@@ -1,0 +1,16 @@
+/*Header Styling Starts Here*/
+header {
+	.header-inner {
+		min-height: 70px;
+
+		@include mq(large-screen) {
+			min-height: 115px;
+		}
+		.menu-icon {
+			@include mq(medium-screen) {
+			display: none;
+		}
+		}
+	}
+}
+/*Header Styling Ends Here*/

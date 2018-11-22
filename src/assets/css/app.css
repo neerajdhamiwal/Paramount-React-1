@@ -1,0 +1,257 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,600,700");
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+}
+
+a {
+  color: #5b5c5e;
+}
+a:focus, a:active {
+  outline: 0;
+  background: transparent;
+}
+
+.custom-grid {
+  max-width: 1300px;
+}
+@media screen and (min-width: 64em) {
+  .custom-grid.custom-grid-right {
+    margin-right: 0;
+    margin-left: auto;
+    padding-right: 0;
+  }
+}
+@media screen and (min-width: 64em) {
+  .custom-grid.custom-grid-left {
+    margin-right: auto;
+    margin-left: 0;
+    padding-left: 0;
+  }
+}
+
+@media screen and (min-width: 64em) {
+  .no-padding {
+    padding: 0 !important;
+  }
+}
+
+.full-bg-red {
+  background-color: #fd302a;
+}
+
+.menu-icon::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: #000;
+  box-shadow: 0 7px 0 #000, 0 14px 0 #000;
+  content: "";
+}
+
+/*Header Styling Starts Here*/
+header .header-inner {
+  min-height: 70px;
+}
+@media screen and (min-width: 64em) {
+  header .header-inner {
+    min-height: 115px;
+  }
+}
+@media screen and (min-width: 40em) {
+  header .header-inner .menu-icon {
+    display: none;
+  }
+}
+
+/*Header Styling Ends Here*/
+.main-menu ul li a {
+  position: relative;
+  padding-left: 0;
+  padding-right: 0;
+  margin: 0 15px;
+}
+.main-menu ul li a::before {
+  content: "";
+  height: 2px;
+  width: 0%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: #db0000;
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+.main-menu ul li a:hover::before {
+  width: 100%;
+}
+
+/*Tab Accordion style starts here*/
+.tab-accordion .tabs-title {
+  float: none;
+}
+.tab-accordion .tabs-title a {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #5b5c5e;
+}
+.tab-accordion .tabs-title a[aria-selected=true] {
+  background: #fff;
+  color: #ff0000;
+}
+.tab-accordion .tabs-title a:focus {
+  background: #fff;
+}
+.tab-accordion .tabs-content,
+.tab-accordion .tabs {
+  border: 0;
+}
+.tab-accordion .tabs-content h3 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.125rem;
+}
+.tab-accordion .tabs-content p {
+  font-size: 0.75rem;
+}
+.tab-accordion .tabs-panel {
+  padding: 0;
+}
+
+.img-relative-title-ld {
+  position: relative;
+}
+@media screen and (min-width: 64em) {
+  .img-relative-title-ld h2 {
+    position: absolute;
+    bottom: -65px;
+    background: red;
+    color: #fff;
+    font-size: 24px;
+    font-weight: 300;
+    width: 285px;
+    left: -33px;
+    height: 152px;
+    display: flex;
+    align-items: flex-end;
+    padding: 0 34px 16px;
+    border-radius: 4px;
+  }
+}
+.img-relative-title-ld img {
+  position: relative;
+  width: 100%;
+}
+
+.block-overlap-custom > .cell {
+  background: #e00106;
+  max-width: 275px;
+  width: 100%;
+  min-height: 340px;
+  border-radius: 4px;
+  box-shadow: 4px 4px 0px #b90101;
+  margin: 0px 6px;
+  -webkit-transition: all 0.2s linear 0.1s;
+  position: relative;
+}
+.block-overlap-custom > .cell:hover {
+  transform: scale(1.13);
+  z-index: 1;
+  position: inherit;
+  -webkit-transition: all 0.2s linear 0.1s;
+}
+.block-overlap-custom > .cell:hover h3 {
+  font-size: 1.125rem;
+  -webkit-transition: all 0.2s linear 0.1s;
+}
+.block-overlap-custom > .cell h3 {
+  position: absolute;
+  bottom: 15px;
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  font-size: 0.875rem;
+  -webkit-transition: all 0.2s linear 0.1s;
+}
+
+.img-relative-title-ru {
+  position: relative;
+  margin-bottom: 2em;
+}
+.img-relative-title-ru h2 {
+  background: red;
+  color: #fff;
+  font-size: 24px;
+  font-weight: 400;
+  padding: 5px 15px;
+  border-radius: 4px;
+  width: 285px;
+}
+@media screen and (min-width: 64em) {
+  .img-relative-title-ru h2 {
+    position: absolute;
+    top: -75px;
+    background: red;
+    color: #fff;
+    font-size: 24px;
+    font-weight: 400;
+    width: 285px;
+    right: -60px;
+    height: 152px;
+    display: flex;
+    align-items: flex-start;
+    padding: 30px 35px 0;
+    border-radius: 4px;
+  }
+}
+.img-relative-title-ru img {
+  position: relative;
+  width: 100%;
+  box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+}
+
+.left-image-right-content h3 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.125rem;
+}
+.left-image-right-content p {
+  font-size: 0.75rem;
+}
+
+@media screen and (min-width: 64em) {
+  .pl-155 {
+    padding-left: 155px;
+  }
+}
+
+@media screen and (min-width: 64em) {
+  .height-750 {
+    min-height: 750px;
+  }
+}
+
+@media screen and (min-width: 64em) {
+  .top-100 {
+    margin-top: 100px;
+  }
+}
+
+@media screen and (min-width: 64em) {
+  .bottom-100 {
+    margin-bottom: 100px;
+  }
+}
+
+/*# sourceMappingURL=app.css.map */

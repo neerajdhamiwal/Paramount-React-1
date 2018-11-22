@@ -1,0 +1,83 @@
+
+
+
+
+.box {
+	position: relative;}
+
+.box__title {
+	margin: 0;
+	line-height: 1;
+	position: absolute;
+	z-index: 100;
+}
+
+.box__title-inner {
+	display: block;
+	position: relative;
+	font-weight: normal;
+	text-transform: uppercase;
+	font-size: 4.15rem;
+	letter-spacing: 0.15rem;
+	line-height: 1.25;
+	font-family: 'Anton', sans-serif;
+}
+
+.box__title-inner[data-hover] {
+	-webkit-text-stroke: 2px #000;
+	text-stroke: 2px #000;
+	-webkit-text-fill-color: transparent;
+	text-fill-color: transparent;
+	color: transparent;
+}
+
+.box__title-inner::before {
+	content: attr(data-hover);
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 0;
+	overflow: hidden;
+	white-space: nowrap;
+	-webkit-text-stroke: 0;
+	text-stroke: 0;
+	-webkit-text-fill-color: #000;
+	text-fill-color: #000;
+	color: #000;
+	transition: all 0.3s;
+}
+
+
+
+.box__shadow {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: -9rem;
+    left: 2rem;
+    background: url(../img/layerbottom.png) no-repeat right top;
+    background-size: 372px 370px;
+}
+.box__img {
+	    width: 600px !important;
+    right: -9em;
+}
+
+.box__deco {
+	font-size: 6rem;
+	line-height: 1;
+	font-weight: bold;
+	position: absolute;
+	bottom: -4rem;
+	right: -4rem;
+	display: none;
+}
+
+.box__content {
+	position: absolute;
+	max-width: 195px;
+	font-size: 0.9rem;
+	text-align: right;
+	display: none;
+}
+

@@ -1,0 +1,22 @@
+.pl-155 {
+@include mq(large-screen) {
+	padding-left: 155px;
+	}
+}
+
+.height-750 {
+	@include mq(large-screen) {
+		min-height: 750px;
+	}
+}
+
+.top-100 {
+	@include mq(large-screen) {
+	margin-top: 100px;
+}
+}
+.bottom-100 {
+	@include mq(large-screen) {
+	margin-bottom: 100px;
+}
+}

@@ -1,0 +1,32 @@
+.block-overlap-custom {
+	>.cell {
+		background: #e00106;
+    max-width: 275px;
+    width: 100%;
+    min-height: 340px;
+    border-radius: 4px;
+    box-shadow: 4px 4px 0px #b90101;
+    margin: 0px 6px;
+    -webkit-transition: all 0.2s linear 0.1s;
+    position: relative;
+    &:hover {
+    	transform: scale(1.13);
+    	z-index: 1;
+    	position: inherit;
+    	-webkit-transition: all 0.2s linear 0.1s;
+    	h3 {
+    		font-size: 1.125rem;
+    		-webkit-transition: all 0.2s linear 0.1s;
+    	}
+    }
+    h3 {
+	    position: absolute;
+	    bottom: 15px;
+	    width: 100%;
+	    text-align: center;
+	    color: #fff;
+	    font-size: 0.875rem;
+	    -webkit-transition: all 0.2s linear 0.1s;
+    }
+	}
+}

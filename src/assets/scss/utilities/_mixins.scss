@@ -1,0 +1,21 @@
+
+@mixin font-tab ($size) {
+  font: {
+  	family: $font-primary;
+  	size: 1.125rem;
+  	weight: 700;
+  }
+}
+
+@mixin mq($media) {
+  @if $media == large-screen {
+    @media screen and (min-width: 64em) { @content; }
+  }
+  @else if $media == medium-screen {
+    @media screen and (min-width: 40em) { @content; }
+  }
+  @else if $media == small-screen {
+    @media screen and (max-width: 39.9375em)  { @content; }
+  }
+}
+

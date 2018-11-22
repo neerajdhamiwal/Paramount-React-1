@@ -1,0 +1,70 @@
+
+@mixin tab-title ($size) {
+  font: {
+  	family: $font-primary;
+  	size: 1.125rem;
+  }
+}
+
+/*Tab Accordion style starts here*/
+.tab-accordion {
+	.tabs-title {
+		float: none;
+		a {
+			@include font-tab(18);
+			color: #5b5c5e;
+
+		 &[aria-selected='true'] {
+		 	background: #fff;
+		 	color: #ff0000;
+		 }
+		 &:focus {
+		 	background: #fff;
+		}
+	}
+	}
+	.tabs-content,
+	.tabs {
+		border: 0;
+	}
+
+	.tabs-content {
+		h3 {
+		@include tab-title(18);
+	}
+	p {
+		font-size: 0.750rem;
+	}
+	}
+
+	.tabs-panel {
+		padding: 0;
+	}
+
+}
+
+.img-relative-title-ld {
+	position: relative;
+	h2 {
+		@include mq(large-screen) {
+		position: absolute;
+    bottom: -65px;
+    background: red;
+    color: #fff;
+    font-size: 24px;
+    font-weight: 300;
+    width: 285px;
+    left: -33px;
+    height: 152px;
+    display: flex;
+    align-items: flex-end;
+    padding: 0 34px 16px;
+    border-radius: 4px;
+    
+    }
+	}
+	img {
+		position: relative;
+		width: 100%
+	}
+}
