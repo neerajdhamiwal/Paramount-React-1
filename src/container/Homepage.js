@@ -54,10 +54,8 @@ class Home extends React.Component{
                 <div className="top-100 bottom-100 clearfix"></div>
                 <RightImgLContent/>
                 <div className="clear"></div>
-                <Footer/>
             </div>
         )
     }
 }
 export default Home;
-

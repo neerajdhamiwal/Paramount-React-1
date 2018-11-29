@@ -1,3 +1,15 @@
+.pl-100 {
+@include mq(large-screen) {
+	padding-left: 100px;
+	}
+}
+
+.pr-100 {
+@include mq(large-screen) {
+	padding-right: 100px;
+	}
+}
+
 .pl-155 {
 @include mq(large-screen) {
 	padding-left: 155px;
@@ -86,4 +98,13 @@
 			box-shadow: 4px 4px 0px #e8e8e8;
 		}
 	}
+}
+.white-btn {
+  background: transparent;
+  border: #d90000 1px solid;
+  color: #d90000;
+}
+.ptb-40{
+	padding-top: 40px;
+	padding-bottom: 40px;
 }
