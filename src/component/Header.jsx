@@ -1,6 +1,8 @@
 
 import React from 'react';
 import Logo from '../assets/img/logo.png';
+import {Link } from "react-router-dom";
+
 class Header extends React.Component{
     render(){
         return(
@@ -13,10 +15,10 @@ class Header extends React.Component{
                             <button className="menu-icon" type="button" data-toggle="offCanvas"></button>
                             <nav className="main-menu show-for-medium">
                                 <ul className="menu align-right">
-                                    <li><a href="/next">About Us</a></li>
-                                    <li><a href="#">Services</a></li>
-                                    <li><a href="#">Resources</a></li>
-                                    <li><a href="#">Expertise</a></li>
+                                    <li><a href="/about">About Us</a></li>
+                                    <li><a href="">Services</a></li>
+                                    <li><a href="/resource">Resources</a></li>
+                                    <li><a href="/expertise">Expertise</a></li>
                                 </ul>
                             </nav>
                         </div>

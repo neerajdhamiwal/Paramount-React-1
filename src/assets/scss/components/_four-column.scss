@@ -1,0 +1,52 @@
+.four-column-outer{
+  background: #f6f4f5;
+  .heading-four-column{
+    text-align: center;
+    width: 100%;
+    margin-bottom: 100px;
+    h3{
+      span{
+        font-weight: 100;
+      }
+    }
+  }
+
+  .four-col-left{
+    padding-left: 100px;
+    width: 80%;
+  }
+
+  .four-col-right{
+    float: right;
+  }
+
+  .four-column-content{
+    a{
+      font-size: 20px;
+      position: relative;
+      font-weight: 600;
+      margin-bottom:15px;
+
+      &:after{
+        content: '';
+        position: absolute;
+        bottom: -20px;
+        width: 50px;
+        height: 6px;
+        background: #999;
+        display: block;
+      }
+
+      &:hover{
+        &:after{
+          background: #ff0000;
+        }
+      }
+    }
+    p{
+      font-size: 0.750rem;
+      color: rgba(0, 0, 0, 0.6);
+      margin-top: 30px;
+    }
+  }
+}

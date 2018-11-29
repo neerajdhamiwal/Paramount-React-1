@@ -1,16 +1,26 @@
 import React from 'react';
-import {Route, Redirect} from 'react-router-dom';// eslint-disable-line no-unused-vars
-import Home from './container/Homepage'
+import { Switch, Route } from 'react-router';
+import { BrowserRouter } from 'react-router-dom';
+import Home from './container/Homepage';
+import About from './container/About.jsx';
+import Expertise from './container/Expertise.jsx';
+import Resource from './container/Resource.jsx';
+import Main from './main';
+
 class App extends React.Component{
     render(){
         return(
-            <div className="app">
-                <div className="App-intro">
-                    <Route path='/home' exact component={Home} />
-                    <Route path='/next' component={Home} />
-                    <Redirect to='/home' />
-                </div>
-            </div>
+            <Main>
+                <BrowserRouter>
+                    <Switch>
+                        <Route exact path="/" component={Home} />
+                        <Route exact path="/about" component={About} />
+                        <Route exact path="/resource" component={Resource} />
+                        <Route exact path="/expertise" component={Expertise} />
+                    </Switch>
+                </BrowserRouter>
+            </Main>
+
         )
     }
 }

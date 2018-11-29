@@ -6,14 +6,19 @@ window.$ = $;
 import './assets/css/app.css';
 import './assets/css/base.css';
 import './assets/css/foundation.css';
+import 'owl.carousel/dist/assets/owl.carousel.css';
+import 'slick-carousel/slick/slick.css'
 //import  './assets/js/vendor/TweenMax.min';
 import 'what-input';
 import 'foundation-sites';
-import Home from './container/Homepage';
-import App from './app';
-import { BrowserRouter } from 'react-router-dom';
+import 'owl.carousel/dist/assets/owl.carousel.min.css';
+import 'owl.carousel/dist/assets/owl.theme.default.min.css';
+import 'owl.carousel/dist/assets/owl.theme.green.min.css';
+import 'owl.carousel/dist/owl.carousel.min.js';
+import 'slick-carousel';
 
-ReactDom.render(<BrowserRouter>
-    <App/></BrowserRouter>
+// import Home from './container/Homepage';
+import App from './app';
+ReactDom.render(<App/>
     ,document.getElementById('root'));
 

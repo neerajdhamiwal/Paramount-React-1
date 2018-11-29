@@ -11,18 +11,18 @@
     width: 285px;
     @include mq(large-screen) {
       position: absolute;
-    top: -75px;
-    background: red;
-    color: #fff;
-    font-size: 24px;
-    font-weight: 400;
-    width: 285px;
-    right: -60px;
-    height: 152px;
-    display: flex;
-    align-items: flex-start;
-    padding: 30px 35px 0;
-    border-radius: 4px;
+      top: -75px;
+      background: red;
+      color: #fff;
+      font-size: 24px;
+      font-weight: 400;
+      width: 285px;
+      right: -60px;
+      height: 152px;
+      display: flex;
+      align-items: flex-start;
+      padding: 30px 35px 0;
+      border-radius: 4px;
     }
 	}
 	img {
@@ -35,6 +35,7 @@
 
 
 .left-image-right-content {
+    padding-top: 75px;
   h3 {
     @include tab-title(18);
   }

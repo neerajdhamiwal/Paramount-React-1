@@ -1,0 +1,25 @@
+.award-content-box{
+  .award-content{
+    a{
+      font-size: 20px;
+      color: #e93f33;
+    }
+    h3{
+      font-family: "Montserrat", sans-serif;
+      font-size: 1.125rem;
+      margin: 40px 0 15px;
+    }
+    p{
+      font-size: 0.750rem;
+    }
+  }
+}
+
+.our-certifications-box{
+  background: url(..//img/our-award-bg.png)no-repeat top right #f6f4f5;
+  background-position: 80% top;
+
+  .our-certifications-content {
+    padding: 130px 0 130px;
+  }
+}

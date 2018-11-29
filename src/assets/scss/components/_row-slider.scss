@@ -1,0 +1,19 @@
+.row-slider {
+	.slick-dots {
+		  display: flex;
+    	justify-content: center;
+		li {
+	    list-style-type: none;
+	    margin: 0 5px;
+	    background: #d0d0d0;
+	    width: 10px;
+	    height: 10px;
+	    font-size: 0;
+	    border-radius: 50%;
+	    cursor: pointer;
+	    &.slick-active {
+	    	background: #ff0101;
+	    }
+		}
+	}
+}

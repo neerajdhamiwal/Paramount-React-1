@@ -1,0 +1,72 @@
+.banner-info {
+	font: {
+	size: 1.875rem;
+	}
+	color: #575757;
+  line-height: 1.2;
+  margin-bottom: 24px;
+	span {
+	font-weight: 300;
+	}
+}
+
+.award-banner{
+ h6 {
+	 font-weight: 600;
+	 color: rgba(0, 0, 0, 0.6);
+	 margin-bottom: 40px;
+	 margin-top: 30px;
+	}
+	p{
+		font-size: 0.750rem;
+		color: rgba(0, 0, 0, 0.6);
+	}
+}
+
+.banner-img-link {
+	position: relative;
+	.img-shadow-hover {
+				@include mq(medium-screen) {
+		position: absolute;
+		top: 60px;
+		width: 600px;
+
+	}
+}
+}
+
+.team-scnd-banner{
+	h4{
+		color: red;
+		font-weight: 400;
+		margin-bottom: 20px;
+	}
+	p{
+		margin: 50px 0;
+	}
+	.team-banner-be {
+		a{
+	    padding: 50px 30px;
+	    background: #ff0000;
+	    color: #fff;
+			cursor: pointer;
+		}
+	}
+	.small-order-change{
+		padding-right: 150px;
+	}
+	.img-shadow-hover {
+		@include mq(medium-screen) {
+			position: absolute;
+			top: 60px;
+			width: 600px;
+			left: 80px;
+		}
+	}
+}
+
+.small-order-change {
+@include mq(small-screen) {
+	order: 1;
+	}
+}

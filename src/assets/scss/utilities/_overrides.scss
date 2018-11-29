@@ -1,0 +1,11 @@
+.button {
+	font-family: $font-primary;
+	border-radius: 30px;
+  font-weight: 300;
+  font-size: 1rem;
+  padding: 11px 43px;
+  &.btn-full {
+  	width: 100%;
+  	border-radius: 3px;
+  }
+}

@@ -1,0 +1,36 @@
+.banner-with-content{
+	background: url(..//img/banner-with-content.jpeg) no-repeat center;
+	background-size:cover;
+	position: relative;
+	height: 600px;
+
+	h3.banner-info{
+		color: #fff;
+		margin-top: 184px;
+	}
+
+	.banner-with-content-right{
+		position: absolute;
+    right: 0;
+    background: rgba(0,0,0, 0.2);
+    padding: 10px 210px 0px 15px;
+    top: 280px;
+		color: #888;
+	}
+}
+
+.banner-with-content-box{
+	h3{
+		font-family: "Montserrat", sans-serif;
+		font-size: 1.125rem;
+		margin-bottom: 50px;
+	}
+	p{
+		font-size: 0.750rem;
+		margin-bottom: 30px;
+	}
+}
+.article-banner{
+	background: url(..//img/article-banner.jpeg) no-repeat center;
+	background-size: cover;
+}

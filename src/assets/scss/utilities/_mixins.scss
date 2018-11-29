@@ -7,6 +7,13 @@
   }
 }
 
+@mixin transition () {
+  -webkit-transition: all .2s linear;
+  -moz-transition: all .2s linear;
+  -o-transition: all .2s linear;
+  transition: all .2s linear;
+}
+
 @mixin mq($media) {
   @if $media == large-screen {
     @media screen and (min-width: 64em) { @content; }

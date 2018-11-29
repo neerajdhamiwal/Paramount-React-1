@@ -1,0 +1,36 @@
+.content-with-sidemenu{
+  .sidemnu-heading{
+    text-align: center;
+    h3{
+      font-style: italic;
+      font-size: 40px;
+      font-weight: 400;
+      line-height: 60px;
+      margin-bottom: 25px;
+    }
+  }
+  .relative-title{
+    text-transform: uppercase;
+  }
+  .img-relative-title-ld h2 {
+      left: auto;
+      right: -64px;
+  }
+  .right-sidemenu{
+    float: right;
+    margin-right: 250px;
+    text-align: right;
+    ul{
+      margin: 0px;
+      padding: 0px;
+      list-style: none;
+      li{
+        margin-bottom: 25px;
+        a{
+          font-size: 18px;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}

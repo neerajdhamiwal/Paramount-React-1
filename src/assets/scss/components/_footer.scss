@@ -1,0 +1,66 @@
+.contact-form {
+	background: #fff;
+    padding: 40px 40px;
+    max-width: 440px;
+        margin: 0 0 0 auto;
+    box-shadow: 9px 9px 0 rgba(0,0,0,.1);
+    position: relative;
+    top: 60px;
+    [type='text'],
+    [type='email'],
+    textarea {
+    	    border: 1px solid #ff0000;
+    	    box-shadow: 0 0 0;
+    }
+    ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #303347;
+  font-size: 14px;
+  font-family: $font-primary;
+	-webkit-font-smoothing: auto;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: #303347;
+  font-size: 14px;
+  font-family: $font-primary;
+	-webkit-font-smoothing: auto;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: #303347;
+  font-size: 14px;
+  font-family: $font-primary;
+	-webkit-font-smoothing: auto;
+}
+:-moz-placeholder { /* Firefox 18- */
+  color: #303347;
+  font-size: 14px;
+  font-family: $font-primary;
+	-webkit-font-smoothing: auto;
+}
+h5 {
+	    margin-bottom: 30px;
+}
+}
+
+footer {
+	h5 {
+		font-size: 1.125rem;
+		color: #303347;
+		margin-bottom: 30px;
+	}
+	&.footer-bottom {
+		    padding-top: 100px;
+    padding-bottom: 100px;
+		h5 {
+			color: #fff;
+			    margin-bottom: 60px;
+		}
+	}
+}
+.footer-info {
+	ul {
+		font-size: 14px;
+    font-weight: 700;
+    color: #303347;
+    line-height: 3;
+	}
+}
