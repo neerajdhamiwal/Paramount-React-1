@@ -2,7 +2,6 @@
 import React from 'react';
 import Headercomp from '../component/Header.jsx';
 import AccordionTab from '../component/AccordionTab.jsx';
-import FooterRowSlider from '../component/FooterRowSlider.jsx';
 import Footer from '../component/Footer.jsx';
 import bannerAwarBgImg from '../assets/img/award-banner-bg.png';
 import $ from 'jquery';
@@ -39,4 +38,3 @@ class Expertise extends React.Component{
     }
 }
 export default Expertise;
-

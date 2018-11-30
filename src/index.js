@@ -11,6 +11,7 @@ import 'slick-carousel/slick/slick.css'
 //import  './assets/js/vendor/TweenMax.min';
 import 'what-input';
 import 'foundation-sites';
+import 'wowjs/dist/wow.min.js';
 import 'owl.carousel/dist/assets/owl.carousel.min.css';
 import 'owl.carousel/dist/assets/owl.theme.default.min.css';
 import 'owl.carousel/dist/assets/owl.theme.green.min.css';
