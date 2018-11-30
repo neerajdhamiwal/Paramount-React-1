@@ -14,11 +14,12 @@ class Team extends React.Component{
     render(){
         return(
           <div>
-            <AwardBanner/>
+            <AwardBanner customClass = "main-banner award-banner"></AwardBanner>
             <div className="top-100 bottom-100 clearfix"></div>
             <GridList/>
             <div className="top-100 bottom-100 clearfix"></div>
-            </div>
+              <AwardBanner />
+          </div>
         )
     }
 }

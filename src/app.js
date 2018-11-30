@@ -6,6 +6,7 @@ import About from './container/About.jsx';
 import Expertise from './container/Expertise.jsx';
 import Resource from './container/Resource.jsx';
 import Team from './container/Team.jsx';
+import CaseStudy from './container/Casestudy.jsx';
 import Main from './main';
 
 class App extends React.Component{
@@ -19,6 +20,7 @@ class App extends React.Component{
                         <Route exact path="/resource" component={Resource} />
                         <Route exact path="/expertise" component={Expertise} />
                         <Route exact path="/team" component={Team} />
+                        <Route exact path="/casestudy" component={CaseStudy} />
                     </Switch>
                 </BrowserRouter>
             </Main>
