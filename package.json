@@ -9,7 +9,7 @@
   "main": "index.js",
   "scripts": {
     "watch": "webpack --watch",
-    "start": "webpack-dev-server  --open --color ",
+    "start": "webpack-dev-server --color ",
     "build": "rimraf dist &&  webpack --progress --profile"
   },
   "author": "",
