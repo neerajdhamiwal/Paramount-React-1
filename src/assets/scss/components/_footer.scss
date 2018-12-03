@@ -6,6 +6,7 @@
     box-shadow: 9px 9px 0 rgba(0,0,0,.1);
     position: relative;
     top: 60px;
+    z-index: 1;
     [type='text'],
     [type='email'],
     textarea {
