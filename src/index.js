@@ -17,8 +17,9 @@ import 'owl.carousel/dist/assets/owl.theme.default.min.css';
 import 'owl.carousel/dist/assets/owl.theme.green.min.css';
 import 'owl.carousel/dist/owl.carousel.min.js';
 import 'slick-carousel';
-
-// import Home from './container/Homepage';
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
 import App from './app';
-ReactDom.render(<App/>
+ReactDom.render(
+    <App/>
     ,document.getElementById('root'));

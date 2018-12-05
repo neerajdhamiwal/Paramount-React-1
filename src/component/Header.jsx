@@ -1,17 +1,20 @@
 
 import React from 'react';
 import Logo from '../assets/img/logo.png';
-import {Link } from "react-router-dom";
+
 
 class Header extends React.Component{
+    constructor(props){
+        super(props)
+    }
     render(){
+        console.log('this.props',this.props);
         return(
             <header>
                 <div className="grid-container">
                     <div className="grid-x header-inner align-middle">
                         <div className="medium-4 small-6 cell"><h1><a href="/"><img src={Logo} alt="Paramount Software Solution" /></a></h1></div>
                         <div className="medium-8  small-6 cell text-right">
-
                             <button className="menu-icon" type="button" data-toggle="offCanvas"></button>
                             <nav className="main-menu show-for-medium">
                                 <ul className="menu align-right">
@@ -30,4 +33,5 @@ class Header extends React.Component{
         )
     }
 }
+
 export default Header;

@@ -11,6 +11,7 @@ module.exports={
     compress: true,
     port: 8080,
     historyApiFallback: true,
+    host: '0.0.0.0'
   },
 
   devtool:  "cheap-eval-source-map",
@@ -100,7 +101,6 @@ module.exports={
       chunkFilename: "[id][hash].css"
     }),
     new UglifyJsPlugin({ sourceMap: true }),
-
 
 ],
     mode: 'production'
