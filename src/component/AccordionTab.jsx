@@ -36,8 +36,7 @@ class AccordionaTab extends React.Component{
                                         return <li className={index === 0 ? "tabs-title is-active" : "tabs-title"}><a href={'#panel'+index} aria-selected={index ===0? 'true':''}>{service.slideimagetitle}</a></li>
                                     }
                                 })}
-
-                                    </ul>
+                            </ul>
                         </div>
                         <div className="medium-10 cell">
                             <div className="tabs-content" data-tabs-content="service-tabs">

@@ -36,7 +36,7 @@ class CaseStudylist extends React.Component {
                       <div className="content-inner pl-155">
                         <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                           incididunt ut labore et dolore magna aliqua.</h3>
-                        <p className="ptb-40">{caseStudy.field_body}</p>
+                        <p className="ptb-40">{$(caseStudy.field_body).text()}</p>
                         <button className="button">Read more</button>
                       </div>
                     </div>
