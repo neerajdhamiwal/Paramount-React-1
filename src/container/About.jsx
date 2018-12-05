@@ -7,9 +7,58 @@ import mobileHeader from '../component/mobileHeader.jsx';
 import FooterRowSlider from '../component/FooterRowSlider.jsx';
 import layerTop from '../assets/img/layertop.png';
 import placeholder from '../assets/img/placeholder.png';
+import requestService from '../services/request.js';
+import {apiUrl} from '../services/common.js';
 import $ from 'jquery';
+
 //import 'foundation/js/vendor/zepto';
 class Home extends React.Component{
+    constructor(props) {
+        super(props)
+        this.state = {
+            aboutData: [],
+            foundationData: [],
+            headingData: [],
+            heading: []
+        }
+    }
+    componentWillMount(){
+        requestService.getService('/image-slider/13')
+            .then((response) => {
+                this.setState({aboutData: response.data})
+            })
+            .catch((err) => {
+                console.log(err);
+            })
+        requestService.getService('/image-component-data/11')
+            .then((response) => {
+                this.setState({foundationData: response.data})
+            })
+            .catch((err) => {
+                console.log(err);
+            })
+        requestService.getService('/standard-heading-component-data/11')
+            .then((response) => {
+            this.setState({heading: response.data})
+            let headingData = [];
+                let subarr = [];
+                response.data.forEach((data, index) => {
+                if(index!==0 && index%2 === 0){
+                    headingData.push(subarr)
+                    subarr = [];
+                }
+                else{
+                    subarr.push(data);
+                }
+
+            })
+                this.setState({headingData});
+            })
+            .catch((err) => {
+                console.log(err);
+            })
+    }
+
     componentDidMount(){
         //Foundation.addToJquery($);
         $(document).foundation();
@@ -23,15 +72,14 @@ class Home extends React.Component{
                             <div className="medium-4 cell small-order-change">
                                 <h3 className="banner-info"><span>About</span><br/>
                                     Us</h3>
-                                <h6>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type.</h6>
+
+                                <h6>{this.state.aboutData.length>0 ? $(this.state.aboutData[0]['node_body']).text() : ''}</h6>
                                 <button className="button">Download Brochure</button>
                             </div>
                             <div className="medium-6 cell">
                                 <img src={layerTop} alt=""/>
                             </div>
-
                         </div>
-
                     </div>
                 </section>
                 <AccordionTab/>
@@ -40,45 +88,29 @@ class Home extends React.Component{
                         <div className="grid-x">
                             <div className="medium-12 cell">
                                 <div className="tabs-content" data-tabs-content="service-tabs">
-                                    <div className="tabs-panel is-active" id="panel1">
-                                        <div className="grid-x grid-padding-x ">
-                                            <div className="medium-6 cell">
-                                                <div className="pr-155 pt-50">
-                                                    <h3 className="mb-50">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h3>
-                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                    <div className="tabs-panel is-active">
+                                        {  this.state.foundationData.map((data) => {
+                                            if (data.image_title) {
+                                                return <div className="grid-x grid-padding-x ">
+                                                    <div className="medium-6 cell">
+                                                        <div className="pr-155 pt-50">
+                                                            <h3 className="mb-50">{data.image_title}</h3>
+                                                            <p>{$(data.image_description).text()}</p>
+                                                        </div>
+                                                    </div>
+                                                    <div className="medium-6 cell no-padding">
+                                                        <div className="img-relative-title-ld">
+                                                            <h2 className="relative-title">Our Foundation</h2>
+                                                            <img src={apiUrl+data.image_url} alt=""/>
+                                                        </div>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div className="medium-6 cell no-padding">
-                                                <div className="img-relative-title-ld">
-                                                    <h2 className="relative-title">Our Foundation</h2>
-                                                    <img src={placeholder} alt=""/>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="tabs-panel" id="panel2">
-                                        <p>two</p>
-                                        <img className="thumbnail" src=""/>
-                                    </div>
-                                    <div className="tabs-panel" id="panel3">
-                                        <p>three</p>
-                                        <p>Check me out! I'm a super cool Tab panel with text content!</p>
-                                    </div>
-                                    <div className="tabs-panel" id="panel4">
-                                        <p>four</p>
-                                        <img className="thumbnail" src=""/>
-                                    </div>
-                                    <div className="tabs-panel" id="panel5">
-                                        <p>five</p>
-                                        <p>Check me out! I'm a super cool Tab panel with text content!</p>
-                                    </div>
-                                    <div className="tabs-panel" id="panel6">
-                                        <p>six</p>
-                                        <img className="thumbnail" src=""/>
+                                            }
+                                        })
+                                        }
                                     </div>
                                 </div>
                             </div>
-
                         </div>
                     </div>
 
@@ -87,41 +119,31 @@ class Home extends React.Component{
                     <div className="grid-container">
                         <div className="grid-x">
                             <div className="heading-four-column">
-                                <h3><span>Heading</span> big one</h3>
+                                {this.state.heading.map((mainHeading) => {
+                                    if(mainHeading.main_heading !==''){
+                                        return <h3>{mainHeading.main_heading}</h3>
+                                    }
+                                })}
                             </div>
-                            <div className="medium-12 cell">
-                                <div className="grid-x">
-                                    <div className="medium-5 cell">
-                                        <div className="four-column-content four-col-left">
-                                            <a href="#">Sub Heading one</a>
-                                            <p>but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the</p>
-                                        </div>
-                                    </div>
-                                    <div className="medium-5 cell">
-                                        <div className="four-column-content four-col-left four-col-right">
-                                            <a href="#">Sub Heading one</a>
-                                            <p>but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the</p>
-                                        </div>
+                            {this.state.heading.length>0?
+                                this.state.headingData.map((subArr, index) => {
+                                        return  <div className="medium-12 cell">
+                                    <div className="grid-x">
+                                        {
+                                            subArr.map((heading, i) => {
+                                            return <div className="medium-5 cell">
+                                                <div className="four-column-content four-col-left">
+                                                    <a href="#">{heading.sub_heading}</a>
+                                                    <p>{$(heading.heading_description).text()}</p>
+                                                </div>
+                                            </div>
+                                        })
+                                        }
                                     </div>
                                 </div>
-                            </div>
+                            }
+                            ):''}
 
-                            <div className="medium-12 cell pt-50">
-                                <div className="grid-x">
-                                    <div className="medium-5 cell">
-                                        <div className="four-column-content four-col-left">
-                                            <a href="#">Sub Heading one</a>
-                                            <p>but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the</p>
-                                        </div>
-                                    </div>
-                                    <div className="medium-5 cell">
-                                        <div className="four-column-content four-col-left four-col-right">
-                                            <a href="#">Sub Heading one</a>
-                                            <p>but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </section>
