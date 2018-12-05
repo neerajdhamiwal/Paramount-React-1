@@ -23,6 +23,9 @@ class AccordionaTab extends React.Component{
                 console.log(err);
             })
     }
+    active(e){
+        console.log(e)
+    }
 
     render(){
         return(
@@ -33,7 +36,7 @@ class AccordionaTab extends React.Component{
                             <ul className="accordion" data-responsive-accordion-tabs="accordion medium-tabs" id="service-tabs">
                                 {this.state.sliderData.map((service, index) => {
                                     if(service.slideimagetitle !==''){
-                                        return <li className={index === 0 ? "tabs-title is-active" : "tabs-title"}><a href={'#panel'+index} aria-selected={index ===0? 'true':''}>{service.slideimagetitle}</a></li>
+                                        return <li className={index === 0 ? "tabs-title is-active" : "tabs-title"}><a href= {'#panel'+index} aria-selected={index ===0? 'true':''}>{service.slideimagetitle}</a></li>
                                     }
                                 })}
                             </ul>
