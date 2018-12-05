@@ -11,7 +11,6 @@ module.exports={
     compress: true,
     port: 8080,
     historyApiFallback: true,
-    host: '0.0.0.0'
   },
 
   devtool:  "cheap-eval-source-map",
@@ -52,6 +51,10 @@ module.exports={
               }
             }
             ]
+          },
+          {
+              test: /\.svg$/,
+              loader: 'svg-inline-loader'
           },
         //     {
         //         test: /\.(scss|sass)$/i,
@@ -101,6 +104,7 @@ module.exports={
       chunkFilename: "[id][hash].css"
     }),
     new UglifyJsPlugin({ sourceMap: true }),
+
 
 ],
     mode: 'production'
