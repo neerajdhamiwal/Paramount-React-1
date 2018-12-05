@@ -24,7 +24,6 @@ class App extends React.Component{
                     </Switch>
                 </BrowserRouter>
             </Main>
-
         )
     }
 }

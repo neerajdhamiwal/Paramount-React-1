@@ -1,5 +1,8 @@
-import apiUrl from '../config/config.js';
+import {apiUrl, UserName, Pass} from './common.js';
+
 const apiService = {};
+import axios from 'axios';
+
 
 const handleErrors = function(response) {
     if (!response.ok) {
@@ -9,31 +12,30 @@ const handleErrors = function(response) {
 };
 
 apiService.getService = function(url) {
-    return new Promise((resolve, reject) => fetch(`${apiUrl.url}${url}`, {
-        method: 'GET',
-        headers: {
-            Accept: 'application/json',
-            'Content-Type': 'application/json',
-            'x-access-token': sessionStorage.getItem('token') //eslint-disable-line
-        }
-    })
-        .then(handleErrors)
-        .then(
-            response => {
-                if (response.error) {
 
-                } else {
-                    resolve(response);
-                }
-            },
-            error => {
-                reject(error);
-            }));
+    const method = 'GET';
+    const config = {
+        method
+    };
+    // config.auth = {
+    //     username: UserName,
+    //     password: Pass
+    // };
+    config.url = `${apiUrl}${url}`;
+    config.headers = {'Content-Type': 'application/json'};
+    return new Promise((resolve, reject) => axios(config)
+        .then(response => {
+            resolve(response);
+        })
+        .catch(error => {
+            reject(error);
+        })
+    )
 };
 
 apiService.updateService = function(url) {
     return new Promise((resolve, reject) => {
-        fetch(`${apiUrl.url}${url}`,
+        fetch(`${apiUrl}${url}`,
             {
                 method: 'PUT',
                 headers: {
@@ -75,7 +77,7 @@ apiService.postService = function(url, data, multi) {
     }
 
     return new Promise((resolve, reject) => {
-        fetch(`${apiUrl.url}${url}`,
+        fetch(`${apiUrl}${url}`,
             {
                 method: 'POST',
                 headers: request.header,
@@ -84,10 +86,7 @@ apiService.postService = function(url, data, multi) {
             .then(handleErrors)
             .then(response => {
                 if (response.error) {
-                    const link = document.createElement('a');
-                    link.href = '/error';
-                    document.body.appendChild(link);
-                    link.click();
+
                 } else {
                     resolve(response);
                 }
