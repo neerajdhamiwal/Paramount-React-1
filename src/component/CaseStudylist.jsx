@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router';
 import Placeholder2 from '../assets/img/placeholder2.png';
 import requestService from '../services/request.js';
 import {apiUrl} from '../services/common.js';

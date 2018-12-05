@@ -1,9 +1,9 @@
 import React from 'react';
+import ImgSlider from './ImgSlider.jsx';
 import placeholderImg from '../assets/img/placeholder.png';
 import requestService from '../services/request.js';
 import {apiUrl} from '../services/common.js';
 import $ from 'jquery';
-
 class AccordionaTab extends React.Component{
     constructor(props){
         super(props)

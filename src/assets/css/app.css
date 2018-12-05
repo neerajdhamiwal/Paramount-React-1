@@ -605,7 +605,7 @@ footer.footer-bottom h5 {
 }
 
 .our-certifications-box {
-  background: url(..//img/our-award-bg.png) no-repeat top right #f6f4f5;
+  background: url(../img/our-award-bg.png) no-repeat top right #f6f4f5;
   background-position: 80% top;
 }
 
@@ -614,7 +614,7 @@ footer.footer-bottom h5 {
 }
 
 .our-certifications-box {
-  background: url(..//img/our-award-bg.png) no-repeat top right #f6f4f5;
+  background: url(../img/our-award-bg.png) no-repeat top right #f6f4f5;
   background-position: 80% top;
 }
 
@@ -643,6 +643,7 @@ footer.footer-bottom h5 {
 }
 
 .banner-with-content {
+  background: url(../img/banner-with-content.jpeg) no-repeat center;
   background-size: cover;
   position: relative;
   height: 600px;
@@ -674,7 +675,7 @@ footer.footer-bottom h5 {
 }
 
 .article-banner {
-  background: url(..//img/article-banner.jpeg) no-repeat center;
+  background: url(../img/article-banner.jpeg) no-repeat center;
   background-size: cover;
 }
 
@@ -843,6 +844,25 @@ footer.footer-bottom h5 {
 .content-with-sidemenu .right-sidemenu ul li a {
   font-size: 18px;
   font-weight: bold;
+}
+
+.img-slider .slick-arrow {
+  position: absolute;
+  bottom: -30px;
+  z-index: 1;
+  font-size: 0;
+  width: 20px;
+  height: 20px;
+}
+
+.img-slider .slick-arrow.slick-prev {
+  left: 0;
+  background: url(../img/arrow-left.svg) left center no-repeat;
+}
+
+.img-slider .slick-arrow.slick-next {
+  left: 60px;
+  background: url(../img/arrow-right.svg) left center no-repeat;
 }
 
 @media screen and (min-width: 64em) {
