@@ -7,7 +7,7 @@ import Expertise from './container/Expertise.jsx';
 import Resource from './container/Resource.jsx';
 import Team from './container/Team.jsx';
 import CaseStudy from './container/Casestudy.jsx';
-import ArticlePage from './container/ArticlePage.jsx';
+import ArticlePage from './container/Articlepage.jsx';
 import Main from './main';
 
 class App extends React.Component{
