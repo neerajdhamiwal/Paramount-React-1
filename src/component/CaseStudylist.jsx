@@ -12,13 +12,13 @@ class CaseStudylist extends React.Component {
       }
   }
   componentWillMount(){
-      requestService.getService('/paragraph-data?_format=json')
-        .then((response) => {
-        this.setState({caseStudyData: response.data})
-      })
-          .catch((err) => {
-            console.log(err);
-          })
+      // requestService.getService('/paragraph-data?_format=json')
+      //   .then((response) => {
+      //   this.setState({caseStudyData: response.data})
+      // })
+      //     .catch((err) => {
+      //       console.log(err);
+      //     })
   }
   render(){
     return(

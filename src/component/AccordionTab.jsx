@@ -20,6 +20,9 @@ class AccordionaTab extends React.Component{
                 console.log(err);
             })
     }
+    componentDidMount(){
+
+    }
     active(e){
         console.log(e)
     }
@@ -33,10 +36,9 @@ class AccordionaTab extends React.Component{
                             <ul className="accordion" data-responsive-accordion-tabs="accordion medium-tabs" id="service-tabs">
                                 {this.state.sliderData.map((service, index) => {
                                     if(service.slideimagetitle !==''){
-                                        return <li className={index === 0 ? "tabs-title is-active" : "tabs-title"} onClick={(e)=> {this.active}}>{service.slideimagetitle}</li>
+                                        return <li className={index === 0 ? "tabs-title is-active" : "tabs-title"}><a href={`#panel${index}`}>{service.slideimagetitle}</a></li>
                                     }
                                 })}
-
                             </ul>
                         </div>
                         <div className="medium-10 cell">

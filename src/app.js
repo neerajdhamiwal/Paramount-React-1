@@ -1,7 +1,7 @@
 import React from 'react';
 import { Switch, Route } from 'react-router';
 import { BrowserRouter } from 'react-router-dom';
-import Home from './container/Homepage';
+import Home from './container/Homepage.jsx';
 import About from './container/About.jsx';
 import Expertise from './container/Expertise.jsx';
 import Resource from './container/Resource.jsx';

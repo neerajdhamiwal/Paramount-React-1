@@ -19,13 +19,7 @@ class FeaturedContent extends React.Component{
       }
   }
     componentWillMount(){
-        requestService.getService('/paragraph-data?_format=json')
-            .then((response) => {
-                this.setState({caseStudy: response.data[0]})
-            })
-            .catch((err) => {
-                console.log(err);
-            })
+
     }
   render(){
     return(
