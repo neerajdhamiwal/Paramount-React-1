@@ -50,10 +50,7 @@ class AccordionaTab extends React.Component{
                                                     <p>{$(service.slideimagedescription).text()}</p>
                                                 </div>
                                                 <div className="medium-7 cell no-padding">
-                                                    <div className="img-relative-title-ld">
-                                                        <h2 className="relative-title">Our Services</h2>
-                                                        <img src={placeholderImg} alt=""/>
-                                                    </div>
+                                                    <ImgSlider/>
                                                 </div>
                                             </div>
                                         </div>

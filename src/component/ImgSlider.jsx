@@ -6,14 +6,10 @@ class ImgSlider extends React.Component{
     constructor(){
         super();
         this.state = {
-            logo : [1,2,3,4,5]
+            logo : [1,2]
         }
     }
-    componentDidMount(){
-      $('.single-item').slick({
-        fade: true
-      });
-    }
+  
     render(){
         return(
           <div className="grid-container img-slider">

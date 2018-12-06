@@ -8,6 +8,7 @@ import Resource from './container/Resource.jsx';
 import Team from './container/Team.jsx';
 import CaseStudy from './container/Casestudy.jsx';
 import ArticlePage from './container/ArticlePage.jsx';
+import Contact from './container/Contact.jsx';
 import Main from './main';
 
 class App extends React.Component{
@@ -22,6 +23,7 @@ class App extends React.Component{
                         <Route exact path="/expertise" component={Expertise} />
                         <Route exact path="/team" component={Team} />
                         <Route exact path="/casestudy" component={CaseStudy} />
+                        <Route exact path="/contact-us" component={Contact} />
                         <Route exact path="/casestudy2/article" component={ArticlePage} />
                     </Switch>
                 </BrowserRouter>
