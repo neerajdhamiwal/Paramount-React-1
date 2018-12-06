@@ -26,8 +26,8 @@ class ImgSlider extends React.Component{
         });
     }
     componentDidMount(){
-        $('.img-slider .slick-arrow.slick-prev').css({"left": "0", "background": `url(${ArrowLeft}) left center no-repeat`});
-        $('.img-slider .slick-arrow.slick-next').css({"left": "60px", "background": `url(${ArrowRight}) left center no-repeat`});
+       // $('.slick-prev').css({"left": "0", "background": `url(${ArrowLeft}) left center no-repeat`});
+       // $('.slick-next').css({"left": "60px", "background": `url(${ArrowRight}) left center no-repeat`});
         this.createSlick()
         //$(window).on( 'resize', this.createSlick );
     }

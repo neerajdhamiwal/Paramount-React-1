@@ -857,12 +857,15 @@ footer.footer-bottom h5 {
 
 .img-slider .slick-arrow.slick-prev {
   left: 0;
-  background: url(../img/arrow-left.svg) left center no-repeat;
+  background: url(../img/icons8-left-50.png) left center no-repeat;
 }
 
 .img-slider .slick-arrow.slick-next {
   left: 60px;
-  background: url(../img/arrow-right.svg) left center no-repeat;
+  background: url(../img/icons8-right-50.png) left center no-repeat;
+}
+.img-slider .slick-arrow{
+  width: 45px !important;
 }
 
 @media screen and (min-width: 64em) {
