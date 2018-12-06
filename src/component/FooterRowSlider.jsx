@@ -69,4 +69,3 @@ class FooterRowSlider extends React.Component{
     }
 }
 export default FooterRowSlider;
-

@@ -10,7 +10,7 @@ class ImgSlider extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            logo : [1,2,3,4,5]
+            logo : [1,2]
         }
     }
 
