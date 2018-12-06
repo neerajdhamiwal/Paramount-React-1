@@ -61,7 +61,7 @@ class Home extends React.Component{
 
     componentDidMount(){
         //Foundation.addToJquery($);
-        $(document).foundation();
+        //$(document).foundation();
     }
     render(){
         return(
@@ -73,7 +73,7 @@ class Home extends React.Component{
                                 <h3 className="banner-info"><span>About</span><br/>
                                     Us</h3>
 
-                                <h6>{this.state.aboutData.length>0 ? $(this.state.aboutData[0]['node_body']).text() : ''}</h6>
+                                <h6>{this.state.aboutData.length>0 ? $(this.state.aboutData[0]['header_description']).text() : ''}</h6>
                                 <button className="button">Download Brochure</button>
                             </div>
                             <div className="medium-6 cell">

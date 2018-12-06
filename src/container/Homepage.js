@@ -59,15 +59,15 @@ var parallaxInstance = new Parallax(scene);
 
                             </div>
                             <div className="medium-6 cell">
-                            <div id="scene" data-friction-x="0.1" data-friction-y="0.1" data-scalar-x="25" data-scalar-y="15">
-                              <div data-depth="0.3"><img src={layer7} alt="" /></div>
-                              <div data-depth="0.8"><img src={layer6} alt="" /></div>
-                              <div data-depth="0.8"><img src={layer5} alt="" /></div>
-                              <div data-depth="0.6"><img src={layer4} alt="" /></div>
-                              <div data-depth="0.2"><img src={layer3} alt="" /></div>
-                              <div data-depth="0.4"><img src={layer2} alt="" /></div>
-                              <div data-depth="0.2"><img src={layer1} alt="" /></div>
-                            </div>
+                              <div id="scene" data-friction-x="0.1" data-friction-y="0.1" data-scalar-x="25" data-scalar-y="15">
+                                <div data-depth="0.3"><img src={layer7} alt="" /></div>
+                                <div data-depth="0.8"><img src={layer6} alt="" /></div>
+                                <div data-depth="0.8"><img src={layer5} alt="" /></div>
+                                <div data-depth="0.6"><img src={layer4} alt="" /></div>
+                                <div data-depth="0.2"><img src={layer3} alt="" /></div>
+                                <div data-depth="0.4"><img src={layer2} alt="" /></div>
+                                <div data-depth="0.2"><img src={layer1} alt="" /></div>
+                              </div>
                             </div>
 
                         </div>

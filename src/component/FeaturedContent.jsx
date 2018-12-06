@@ -1,20 +1,41 @@
 import React from 'react';
 import BannerImg from '../assets/img/banner-with-content.jpeg';
+import $ from 'jquery';
+import requestService from '../services/request.js';
+import {apiUrl} from '../services/common.js';
 
-var BannerStyle = {
-  backgroundImage: 'url(' + BannerImg + ')'
+const BannerStyle =(url)=> {
+    let combinedurl = apiUrl+url
+    return {
+        backgroundImage: `url(${combinedurl})`
+    }
 };
 
 class FeaturedContent extends React.Component{
+  constructor(props){
+    super(props)
+      this.state = {
+          caseStudy: []
+      }
+  }
+    componentWillMount(){
+        requestService.getService('/paragraph-data?_format=json')
+            .then((response) => {
+                this.setState({caseStudy: response.data[0]})
+            })
+            .catch((err) => {
+                console.log(err);
+            })
+    }
   render(){
     return(
       <div>
-      <section className="main-banner banner-with-content" style={BannerStyle}>
+      <section className="main-banner banner-with-content" style={BannerStyle(this.state.caseStudy.field_featured_image)}>
       <div className="grid-container">
         <div className="grid-x align-right align-middle grid-margin-x">
           <div className="medium-4 cell small-order-change">
-            <h3 className="banner-info"><span>Featured Case Study</span><br/>
-            Company Name</h3>
+            <h3 className="banner-info"><span>{this.state.caseStudy.title}</span><br/>
+            </h3>
           </div>
           </div>
         </div>
@@ -23,9 +44,8 @@ class FeaturedContent extends React.Component{
       <div className="grid-container">
         <div className="grid-x align-right align-middle grid-margin-x">
             <div className="medium-5 cell small-order-change">
-              <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
-              <button className="button">Read more</button>
+              <p>{$(this.state.caseStudy.field_body).text()}</p>
+              <a href = {"/casestudy/article?nid="+this.state.caseStudy.nid} className="button">Read more</a>
             </div>
             <div className="medium-5 cell"></div>
         </div>

@@ -14,14 +14,14 @@ class AccordionaTab extends React.Component{
     componentWillMount(){
         requestService.getService('/image-slider/13')
             .then((response) => {
-                console.log('response', response);
-                this.setState({sliderData: response.data})
-                console.log(this.state.sliderData);
-
+                this.setState({sliderData: response.data});
             })
             .catch((err) => {
                 console.log(err);
             })
+    }
+    active(e){
+        console.log(e)
     }
 
     render(){
@@ -33,11 +33,11 @@ class AccordionaTab extends React.Component{
                             <ul className="accordion" data-responsive-accordion-tabs="accordion medium-tabs" id="service-tabs">
                                 {this.state.sliderData.map((service, index) => {
                                     if(service.slideimagetitle !==''){
-                                        return <li className={index === 0 ? "tabs-title is-active" : "tabs-title"}><a href={'#panel'+index} aria-selected={index ===0? 'true':''}>{service.slideimagetitle}</a></li>
+                                        return <li className={index === 0 ? "tabs-title is-active" : "tabs-title"} onClick={(e)=> {this.active}}>{service.slideimagetitle}</li>
                                     }
                                 })}
 
-                                    </ul>
+                            </ul>
                         </div>
                         <div className="medium-10 cell">
                             <div className="tabs-content" data-tabs-content="service-tabs">
@@ -50,7 +50,7 @@ class AccordionaTab extends React.Component{
                                                     <p>{$(service.slideimagedescription).text()}</p>
                                                 </div>
                                                 <div className="medium-7 cell no-padding">
-                                                    <ImgSlider/>
+                                                    <ImgSlider imgArray = {service.sliderimage.split(',')} id={index}/>
                                                 </div>
                                             </div>
                                         </div>
