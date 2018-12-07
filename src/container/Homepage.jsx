@@ -34,7 +34,7 @@ class Home extends React.Component{
         ).init();
 
         var scene = document.getElementById('scene');
-var parallaxInstance = new Parallax(scene);
+        var parallaxInstance = new Parallax(scene);
 
     }
     render(){

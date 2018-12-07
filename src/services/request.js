@@ -12,7 +12,6 @@ const handleErrors = function(response) {
 };
 
 apiService.getService = function(url) {
-
     const method = 'GET';
     const config = {
         method

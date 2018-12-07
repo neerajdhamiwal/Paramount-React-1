@@ -40,18 +40,7 @@ class Home extends React.Component{
         requestService.getService('/standard-heading-component-data/11')
             .then((response) => {
             this.setState({heading: response.data})
-            let headingData = [];
-                let subarr = [];
-                response.data.forEach((data, index) => {
-                if(index!==0 && index%2 === 0){
-                    headingData.push(subarr)
-                    subarr = [];
-                }
-                else{
-                    subarr.push(data);
-                }
 
-            })
                 this.setState({headingData});
             })
             .catch((err) => {

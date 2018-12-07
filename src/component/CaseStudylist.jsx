@@ -23,7 +23,7 @@ class CaseStudylist extends React.Component {
   render(){
     return(
         <div>
-            {this.state.caseStudyData.map((caseStudy, i) => {
+            {this.props.activeCaseStudyData.map((caseStudy, i) => {
                 if(i !== 0){
                     return <section className="left-image-right-content top-100 bottom-100">
                         <div className="grid-container custom-grid custom-grid-left">
@@ -31,15 +31,14 @@ class CaseStudylist extends React.Component {
                                 <div className="large-7 cell no-padding">
                                     <div className="img-relative-title-ru">
                                         <h2 className="relative-title">{caseStudy.title}</h2>
-                                        <img src={apiUrl + caseStudy.field_basic_image} alt="placeholder"/>
+                                        <img src={apiUrl + caseStudy.image} alt="placeholder"/>
                                     </div>
                                 </div>
                                 <div className="large-5 cell">
                                     <div className="content-inner pl-155">
-                                        <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                            incididunt ut labore et dolore magna aliqua.</h3>
+                                        <h3></h3>
                                         <p className="ptb-40">{$(caseStudy.field_body).text()}</p>
-                                        <a href = {"/casestudy/article?nid="+caseStudy.nid} className="button">Read more</a>
+                                        <a href = {"/casestudy/article?nid="+caseStudy.id} className="button">Read more</a>
                                     </div>
                                 </div>
                             </div>

@@ -8,7 +8,6 @@ class Header extends React.Component{
         super(props)
     }
     render(){
-        console.log('this.props',this.props);
         return(
             <header>
                 <div className="grid-container">
@@ -22,6 +21,7 @@ class Header extends React.Component{
                                     <li><a href="">Services</a></li>
                                     <li><a href="/resource">Resources</a></li>
                                     <li><a href="/expertise">Expertise</a></li>
+                                    <li><a href="/exp-article">Expertise Gov</a></li>
                                     <li><a href="/team">Team</a></li>
                                     <li><a href="/casestudy">Case Study</a></li>
                                     <li><a href="/contact-us">Contact</a></li>

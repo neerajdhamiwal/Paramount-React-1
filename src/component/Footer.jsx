@@ -14,7 +14,6 @@ class Footer extends React.Component{
 
     }
     handleChange(e){
-        console.log(e)
     }
     render(){
         return(

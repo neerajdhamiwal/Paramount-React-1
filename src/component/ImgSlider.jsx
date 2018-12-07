@@ -33,7 +33,6 @@ class ImgSlider extends React.Component{
     }
 
     render(){
-        console.log('props', this.props.imgArray);
         return(
           <div className="grid-container img-slider">
             <div className={`carousel single-item${this.props.id}`}>
