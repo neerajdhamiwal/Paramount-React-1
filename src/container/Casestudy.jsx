@@ -46,11 +46,12 @@ class CaseStudy extends React.Component{
     let uri = `/taxonomy/term-info/${id}`;
       requestService.getService(uri.replace(' ',''))
           .then((response) => {
-              this.setState({activeCaseStudy: response.data})
-              response.data.forEach((obj)=> {
+              response.data.forEach((obj,i)=> {
                   if(obj.field_featured)
                   {
                       this.setState({featuredActive: obj});
+                      response.data.splice(i, 1);
+                      this.setState({activeCaseStudy: response.data});
                   }
               })
           })
@@ -66,7 +67,7 @@ class CaseStudy extends React.Component{
     return(
       <div>
       <FeaturedContent activeCaseStudy={this.state.featuredActive}/>
-      <TagLinks firstCaseStudy = {this.state.activeCaseStudy[1]} caseStudyList = {this.state.caseStudyList} getTermInfo={this.getTermInfo}/>
+      <TagLinks firstCaseStudy = {this.state.activeCaseStudy[0]} caseStudyList = {this.state.caseStudyList} getTermInfo={this.getTermInfo}/>
       <div className=" bottom-100 clearfix"></div>
         <CaseStudylist activeCaseStudyData = {this.state.activeCaseStudy}/>
       </div>
