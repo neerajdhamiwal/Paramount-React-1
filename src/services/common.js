@@ -20,6 +20,10 @@ export const jsonMiddleware = (json, ids)=> {
         customJson = {};
         uniqueArray=[];
     })
+    console.log('customJsonJson', customJsonJson)
     return customJsonJson;
+}
+export const decodeUri = (uri)=> {
+    return decodeURIComponent(uri).replace(' ','');
 }
 

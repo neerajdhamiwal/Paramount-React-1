@@ -13,12 +13,12 @@ class ExpertiseArticle extends React.Component{
     constructor(props){
         super(props)
         this.state = {
-            ExpertiseGovData: []
+            ExpertiseGovData: {}
         }
     }
 
     componentWillMount(){
-        requestService.getService('/landing-page-data/20')
+        requestService.getService('/landing-page-data/24')
             .then((response) => {
                 let ids = ['slider_id','flipper_id','logo_id','sub_block_id','image_description_id','hd_id'];
                 this.setState({ExpertiseGovData: jsonMiddleware(response.data, ids)});
@@ -39,14 +39,14 @@ class ExpertiseArticle extends React.Component{
                 <div className="top-100 bottom-100 clearfix"></div>
                  <FooterHeading subBlockData = {this.state.ExpertiseGovData['sub_block_id'][0]}/>
                 {
-                    this.state.ExpertiseGovData['image_description_id'][0].map((obj, i) => {
+                    this.state.ExpertiseData.hasOwnProperty('image_description_id')? this.state.ExpertiseGovData['image_description_id'][0].map((obj, i) => {
                         if ((i + 1) % 2 === 0) {
                             return <LeftImgRContent data={obj}/>
                         }
                         else {
                             return <RightImgLContent data={obj}/>
                         }
-                    })
+                    }): ''
                 }
             </div>: ''
         )

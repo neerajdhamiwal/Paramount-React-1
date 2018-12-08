@@ -18,7 +18,7 @@ class Header extends React.Component{
                             <nav className="main-menu show-for-medium">
                                 <ul className="menu align-right">
                                     <li><a href="/about">About Us</a></li>
-                                    <li><a href="">Services</a></li>
+                                    <li><a href="/service">Services</a></li>
                                     <li><a href="/resource">Resources</a></li>
                                     <li><a href="/expertise">Expertise</a></li>
                                     <li><a href="/exp-article">Expertise Gov</a></li>

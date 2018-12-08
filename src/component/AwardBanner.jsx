@@ -14,7 +14,7 @@ class AwardBanner extends React.Component{
         <div className="grid-x align-right align-middle grid-margin-x wow fadeInUp">
           <div className="medium-5 cell small-order-change">
             <h3 className="banner-info"><span>{this.props.nodeData[0].node_title}</span><br/>
-                {this.props.nodeData[0].node_title}</h3>
+                {this.props.nodeData[0].node_subtitle_title}</h3>
             {/*<h6>Lorem Ipsum is simply dummy text of the printing and typesetting indu*/}
               {/*stry. Lorem Ipsum has been the industry's standard dummy text ever since the */}
               {/*1500s, when an unknown printer took a galley of type.</h6>*/}

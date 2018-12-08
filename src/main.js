@@ -16,7 +16,7 @@ class Main extends React.Component{
                 <div className="App-intro">
                 <Headercomp/>
                     <main>{this.props.children}</main>
-                    <FooterRowSlider/>
+                    {/*<FooterRowSlider/>*/}
                 <Footer/>
             </div>
             </div>

@@ -2,15 +2,10 @@
 import React from 'react';
 import WOW from 'wowjs';
 import Parallax from 'parallax-js';
-import Headercomp from '../component/Header.jsx';
 import GridOverLap from '../component/GridOverlap.jsx';
 import AccordionTab from '../component/AccordionTab.jsx';
 import LeftImgRContent from '../component/LeftImgRContent.jsx';
 import RightImgLContent from '../component/RightImgLContent.jsx';
-import FooterRowSlider from '../component/FooterRowSlider.jsx';
-import Footer from '../component/Footer.jsx';
-import smallImg from '../assets/img/small-img.png';
-import bannerPlaceImg from '../assets/img/banner-placeholder.png';
 import layer1 from '../assets/img/layers/layer1.png';
 import layer2 from '../assets/img/layers/layer2.png';
 import layer3 from '../assets/img/layers/layer3.png';
@@ -18,10 +13,30 @@ import layer4 from '../assets/img/layers/layer4.png';
 import layer5 from '../assets/img/layers/layer5.png';
 import layer6 from '../assets/img/layers/layer6.png';
 import layer7 from '../assets/img/layers/layer7.png';
+import FooterRowSlider from '../component/FooterRowSlider.jsx';
+import smallImg from '../assets/img/small-img.png';
+import {jsonMiddleware} from '../services/common';
+import requestService from '../services/request.js';
 import $ from 'jquery';
 
 //import 'foundation/js/vendor/zepto';
 class Home extends React.Component{
+    constructor(){
+        super()
+        this.state = {
+            ExpertiseData: {}
+        }
+    }
+    componentWillMount(){
+        requestService.getService('/landing-page-data/38')
+            .then((response) => {
+                let ids = ['slider_id','flipper_id','logo_id','sub_block_id','image_description_id','hd_id'];
+                this.setState({ExpertiseData: jsonMiddleware(response.data, ids)});
+            })
+            .catch((err) => {
+                console.log(err);
+            })
+    }
     componentDidMount(){
         //Foundation.addToJquery($);
         $(document).foundation();
@@ -77,11 +92,20 @@ class Home extends React.Component{
                 <div className="top-100 bottom-100 clearfix"></div>
                 <GridOverLap/>
                 <div className="top-100 bottom-100 clearfix"></div>
-                <AccordionTab/>
+                {this.state.ExpertiseData.hasOwnProperty('slider_id')? <AccordionTab sliderData = {this.state.ExpertiseData['slider_id'][0]}/>:''}
                 <div className="top-100 bottom-100 clearfix"></div>
-                <LeftImgRContent/>
-                <div className="top-100 bottom-100 clearfix"></div>
-                <RightImgLContent/>
+                {
+                    this.state.ExpertiseData.hasOwnProperty('image_description_id') ? this.state.ExpertiseData['image_description_id'][0].map((obj, i) => {
+                        if ((i + 1) % 2 === 0) {
+                            return <LeftImgRContent data={obj}/>
+
+                        }
+                        else {
+                            return <RightImgLContent data={obj}/>
+
+                        }
+                    }):''
+                }
                 <div className="clear"></div>
             </div>
         )

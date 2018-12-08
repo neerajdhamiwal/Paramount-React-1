@@ -37,11 +37,6 @@ class FooterHeading extends React.Component{
                 <div className="grid-container">
                     <div className="grid-x">
                         <div className="heading-four-column">
-                            {/*{this.state.footerHeadData.map((mainHeading) => {*/}
-                                {/*if(mainHeading.main_heading !==''){*/}
-                                    {/*return <h3>{mainHeading.main_heading}</h3>*/}
-                                {/*}*/}
-                            {/*})}*/}
                             <h3>{this.props.subBlockData[0].sub_block_title}</h3>
                         </div>
                         {this.props.subBlockData.length>0?

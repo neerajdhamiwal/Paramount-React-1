@@ -1,6 +1,5 @@
 
 import React from 'react';
-import Header from '../component/Header.jsx';
 import AwardBanner from '../component/AwardBanner.jsx';
 import GridList from '../component/GridList.jsx';
 

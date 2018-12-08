@@ -34,7 +34,7 @@ constructor(props){
             <div className="medium-2 cell">
               <ul className="vertical menu">
                   {this.state.name.map((value, index) => {
-                      return <li onClick={this.clickHandler} ><a href="#" id={index} className={index === 0 ? 'is-active' : ''}>
+                      return <li onClick={this.clickHandler} ><a href="#" id={index}>
                           {value}</a></li>
                   })
                   }

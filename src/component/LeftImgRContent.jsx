@@ -2,6 +2,9 @@
 import React from 'react';
 import Placeholder2 from '../assets/img/placeholder2.png';
 import {apiUrl} from '../services/common.js';
+import $ from 'jquery';
+
+
 class LeftImgRContent extends React.Component{
     render(){
         return(
@@ -18,7 +21,7 @@ class LeftImgRContent extends React.Component{
                         <div className="large-5 cell wow fadeInUp">
                             <div className="content-inner pl-155">
                                 <h3>{this.props.data.image_description_title}</h3>
-                                <p>{this.props.data.image_description_body}</p>
+                                <p>{$(this.props.data.image_description_body).text()}</p>
                             </div>
                         </div>
                     </div>
