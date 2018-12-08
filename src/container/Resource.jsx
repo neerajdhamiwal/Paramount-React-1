@@ -137,7 +137,7 @@ class Resource extends React.Component{
                         </div>
                     </div>
                 </section>
-                <AccordionTab/>
+                {/*<AccordionTab/>*/}
             </div>
         )
     }

@@ -11,7 +11,7 @@ class RightImgLContent extends React.Component{
                 <div class="grid-x grid-padding-x height-750 align-middle">
                     <div class="medium-4 cell">
                         {/*<h2 class="relative-title">Our Services</h2>*/}
-                        <h3>{this.props.data.image_description_title}</h3>
+                        <h3>{this.props.data.image_description_subheading}</h3>
                         <p>{$(this.props.data.image_description_body).text()}</p>
                     </div>
                     <div class="medium-7 cell no-padding">
@@ -20,7 +20,8 @@ class RightImgLContent extends React.Component{
                                 <a class="grid__item" href="#">
                                     <div class="box">
                                         <div class="box__shadow"></div>
-                                        <img class="box__img" src={apiUrl+this.props.data.image_description_image} alt="Some image"/>
+                                        <h2>{this.props.data.image_description_title}</h2>
+                                        <img class="box__img" src={apiUrl+this.props.data.image_description_img} alt="Some image"/>
                                     </div>
                                 </a>
                             </div>

@@ -15,7 +15,7 @@ class Contact extends React.Component{
     render(){
         return(
           <div>
-            <AwardBanner customClass = "main-banner award-banner"></AwardBanner>
+            {/*<AwardBanner customClass = "main-banner award-banner"></AwardBanner>*/}
             <div className="top-100 bottom-100 clearfix"></div>
             <section className="left-image-right-content top-100 bottom-100 contact-us-page">
       <div className="grid-container custom-grid custom-grid-left lp-row-none">

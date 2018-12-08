@@ -49,7 +49,7 @@ class About extends React.Component{
                                                         </div>
                                                         <div className="medium-6 cell no-padding">
                                                             <div className="img-relative-title-ld">
-                                                                <h2 className="relative-title">Our Foundation</h2>
+                                                                {/*<h2 className="relative-title">{data.image_description_title}</h2>*/}
                                                                 <img src={apiUrl+data.image_description_image} alt=""/>
                                                             </div>
                                                         </div>

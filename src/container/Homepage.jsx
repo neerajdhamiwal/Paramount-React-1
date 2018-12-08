@@ -28,9 +28,9 @@ class Home extends React.Component{
         }
     }
     componentWillMount(){
-        requestService.getService('/landing-page-data/38')
+        requestService.getService('/services-node-data/24')
             .then((response) => {
-                let ids = ['slider_id','flipper_id','logo_id','sub_block_id','image_description_id','hd_id'];
+                let ids = ['img_des_id','sub_block_id'];
                 this.setState({ExpertiseData: jsonMiddleware(response.data, ids)});
             })
             .catch((err) => {
@@ -95,7 +95,7 @@ class Home extends React.Component{
                 {this.state.ExpertiseData.hasOwnProperty('slider_id')? <AccordionTab sliderData = {this.state.ExpertiseData['slider_id'][0]}/>:''}
                 <div className="top-100 bottom-100 clearfix"></div>
                 {
-                    this.state.ExpertiseData.hasOwnProperty('image_description_id') ? this.state.ExpertiseData['image_description_id'][0].map((obj, i) => {
+                    this.state.ExpertiseData.hasOwnProperty('img_des_id') ? this.state.ExpertiseData['img_des_id'][0].map((obj, i) => {
                         if ((i + 1) % 2 === 0) {
                             return <LeftImgRContent data={obj}/>
 

@@ -18,9 +18,9 @@ class ExpertiseArticle extends React.Component{
     }
 
     componentWillMount(){
-        requestService.getService('/landing-page-data/24')
+        requestService.getService('/services-node-data/24')
             .then((response) => {
-                let ids = ['slider_id','flipper_id','logo_id','sub_block_id','image_description_id','hd_id'];
+                let ids = ['img_des_id','sub_block_id'];
                 this.setState({ExpertiseGovData: jsonMiddleware(response.data, ids)});
             })
             .catch((err) => {
@@ -34,12 +34,12 @@ class ExpertiseArticle extends React.Component{
     }
     render(){
         return(
-            this.state.ExpertiseGovData.hasOwnProperty('flipper_id')? <div>
-                <AwardBanner customClass = "main-banner award-banner" nodeData = {this.state.ExpertiseGovData['sub_block_id'][0]}></AwardBanner>
+             <div>
+                 {this.state.ExpertiseGovData.hasOwnProperty('sub_block_id')? <AwardBanner customClass = "main-banner award-banner" nodeData = {this.state.ExpertiseGovData['sub_block_id'][0]}></AwardBanner>: ''}
                 <div className="top-100 bottom-100 clearfix"></div>
-                 <FooterHeading subBlockData = {this.state.ExpertiseGovData['sub_block_id'][0]}/>
+                 {this.state.ExpertiseGovData.hasOwnProperty('sub_block_id')? <FooterHeading subBlockData = {this.state.ExpertiseGovData['sub_block_id'][0]}/>:''}
                 {
-                    this.state.ExpertiseData.hasOwnProperty('image_description_id')? this.state.ExpertiseGovData['image_description_id'][0].map((obj, i) => {
+                    this.state.ExpertiseGovData.hasOwnProperty('img_des_id')? this.state.ExpertiseGovData['img_des_id'][0].map((obj, i) => {
                         if ((i + 1) % 2 === 0) {
                             return <LeftImgRContent data={obj}/>
                         }
@@ -48,7 +48,7 @@ class ExpertiseArticle extends React.Component{
                         }
                     }): ''
                 }
-            </div>: ''
+            </div>
         )
     }
 }
