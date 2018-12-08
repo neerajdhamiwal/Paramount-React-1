@@ -12,20 +12,24 @@ class FooterHeading extends React.Component{
     customDivideData(data){
         let headingData = [];
         let subarr = [];
-        data.forEach((data, index) => {
-            if(index!==0 && index%2 === 0){
+        let dLen = data.length;
+        data.forEach((obj, index) => {
+            index = index+1;
+            if(index%2 === 0 ){
+                subarr.push(obj);
                 headingData.push(subarr)
                 subarr = [];
             }
             else{
-                subarr.push(data);
+                subarr.push(obj);
+                if( dLen == index){
+                    headingData.push(subarr)
+                }
             }
         })
-        if(data.length === 1 || data.length === 2){
-            headingData.push(subarr)
-        }
         return headingData;
     }
+
     componentDidMount(){
         //Foundation.addToJquery($);
         $(document).foundation();
