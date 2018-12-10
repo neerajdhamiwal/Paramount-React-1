@@ -1,6 +1,6 @@
 
 import React from 'react';
-import GridImgPlaceholder from '../assets/img/img4.png';
+import teamBanner from '../assets/img/team-banner-bg2.png';
 import ReactHtmlParser from 'react-html-parser';
 
 
@@ -25,7 +25,7 @@ class FlipperBanner extends React.Component{
                             </div>
                         </div>
                         <div className="medium-6 cell">
-                            <img src="img/team-banner-bg2.png" alt=""/>
+                            <img src={teamBanner} alt=""/>
                         </div>
                     </div>
                 </div>

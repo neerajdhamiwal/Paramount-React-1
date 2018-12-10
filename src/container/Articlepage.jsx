@@ -4,9 +4,7 @@ import $ from 'jquery';
 import requestService from '../services/request.js';
 import {apiUrl} from '../services/common.js';
 import ReactHtmlParser from 'react-html-parser';
-
-
-
+import Loader from 'react-loader-spinner'; // eslint-disable-line no-unused-vars
 
 const BannerStyle =(url)=> {
     let combinedurl = apiUrl+url
@@ -20,7 +18,9 @@ class ArticlePage extends React.Component{
         super(props)
         this.state= {
             caseStudy: [],
-            caseList: {}
+            caseList: {},
+            loading: true
+
         }
     }
     componentWillMount(){
@@ -28,6 +28,7 @@ class ArticlePage extends React.Component{
         requestService.getService(`/case-study-contents/${this.props.location.search.substring(this.props.location.search.indexOf("=")+1)}`)
             .then((response) => {
             caseStudy =  response.data[0];
+                this.setState({loading: false})
                 this.setState({caseStudy: caseStudy});
             })
             .catch((err) => {
@@ -49,7 +50,15 @@ class ArticlePage extends React.Component{
 
     render(){
         return(
-            <div>
+            this.state.loading? <center >
+                    <Loader
+                        type="ThreeDots"
+                        color="#fd302a"
+                        height="100"
+                        width="100"
+                    />
+                </center> :
+                <div>
             <section className="main-banner banner-with-content article-banner" style={BannerStyle(this.state.caseStudy.field_hero_image)}>
          <div className="grid-container">
            <div className="grid-x align-right align-middle grid-margin-x">

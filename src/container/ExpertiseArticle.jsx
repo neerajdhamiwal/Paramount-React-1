@@ -8,12 +8,16 @@ import requestService from '../services/request.js';
 import {apiUrl} from '../services/common.js';
 import WOW from 'wowjs';
 import $ from 'jquery';
+import Loader from 'react-loader-spinner'; // eslint-disable-line no-unused-vars
+
 
 class ExpertiseArticle extends React.Component{
     constructor(props){
         super(props)
         this.state = {
-            ExpertiseGovData: {}
+            ExpertiseGovData: {},
+            loading: true
+
         }
     }
 
@@ -21,6 +25,7 @@ class ExpertiseArticle extends React.Component{
         requestService.getService('/services-node-data/24')
             .then((response) => {
                 let ids = ['img_des_id','sub_block_id'];
+                this.setState({loading: false});
                 this.setState({ExpertiseGovData: jsonMiddleware(response.data, ids)});
             })
             .catch((err) => {
@@ -34,6 +39,14 @@ class ExpertiseArticle extends React.Component{
     }
     render(){
         return(
+            this.state.loading? <center >
+                    <Loader
+                        type="ThreeDots"
+                        color="#fd302a"
+                        height="100"
+                        width="100"
+                    />
+                </center> :
              <div>
                  {Object.keys(this.state.ExpertiseGovData).length>0? <AwardBanner customClass = "main-banner award-banner" nodeData = {this.state.ExpertiseGovData[Object.keys(this.state.ExpertiseGovData)[0]][0]}></AwardBanner>: ''}
                 <div className="top-100 bottom-100 clearfix"></div>

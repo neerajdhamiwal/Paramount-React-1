@@ -5,6 +5,8 @@ import requestService from '../services/request.js';
 import {apiUrl, jsonMiddleware} from '../services/common.js';
 import $ from 'jquery';
 import ReactHtmlParser from 'react-html-parser';
+import Loader from 'react-loader-spinner'; // eslint-disable-line no-unused-vars
+
 
 
 //import 'foundation/js/vendor/zepto';
@@ -12,7 +14,8 @@ class About extends React.Component{
     constructor(props) {
         super(props)
         this.state = {
-            awardsData: {}
+            awardsData: {},
+            loading: true
         }
     }
     componentWillMount(){
@@ -20,6 +23,7 @@ class About extends React.Component{
             .then((response) => {
                 let ids = ['primary_image_id','secondary_image_id'];
                 let data = jsonMiddleware(response.data, ids)
+                this.setState({loading: false});
                 this.setState({awardsData: data});
             })
             .catch((err) => {
@@ -28,6 +32,14 @@ class About extends React.Component{
     }
     render(){
         return(
+            this.state.loading? <center >
+                    <Loader
+                        type="ThreeDots"
+                        color="#fd302a"
+                        height="100"
+                        width="100"
+                    />
+                </center> :
         this.state.awardsData.hasOwnProperty('primary_image_id')?
             <div>
             <MainBanner node={this.state.awardsData.primary_image_id[0]}/>

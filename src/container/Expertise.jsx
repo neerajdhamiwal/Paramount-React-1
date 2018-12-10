@@ -7,6 +7,8 @@ import FooterHeading from '../component/FooterHeading.jsx';
 import smallImg from '../assets/img/small-img.png';
 import {jsonMiddleware} from '../services/common';
 import requestService from '../services/request.js';
+import Loader from 'react-loader-spinner'; // eslint-disable-line no-unused-vars
+
 
 import WOW from 'wowjs';
 import $ from 'jquery';
@@ -16,13 +18,16 @@ class Expertise extends React.Component{
     constructor(){
         super()
         this.state = {
-            ExpertiseData: {}
+            ExpertiseData: {},
+            loading: true
+
         }
     }
     componentWillMount(){
             requestService.getService(`/landing-page-data/${this.props.location.search.substring(this.props.location.search.indexOf("=")+1)}`)
                 .then((response) => {
                 let ids = ['slider_id','flipper_id','logo_id','sub_block_id','image_description_id','hd_id'];
+                    this.setState({loading: false});
                     this.setState({ExpertiseData: jsonMiddleware(response.data, ids)});
                 })
                 .catch((err) => {
@@ -40,7 +45,14 @@ class Expertise extends React.Component{
         ).init();
     }
     render(){
-        return( <div>
+        return( this.state.loading? <center >
+                    <Loader
+                        type="ThreeDots"
+                        color="#fd302a"
+                        height="100"
+                        width="100"
+                    />
+                </center> : <div>
                 {Object.keys(this.state.ExpertiseData).length>0? <MainBanner node = {this.state.ExpertiseData[Object.keys(this.state.ExpertiseData)[0]][0]}></MainBanner>: ''}
                 <div className="banner-img-link">
                     {this.state.ExpertiseData.hasOwnProperty('flipper_id')?<div className="grid-x grid-margin-x grid-margin-y img-shadow-hover hide-for-small-only">

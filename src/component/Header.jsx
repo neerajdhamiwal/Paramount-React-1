@@ -16,7 +16,7 @@ class Header extends React.Component{
                             <button className="menu-icon" type="button" data-toggle="offCanvas"></button>
                             <nav className="main-menu show-for-medium">
                                 <ul className="menu align-right dropdown" data-dropdown-menu>
-                                    <li><a href="/about">About Us</a>
+                                    <li><a href="/expertise?nid=35">About Us</a>
                                         <ul class="menu dropdown-menu-an">
                                             <li><a href="/team?nid=42">Team</a></li>
                                             <li><a href="#">Leadership</a></li>
@@ -37,14 +37,6 @@ class Header extends React.Component{
                                         </li>
                                       </ul>
                                     </li>
-                                    <li><a href="/resource">Resources</a>
-                                        <ul class="menu dropdown-menu-an">
-                                            <li><a href="#">Blogs</a></li>
-                                            <li><a href="#">Case Studies</a></li>
-                                            <li><a href="#">White Papers</a></li>
-                                            <li><a href="#">Infographics</a></li>
-                                        </ul>
-                                    </li>
                                     <li><a href="/expertise?nid=38">Expertise</a>
                                         <ul class="menu dropdown-menu-an">
                                             <li><a href="/exp-article">Industries</a></li>
@@ -53,9 +45,16 @@ class Header extends React.Component{
 
                                         </ul>
                                     </li>
+                                    <li><a href="/resource">Resources</a>
+                                        <ul class="menu dropdown-menu-an">
+                                            <li><a href="#">Blogs</a></li>
+                                            <li><a href="/casestudy">Case Studies</a></li>
+                                            <li><a href="#">White Papers</a></li>
+                                            <li><a href="#">Infographics</a></li>
+                                        </ul>
+                                    </li>
                                     <li><a href="/team?nid=37">Contact Us</a></li>
                                     <li><a href="/team?nid=42">Careers</a></li>
-                                    <li><a href="/casestudy">Case Study</a></li>
                                 </ul>
                             </nav>
                         </div>

@@ -3,6 +3,8 @@ import CaseStudylist from '../component/CaseStudylist.jsx';
 import FeaturedContent from '../component/FeaturedContent.jsx';
 import TagLinks from '../component/TagLinks.jsx';
 import requestService from '../services/request.js';
+import Loader from 'react-loader-spinner'; // eslint-disable-line no-unused-vars
+
 let nid = [];
 
 
@@ -15,7 +17,9 @@ class CaseStudy extends React.Component{
           caseStudyList: [],
           activeCaseStudy: [],
           firstCaseStudy: [],
-          featuredActive: {}
+          featuredActive: {},
+          loading: true
+
       }
       this.getTermInfo = this.getTermInfo.bind(this);
   }
@@ -50,6 +54,7 @@ class CaseStudy extends React.Component{
                   {
                       this.setState({featuredActive: obj});
                       response.data.splice(i, 1);
+                      this.setState({loading: false});
                       this.setState({activeCaseStudy: response.data});
                   }
               })
@@ -64,7 +69,14 @@ class CaseStudy extends React.Component{
   }
   render() {
     return(
-      <div>
+        this.state.loading? <center >
+                <Loader
+                    type="ThreeDots"
+                    color="#fd302a"
+                    height="100"
+                    width="100"
+                />
+            </center> : <div>
       <FeaturedContent activeCaseStudy={this.state.featuredActive}/>
       <TagLinks firstCaseStudy = {this.state.activeCaseStudy[0]} caseStudyList = {this.state.caseStudyList} getTermInfo={this.getTermInfo}/>
       <div className=" bottom-100 clearfix"></div>
