@@ -11,6 +11,50 @@ header {
 			display: none;
 		}
 		}
+
+		.dropdown-menu-an{
+		opacity: 0;
+		transform: translateY(-2em);
+		transition: all 0.3s ease-in-out 0s, visibility 0s linear 0.3s, z-index 0s linear 0.01s;
+		border: none;
+		box-shadow: 0 0 5px #ccc;
+		min-width:120px;
+		li{
+			&:hover{
+				a{
+					color: #fff;
+				}
+			}
+			a{
+				margin-left: 0px;
+				margin-right: 0px;
+				width: 100%;
+				text-align: left;
+				&:before{
+					top: 0;
+					left: 0;
+					bottom: auto;
+					background: #db0000;
+					-webkit-transition: all 0.2s linear;
+					transition: all 0.2s linear;
+					height: 100%;
+					color: #fff;
+					z-index: -1;
+				}
+			}
+		}
+	}
+	.is-dropdown-submenu-parent{
+		&:hover{
+			.dropdown-menu-an{
+				visibility: visible;
+				opacity: 1;
+				transform: translateY(0%);
+				transition: all 0.3s ease-in-out 0s, visibility 0s linear 0.3s, z-index 0s linear 0.01s;
+			}
+		}
+	}
+	
 	}
 }
 /*Header Styling Ends Here*/
