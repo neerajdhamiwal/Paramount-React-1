@@ -1,5 +1,8 @@
 import React from 'react';
 import $ from 'jquery';
+import {customDivideData} from '../services/common';
+import ReactHtmlParser from 'react-html-parser';
+
 class FooterHeading extends React.Component{
     constructor(props){
         super(props)
@@ -7,27 +10,6 @@ class FooterHeading extends React.Component{
                 footerHeadData : [],
                 customData: []
             }
-            this.customDivideData = this.customDivideData.bind(this);
-    }
-    customDivideData(data){
-        let headingData = [];
-        let subarr = [];
-        let dLen = data.length;
-        data.forEach((obj, index) => {
-            index = index+1;
-            if(index%2 === 0 ){
-                subarr.push(obj);
-                headingData.push(subarr)
-                subarr = [];
-            }
-            else{
-                subarr.push(obj);
-                if( dLen == index){
-                    headingData.push(subarr)
-                }
-            }
-        })
-        return headingData;
     }
 
     componentDidMount(){
@@ -41,18 +23,18 @@ class FooterHeading extends React.Component{
                 <div className="grid-container">
                     <div className="grid-x">
                         <div className="heading-four-column">
-                            <h3>{this.props.subBlockData[0].sub_block_title}</h3>
+                            <h3>{ReactHtmlParser(this.props.subBlockData[0].sub_block_title)}</h3>
                         </div>
                         {this.props.subBlockData.length>0?
-                            this.customDivideData(this.props.subBlockData).map((subArr, index) => {
+                            customDivideData(this.props.subBlockData, 2).map((subArr, index) => {
                                     return  <div className="medium-12 cell">
                                         <div className="grid-x">
                                             {
                                                 subArr.map((heading, i) => {
                                                     return <div className="medium-5 cell">
                                                         <div className="four-column-content four-col-left">
-                                                            <a href="#">{heading.sub_block_heading}</a>
-                                                            <p>{$(heading.sub_block_description).text()}</p>
+                                                            <a href="#">{ReactHtmlParser(heading.sub_block_heading)}</a>
+                                                            <p>{ReactHtmlParser(heading.sub_block_description)}</p>
                                                         </div>
                                                     </div>
                                                 })

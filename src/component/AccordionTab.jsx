@@ -1,6 +1,8 @@
 import React from 'react';
 import ImgSlider from './ImgSlider.jsx';
 import $ from 'jquery';
+import ReactHtmlParser from 'react-html-parser';
+
 class AccordionaTab extends React.Component{
     constructor(props){
         super(props)
@@ -33,7 +35,7 @@ class AccordionaTab extends React.Component{
                         <div className="medium-2 cell">
                             <ul className="accordion" id="service-tabs">
                                 {this.props.sliderData.map((service, index) => {
-                                        return <li className="tabs-title"><a data-page = {`panel${index}`} id = {index}>{service.image_slider_title}</a></li>
+                                        return <li className="tabs-title"><a data-page = {`panel${index}`} id = {index}>{ReactHtmlParser(service.image_slider_title)}</a></li>
                                 })}
                             </ul>
                         </div>
@@ -44,7 +46,7 @@ class AccordionaTab extends React.Component{
                                                     id={'panel' + index} data-page={'panel' + index}>
                                             <div className="grid-x grid-padding-x">
                                                 <div className="medium-5 cell">
-                                                    <p>{$(service.image_slider_description).text()}</p>
+                                                    <p>{ReactHtmlParser(service.image_slider_description)}</p>
                                                 </div>
                                                 <div className="medium-7 cell no-padding">
                                                     <ImgSlider imgArray = {service.image_slider_image.split(',')} id={index}/>

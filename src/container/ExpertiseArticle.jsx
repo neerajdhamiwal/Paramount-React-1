@@ -35,7 +35,7 @@ class ExpertiseArticle extends React.Component{
     render(){
         return(
              <div>
-                 {this.state.ExpertiseGovData.hasOwnProperty('sub_block_id')? <AwardBanner customClass = "main-banner award-banner" nodeData = {this.state.ExpertiseGovData['sub_block_id'][0]}></AwardBanner>: ''}
+                 {Object.keys(this.state.ExpertiseGovData).length>0? <AwardBanner customClass = "main-banner award-banner" nodeData = {this.state.ExpertiseGovData[Object.keys(this.state.ExpertiseGovData)[0]][0]}></AwardBanner>: ''}
                 <div className="top-100 bottom-100 clearfix"></div>
                  {this.state.ExpertiseGovData.hasOwnProperty('sub_block_id')? <FooterHeading subBlockData = {this.state.ExpertiseGovData['sub_block_id'][0]}/>:''}
                 {

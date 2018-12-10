@@ -3,7 +3,6 @@ import CaseStudylist from '../component/CaseStudylist.jsx';
 import FeaturedContent from '../component/FeaturedContent.jsx';
 import TagLinks from '../component/TagLinks.jsx';
 import requestService from '../services/request.js';
-import {apiUrl} from '../services/common.js';
 let nid = [];
 
 
