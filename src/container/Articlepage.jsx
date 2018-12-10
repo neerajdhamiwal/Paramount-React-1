@@ -1,16 +1,11 @@
 
 import React from 'react';
-import Header from '../component/Header.jsx';
-import AccordionTab from '../component/AccordionTab.jsx';
-import Footer from '../component/Footer.jsx';
-import mobileHeader from '../component/mobileHeader.jsx';
-import FooterRowSlider from '../component/FooterRowSlider.jsx';
-import layerTop from '../assets/img/layertop.png';
-import placeholder from '../assets/img/placeholder.png';
 import $ from 'jquery';
-import BannerImg from '../assets/img/article-banner.jpeg';
 import requestService from '../services/request.js';
 import {apiUrl} from '../services/common.js';
+import ReactHtmlParser from 'react-html-parser';
+
+
 
 
 const BannerStyle =(url)=> {
@@ -59,7 +54,7 @@ class ArticlePage extends React.Component{
          <div className="grid-container">
            <div className="grid-x align-right align-middle grid-margin-x">
              <div className="medium-10 cell small-order-change">
-               <h3 className="banner-info"><span>{this.state.caseStudy.title}</span><br/>
+               <h3 className="banner-info"><span>{ReactHtmlParser(this.state.caseStudy.title)}</span><br/>
              </h3>
              </div>
            </div>
@@ -70,7 +65,7 @@ class ArticlePage extends React.Component{
            <div className="grid-x grid-padding-x pl-155">
              <div className="medium-6 small-12 cell">
                <div className="pr-155 ">
-                   {$(this.state.caseStudy.field_body).text()}
+                   {ReactHtmlParser(this.state.caseStudy.field_body)}
                </div>
            </div>
          <div className="medium-6 cell no-padding article-top-content hide-for-small-only">
@@ -86,15 +81,15 @@ class ArticlePage extends React.Component{
             <div className="grid-x">
             <div className="medium-12 cell">
               <div className="sidemnu-heading pl-155 pr-155 pb-50">
-                <h3>{$(this.state.caseStudy.field_quote).text()}</h3>
-                <p>{this.state.caseStudy.field_quote_author}</p>
+                <h3>{ReactHtmlParser(this.state.caseStudy.field_quote)}</h3>
+                <p>{ReactHtmlParser(this.state.caseStudy.field_quote_author)}</p>
               </div>
               <div className="tabs-content" data-tabs-content="service-tabs">
                 <div className="tabs-panel is-active" id="panel1">
                   <div className="grid-x grid-padding-x pl-155">
                   <div className="medium-6 cell">
                     <div className="pr-155 ">
-                        <p>{$(this.state.caseStudy.field_secondary_body).text()}</p>
+                        <p>{ReactHtmlParser(this.state.caseStudy.field_secondary_body)}</p>
 
                     </div>
                 </div>
