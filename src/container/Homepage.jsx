@@ -66,9 +66,9 @@ class Home extends React.Component{
                                 <button className="button">Know more</button>
                                 <div className="banner-img-link">
                                     <div className="grid-x grid-margin-x grid-margin-y img-shadow-hover hide-for-small-only">
-                                        <div className="cell shrink wow fadeInDown" data-wow-delay="0.5s"><a href="#"><img src={smallImg} alt=""/></a></div>
-                                        <div className="cell shrink wow fadeInDown" data-wow-delay="1s"><a href="#"><img src={smallImg} alt=""/></a></div>
-                                        <div className="cell shrink wow fadeInDown" data-wow-delay="1.5s"><a href="#"><img src={smallImg} alt=""/></a></div>
+                                        <div className="cell shrink wow fadeInDown banner-image-effect" data-wow-delay="0.5s"><a href="#"><img src={smallImg} alt=""/><span>Paramount Test</span></a></div>
+                                        <div className="cell shrink wow fadeInDown banner-image-effect" data-wow-delay="1s"><a href="#"><img src={smallImg} alt=""/><span>Paramount Test</span></a></div>
+                                        <div className="cell shrink wow fadeInDown banner-image-effect" data-wow-delay="1.5s"><a href="#"><img src={smallImg} alt=""/><span>Paramount Test</span></a></div>
                                     </div>
                                 </div>
 
