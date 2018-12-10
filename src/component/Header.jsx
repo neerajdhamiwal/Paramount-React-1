@@ -16,9 +16,17 @@ class Header extends React.Component{
                         <div className="medium-8  small-6 cell text-right">
                             <button className="menu-icon" type="button" data-toggle="offCanvas"></button>
                             <nav className="main-menu show-for-medium">
-                                <ul className="menu align-right">
-                                    <li><a href="/expertise?nid=35">About Us</a></li>
-                                    <li><a href="/expertise?nid=36">Services</a></li>
+                                <ul className="menu align-right dropdown" data-dropdown-menu>
+                                    <li><a href="/about">About Us</a></li>
+                                    <li><a href="/service">Services</a>
+                                      <ul class="menu dropdown-menu-an">
+                                        <li><a href="#">Item 1A</a></li>
+                                        <li><a href="#">Item 1A</a></li>
+                                        <li><a href="#">Item 1A</a></li>
+                                        <li><a href="#">Item 1A</a></li>
+                                        <li><a href="#">Item 1A</a></li>
+                                      </ul>
+                                    </li>
                                     <li><a href="/resource">Resources</a></li>
                                     <li><a href="/expertise?nid=38">Expertise</a></li>
                                     <li><a href="/exp-article">Paramount Edge</a></li>
