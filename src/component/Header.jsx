@@ -2,7 +2,6 @@
 import React from 'react';
 import Logo from '../assets/img/logo.png';
 
-
 class Header extends React.Component{
     constructor(props){
         super(props)
@@ -17,24 +16,46 @@ class Header extends React.Component{
                             <button className="menu-icon" type="button" data-toggle="offCanvas"></button>
                             <nav className="main-menu show-for-medium">
                                 <ul className="menu align-right dropdown" data-dropdown-menu>
-                                    <li><a href="/about">About Us</a></li>
+                                    <li><a href="/about">About Us</a>
+                                        <ul class="menu dropdown-menu-an">
+                                            <li><a href="/team?nid=42">Team</a></li>
+                                            <li><a href="#">Leadership</a></li>
+                                            <li><a href="/awards">Community</a></li>
+                                            <li><a href="/awards">Awards & Certifications</a></li>
+                                        </ul>
+                                    </li>
                                     <li><a href="/service">Services</a>
                                       <ul class="menu dropdown-menu-an">
-                                        <li><a href="#">Item 1A</a></li>
-                                        <li><a href="#">Item 1A</a></li>
-                                        <li><a href="#">Item 1A</a></li>
-                                        <li><a href="#">Item 1A</a></li>
-                                        <li><a href="#">Item 1A</a></li>
+                                        <li><a href="/exp-article"> Paramount Edge</a></li>
+                                        <li><a href="/exp-article">Paramount TechExec</a></li>
+                                        <li><a href="/exp-article">Paramount Techadvisory</a>
+                                            <ul class="menu dropdown-menu-an">
+                                            <li><a href="/exp-article">Content Management Systems & Mobile App Development</a></li>
+                                            <li><a href="/exp-article">Application Maintenance, Development & Integration</a></li>
+                                            <li><a href="/exp-article">Infrastructure Management & Monitoring</a></li>
+                                        </ul>
+                                        </li>
                                       </ul>
                                     </li>
-                                    <li><a href="/resource">Resources</a></li>
-                                    <li><a href="/expertise?nid=38">Expertise</a></li>
-                                    <li><a href="/exp-article">Paramount Edge</a></li>
-                                    <li><a href="/team?nid=42">Team</a></li>
-                                    <li><a href="/team?nid=42">Contact</a></li>
-                                    <li><a href="/team?nid=42">Carrier</a></li>
+                                    <li><a href="/resource">Resources</a>
+                                        <ul class="menu dropdown-menu-an">
+                                            <li><a href="#">Blogs</a></li>
+                                            <li><a href="#">Case Studies</a></li>
+                                            <li><a href="#">White Papers</a></li>
+                                            <li><a href="#">Infographics</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="/expertise?nid=38">Expertise</a>
+                                        <ul class="menu dropdown-menu-an">
+                                            <li><a href="/exp-article">Industries</a></li>
+                                            <li><a href="/exp-article">Technologies</a></li>
+                                            <li><a href="/exp-article">Government</a></li>
+
+                                        </ul>
+                                    </li>
+                                    <li><a href="/team?nid=37">Contact Us</a></li>
+                                    <li><a href="/team?nid=42">Careers</a></li>
                                     <li><a href="/casestudy">Case Study</a></li>
-                                    <li><a href="/awards">Awards & Certification</a></li>
                                 </ul>
                             </nav>
                         </div>
