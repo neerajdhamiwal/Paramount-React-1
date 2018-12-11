@@ -10,7 +10,7 @@
     -webkit-transition: all 0.2s linear 0.1s;
     position: relative;
     &:hover {
-    	transform: scale(1.13);
+    	transform: scale(1.70);
     	z-index: 1;
     	position: inherit;
     	-webkit-transition: all 0.2s linear 0.1s;
@@ -18,6 +18,9 @@
     		font-size: 1.125rem;
     		-webkit-transition: all 0.2s linear 0.1s;
     	}
+			p{
+				font-size: 14px;
+			}
     }
     h3 {
 	    position: absolute;

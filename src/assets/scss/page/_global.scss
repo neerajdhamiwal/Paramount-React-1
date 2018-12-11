@@ -10,6 +10,7 @@ body {
 	font-family: $font-primary;
 	-webkit-font-smoothing: auto;
 	color: #303347;
+	font-size: 1.125rem;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -43,6 +44,11 @@ a {
 	}
 	}
 }
+
+p{
+	font-size: 1.125rem;
+}
+
 
 .clear{
 	clear: both;

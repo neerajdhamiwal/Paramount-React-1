@@ -33,9 +33,6 @@
 		h3 {
 		@include tab-title(18);
 	}
-	p {
-		font-size: 0.750rem;
-	}
 	}
 
 	.tabs-panel {
@@ -61,7 +58,7 @@
     align-items: flex-end;
     padding: 0 34px 16px;
     border-radius: 4px;
-    
+
     }
 	}
 	img {

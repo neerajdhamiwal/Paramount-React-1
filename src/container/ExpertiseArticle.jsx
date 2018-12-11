@@ -22,7 +22,7 @@ class ExpertiseArticle extends React.Component{
     }
 
     componentWillMount(){
-        requestService.getService('/services-node-data/24')
+        requestService.getService(`/services-node-data/${this.props.location.search.substring(this.props.location.search.indexOf("=")+1)}`)
             .then((response) => {
                 let ids = ['img_des_id','sub_block_id'];
                 this.setState({loading: false});

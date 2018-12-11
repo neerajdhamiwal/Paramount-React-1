@@ -13,10 +13,6 @@ class AccordionaTab extends React.Component{
     componentDidMount(){
         $("#service-tabs li a").on('click', function(e) {
             e.preventDefault()
-            // $(`#service-tabs li a:not('.active-color')`).stop().fadeOut('fast', function() {
-            //     $(this).addClass('active-color');
-            // })
-            //$(this).addClass('active-color');
             let page = $(this).data('page');
             $(`#pages .page:not('.hide')`).stop().fadeOut('fast', function() {
                 $(this).addClass('hide');
@@ -46,7 +42,10 @@ class AccordionaTab extends React.Component{
                                                     id={'panel' + index} data-page={'panel' + index}>
                                             <div className="grid-x grid-padding-x">
                                                 <div className="medium-5 cell">
-                                                    <p>{ReactHtmlParser(service.image_slider_description)}</p>
+                                                    <div className="pr-100">
+                                                    <p className="ptb-40">{ReactHtmlParser(service.image_slider_description)}</p>
+                                                    {service.image_slider_cta_button_title !==''? <button class="button white-btn">{service.image_slider_cta_button_title}</button>:''}
+                                                </div>
                                                 </div>
                                                 <div className="medium-7 cell no-padding wow slideInRight">
                                                     <ImgSlider imgArray = {service.image_slider_image.split(',')} id={index}/>

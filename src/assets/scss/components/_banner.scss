@@ -52,7 +52,6 @@
 	 margin-top: 30px;
 	}
 	p{
-		font-size: 0.750rem;
 		color: rgba(0, 0, 0, 0.6);
 	}
 }
@@ -106,4 +105,29 @@
 @include mq(small-screen) {
 	order: 1;
 	}
+}
+
+#loading {
+  -webkit-animation: rotation 4s infinite linear;
+}
+
+@-webkit-keyframes rotation {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+
+  to {
+    -webkit-transform: rotate(359deg);
+  }
+}
+
+.rotation-banner {
+  position: relative;
+}
+
+.over-img {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+	left: 0;
 }

@@ -19,11 +19,9 @@ module.exports={
     maxAssetSize: 10000,
     hints: false
   },
-
     entry:{
      index:'./src/index.js',
     },
-
     output: {
       path: path.resolve(__dirname, 'dist'),
       filename: 'bundle.js',
@@ -32,7 +30,6 @@ module.exports={
     },
     module: {
         rules: [
-
           {
             test: /\.(js|jsx)$/,
             exclude: /(node_modules|bower_components)/,
@@ -56,7 +53,7 @@ module.exports={
               test: /\.svg$/,
               loader: 'svg-inline-loader'
           },
-          
+
         //     {
         //         test: /\.(scss|sass)$/i,
         //         include: [

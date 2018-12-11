@@ -19,7 +19,7 @@ class About extends React.Component{
         }
     }
     componentWillMount(){
-        requestService.getService('/reinforcement-data/33')
+        requestService.getService(`/reinforcement-data/${this.props.location.search.substring(this.props.location.search.indexOf("=")+1)}`)
             .then((response) => {
                 let ids = ['primary_image_id','secondary_image_id'];
                 let data = jsonMiddleware(response.data, ids)
@@ -31,6 +31,7 @@ class About extends React.Component{
             })
     }
     render(){
+        console.log(this.props.location.search.substring(this.props.location.search.indexOf("=")+1))
         return(
             this.state.loading? <center >
                     <Loader
@@ -40,9 +41,26 @@ class About extends React.Component{
                         width="100"
                     />
                 </center> :
-        this.state.awardsData.hasOwnProperty('primary_image_id')?
             <div>
-            <MainBanner node={this.state.awardsData.primary_image_id[0]}/>
+
+                { this.state.awardsData.hasOwnProperty('primary_image_id')?
+           <div>
+               {this.props.location.search.substring(this.props.location.search.indexOf("=")+1) == 33?<section className="our-certifications-box top-100 bottom-100">
+                       <div className="grid-container">
+                           <div className="grid-x align-right align-middle grid-margin-x our-certifications-bg">
+                               <div className="medium-2 cell small-order-change">
+                                   <div className="our-certifications-content">
+                                       <h3 className="banner-info"><span>{ReactHtmlParser(this.state.awardsData.primary_image_id[0][0].node_title)}</span><br/>
+                                           {ReactHtmlParser(this.state.awardsData.primary_image_id[0][0].node_subtitle_title)}</h3>
+                                   </div>
+                               </div>
+                               <div className="medium-8 cell">
+                               </div>
+                           </div>
+                       </div>
+                   </section>:<MainBanner node={this.state.awardsData.primary_image_id[0]}/>
+               }
+
                 {this.state.awardsData['primary_image_id'][0].map((obj) => {
                     return <section className="award-content-box top-100 bottom-100">
                         <div className="grid-container">
@@ -63,7 +81,6 @@ class About extends React.Component{
                 })
                     }
 
-
         <section className="our-certifications-box top-100 bottom-100">
             <div className="grid-container">
                 <div className="grid-x align-right align-middle grid-margin-x our-certifications-bg">
@@ -79,8 +96,10 @@ class About extends React.Component{
                 </div>
             </div>
         </section>
+           </div> :''}
 
-                {this.state.awardsData['secondary_image_id'][0].map((obj) => {
+                {this.state.awardsData.hasOwnProperty('secondary_image_id')?
+                    this.state.awardsData['secondary_image_id'][0].map((obj) => {
                     return <section className="award-content-box top-100 bottom-100">
                         <div className="grid-container">
                             <div className="grid-x align-right align-middle grid-margin-x">
@@ -98,9 +117,9 @@ class About extends React.Component{
                         </div>
                     </section>
                 })
-                }
+                :''}
 
-            </div> :''
+            </div>
         )
     }
 }

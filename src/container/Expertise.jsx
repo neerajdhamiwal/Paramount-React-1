@@ -5,6 +5,8 @@ import AccordionTab from '../component/AccordionTab.jsx';
 import MainBanner from '../component/MainBanner.jsx';
 import FooterRowSlider from '../component/FooterRowSlider.jsx';
 import FooterHeading from '../component/FooterHeading.jsx';
+import RightImgLContent from '../component/RightImgLContent.jsx';
+import LeftImgRContent from '../component/LeftImgRContent.jsx';
 import smallImg from '../assets/img/small-img.png';
 import {jsonMiddleware} from '../services/common';
 import requestService from '../services/request.js';
@@ -66,6 +68,17 @@ class Expertise extends React.Component{
                 <div className="top-100 bottom-100 clearfix"></div>
                     {this.state.ExpertiseData.hasOwnProperty('slider_id')? <AccordionTab sliderData = {this.state.ExpertiseData['slider_id'][0]}/>:''}
                 <div className="top-100 bottom-100 clearfix"></div>
+                    {
+                        this.state.ExpertiseData.hasOwnProperty('image_description_id')? this.state.ExpertiseData['image_description_id'][0].map((obj, i) => {
+                                if ((i + 1) % 2 === 0) {
+                                    return <LeftImgRContent data={obj}/>
+                                }
+                                else {
+                                    return <RightImgLContent data={obj}/>
+                                }
+                            }): ''
+                    }
+                    <div className="top-100 bottom-100 clearfix"></div>
                 {this.state.ExpertiseData.hasOwnProperty('sub_block_id')? <FooterHeading subBlockData = {this.state.ExpertiseData['sub_block_id'][0]}/>:''}
                 <div className="top-100 bottom-100 clearfix"></div>
             {this.state.ExpertiseData.hasOwnProperty('logo_id')?<FooterRowSlider clientData = {this.state.ExpertiseData['logo_id'][0]}/>:''}
