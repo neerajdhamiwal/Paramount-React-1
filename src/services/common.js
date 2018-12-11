@@ -22,7 +22,7 @@ export const jsonMiddleware = (json, ids)=> {
                 notEmpty = false;
             }
         })
-        if(notEmpty){
+        if(notEmpty && json.length>0){
             customJsonJson[idType] = []
             customJsonJson[idType].push(uniqueArray)
             customJson = {};

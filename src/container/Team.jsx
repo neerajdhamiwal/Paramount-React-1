@@ -76,7 +76,6 @@ class Team extends React.Component{
                         {this.state.teamData.hasOwnProperty('award_id')? <AwardSlider clientData = {this.state.teamData['award_id'][0]}/>: ''}
                         {this.state.teamData.hasOwnProperty('certificate_id')? <CertSlider clientData = {this.state.teamData['certificate_id'][0]}/>: ''}
                     </div>}
-
           </div>
         )
     }

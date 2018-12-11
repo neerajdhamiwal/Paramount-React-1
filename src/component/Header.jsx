@@ -19,35 +19,35 @@ class Header extends React.Component{
                                     <li><a href="/expertise?nid=35">About Us</a>
                                         <ul class="menu dropdown-menu-an">
                                             <li><a href="/team?nid=42">Team</a></li>
-                                            <li><a href="#">Leadership</a></li>
-                                            <li><a href="/awards">Community</a></li>
-                                            <li><a href="/awards">Awards & Certifications</a></li>
+                                            {/*<li><a href="#">Leadership</a></li>*/}
+                                            <li><a href="/awards?nid=46">Community</a></li>
+                                            <li><a href="/awards?nid=33">Awards & Certifications</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="/service">Services</a>
+                                    <li><a href="/expertise?nid=36">Services</a>
                                       <ul class="menu dropdown-menu-an">
-                                        <li><a href="/exp-article"> Paramount Edge</a></li>
-                                        <li><a href="/exp-article">Paramount TechExec</a></li>
-                                        <li><a href="/exp-article">Paramount Techadvisory</a>
+                                        <li><a href="/exp-article?nid=24"> Paramount Edge</a></li>
+                                        <li><a href="/exp-article?nid=39">Paramount TechExec</a></li>
+                                        <li><a href="/exp-article?nid=">Paramount Techadvisory</a>
                                             <ul class="menu dropdown-menu-an">
-                                            <li><a href="/exp-article">Content Management Systems & Mobile App Development</a></li>
-                                            <li><a href="/exp-article">Application Maintenance, Development & Integration</a></li>
-                                            <li><a href="/exp-article">Infrastructure Management & Monitoring</a></li>
+                                            <li><a href="/exp-article?nid=47">Content Management Systems & Mobile App Development</a></li>
+                                            <li><a href="/exp-article?nid=48">Application Maintenance, Development & Integration</a></li>
+                                            <li><a href="/exp-article?nid=49">Infrastructure Management & Monitoring</a></li>
                                         </ul>
                                         </li>
                                       </ul>
                                     </li>
                                     <li><a href="/expertise?nid=38">Expertise</a>
                                         <ul class="menu dropdown-menu-an">
-                                            <li><a href="/exp-article">Industries</a></li>
-                                            <li><a href="/exp-article">Technologies</a></li>
-                                            <li><a href="/exp-article">Government</a></li>
+                                            <li><a href="/exp-article?nid=45">Industries</a></li>
+                                            <li><a href="/exp-article?nid=45">Technologies</a></li>
+                                            <li><a href="/exp-article?nid=24">Government</a></li>
 
                                         </ul>
                                     </li>
                                     <li><a href="/resource">Resources</a>
                                         <ul class="menu dropdown-menu-an">
-                                            <li><a href="#">Blogs</a></li>
+                                            <li><a href="/casestudy">Blogs</a></li>
                                             <li><a href="/casestudy">Case Studies</a></li>
                                             <li><a href="#">White Papers</a></li>
                                             <li><a href="#">Infographics</a></li>

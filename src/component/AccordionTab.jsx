@@ -13,10 +13,6 @@ class AccordionaTab extends React.Component{
     componentDidMount(){
         $("#service-tabs li a").on('click', function(e) {
             e.preventDefault()
-            // $(`#service-tabs li a:not('.active-color')`).stop().fadeOut('fast', function() {
-            //     $(this).addClass('active-color');
-            // })
-            //$(this).addClass('active-color');
             let page = $(this).data('page');
             $(`#pages .page:not('.hide')`).stop().fadeOut('fast', function() {
                 $(this).addClass('hide');
