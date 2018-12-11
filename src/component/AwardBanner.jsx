@@ -21,6 +21,7 @@ class AwardBanner extends React.Component{
               {/*stry. Lorem Ipsum has been the industry's standard dummy text ever since the */}
               {/*1500s, when an unknown printer took a galley of type.</h6>*/}
             <p>{ReactHtmlParser(this.props.nodeData[0].node_description)}</p>
+            <p>{ReactHtmlParser(this.props.nodeData[0].node_body)}</p>
           </div>
           <div className="medium-6 cell">
             <img src={ImgBanner} alt="Banner"/>

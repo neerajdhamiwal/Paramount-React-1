@@ -11,12 +11,16 @@ class Footer extends React.Component{
             email: '',
             message: ''
         }
+        this.handleChange = this.handleChange.bind(this);
     }
     submit(){
 
     }
     handleChange(e){
-        console.log(e.target.value);
+        console.log(e.target.value, this.state);
+        let obj = {}
+        obj[e.target.name] = e.target.value
+        this.setState(obj);
     }
     render(){
         return(
@@ -43,13 +47,13 @@ class Footer extends React.Component{
                                         <h5>Stay in touch</h5>
                           <div className="grid-x">
                             <div className="medium-12 cell">
-                                <input type="text" placeholder="Name" value={this.state.name} name = "name" onChange = {(e) => this.handleChange} required/>
+                                <input type="text" placeholder="Name" name = "name" onChange = {this.handleChange} required/>
                             </div>
                             <div className="medium-12 cell">
-                                <input type="email" placeholder="Email" value = {this.state.email} name = "email" onChange = {(e) => this.handleChange} required/>
+                                <input type="email" placeholder="Email"  name = "email" onChange = {this.handleChange} required/>
                             </div>
                             <div className="medium-12 cell">
-                                <textarea placeholder="Message" rows="5" value = {this.state.message} name="message" onChange = {(e) => this.handleChange}></textarea>
+                                <textarea placeholder="Message" rows="5"  name="message" onChange = {this.handleChange}></textarea>
                             </div>
                             <button className="button btn-full" onClick={this.submit.bind()}>Contact Us</button>
                           </div>
