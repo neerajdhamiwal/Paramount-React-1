@@ -1,5 +1,6 @@
 import React from 'react';
 import FooterHeading from '../component/FooterHeading.jsx';
+import FooterSecndHeading from '../component/FooterSecndHeading.jsx';
 import LeftImgRContent from '../component/LeftImgRContent.jsx';
 import RightImgLContent from '../component/RightImgLContent.jsx';
 import AwardBanner from '../component/AwardBanner.jsx';
@@ -24,7 +25,7 @@ class ExpertiseArticle extends React.Component{
     componentWillMount(){
         requestService.getService(`/services-node-data/${this.props.location.search.substring(this.props.location.search.indexOf("=")+1)}`)
             .then((response) => {
-                let ids = ['img_des_id','sub_block_id'];
+                let ids = ['img_des_id','sub_block_id', 'secondary_sub_block_id','secondary_img_des_id'];
                 this.setState({loading: false});
                 this.setState({ExpertiseGovData: jsonMiddleware(response.data, ids)});
             })
@@ -61,7 +62,19 @@ class ExpertiseArticle extends React.Component{
                         }
                     }): ''
                 }
-            </div>
+                 {this.state.ExpertiseGovData.hasOwnProperty('secondary_sub_block_id')? <FooterSecndHeading subBlockData = {this.state.ExpertiseGovData['secondary_sub_block_id'][0]}/>:''}
+                 {
+                     this.state.ExpertiseGovData.hasOwnProperty('secondary_img_des_id')? this.state.ExpertiseGovData['img_des_id'][0].map((obj, i) => {
+                             if ((i + 1) % 2 === 0) {
+                                 return <LeftImgRContent data={obj} secondary = "true"/>
+                             }
+                             else {
+                                 return <RightImgLContent data={obj} secondary = "true"/>
+                             }
+                         }): ''
+                 }
+
+             </div>
         )
     }
 }
