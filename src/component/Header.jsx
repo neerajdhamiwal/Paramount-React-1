@@ -28,7 +28,7 @@ class Header extends React.Component{
                                       <ul class="menu dropdown-menu-an">
                                         <li><a href="/exp-article?nid=24"> Paramount Edge</a></li>
                                         <li><a href="/exp-article?nid=39">Paramount TechExec</a></li>
-                                        <li><a href="/exp-article?nid=">Paramount Techadvisory</a>
+                                        <li><a href="">Paramount Techadvisory</a>
                                             <ul class="menu dropdown-menu-an">
                                             <li><a href="/exp-article?nid=47">Content Management Systems & Mobile App Development</a></li>
                                             <li><a href="/exp-article?nid=48">Application Maintenance, Development & Integration</a></li>
@@ -41,7 +41,7 @@ class Header extends React.Component{
                                         <ul class="menu dropdown-menu-an">
                                             {/*<li><a href="/exp-article?nid=45">Industries</a></li>*/}
                                             <li><a href="/exp-article?nid=45">Technologies</a></li>
-                                            <li><a href="/exp-article?nid=24">Government</a></li>
+                                            <li><a href="/exp-article?nid=52">Government</a></li>
                                         </ul>
                                     </li>
                                     <li><a href="/resource">Resources</a>
