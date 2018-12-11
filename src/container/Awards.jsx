@@ -81,21 +81,21 @@ class About extends React.Component{
                 })
                     }
 
-        <section className="our-certifications-box top-100 bottom-100">
-            <div className="grid-container">
-                <div className="grid-x align-right align-middle grid-margin-x our-certifications-bg">
-                    <div className="medium-2 cell small-order-change">
-                        <div className="our-certifications-content">
-                            <h3 className="banner-info"><span>{ReactHtmlParser(this.state.awardsData.primary_image_id[0][0].image_overlay_title)}</span><br/>
-                                {ReactHtmlParser(this.state.awardsData.primary_image_id[0][0].image_overlay_sub_heading)}</h3>
-                        </div>
-                    </div>
-                    <div className="medium-8 cell">
+               {this.state.awardsData.primary_image_id[0][0].image_overlay_title!==''? <section className="our-certifications-box top-100 bottom-100">
+                       <div className="grid-container">
+                           <div className="grid-x align-right align-middle grid-margin-x our-certifications-bg">
+                               <div className="medium-2 cell small-order-change">
+                                   <div className="our-certifications-content">
+                                       <h3 className="banner-info"><span>{ReactHtmlParser(this.state.awardsData.primary_image_id[0][0].image_overlay_title)}</span><br/>
+                                           {ReactHtmlParser(this.state.awardsData.primary_image_id[0][0].image_overlay_sub_heading)}</h3>
+                                   </div>
+                               </div>
+                               <div className="medium-8 cell">
 
-                    </div>
-                </div>
-            </div>
-        </section>
+                               </div>
+                           </div>
+                       </div>
+                   </section>:''}
            </div> :''}
 
                 {this.state.awardsData.hasOwnProperty('secondary_image_id')?
