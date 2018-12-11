@@ -13,7 +13,7 @@ class RightImgLContent extends React.Component{
                 <div class="grid-x grid-padding-x height-750 align-middle">
                     <div class="medium-4 cell">
                         {/*<h2 class="relative-title">Our Services</h2>*/}
-                        <h3>{ReactHtmlParser(this.props.data.image_description_subheading)}</h3>
+                        <h3 class="heading-content">{ReactHtmlParser(this.props.data.image_description_subheading)}</h3>
                         <p>{ReactHtmlParser(this.props.data.image_description_body)}</p>
                     </div>
                     <div class="medium-7 cell no-padding">
@@ -37,4 +37,3 @@ class RightImgLContent extends React.Component{
     }
 }
 export default RightImgLContent;
-

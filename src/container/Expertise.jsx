@@ -1,5 +1,6 @@
 
 import React from 'react';
+import WOW from 'wowjs';
 import AccordionTab from '../component/AccordionTab.jsx';
 import MainBanner from '../component/MainBanner.jsx';
 import FooterRowSlider from '../component/FooterRowSlider.jsx';
@@ -9,8 +10,6 @@ import {jsonMiddleware} from '../services/common';
 import requestService from '../services/request.js';
 import Loader from 'react-loader-spinner'; // eslint-disable-line no-unused-vars
 
-
-import WOW from 'wowjs';
 import $ from 'jquery';
 
 //import 'foundation/js/vendor/zepto';
@@ -38,10 +37,10 @@ class Expertise extends React.Component{
     componentDidMount(){
         $(document).foundation();
         new WOW.WOW(
-            {
-                animateClass: 'animated',
-                offset:       100,
-            }
+          {
+            animateClass: 'animated',
+            offset:       100,
+          }
         ).init();
     }
     render(){
