@@ -7,8 +7,16 @@ import mobileHeader from '../component/mobileHeader.jsx';
 import FooterRowSlider from '../component/FooterRowSlider.jsx';
 import img4 from '../assets/img/img4.png';
 import $ from 'jquery';
+import Loader from 'react-loader-spinner'; // eslint-disable-line no-unused-vars
+
 //import 'foundation/js/vendor/zepto';
 class Resource extends React.Component{
+    constructor(){
+        super()
+        this.state = {
+            loading: true
+        }
+    }
     componentDidMount(){
         //Foundation.addToJquery($);
         $(document).foundation();

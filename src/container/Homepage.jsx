@@ -18,13 +18,17 @@ import smallImg from '../assets/img/small-img.png';
 import {jsonMiddleware} from '../services/common';
 import requestService from '../services/request.js';
 import $ from 'jquery';
+import Loader from 'react-loader-spinner'; // eslint-disable-line no-unused-vars
+
 
 //import 'foundation/js/vendor/zepto';
 class Home extends React.Component{
     constructor(){
         super()
         this.state = {
-            ExpertiseData: {}
+            ExpertiseData: {},
+            loading: true
+
         }
     }
     componentWillMount(){

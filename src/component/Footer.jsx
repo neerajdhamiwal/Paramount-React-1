@@ -1,5 +1,7 @@
 
 import React from 'react';
+import ReactHtmlParser from 'react-html-parser';
+
 
 class Footer extends React.Component{
     constructor(props){

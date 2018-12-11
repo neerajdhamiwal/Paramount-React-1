@@ -3,6 +3,8 @@ import BannerImg from '../assets/img/banner-with-content.jpeg';
 import $ from 'jquery';
 import requestService from '../services/request.js';
 import {apiUrl} from '../services/common.js';
+import ReactHtmlParser from 'react-html-parser';
+
 
 const BannerStyle =(url)=> {
     let combinedurl = apiUrl+url
@@ -31,7 +33,7 @@ class FeaturedContent extends React.Component{
                   <div className="grid-container">
                       <div className="grid-x align-right align-middle grid-margin-x">
                           <div className="medium-4 cell small-order-change">
-                              <h3 className="banner-info"><span>{this.state.activeCaseStudy.title}</span><br/><p>{this.state.activeCaseStudy.sub_title}</p>
+                              <h3 className="banner-info"><span>{ReactHtmlParser(this.state.activeCaseStudy.title)}</span><br/><p>{ReactHtmlParser(this.state.activeCaseStudy.sub_title)}</p>
                               </h3>
                           </div>
                       </div>
@@ -41,7 +43,7 @@ class FeaturedContent extends React.Component{
                   <div className="grid-container">
                       <div className="grid-x align-right align-middle grid-margin-x">
                           <div className="medium-5 cell small-order-change">
-                              <p>{$(this.state.activeCaseStudy.field_body).text()}</p>
+                              <p>{ReactHtmlParser(this.state.activeCaseStudy.field_body)}</p>
                               <a href = {"/casestudy/article?nid="+this.state.activeCaseStudy.id} className="button">Read more</a>
                           </div>
                           <div className="medium-5 cell"></div>
