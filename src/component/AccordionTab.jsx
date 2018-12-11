@@ -28,14 +28,14 @@ class AccordionaTab extends React.Component{
             <section className="tab-accordion top-100">
                 <div className="grid-container  custom-grid custom-grid-right">
                     <div className="grid-x">
-                        <div className="medium-2 cell">
+                        <div className="medium-2 cell  wow fadeInUp">
                             <ul className="accordion" id="service-tabs">
                                 {this.props.sliderData.map((service, index) => {
                                         return <li className="tabs-title"><a data-page = {`panel${index}`} id = {index}>{ReactHtmlParser(service.image_slider_title)}</a></li>
                                 })}
                             </ul>
                         </div>
-                        <div className="medium-10 cell"id="pages">
+                        <div className="medium-10 cell  wow fadeInUp"id="pages">
                             <div className="tabs-content">
                                 {this.props.sliderData.map((service, index) => {
                                         return <div className={index === 0 ? "page" : "page hide"}
@@ -47,7 +47,7 @@ class AccordionaTab extends React.Component{
                                                     {service.image_slider_cta_button_title !==''? <button class="button white-btn">{service.image_slider_cta_button_title}</button>:''}
                                                 </div>
                                                 </div>
-                                                <div className="medium-7 cell no-padding">
+                                                <div className="medium-7 cell no-padding wow slideInRight">
                                                     <ImgSlider imgArray = {service.image_slider_image.split(',')} id={index}/>
                                                 </div>
                                             </div>

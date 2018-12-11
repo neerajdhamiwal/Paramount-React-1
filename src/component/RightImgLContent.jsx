@@ -11,10 +11,10 @@ class RightImgLContent extends React.Component{
         <section class="left-image-right-content top-100 bottom-100">
             {this.props.secondary? <div class="grid-container custom-grid custom-grid-right">
                 <div class="grid-x grid-padding-x height-750 align-middle">
-                    <div class="medium-4 cell">
+                    <div class="medium-5 cell">
                         {/*<h2 class="relative-title">Our Services</h2>*/}
-                        <h3>{ReactHtmlParser(this.props.data.secondary_image_description_subheading)}</h3>
-                        <p>{ReactHtmlParser(this.props.data.secondary_image_description_body)}</p>
+                        <h3 class="heading-content">{ReactHtmlParser(this.props.data.image_description_subheading)}</h3>
+                        <p>{ReactHtmlParser(this.props.data.image_description_body)}</p>
                     </div>
                     <div class="medium-7 cell no-padding">
                         <div class="img-relative-title-ld">
@@ -58,4 +58,3 @@ class RightImgLContent extends React.Component{
     }
 }
 export default RightImgLContent;
-

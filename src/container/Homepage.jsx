@@ -88,6 +88,7 @@ class Home extends React.Component{
                 </center> :
         Object.keys(this.state.HomeData).length >0 ?
             <div>
+
            < section className="main-banner">
            <div className="grid-container">
            <div className="grid-x align-right align-middle grid-margin-x wow fadeInUp">
@@ -101,7 +102,7 @@ class Home extends React.Component{
            <div className="banner-img-link paroller-example">
            <div className="grid-x grid-margin-x grid-margin-y img-shadow-hover hide-for-small-only">
                {this.state.HomeData.hasOwnProperty('node_flip_id')? this.state.HomeData['node_flip_id'][0].map((data, index) => {
-                   return <div className="cell shrink wow fadeInDown" data-wow-delay={`${index}s`} ><a href="#"><img src={apiUrl+data.node_flipper_image} alt=""/></a></div>
+                   return <div className="cell shrink wow fadeInDown banner-image-effect" data-wow-delay={`${index}s`} ><a href="#"><img src={apiUrl+data.node_flipper_image} alt=""/><span>Paramount Test</span></a></div>
                    }):''}
            </div>
            </div>

@@ -8,12 +8,17 @@ class GridOverlap extends React.Component{
         return(
             <section className="grid-overlap full-bg-red jumbotron ptb-50-mobile">
                 <div className="grid-container">
-                    <div className="grid-x align-center align-middle block-overlap-custom height-750" >
+                    <div className="grid-x align-center align-middle block-overlap-custom height-750">
                         {this.props.data.map((obj) => {
                             return <div className="medium-3 cell wow fadeInUp" data-wow-delay="0.2s">
-                                <a href="#">
+                                <a href="#" class="overlap-grid-hover-effect">
                                     <img src={Img2} alt=""/>
-                                    <h3>{obj.content_flipper_description}</h3>
+                                    <h3>Work Brilliance</h3>
+                                    <div class="overlap-hover-box">
+                                      <h3>Work Brilliance</h3>
+                                      {obj.content_flipper_description}
+                                      <a href="#">Read More</a>
+                                    </div>
                                 </a>
                             </div>
                         })}
