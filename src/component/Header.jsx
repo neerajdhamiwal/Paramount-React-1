@@ -18,13 +18,13 @@ class Header extends React.Component{
                                 <ul className="menu align-right dropdown" data-dropdown-menu>
                                     <li><a href="/expertise?nid=35">About Us</a>
                                         <ul class="menu dropdown-menu-an">
-                                            <li><a href="/team?nid=42">Team</a></li>
+                                            {/*<li><a href="/team?nid=42">Team</a></li>*/}
                                             {/*<li><a href="#">Leadership</a></li>*/}
                                             <li><a href="/awards?nid=46">Community</a></li>
                                             <li><a href="/awards?nid=33">Awards & Certifications</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="/expertise?nid=36">Services</a>
+                                    <li><a href="">Services</a>
                                       <ul class="menu dropdown-menu-an">
                                         <li><a href="/exp-article?nid=24"> Paramount Edge</a></li>
                                         <li><a href="/exp-article?nid=39">Paramount TechExec</a></li>
@@ -39,10 +39,9 @@ class Header extends React.Component{
                                     </li>
                                     <li><a href="/expertise?nid=38">Expertise</a>
                                         <ul class="menu dropdown-menu-an">
-                                            <li><a href="/exp-article?nid=45">Industries</a></li>
+                                            {/*<li><a href="/exp-article?nid=45">Industries</a></li>*/}
                                             <li><a href="/exp-article?nid=45">Technologies</a></li>
                                             <li><a href="/exp-article?nid=24">Government</a></li>
-
                                         </ul>
                                     </li>
                                     <li><a href="/resource">Resources</a>

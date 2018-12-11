@@ -46,7 +46,7 @@ class Home extends React.Component{
     }
 
     componentWillMount(){
-        requestService.getService('/homepage-data/24')
+        requestService.getService('/homepage-data/50')
             .then((response) => {
                 let ids = ['node_flip_id','content_flip_id', 'content_slider_id', ];
                 this.setState({loading: false});
@@ -101,8 +101,7 @@ class Home extends React.Component{
            <div className="banner-img-link paroller-example">
            <div className="grid-x grid-margin-x grid-margin-y img-shadow-hover hide-for-small-only">
                {this.state.HomeData.hasOwnProperty('node_flip_id')? this.state.HomeData['node_flip_id'][0].map((data, index) => {
-                   return <div className="cell shrink wow fadeInDown" data-wow-delay={`${index}s`} ><a href="#"><img src={data.node_flipper_image} alt=""/></a></div>
-
+                   return <div className="cell shrink wow fadeInDown" data-wow-delay={`${index}s`} ><a href="#"><img src={apiUrl+data.node_flipper_image} alt=""/></a></div>
                    }):''}
            </div>
            </div>
@@ -140,7 +139,7 @@ class Home extends React.Component{
                            </div>
                            <div className="medium-10 cell wow fadeInUp">
                                <div className="tabs-content" data-tabs-content="service-tabs">
-                                   {this.state.HomeData['content_slider_id'][0].map((obj, i) => {
+                                   {this.state.HomeData['content_slider_id'][0].map((obj, index) => {
                                        return <div className={index === 0 ? "page" : "page hide"}
                                                         id={'panel' + index} data-page={'panel' + index}>
                                            <div className="grid-x grid-padding-x">
@@ -181,8 +180,9 @@ class Home extends React.Component{
                        </div>
                        <div className="large-5 cell wow fadeInUp">
                            <div className="content-inner pl-155">
-                               <h3>{ReactHtmlParser(this.state.HomeData[Object.keys(this.state.HomeData)[0]][0][0].image_content_block_description)}</h3>
-                               <p>{ReactHtmlParser(this.state.HomeData[Object.keys(this.state.HomeData)[0]][0][0].image_content_block_body)}</p>
+                               <h3>{ReactHtmlParser(this.state.HomeData[Object.keys(this.state.HomeData)[0]][0][0].content_flipper_title)}</h3>
+                               {/*<h3>{ReactHtmlParser(this.state.HomeData[Object.keys(this.state.HomeData)[0]][0][0].image_content_block_description)}</h3>*/}
+                               {/*<p>{ReactHtmlParser(this.state.HomeData[Object.keys(this.state.HomeData)[0]][0][0].image_content_block_body)}</p>*/}
                            </div>
                        </div>
                    </div>

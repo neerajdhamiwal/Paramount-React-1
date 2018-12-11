@@ -12,7 +12,7 @@ class GridOverlap extends React.Component{
                         {this.props.data.map((obj) => {
                             return <div className="medium-3 cell wow fadeInUp" data-wow-delay="0.2s">
                                 <a href="#">
-                                    <img src={decodeUri(apiUrl+obj.content_flipper_img)} alt=""/>
+                                    <img src={Img2} alt=""/>
                                     <h3>{obj.content_flipper_description}</h3>
                                 </a>
                             </div>
