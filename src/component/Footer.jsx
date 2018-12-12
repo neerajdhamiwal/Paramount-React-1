@@ -46,6 +46,7 @@ class Footer extends React.Component{
                   <div className="medium-4 cell">
                     <div className="footer-info">
                         {this.state.footerData.length>0 ?ReactHtmlParser(this.state.footerData[0].block_body): ''}
+
                     </div>
                   </div>
                   <div className="medium-5 cell">
