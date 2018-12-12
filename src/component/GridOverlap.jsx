@@ -19,7 +19,6 @@ class GridOverlap extends React.Component{
                                     <div class="overlap-hover-box">
                                       <h3>{ReactHtmlParser(obj.content_flipper_title)}</h3>
                                       {ReactHtmlParser(obj.content_flipper_description)}
-                                      <a href="#" className="button">{obj.content_flipper_cta_title}</a>
                                     </div>
                                 </a>
                             </div>
