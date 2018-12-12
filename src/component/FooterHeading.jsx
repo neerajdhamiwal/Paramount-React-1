@@ -28,7 +28,7 @@ class FooterHeading extends React.Component{
                         {this.props.subBlockData.length>0?
                             customDivideData(this.props.subBlockData, 2).map((subArr, index) => {
                                     return  <div className="medium-12 cell">
-                                        <div className="grid-x">
+                                        <div className="grid-x pl-155">
                                             {
                                                 subArr.map((heading, i) => {
                                                     if(i==1){
@@ -62,4 +62,3 @@ class FooterHeading extends React.Component{
     }
 }
 export default FooterHeading;
-

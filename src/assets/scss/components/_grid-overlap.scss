@@ -62,13 +62,14 @@
 		    transition: transform .5s ease, opacity .7s ease;
 				h3{
 					bottom: auto;
-					top:100px;
+					top:50px;
 				}
 				p{
 					position: absolute;
-			    bottom: 100px;
+			    bottom: 60px;
 			    right: 14px;
 			    left: 15px;
+					font-size: .60rem
 				}
  				a {
 				    color: #fff;
