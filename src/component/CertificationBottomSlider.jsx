@@ -68,7 +68,7 @@ class FooterRowSlider extends React.Component{
                 <div className="carousel cert-items">
                         {
                             this.state.clientData.map((image)=> {
-                                return <div className="logo-icon"><img src={decodeUri(apiUrl+image.logo_image_image)} width="200" height="200" alt="destination"/></div>
+                                return <div className="logo-icon"><img src={apiUrl+image.logo_image_image} width="200" height="200" alt="destination"/></div>
                             })
                         }
                     </div>

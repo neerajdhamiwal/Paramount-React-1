@@ -10,17 +10,20 @@ class FooterRowSlider extends React.Component{
             logo : [1,2,3,4,5],
             clientData:[]
         }
+        this.slider = this.slider.bind(this);
     }
     componentWillMount(){
         requestService.getService('/block-slider-data/6')
             .then((response) => {
-                this.setState({clientData: response.data});
+                this.setState({clientData: response.data},()=> {
+                    this.slider()
+                });
             })
             .catch((err) => {
                 console.log(err);
             })
     }
-    componentDidMount(){
+    slider(){
         $('.multiple-items').slick({
             dots: true,
             slidesPerRow: 5,
@@ -45,13 +48,6 @@ class FooterRowSlider extends React.Component{
                 }
             ]
         });
-    }
-    componentWillMOunt(){
-
-    }
-
-    componentWillReceiveProps(nextProps){
-        console.log(nextProps);
     }
 
     render(){

@@ -10,10 +10,10 @@ class TextContent extends React.Component{
             <div className="grid-container custom-grid custom-grid-right">
               <div className="grid-x align-middle grid-margin-x">
                 <div className="medium-12 cell pr-155">
-                  <h3 className="banner-info"><span>Expertise in</span><br/>
-                  Governemnt</h3>
-                  <h6>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type.</h6>
-                  <p>but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more. but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more.</p>
+                    <h3 className="banner-info"><span>{this.props.data.extra_content_title}</span></h3>
+
+                  <h6>{ReactHtmlParser(this.props.data.extra_content_description)}</h6>
+                  <p>{ReactHtmlParser(this.props.data.extra_content_body)}</p>
                 </div>
               </div>
             </div>

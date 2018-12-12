@@ -10,6 +10,10 @@ import {apiUrl} from '../services/common.js';
 import WOW from 'wowjs';
 import $ from 'jquery';
 import Loader from 'react-loader-spinner'; // eslint-disable-line no-unused-vars
+import TextContent from '../component/TextContent.jsx';
+
+let nid = ''
+
 
 
 class ExpertiseArticle extends React.Component{
@@ -25,8 +29,9 @@ class ExpertiseArticle extends React.Component{
     componentWillMount(){
         requestService.getService(`/services-node-data/${this.props.location.search.substring(this.props.location.search.indexOf("=")+1)}`)
             .then((response) => {
-                let ids = ['img_des_id','sub_block_id', 'secondary_sub_block_id','secondary_img_des_id'];
+                let ids = ['img_des_id','sub_block_id', 'secondary_sub_block_id','secondary_img_des_id', 'extra_content_id'];
                 this.setState({loading: false});
+                nid = this.props.location.search.substring(this.props.location.search.indexOf("=")+1)
                 this.setState({ExpertiseGovData: jsonMiddleware(response.data, ids)});
             })
             .catch((err) => {
@@ -49,7 +54,7 @@ class ExpertiseArticle extends React.Component{
                     />
                 </center> :
              <div>
-                 {Object.keys(this.state.ExpertiseGovData).length>0? <AwardBanner customClass = "main-banner award-banner" nodeData = {this.state.ExpertiseGovData[Object.keys(this.state.ExpertiseGovData)[0]][0]}></AwardBanner>: ''}
+                 {Object.keys(this.state.ExpertiseGovData).length>0? <AwardBanner customClass = "main-banner award-banner" nid={nid} nodeData = {this.state.ExpertiseGovData[Object.keys(this.state.ExpertiseGovData)[0]][0]}></AwardBanner>: ''}
                 <div className="top-100 bottom-100 clearfix"></div>
                  {this.state.ExpertiseGovData.hasOwnProperty('sub_block_id')? <FooterHeading subBlockData = {this.state.ExpertiseGovData['sub_block_id'][0]}/>:''}
                 {
@@ -63,6 +68,9 @@ class ExpertiseArticle extends React.Component{
                     }): ''
                 }
                  {this.state.ExpertiseGovData.hasOwnProperty('secondary_sub_block_id')? <FooterSecndHeading subBlockData = {this.state.ExpertiseGovData['secondary_sub_block_id'][0]}/>:''}
+                 {this.state.ExpertiseGovData.hasOwnProperty('extra_content_id')? this.state.ExpertiseGovData['extra_content_id'][0].map((obj) => {
+                     return <TextContent data = {obj}/>
+                     }) :''}
                  {
                      this.state.ExpertiseGovData.hasOwnProperty('secondary_img_des_id')? this.state.ExpertiseGovData['img_des_id'][0].map((obj, i) => {
                              if ((i + 1) % 2 === 0) {

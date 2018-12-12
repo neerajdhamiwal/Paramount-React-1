@@ -220,7 +220,6 @@ class Home extends React.Component{
             </div>
         </section>
         <HorizontalScroll/>
-        <TextContent/>
         <div className="clearfix top-100 bottom-100"></div>
                 <GridList/>
         {/*<FooterRowSlider/>*/}
