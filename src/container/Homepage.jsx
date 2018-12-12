@@ -40,6 +40,7 @@ class Home extends React.Component{
     }
 
     animation(){
+        $(document).foundation();
         new WOW.WOW(
             {
                 animateClass: 'animated',
@@ -49,6 +50,18 @@ class Home extends React.Component{
 
         let scene = document.getElementById('scene');
         let parallaxInstance = new Parallax(scene);
+        $("#service-tabs li a").on('click', function(e) {
+            e.preventDefault()
+            let page = $(this).data('page');
+            $(`#pages .page:not('.hide')`).stop().fadeOut('fast', function() {
+                $(this).addClass('hide');
+                $(`#pages .page[data-page=${page}]`).fadeIn('slow').removeClass('hide');
+            });
+        });
+        $('#service-tabs').on('click', 'li', function() {
+            $('#service-tabs li.activeTab').removeClass('activeTab');
+            $(this).addClass('activeTab');
+        });
     }
 
     componentWillMount(){
@@ -69,16 +82,6 @@ class Home extends React.Component{
 
     componentDidMount(){
         //Foundation.addToJquery($);
-        $(document).foundation();
-        $("#service-tabs li a").on('click', function(e) {
-            e.preventDefault()
-            let page = $(this).data('page');
-            $(`#pages .page:not('.hide')`).stop().fadeOut('fast', function() {
-                $(this).addClass('hide');
-                $(`#pages .page[data-page=${page}]`).fadeIn('slow').removeClass('hide');
-
-            });
-        });
     }
 
     render(){
@@ -107,7 +110,7 @@ class Home extends React.Component{
            <div className="banner-img-link paroller-example">
            <div className="grid-x grid-margin-x grid-margin-y img-shadow-hover hide-for-small-only">
                {this.state.HomeData.hasOwnProperty('node_flip_id')? this.state.HomeData['node_flip_id'][0].map((data, index) => {
-                   return <div className="cell shrink wow fadeInDown banner-image-effect" data-wow-delay={`${index}s`} ><a href="#"><img src={apiUrl+data.node_flipper_image} alt=""/><span>{data.image_flipper_title}</span></a></div>
+                   return <div className="cell shrink wow fadeInDown banner-image-effect" data-wow-delay={`${index}s`} ><a href="#"><img src={apiUrl+data.node_flipper_image} alt=""/><span>{data.node_flipper_title}</span></a></div>
                    }):''}
            </div>
            </div>
@@ -143,7 +146,7 @@ class Home extends React.Component{
                                    })}
                                </ul>
                            </div>
-                           <div className="medium-10 cell wow fadeInUp">
+                           <div className="medium-10 cell wow fadeInUp" id="pages">
                                <div className="tabs-content" data-tabs-content="service-tabs">
                                    {this.state.HomeData['content_slider_id'][0].map((obj, index) => {
                                        return <div className={index === 0 ? "page" : "page hide"}
@@ -167,7 +170,6 @@ class Home extends React.Component{
                                    })}
                                </div>
                            </div>
-
                        </div>
                    </div>
                </section>
@@ -186,9 +188,9 @@ class Home extends React.Component{
                        </div>
                        <div className="large-5 cell wow fadeInUp">
                            <div className="content-inner pl-155">
-                               <h3>{ReactHtmlParser(this.state.HomeData[Object.keys(this.state.HomeData)[0]][0][0].content_flipper_title)}</h3>
+                               {/*<h3>{ReactHtmlParser(this.state.HomeData[Object.keys(this.state.HomeData)[0]][0][0].content_flipper_title)}</h3>*/}
                                {/*<h3>{ReactHtmlParser(this.state.HomeData[Object.keys(this.state.HomeData)[0]][0][0].image_content_block_description)}</h3>*/}
-                               {/*<p>{ReactHtmlParser(this.state.HomeData[Object.keys(this.state.HomeData)[0]][0][0].image_content_block_body)}</p>*/}
+                               <p>{ReactHtmlParser(this.state.HomeData[Object.keys(this.state.HomeData)[0]][0][0].image_content_block_body)}</p>
                            </div>
                        </div>
                    </div>
@@ -221,7 +223,7 @@ class Home extends React.Component{
                 </div>
             </div>
         </section>
-        <HorizontalScroll/>
+        {/*<HorizontalScroll/>*/}
         <div className="clearfix top-100 bottom-100"></div>
                 <GridList/>
         {/*<FooterRowSlider/>*/}

@@ -28,7 +28,8 @@ class GridList extends React.Component{
     }
     render(){
         return(
-          <div className="grid-container">
+          this.state.latestReadData.length>0?<div className="grid-container">
+              <h4>{ReactHtmlParser(this.state.latestReadData[0].block_title)}</h4>
             <div className="grid-x align-center block-latest-reads">
                 {this.state.latestReadData.map((obj) => {
                     return <div className="medium-4 cell img-block">
@@ -42,7 +43,7 @@ class GridList extends React.Component{
                     </div>
                 })}
               </div>
-            </div>
+            </div>:''
         )
     }
 }

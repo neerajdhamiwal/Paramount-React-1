@@ -13,7 +13,9 @@ import {apiUrl, jsonMiddleware} from '../services/common.js';
 import ReactHtmlParser from 'react-html-parser';
 import WOW from 'wowjs';
 import Loader from 'react-loader-spinner'; // eslint-disable-line no-unused-vars
-
+let nid = '';
+import aboutLayerBannerone from '../assets/img/about-layer1.png';
+import aboutLayerBannertwo from '../assets/img/about-layer2.png';
 //import 'foundation/js/vendor/zepto';
 class About extends React.Component{
     constructor(props) {
@@ -44,6 +46,7 @@ class About extends React.Component{
                 let data = jsonMiddleware(response.data, ids)
                 this.setState({loading: false});
                 this.setState({awardsData: data},()=> {
+                    nid = this.props.location.search.substring(this.props.location.search.indexOf("=")+1);
                     if(this.props.location.search.substring(this.props.location.search.indexOf("=")+1) == 33){
                         this.animation()
                     }
@@ -79,7 +82,8 @@ class About extends React.Component{
                                <div className="grid-x align-right align-middle grid-margin-x wow fadeInUp">
                                    <div className="medium-5 cell small-order-change">
                                        <h3 className="banner-info"><span>{ReactHtmlParser(this.state.awardsData.primary_image_id[0][0].node_title)}</span><br/>
-                                           {ReactHtmlParser(this.state.awardsData.primary_image_id[0][0].node_subtitle_title)}</h3>                 </div>
+                                           {ReactHtmlParser(this.state.awardsData.primary_image_id[0][0].node_subtitle_title)}</h3>
+                                   </div>
                                    <div className="medium-6 cell">
                                        <div id="scene" data-friction-x="0.1" data-friction-y="0.1" data-scalar-x="25" data-scalar-y="15">
                                            <div data-depth="0.3"><img src={award1} alt="" /></div>
@@ -106,7 +110,22 @@ class About extends React.Component{
                        </div>
                        </section>
                    </div>
-                   :<MainBanner node={this.state.awardsData.primary_image_id[0]}/>
+                   : <section className="bottom-100">
+                       <div className="grid-container custom-grid custom-grid-right">
+                           <div className="grid-x align-right align-middle grid-margin-x wow fadeInUp">
+                               <div className="medium-5 cell small-order-change">
+                                   <h3 className="banner-info"><span>{ReactHtmlParser(this.state.awardsData.primary_image_id[0][0].node_title)}</span><br/>
+                                       {ReactHtmlParser(this.state.awardsData.primary_image_id[0][0].node_subtitle_title)}</h3>
+                               </div>
+                               <div className="medium-6 cell">
+                                   <div class="rotation-banner">
+                                       <img id="loading" src={aboutLayerBannerone} alt="" />
+                                       <img class="over-img" src={aboutLayerBannertwo} alt="" />
+                                   </div>
+                               </div>
+                           </div>
+                       </div>
+                   </section>
                }
 
                 {this.state.awardsData['primary_image_id'][0].map((obj) => {

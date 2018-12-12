@@ -37,6 +37,7 @@ class Home extends React.Component{
         //         this.animation();
         //     }
         // })
+        console.log(this.props.nid)
         return(
             <section className="main-banner award-banner">
                 <div className="grid-container">
@@ -45,6 +46,7 @@ class Home extends React.Component{
                             <h3 className="banner-info"><span>{ReactHtmlParser(this.props.node[0].node_title)}</span><br/>{ReactHtmlParser(this.props.node[0].node_subtitle_title)}</h3>
                             <p>{ReactHtmlParser(this.props.node[0].node_description)}</p>
                             {this.props.node[0].hasOwnProperty('node_cta_button_title')? this.props.node[0].node_cta_button_title !==''?<button className="button">{this.props.node[0].node_cta_button_title}</button>:'':''}
+                            {this.props.node[0].download_link_title !==''?<a>{this.props.node[0].download_link_title}</a>:''}
                         </div>
                         {this.props.nid ==35?<div className="medium-6 cell about-us-banner">
                                 <div class="rotation-banner">
@@ -54,6 +56,12 @@ class Home extends React.Component{
                             </div>:''}
                         {this.props.nid== 49?<div className="medium-6 cell services-sub-menu-two">
                         <img src={ImgBannerTwo} alt="Banner"/>
+                    </div>:''}
+                        { this.props.nid ==46?<div className="medium-6 cell about-us-banner">
+                        <div class="rotation-banner">
+                            <img id="loading" src={aboutLayerBannerone} alt="" />
+                            <img class="over-img" src={aboutLayerBannertwo} alt="" />
+                        </div>
                     </div>:''}
 
                         {this.props.nid== 38?<div className="medium-6 cell expertise-banner">
