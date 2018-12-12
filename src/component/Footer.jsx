@@ -1,5 +1,6 @@
 
 import React from 'react';
+import requestService from '../services/request.js';
 import ReactHtmlParser from 'react-html-parser';
 
 
@@ -9,19 +10,33 @@ class Footer extends React.Component{
         this.state = {
             name: '',
             email: '',
-            message: ''
+            message: '',
+            footerData: []
         }
         this.handleChange = this.handleChange.bind(this);
     }
+    componentWillMount(){
+        requestService.getService('/stay-in-touch')
+            .then((response) => {
+            console.log(response.data);
+                this.setState({footerData: response.data});
+            })
+            .catch((err) => {
+                console.log(err);
+            })
+    }
+
     submit(){
 
     }
+
     handleChange(e){
         console.log(e.target.value, this.state);
         let obj = {}
         obj[e.target.name] = e.target.value
         this.setState(obj);
     }
+
     render(){
         return(
           <div>
@@ -30,13 +45,7 @@ class Footer extends React.Component{
                 <div className="grid-x footer-inner align-middle align-center ">
                   <div className="medium-4 cell">
                     <div className="footer-info">
-                      <h5>Stay in touch</h5>
-                      <p>With more than 100 global happy clients, and experience since 1997, we take pride in providing best-in-className IT services.</p>
-                      <ul className="menu vertical">
-                        <li className="email">info@paramountsoft.net</li>
-                        <li className="address"><address>4030 Old Milton Parkway Alpharetta, GA 30005, USA</address></li>
-                        <li className="phone">770-857-8348</li>
-                      </ul>
+                        {this.state.footerData.length>0 ?ReactHtmlParser(this.state.footerData[0].block_body): ''}
                     </div>
                   </div>
                   <div className="medium-5 cell">
@@ -44,7 +53,7 @@ class Footer extends React.Component{
 
                       <form className="contact-form">
                         <div className="grid-container">
-                                        <h5>Stay in touch</h5>
+                                        <h5>{this.state.footerData.length>0?ReactHtmlParser(this.state.footerData[0].block_title):''}</h5>
                           <div className="grid-x">
                             <div className="medium-12 cell">
                                 <input type="text" placeholder="Name" name = "name" onChange = {this.handleChange} required/>
@@ -81,7 +90,6 @@ class Footer extends React.Component{
               </div>
             </footer>
             </div>
-
         )
     }
 }

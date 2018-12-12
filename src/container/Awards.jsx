@@ -118,7 +118,6 @@ class About extends React.Component{
                     </section>
                 })
                 :''}
-
             </div>
         )
     }
