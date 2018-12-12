@@ -1,5 +1,9 @@
 import React from 'react';
-import ImgBanner from '../assets/img/team-banner-bg.png';
+import ImgBanner from '../assets/img/paramount-edge.png';
+import ImgBannerTwo from '../assets/img/services-sub-two.png';
+import ImgBannerThree from '../assets/img/expertise-sub-menu.png';
+
+
 import ReactHtmlParser from 'react-html-parser';
 
 
@@ -23,9 +27,18 @@ class AwardBanner extends React.Component{
             <p>{ReactHtmlParser(this.props.nodeData[0].node_description)}</p>
             <p>{ReactHtmlParser(this.props.nodeData[0].node_body)}</p>
           </div>
-          <div className="medium-6 cell">
+          <div className="medium-6 cell services-sub-menu">
             <img src={ImgBanner} alt="Banner"/>
           </div>
+
+          <div className="medium-6 cell services-sub-menu-two">
+            <img src={ImgBannerTwo} alt="Banner"/>
+          </div>
+
+          <div className="medium-6 cell technologies-government-banner">
+            <img src={ImgBannerThree} alt="Banner"/>
+          </div>
+
         </div>
       </div>
     </section>
