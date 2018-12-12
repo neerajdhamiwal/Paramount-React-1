@@ -133,6 +133,14 @@ header .header-inner {
       position: absolute;
       right: 10px;
       left: auto; }
+  header .header-inner .main-menu > ul > li.is-dropdown-submenu-parent:nth-child(3) .is-dropdown-submenu {
+    min-width: 200px; }
+  header .header-inner .main-menu > ul > li.is-dropdown-submenu-parent:nth-child(4) .is-dropdown-submenu {
+    min-width: 200px; }
+  header .header-inner .main-menu .is-dropdown-submenu {
+    min-width: 260px; }
+    header .header-inner .main-menu .is-dropdown-submenu ul {
+      min-width: 295px; }
   header .header-inner .is-dropdown-submenu-parent.opens-left > .is-dropdown-submenu {
     right: auto;
     left: 100%;
@@ -237,10 +245,10 @@ header .header-inner {
   @media screen and (min-width: 64em) {
     .img-relative-title-ld h2 {
       position: absolute;
-      bottom: -65px;
+      bottom: -124px;
       background: red;
       color: #fff;
-      font-size: 24px;
+      font-size: 20px;
       font-weight: 300;
       width: 285px;
       left: -33px;
