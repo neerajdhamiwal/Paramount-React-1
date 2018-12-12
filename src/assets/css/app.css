@@ -714,6 +714,11 @@ header .header-inner .is-dropdown-submenu-parent:hover .dropdown-menu-an {
   left: 0;
 }
 
+.img-shadow-hover img {
+  width: 160px;
+  height: 90px;
+}
+
 .contact-form {
   background: #fff;
   padding: 40px 40px;
