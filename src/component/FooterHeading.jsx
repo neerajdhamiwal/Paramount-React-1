@@ -31,12 +31,23 @@ class FooterHeading extends React.Component{
                                         <div className="grid-x">
                                             {
                                                 subArr.map((heading, i) => {
-                                                    return <div className="medium-5 cell">
-                                                        <div className="four-column-content four-col-left">
-                                                            <a href="#">{ReactHtmlParser(heading.sub_block_heading)}</a>
-                                                            <p>{ReactHtmlParser(heading.sub_block_description)}</p>
+                                                    if(i==1){
+                                                        return <div className="medium-5 cell">
+                                                            <div className="four-column-content four-col-left four-col-right">
+                                                                <a href="#">{ReactHtmlParser(heading.sub_block_heading)}</a>
+                                                                <p>{ReactHtmlParser(heading.sub_block_description)}</p>
+                                                            </div>
                                                         </div>
-                                                    </div>
+                                                    }
+                                                    else{
+                                                        return <div className="medium-5 cell">
+                                                            <div className="four-column-content four-col-left">
+                                                                <a href="#">{ReactHtmlParser(heading.sub_block_heading)}</a>
+                                                                <p>{ReactHtmlParser(heading.sub_block_description)}</p>
+                                                            </div>
+                                                        </div>
+                                                    }
+
                                                 })
                                             }
                                         </div>

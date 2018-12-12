@@ -18,7 +18,7 @@ class FooterRowSlider extends React.Component{
         $('.award-items').slick({
             dots: true,
             slidesPerRow: 5,
-            rows: 2,
+            rows: 1,
             arrows : false,
             responsive: [
                 {

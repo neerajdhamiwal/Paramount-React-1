@@ -1,10 +1,5 @@
 
 import React from 'react';
-import Header from '../component/Header.jsx';
-import AccordionTab from '../component/AccordionTab.jsx';
-import Footer from '../component/Footer.jsx';
-import mobileHeader from '../component/mobileHeader.jsx';
-import FooterRowSlider from '../component/FooterRowSlider.jsx';
 import img4 from '../assets/img/img4.png';
 import $ from 'jquery';
 import Loader from 'react-loader-spinner'; // eslint-disable-line no-unused-vars

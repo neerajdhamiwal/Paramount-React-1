@@ -11,11 +11,13 @@ import WOW from 'wowjs';
 import $ from 'jquery';
 import Loader from 'react-loader-spinner'; // eslint-disable-line no-unused-vars
 import TextContent from '../component/TextContent.jsx';
+import CertSlider from '../component/CertificationBottomSlider.jsx';
+import AwardSlider from '../component/AwardsBottomSlider.jsx';
+import PartnerSlider from '../component/PartnerSlider.jsx';
+import GridList from '../component/GridList.jsx';
+import FooterRowSlider from '../component/FooterRowSlider.jsx';
 
 let nid = ''
-
-
-
 class ExpertiseArticle extends React.Component{
     constructor(props){
         super(props)
@@ -29,7 +31,7 @@ class ExpertiseArticle extends React.Component{
     componentWillMount(){
         requestService.getService(`/services-node-data/${this.props.location.search.substring(this.props.location.search.indexOf("=")+1)}`)
             .then((response) => {
-                let ids = ['img_des_id','sub_block_id', 'secondary_sub_block_id','secondary_img_des_id', 'extra_content_id'];
+                let ids = ['img_des_id','sub_block_id', 'secondary_sub_block_id','secondary_img_des_id', 'extra_content_id', 'award_slider_id', 'certificate_slider_id','partner_slider_id','client_slider_id'];
                 this.setState({loading: false});
                 nid = this.props.location.search.substring(this.props.location.search.indexOf("=")+1)
                 this.setState({ExpertiseGovData: jsonMiddleware(response.data, ids)});
@@ -68,8 +70,22 @@ class ExpertiseArticle extends React.Component{
                     }): ''
                 }
                  {this.state.ExpertiseGovData.hasOwnProperty('secondary_sub_block_id')? <FooterSecndHeading subBlockData = {this.state.ExpertiseGovData['secondary_sub_block_id'][0]}/>:''}
-                 {this.state.ExpertiseGovData.hasOwnProperty('extra_content_id')? this.state.ExpertiseGovData['extra_content_id'][0].map((obj) => {
-                     return <TextContent data = {obj}/>
+                 {this.state.ExpertiseGovData.hasOwnProperty('extra_content_id')? this.state.ExpertiseGovData['extra_content_id'][0].map((obj, i) => {
+                     if(nid == 24){
+                         return <div><TextContent data = {obj}/>
+                             {i==0? this.state.ExpertiseGovData.hasOwnProperty('award_slider_id')?this.state.ExpertiseGovData['award_slider_id'][0][0].award_slider_id? <AwardSlider/>: '':'':''}
+                             {i==2? this.state.ExpertiseGovData.hasOwnProperty('client_slider_id')? this.state.ExpertiseGovData['client_slider_id'][0][0].client_slider_id ? <FooterRowSlider/>: '':'':''}
+                             {i==4? this.state.ExpertiseGovData.hasOwnProperty('certificate_slider_id')?this.state.ExpertiseGovData['certificate_slider_id'][0][0].certificate_slider_id? <CertSlider/>: '':'':''}
+                         </div>
+                     }
+                     else if(nid==39){
+                         return <div><TextContent data = {obj}/>
+                             {i==0? this.state.ExpertiseGovData.hasOwnProperty('award_slider_id')?this.state.ExpertiseGovData['award_slider_id'][0][0].award_slider_id? <AwardSlider/>: '':'':''}
+                             {i==1? this.state.ExpertiseGovData.hasOwnProperty('client_slider_id')? this.state.ExpertiseGovData['client_slider_id'][0][0].client_slider_id ? <FooterRowSlider/>: '':'':''}
+                             {/*{i==4? this.state.ExpertiseGovData.hasOwnProperty('certificate_slider_id')?this.state.ExpertiseGovData['certificate_slider_id'][0][0].certificate_slider_id? <CertSlider/>: '':'':''}*/}
+                         </div>
+                     }
+
                      }) :''}
                  {
                      this.state.ExpertiseGovData.hasOwnProperty('secondary_img_des_id')? this.state.ExpertiseGovData['img_des_id'][0].map((obj, i) => {
@@ -81,7 +97,10 @@ class ExpertiseArticle extends React.Component{
                              }
                          }): ''
                  }
-
+                 {nid== 24?this.state.ExpertiseGovData.hasOwnProperty('partner_slider_id')? this.state.ExpertiseGovData['partner_slider_id'][0][0].partner_slider_id ? <PartnerSlider/>: '':'':''}
+                 {/*{this.state.ExpertiseGovData.hasOwnProperty('client_slider_id')? this.state.ExpertiseGovData['client_slider_id'][0][0].client_slider_id ? <FooterRowSlider/>: '':''}*/}
+                 {/*{this.state.ExpertiseGovData.hasOwnProperty('client_slider_id')? this.state.ExpertiseGovData['client_slider_id'][0][0].client_slider_id ? <FooterRowSlider/>: '':''}*/}
+                 {/*{this.state.ExpertiseGovData.hasOwnProperty('client_slider_id')? this.state.ExpertiseGovData['client_slider_id'][0][0].client_slider_id ? <FooterRowSlider/>: '':''}*/}
              </div>
         )
     }

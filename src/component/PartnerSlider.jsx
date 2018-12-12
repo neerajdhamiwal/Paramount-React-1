@@ -1,8 +1,11 @@
 
 import React from 'react';
-import {apiUrl, decodeUri, jsonMiddleware, } from '../services/common.js';
+import {apiUrl, decodeUri} from '../services/common.js';
+import ReactHtmlParser from 'react-html-parser';
 import requestService from '../services/request.js';
-import $ from 'jquery';
+
+
+
 class FooterRowSlider extends React.Component{
     constructor(){
         super();
@@ -10,21 +13,22 @@ class FooterRowSlider extends React.Component{
             logo : [1,2,3,4,5],
             clientData:[]
         }
-        this.slider = this.slider.bind(this);
+        this.slider = this.slider.bind(this)
     }
     componentWillMount(){
-        requestService.getService('/block-slider-data/6')
+        requestService.getService('/block-slider-data/10')
             .then((response) => {
                 this.setState({clientData: response.data},()=> {
-                    this.slider()
+                    this.slider();
                 });
             })
             .catch((err) => {
                 console.log(err);
             })
     }
+
     slider(){
-        $('.multiple-items').slick({
+        $('.part-items').slick({
             dots: true,
             slidesPerRow: 5,
             rows: 1,
@@ -34,7 +38,7 @@ class FooterRowSlider extends React.Component{
                     breakpoint: 1024,
                     settings: {
                         slidesPerRow: 4,
-                        rows: 1,
+                        rows: 2,
                         arrows : false,
                     }
                 },
@@ -48,21 +52,28 @@ class FooterRowSlider extends React.Component{
                 }
             ]
         });
+
+    }
+    componentDidMount() {
+    }
+
+    componentWillReceiveProps(nextProps){
+        console.log(nextProps);
     }
 
     render(){
         return(
             this.state.clientData.length>0? <div className="grid-container row-slider pb-50">
-                <h2 className="title-span text-center"><span>{this.state.clientData[0].logo_image_title}</span></h2>
-                {this.state.clientData.length>0? <div className="carousel multiple-items">
+                    <h2 className="title-span text-center"><span>{ReactHtmlParser(this.state.clientData[0].logo_image_title)}</span></h2>
+                    <div className="carousel part-items">
                         {
                             this.state.clientData.map((image)=> {
                                 return <div className="logo-icon"><img src={apiUrl+image.logo_image_image} width="200" height="200" alt="destination"/></div>
                             })
                         }
-                    </div>: ''}
-            </div>:''
-    )
+                    </div>
+                </div>:''
+        )
     }
 }
 export default FooterRowSlider;

@@ -16,7 +16,7 @@ class FooterRowSlider extends React.Component{
         this.slider = this.slider.bind(this)
     }
     componentWillMount(){
-        requestService.getService('/block-slider-data/6')
+        requestService.getService('/block-slider-data/9')
             .then((response) => {
                 this.setState({clientData: response.data},()=> {
                     this.slider();
@@ -31,7 +31,7 @@ class FooterRowSlider extends React.Component{
         $('.cert-items').slick({
             dots: true,
             slidesPerRow: 5,
-            rows: 2,
+            rows: 1,
             arrows : false,
             responsive: [
                 {
