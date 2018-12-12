@@ -3,12 +3,9 @@ import React from 'react';
 import WOW from 'wowjs';
 import Parallax from 'parallax-js';
 import GridOverLap from '../component/GridOverlap.jsx';
-<<<<<<< HEAD
 import HorizontalScroll from '../component/HorizontalScroll.jsx';
 import TextContent from '../component/TextContent.jsx';
-=======
 import GridList from '../component/GridList.jsx';
->>>>>>> be558440eb8405d65230eb8d158964fd4294ba79
 import layer1 from '../assets/img/layers/layer1.png';
 import layer2 from '../assets/img/layers/layer2.png';
 import layer3 from '../assets/img/layers/layer3.png';
