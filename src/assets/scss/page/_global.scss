@@ -65,3 +65,77 @@ p{
     box-shadow: 0 7px 0 #000, 0 14px 0 #000;
     content: '';
 }
+
+
+// Horizontal scroll
+::-webkit-scrollbar {
+	width: 1px;
+	height: 1px;
+  }
+  ::-webkit-scrollbar-button {
+	width: 1px;
+	height: 1px;
+  }
+  
+  
+  
+  
+  .horizontal-scroll-wrapper {
+	position: absolute;
+	display: block;
+	top: 0;
+	left: 0;
+	width: calc(250px + 1px);
+	max-height: 750px;
+	margin: 0;
+	padding-top: 1px;
+	overflow-y: auto;
+	overflow-x: hidden;
+	-webkit-transform: rotate(-90deg) translateY(-250px);
+			transform: rotate(-90deg) translateY(-250px);
+	-webkit-transform-origin: right top;
+			transform-origin: right top;
+				width: auto;
+	  left: -250px;
+  }
+  .horizontal-scroll-wrapper > div {
+	display: block;
+	padding: 5px;
+	-webkit-transform: rotate(90deg);
+			transform: rotate(90deg);
+	-webkit-transform-origin: right top;
+			transform-origin: right top;
+  }
+  
+  .squares {
+	padding: 100% 0 0 0;
+  }
+  .squares > div {
+	  width: 500px;
+	  height: 500px;
+	  margin: 50px 0;
+	  position: relative;
+	  top: -906px;
+  }
+  
+  .one h4, .two h4{
+	  font-weight: 300;
+	  color: red;
+	  margin-bottom: 60px;
+  }
+  
+  .one p, .two p{
+	  font-size: 20px;
+  }
+  .one span,.two span{
+		font-size: 14px;
+  }
+  
+  .two{
+			margin-bottom: -500px !important;
+  }
+  .scroll-relative {
+	  position: relative;
+	  min-height: 500px;
+  }
+ 

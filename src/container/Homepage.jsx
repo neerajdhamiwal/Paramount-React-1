@@ -3,6 +3,8 @@ import React from 'react';
 import WOW from 'wowjs';
 import Parallax from 'parallax-js';
 import GridOverLap from '../component/GridOverlap.jsx';
+import HorizontalScroll from '../component/HorizontalScroll.jsx';
+import TextContent from '../component/TextContent.jsx';
 import layer1 from '../assets/img/layers/layer1.png';
 import layer2 from '../assets/img/layers/layer2.png';
 import layer3 from '../assets/img/layers/layer3.png';
@@ -216,6 +218,8 @@ class Home extends React.Component{
                 </div>
             </div>
         </section>
+        <HorizontalScroll/>
+        <TextContent/>
         <div className="clearfix top-100 bottom-100"></div>
         {/*<FooterRowSlider/>*/}
         </div> :''
