@@ -3,6 +3,7 @@ import React from 'react';
 import WOW from 'wowjs';
 import AccordionTab from '../component/AccordionTab.jsx';
 import MainBanner from '../component/MainBanner.jsx';
+import GridList from '../component/GridList.jsx';
 import FooterRowSlider from '../component/FooterRowSlider.jsx';
 import FooterHeading from '../component/FooterHeading.jsx';
 import RightImgLContent from '../component/RightImgLContent.jsx';
@@ -27,7 +28,7 @@ class Expertise extends React.Component{
     componentWillMount(){
             requestService.getService(`/landing-page-data/${this.props.location.search.substring(this.props.location.search.indexOf("=")+1)}`)
                 .then((response) => {
-                let ids = ['slider_id','flipper_id','logo_id','sub_block_id','image_description_id','hd_id'];
+                let ids = ['slider_id','flipper_id','logo_id','sub_block_id','image_description_id','hd_id', 'client_slider_id'];
                     this.setState({loading: false});
                     this.setState({ExpertiseData: jsonMiddleware(response.data, ids)});
                 })
@@ -81,7 +82,8 @@ class Expertise extends React.Component{
                     <div className="top-100 bottom-100 clearfix"></div>
                 {this.state.ExpertiseData.hasOwnProperty('sub_block_id')? <FooterHeading subBlockData = {this.state.ExpertiseData['sub_block_id'][0]}/>:''}
                 <div className="top-100 bottom-100 clearfix"></div>
-            {this.state.ExpertiseData.hasOwnProperty('logo_id')?<FooterRowSlider clientData = {this.state.ExpertiseData['logo_id'][0]}/>:''}
+            {this.state.ExpertiseData.hasOwnProperty('client_slider_id')? this.state.ExpertiseData['client_slider_id'][0][0].client_slider_id? <FooterRowSlider/>:'':''}
+            <GridList/>
                 </div>
 
         )

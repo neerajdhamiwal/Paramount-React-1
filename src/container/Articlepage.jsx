@@ -5,6 +5,8 @@ import requestService from '../services/request.js';
 import {apiUrl} from '../services/common.js';
 import ReactHtmlParser from 'react-html-parser';
 import Loader from 'react-loader-spinner'; // eslint-disable-line no-unused-vars
+import GridList from '../component/GridList.jsx';
+
 
 const BannerStyle =(url)=> {
     let combinedurl = apiUrl+url
@@ -127,7 +129,7 @@ class ArticlePage extends React.Component{
           </div>
 
         </section>
-
+        <GridList/>
             </div>
         )
     }

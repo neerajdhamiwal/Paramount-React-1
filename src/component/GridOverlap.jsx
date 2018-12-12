@@ -1,7 +1,9 @@
 import React from 'react';
 import Img2 from '../assets/img/img2.png';
 import Img1 from '../assets/img/img1.png';
-import {decodeUri} from '../services/common'
+import {decodeUri} from '../services/common';
+import ReactHtmlParser from 'react-html-parser';
+
 
 class GridOverlap extends React.Component{
     render(){
@@ -13,11 +15,11 @@ class GridOverlap extends React.Component{
                             return <div className="medium-3 cell wow fadeInUp" data-wow-delay="0.2s">
                                 <a href="#" class="overlap-grid-hover-effect">
                                     <img src={Img2} alt=""/>
-                                    <h3>Work Brilliance</h3>
+                                    <h3>{ReactHtmlParser(obj.content_flipper_title)}</h3>
                                     <div class="overlap-hover-box">
-                                      <h3>Work Brilliance</h3>
-                                      {obj.content_flipper_description}
-                                      <a href="#">Read More</a>
+                                      <h3>{ReactHtmlParser(obj.content_flipper_title)}</h3>
+                                      {ReactHtmlParser(obj.content_flipper_description)}
+                                      <a href="#" className="button">{obj.content_flipper_cta_title}</a>
                                     </div>
                                 </a>
                             </div>

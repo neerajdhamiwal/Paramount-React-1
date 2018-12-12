@@ -2,6 +2,8 @@
 import React from 'react';
 import {apiUrl, decodeUri} from '../services/common.js';
 import ReactHtmlParser from 'react-html-parser';
+import requestService from '../services/request.js';
+
 
 class FooterRowSlider extends React.Component{
     constructor(){
@@ -10,8 +12,9 @@ class FooterRowSlider extends React.Component{
             logo : [1,2,3,4,5],
             clientData:[]
         }
+        this.slider = this.slider.bind(this);
     }
-    componentDidMount(){
+    slider(){
         $('.award-items').slick({
             dots: true,
             slidesPerRow: 5,
@@ -37,6 +40,20 @@ class FooterRowSlider extends React.Component{
             ]
         });
     }
+    componentWillMount(){
+        requestService.getService('/block-slider-data/7')
+            .then((response) => {
+                this.setState({clientData: response.data}, ()=>{
+                    this.slider();
+                });
+            })
+            .catch((err) => {
+                console.log(err);
+            })
+    }
+    componentDidMount(){
+
+    }
 
     componentWillReceiveProps(nextProps){
         console.log(nextProps);
@@ -44,16 +61,16 @@ class FooterRowSlider extends React.Component{
 
     render(){
         return(
-            <div className="grid-container row-slider pb-50">
-                <h2 className="title-span text-center"><span>{ReactHtmlParser(this.props.clientData[0].award_title)}</span></h2>
-                {this.props.clientData.length>0? <div className="carousel award-items">
+            this.state.clientData.length>0? <div className="grid-container row-slider pb-50">
+                <h2 className="title-span text-center"><span>{ReactHtmlParser(this.state.clientData[0].logo_image_title)}</span></h2>
+                <div className="carousel award-items">
                         {
-                            this.props.clientData.map((image)=> {
-                                return <div className="logo-icon"><img src={apiUrl+decodeUri(image.award_image)} width="200" height="200" alt="destination"/></div>
+                            this.state.clientData.map((image)=> {
+                                return <div className="logo-icon"><img src={decodeUri(apiUrl+image.logo_image_image)} width="200" height="200" alt="destination"/></div>
                             })
                         }
-                    </div>: ''}
-            </div>
+                    </div>
+            </div>:''
         )
     }
 }

@@ -3,6 +3,12 @@ import React from 'react';
 import WOW from 'wowjs';
 import Parallax from 'parallax-js';
 import GridOverLap from '../component/GridOverlap.jsx';
+<<<<<<< HEAD
+import HorizontalScroll from '../component/HorizontalScroll.jsx';
+import TextContent from '../component/TextContent.jsx';
+=======
+import GridList from '../component/GridList.jsx';
+>>>>>>> be558440eb8405d65230eb8d158964fd4294ba79
 import layer1 from '../assets/img/layers/layer1.png';
 import layer2 from '../assets/img/layers/layer2.png';
 import layer3 from '../assets/img/layers/layer3.png';
@@ -89,7 +95,7 @@ class Home extends React.Component{
         Object.keys(this.state.HomeData).length >0 ?
             <div>
 
-           < section className="main-banner">
+           <section className="main-banner">
            <div className="grid-container">
            <div className="grid-x align-right align-middle grid-margin-x wow fadeInUp">
            <div className="medium-4 small-12 cell wow fadeInUp">
@@ -207,7 +213,7 @@ class Home extends React.Component{
                                 <a className="grid__item" href="#preview-7">
                                     <div className="box">
                                         <div className="box__shadow"></div>
-                                        <img className="box__img" src={apiUrl+layerImg} alt="Some image"/>
+                                        <img className="box__img" src={layerImg} alt="Some image"/>
                                     </div>
                                 </a>
                             </div>
@@ -216,7 +222,10 @@ class Home extends React.Component{
                 </div>
             </div>
         </section>
+        <HorizontalScroll/>
+        <TextContent/>
         <div className="clearfix top-100 bottom-100"></div>
+                <GridList/>
         {/*<FooterRowSlider/>*/}
         </div> :''
         )

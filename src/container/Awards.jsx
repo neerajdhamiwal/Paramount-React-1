@@ -5,17 +5,11 @@ import award1 from '../assets/img/awards-02.png';
 import award2 from '../assets/img/awards-03.png';
 import award3 from '../assets/img/awards-04.png';
 import award4 from '../assets/img/awards-05.png';
-import layer1 from '../assets/img/layers/layer1.png';
-import layer2 from '../assets/img/layers/layer2.png';
-import layer3 from '../assets/img/layers/layer3.png';
-import layer4 from '../assets/img/layers/layer4.png';
-import layer5 from '../assets/img/layers/layer5.png';
-import layer6 from '../assets/img/layers/layer6.png';
-import layer7 from '../assets/img/layers/layer7.png';
 import MainBanner from '../component/MainBanner.jsx'
+import AwardSlider from '../component/AwardsBottomSlider.jsx'
+import CertSlider from '../component/CertificationBottomSlider.jsx'
 import requestService from '../services/request.js';
 import {apiUrl, jsonMiddleware} from '../services/common.js';
-import $ from 'jquery';
 import ReactHtmlParser from 'react-html-parser';
 import WOW from 'wowjs';
 import Loader from 'react-loader-spinner'; // eslint-disable-line no-unused-vars
@@ -46,11 +40,13 @@ class About extends React.Component{
     componentWillMount(){
         requestService.getService(`/reinforcement-data/${this.props.location.search.substring(this.props.location.search.indexOf("=")+1)}`)
             .then((response) => {
-                let ids = ['primary_image_id','secondary_image_id'];
+                let ids = ['primary_image_id','secondary_image_id', 'award_slider_id', 'certificate_slider_id'];
                 let data = jsonMiddleware(response.data, ids)
                 this.setState({loading: false});
                 this.setState({awardsData: data},()=> {
-                  this.animation()
+                    if(this.props.location.search.substring(this.props.location.search.indexOf("=")+1) == 33){
+                        this.animation()
+                    }
                 });
             })
             .catch((err) => {
@@ -74,26 +70,28 @@ class About extends React.Component{
 
                 { this.state.awardsData.hasOwnProperty('primary_image_id')?
            <div>
-           <section className="bottom-100">
-             <div className="grid-container custom-grid custom-grid-right">
-               <div className="grid-x align-right align-middle grid-margin-x wow fadeInUp">
-                 <div className="medium-5 cell small-order-change">
-                   <h3 className="banner-info"><span>Our</span><br /> Awards</h3>
-                   <h6>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type.</h6>
-                 </div>
 
-               <div className="medium-6 cell">
-                   <div id="scene" data-friction-x="0.1" data-friction-y="0.1" data-scalar-x="25" data-scalar-y="15">
-                     <div data-depth="0.3"><img src={award1} alt="" /></div>
-                     <div data-depth="0.8"><img src={award2} alt="" /></div>
-                     <div data-depth="0.8"><img src={award3} alt="" /></div>
-                     <div data-depth="0.6"><img src={award4} alt="" /></div>
-                   </div>
-               </div>
-             </div>
-             </div>
-           </section>
-               {this.props.location.search.substring(this.props.location.search.indexOf("=")+1) == 33?<section className="our-certifications-box top-100 bottom-100">
+
+               {this.props.location.search.substring(this.props.location.search.indexOf("=")+1) == 33?
+                   <div>
+                       <section className="bottom-100">
+                           <div className="grid-container custom-grid custom-grid-right">
+                               <div className="grid-x align-right align-middle grid-margin-x wow fadeInUp">
+                                   <div className="medium-5 cell small-order-change">
+                                       <h3 className="banner-info"><span>{ReactHtmlParser(this.state.awardsData.primary_image_id[0][0].node_title)}</span><br/>
+                                           {ReactHtmlParser(this.state.awardsData.primary_image_id[0][0].node_subtitle_title)}</h3>                 </div>
+                                   <div className="medium-6 cell">
+                                       <div id="scene" data-friction-x="0.1" data-friction-y="0.1" data-scalar-x="25" data-scalar-y="15">
+                                           <div data-depth="0.3"><img src={award1} alt="" /></div>
+                                           <div data-depth="0.8"><img src={award2} alt="" /></div>
+                                           <div data-depth="0.8"><img src={award3} alt="" /></div>
+                                           <div data-depth="0.6"><img src={award4} alt="" /></div>
+                                       </div>
+                                   </div>
+                               </div>
+                           </div>
+                       </section>
+                       <section className="our-certifications-box top-100 bottom-100">
                        <div className="grid-container">
                            <div className="grid-x align-right align-middle grid-margin-x our-certifications-bg">
                                <div className="medium-2 cell small-order-change">
@@ -106,7 +104,9 @@ class About extends React.Component{
                                </div>
                            </div>
                        </div>
-                   </section>:<MainBanner node={this.state.awardsData.primary_image_id[0]}/>
+                       </section>
+                   </div>
+                   :<MainBanner node={this.state.awardsData.primary_image_id[0]}/>
                }
 
                 {this.state.awardsData['primary_image_id'][0].map((obj) => {
@@ -166,7 +166,8 @@ class About extends React.Component{
                     </section>
                 })
                 :''}
-
+                {this.state.awardsData.hasOwnProperty('award_slider_id')?this.state.awardsData['award_slider_id'][0][0].award_slider_id? <AwardSlider/>: '':''}
+                {this.state.awardsData.hasOwnProperty('certificate_slider_id')? this.state.awardsData['certificate_slider_id'][0][0].certificate_slider_id ? <CertSlider/>: '':''}
             </div>
         )
     }
