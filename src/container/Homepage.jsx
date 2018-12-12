@@ -4,7 +4,10 @@ import WOW from 'wowjs';
 import Parallax from 'parallax-js';
 import GridOverLap from '../component/GridOverlap.jsx';
 import HorizontalScroll from '../component/HorizontalScroll.jsx';
-import TextContent from '../component/TextContent.jsx';
+import CertSlider from '../component/CertificationBottomSlider.jsx';
+import AwardSlider from '../component/AwardsBottomSlider.jsx';
+import FooterRowSlider from '../component/FooterRowSlider.jsx';
+import PartnerSlider from '../component/PartnerSlider.jsx';
 import GridList from '../component/GridList.jsx';
 import layer1 from '../assets/img/layers/layer1.png';
 import layer2 from '../assets/img/layers/layer2.png';
@@ -51,7 +54,7 @@ class Home extends React.Component{
     componentWillMount(){
         requestService.getService('/homepage-data/50')
             .then((response) => {
-                let ids = ['node_flip_id','content_flip_id', 'content_slider_id', ];
+                let ids = ['node_flip_id','content_flip_id', 'content_slider_id', 'award_slider_id', 'certificate_slider_id', 'partner_slider_id', 'client_slider_id'];
                 this.setState({loading: false});
                 this.setState({HomeData: jsonMiddleware(response.data, ids)},()=> {
                     if(Object.keys(this.state.HomeData).length>0){
@@ -223,6 +226,10 @@ class Home extends React.Component{
         <div className="clearfix top-100 bottom-100"></div>
                 <GridList/>
         {/*<FooterRowSlider/>*/}
+                {this.state.HomeData.hasOwnProperty('award_slider_id')?this.state.HomeData['award_slider_id'][0][0].award_slider_id? <AwardSlider/>: '':''}
+                {this.state.HomeData.hasOwnProperty('certificate_slider_id')? this.state.HomeData['certificate_slider_id'][0][0].certificate_slider_id ? <CertSlider/>: '':''}
+                {this.state.HomeData.hasOwnProperty('partner_slider_id')? this.state.HomeData['partner_slider_id'][0][0].partner_slider_id ? <PartnerSlider/>: '':''}
+                {this.state.HomeData.hasOwnProperty('client_slider_id')? this.state.HomeData['client_slider_id'][0][0].client_slider_id ? <FooterRowSlider/>: '':''}
         </div> :''
         )
     }

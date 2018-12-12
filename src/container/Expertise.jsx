@@ -3,6 +3,9 @@ import React from 'react';
 import WOW from 'wowjs';
 import AccordionTab from '../component/AccordionTab.jsx';
 import MainBanner from '../component/MainBanner.jsx';
+import CertSlider from '../component/CertificationBottomSlider.jsx';
+import AwardSlider from '../component/AwardsBottomSlider.jsx';
+import PartnerSlider from '../component/PartnerSlider.jsx';
 import GridList from '../component/GridList.jsx';
 import FooterRowSlider from '../component/FooterRowSlider.jsx';
 import FooterHeading from '../component/FooterHeading.jsx';
@@ -28,7 +31,7 @@ class Expertise extends React.Component{
     componentWillMount(){
             requestService.getService(`/landing-page-data/${this.props.location.search.substring(this.props.location.search.indexOf("=")+1)}`)
                 .then((response) => {
-                let ids = ['slider_id','flipper_id','logo_id','sub_block_id','image_description_id','hd_id', 'client_slider_id'];
+                let ids = ['slider_id','flipper_id','logo_id','sub_block_id','image_description_id','hd_id', 'client_slider_id','award_slider_id','certificate_slider_id','partner_slider_id',];
                     nid = this.props.location.search.substring(this.props.location.search.indexOf("=")+1);
                     this.setState({loading: false});
                     this.setState({ExpertiseData: jsonMiddleware(response.data, ids)});
@@ -83,8 +86,12 @@ class Expertise extends React.Component{
                     <div className="top-100 bottom-100 clearfix"></div>
                 {this.state.ExpertiseData.hasOwnProperty('sub_block_id')? <FooterHeading subBlockData = {this.state.ExpertiseData['sub_block_id'][0]}/>:''}
                 <div className="top-100 bottom-100 clearfix"></div>
-            {this.state.ExpertiseData.hasOwnProperty('client_slider_id')? this.state.ExpertiseData['client_slider_id'][0][0].client_slider_id? <FooterRowSlider/>:'':''}
-            <GridList/>
+                    <GridList/>
+                    <div className="top-100 bottom-100 clearfix"></div>
+                    {this.state.ExpertiseData.hasOwnProperty('award_slider_id')?this.state.ExpertiseData['award_slider_id'][0][0].award_slider_id? <AwardSlider/>: '':''}
+                    {this.state.ExpertiseData.hasOwnProperty('certificate_slider_id')? this.state.ExpertiseData['certificate_slider_id'][0][0].certificate_slider_id ? <CertSlider/>: '':''}
+                    {this.state.ExpertiseData.hasOwnProperty('partner_slider_id')? this.state.ExpertiseData['partner_slider_id'][0][0].partner_slider_id ? <PartnerSlider/>: '':''}
+                    {this.state.ExpertiseData.hasOwnProperty('client_slider_id')? this.state.ExpertiseData['client_slider_id'][0][0].client_slider_id ? <FooterRowSlider/>: '':''}
                 </div>
 
         )
