@@ -52,9 +52,6 @@ class FooterRowSlider extends React.Component{
                 }
             ]
         });
-
-    }
-    componentDidMount() {
     }
 
     componentWillReceiveProps(nextProps){
@@ -76,4 +73,5 @@ class FooterRowSlider extends React.Component{
         )
     }
 }
+
 export default FooterRowSlider;

@@ -17,7 +17,7 @@ import $ from 'jquery';
 class Home extends React.Component{
     constructor(props) {
         super(props)
-        // this.animation = this.animation.bind(this);
+        this.animation = this.animation.bind(this);
     }
 
     animation(){
@@ -32,6 +32,11 @@ class Home extends React.Component{
         console.log(nextProp);
     }
     render(){
+        // setTimeout(500, () => {
+        //     if(this.props.nid== 38){
+        //         this.animation();
+        //     }
+        // })
         return(
             <section className="main-banner award-banner">
                 <div className="grid-container">
@@ -52,19 +57,17 @@ class Home extends React.Component{
                     </div>:''}
 
                         {this.props.nid== 38?<div className="medium-6 cell expertise-banner">
-                            <div id="scenethree" data-friction-x="0.1" data-friction-y="0.1" data-scalar-x="25" data-scalar-y="15">
-                              <div data-depth="0.3"><img src={award1} alt="" /></div>
-                              <div data-depth="0.8"><img src={award2} alt="" /></div>
-                              <div data-depth="0.8"><img src={award3} alt="" /></div>
-                              <div data-depth="0.6"><img src={award4} alt="" /></div>
-                            </div>
+                                <img src={ImgBannerTwo} alt="Banner"/>
+                                {/*<div id="scenethree" data-friction-x="0.1" data-friction-y="0.1" data-scalar-x="25" data-scalar-y="15">*/}
+                              {/*<div data-depth="0.3"><img src={award1} alt="" /></div>*/}
+                              {/*<div data-depth="0.8"><img src={award2} alt="" /></div>*/}
+                              {/*<div data-depth="0.8"><img src={award3} alt="" /></div>*/}
+                              {/*<div data-depth="0.6"><img src={award4} alt="" /></div>*/}
+                            {/*</div>*/}
                         </div>:''}
-
                     </div>
                 </div>
             </section>
-
-
         )
     }
 }

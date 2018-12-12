@@ -12,7 +12,7 @@ import FooterHeading from '../component/FooterHeading.jsx';
 import RightImgLContent from '../component/RightImgLContent.jsx';
 import LeftImgRContent from '../component/LeftImgRContent.jsx';
 import smallImg from '../assets/img/small-img.png';
-import {jsonMiddleware} from '../services/common';
+import {jsonMiddleware, apiUrl} from '../services/common';
 import requestService from '../services/request.js';
 import Loader from 'react-loader-spinner'; // eslint-disable-line no-unused-vars
 let nid = ''
@@ -25,7 +25,6 @@ class Expertise extends React.Component{
         this.state = {
             ExpertiseData: {},
             loading: true
-
         }
     }
     componentWillMount(){
@@ -63,9 +62,9 @@ class Expertise extends React.Component{
                 <div className="banner-img-link">
                     {this.state.ExpertiseData.hasOwnProperty('flipper_id')?<div className="grid-x grid-margin-x grid-margin-y img-shadow-hover hide-for-small-only">
                             {
-                                this.state.ExpertiseData['flipper_id'][0].map((flip) => {
+                                this.state.ExpertiseData['flipper_id'][0].map((flip, i) => {
                                     {/*return <div className="cell wow fadeInDown" data-wow-delay="0.5s"><a href="#"><img src={apiUrl+flip.image_flipper_image} alt=""/></a></div>*/}
-                                    return <div className="cell wow shrink fadeInDown" data-wow-delay="0.5s"><a href="#"><img src={smallImg} alt=""/></a></div>
+                                    return <div className="cell wow shrink fadeInDown banner-image-effect" data-wow-delay={`${i}s`}><a href="#"><img src={apiUrl+flip.image_flipper_image} alt=""/><span>{flip.image_flipper_title}</span></a></div>
                                 })
                             }
                         </div>:''}
