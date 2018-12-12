@@ -2,6 +2,7 @@ import React from 'react';
 import CaseStudylist from '../component/CaseStudylist.jsx';
 import FeaturedContent from '../component/FeaturedContent.jsx';
 import TagLinks from '../component/TagLinks.jsx';
+import GridList from '../component/GridList.jsx';
 import requestService from '../services/request.js';
 import Loader from 'react-loader-spinner'; // eslint-disable-line no-unused-vars
 
@@ -81,6 +82,7 @@ class CaseStudy extends React.Component{
       <TagLinks firstCaseStudy = {this.state.activeCaseStudy[0]} caseStudyList = {this.state.caseStudyList} getTermInfo={this.getTermInfo}/>
       <div className=" bottom-100 clearfix"></div>
         <CaseStudylist activeCaseStudyData = {this.state.activeCaseStudy}/>
+        <GridList/>
       </div>
     )
   }

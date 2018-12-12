@@ -1,7 +1,7 @@
 
 import React from 'react';
 import Placeholder2 from '../assets/img/placeholder2.png';
-import {apiUrl} from '../services/common.js';
+import {apiUrl, decodeUri} from '../services/common.js';
 import ReactHtmlParser from 'react-html-parser';
 import $ from 'jquery';
 
@@ -16,7 +16,7 @@ class LeftImgRContent extends React.Component{
                             <div className="large-7 cell no-padding wow slideInLeft">
                                 <div className="img-relative-title-ru">
                                     <h2 className="relative-title">{ReactHtmlParser(this.props.data.secondary_image_description_title)}</h2>
-                                    <img src={apiUrl+this.props.data.secondary_image_description_img} alt=""/>
+                                    <img src={decodeUri(apiUrl+this.props.data.secondary_image_description_img)} alt=""/>
                                 </div>
                             </div>
                             <div className="large-5 cell wow fadeInUp">
@@ -31,7 +31,7 @@ class LeftImgRContent extends React.Component{
                             <div className="large-7 cell no-padding wow slideInLeft">
                                 <div className="img-relative-title-ru">
                                     <h2 className="relative-title">{ReactHtmlParser(this.props.data.image_description_title)}</h2>
-                                    <img src={apiUrl+this.props.data.image_description_img} alt=""/>
+                                    <img src={decodeUri(apiUrl+this.props.data.image_description_img)} alt=""/>
                                 </div>
                             </div>
                             <div className="large-5 cell wow fadeInUp">

@@ -11,6 +11,15 @@ class FooterRowSlider extends React.Component{
             clientData:[]
         }
     }
+    componentWillMount(){
+        requestService.getService('/block-slider-data/6')
+            .then((response) => {
+                this.setState({clientData: response.data});
+            })
+            .catch((err) => {
+                console.log(err);
+            })
+    }
     componentDidMount(){
         $('.award-items').slick({
             dots: true,
@@ -45,11 +54,11 @@ class FooterRowSlider extends React.Component{
     render(){
         return(
             <div className="grid-container row-slider pb-50">
-                <h2 className="title-span text-center"><span>{ReactHtmlParser(this.props.clientData[0].award_title)}</span></h2>
-                {this.props.clientData.length>0? <div className="carousel award-items">
+                <h2 className="title-span text-center"><span>{ReactHtmlParser(this.props.clientData[0].logo_image_title)}</span></h2>
+                {this.state.clientData.length>0? <div className="carousel award-items">
                         {
-                            this.props.clientData.map((image)=> {
-                                return <div className="logo-icon"><img src={apiUrl+decodeUri(image.award_image)} width="200" height="200" alt="destination"/></div>
+                            this.state.clientData.map((image)=> {
+                                return <div className="logo-icon"><img src={decodeUri(apiUrl+image.logo_image_image)} width="200" height="200" alt="destination"/></div>
                             })
                         }
                     </div>: ''}
