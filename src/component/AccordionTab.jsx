@@ -21,6 +21,10 @@ class AccordionaTab extends React.Component{
 
             });
         });
+        $('#service-tabs').on('click', 'li', function() {
+            $('#service-tabs li.activeTab').removeClass('activeTab');
+            $(this).addClass('activeTab');
+        });
     }
 
     render(){
@@ -31,11 +35,11 @@ class AccordionaTab extends React.Component{
                         <div className="medium-2 cell  wow fadeInUp">
                             <ul className="accordion" id="service-tabs">
                                 {this.props.sliderData.map((service, index) => {
-                                        return <li className="tabs-title"><a data-page = {`panel${index}`} id = {index}>{ReactHtmlParser(service.image_slider_title)}</a></li>
+                                        return <li className='tabs-title'><a data-page = {`panel${index}`} id = {index}>{ReactHtmlParser(service.image_slider_title)}</a></li>
                                 })}
                             </ul>
                         </div>
-                        <div className="medium-10 cell  wow fadeInUp"id="pages">
+                        <div className="medium-10 cell  wow fadeInUp" id="pages">
                             <div className="tabs-content">
                                 {this.props.sliderData.map((service, index) => {
                                         return <div className={index === 0 ? "page" : "page hide"}

@@ -90,10 +90,11 @@ class ExpertiseArticle extends React.Component{
                  {
                      this.state.ExpertiseGovData.hasOwnProperty('secondary_img_des_id')? this.state.ExpertiseGovData['img_des_id'][0].map((obj, i) => {
                              if ((i + 1) % 2 === 0) {
-                                 return <LeftImgRContent data={obj} secondary = "true"/>
+                                 return <RightImgLContent data={obj} secondary = "true"/>
                              }
                              else {
-                                 return <RightImgLContent data={obj} secondary = "true"/>
+                                 return <LeftImgRContent data={obj} secondary = "true"/>
+
                              }
                          }): ''
                  }
