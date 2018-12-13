@@ -44,7 +44,7 @@ class AccordionaTab extends React.Component{
                                 {this.props.sliderData.map((service, index) => {
                                         return <div className={index === 0 ? "page" : "page hide"}
                                                     id={'panel' + index} data-page={'panel' + index}>
-                                            <div className="grid-x grid-padding-x">
+                                            <div className="grid-x grid-padding-x tab-accordion-content">
                                                 <div className="medium-5 cell">
                                                     <div className="pr-100">
                                                     <p className="ptb-40">{ReactHtmlParser(service.image_slider_description)}</p>

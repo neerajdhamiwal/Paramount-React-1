@@ -32,7 +32,9 @@ a {
       padding-left: 0; } }
 
 p {
-  font-size: 1.125rem; }
+  font-size: 1.1rem; }
+  p a {
+    color: red; }
 
 .clear {
   clear: both; }
@@ -219,6 +221,9 @@ header .header-inner {
 /*Tab Accordion style starts here*/
 .tab-accordion {
   padding-bottom: 75px; }
+  .tab-accordion .tab-accordion-content p {
+    font-size: .95rem;
+    margin-right: 10px; }
   .tab-accordion .tabs-title {
     float: none; }
     .tab-accordion .tabs-title a {

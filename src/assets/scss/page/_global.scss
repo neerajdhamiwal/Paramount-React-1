@@ -46,7 +46,10 @@ a {
 }
 
 p{
-	font-size: 1.125rem;
+	font-size: 1.1rem;
+	a{
+		color: red;
+	}
 }
 
 
@@ -76,10 +79,10 @@ p{
 	width: 1px;
 	height: 1px;
   }
-  
-  
-  
-  
+
+
+
+
   .horizontal-scroll-wrapper {
 	position: absolute;
 	display: block;
@@ -106,7 +109,7 @@ p{
 	-webkit-transform-origin: right top;
 			transform-origin: right top;
   }
-  
+
   .squares {
 	padding: 100% 0 0 0;
   }
@@ -117,20 +120,20 @@ p{
 	  position: relative;
 	  top: -906px;
   }
-  
+
   .one h4, .two h4{
 	  font-weight: 300;
 	  color: red;
 	  margin-bottom: 60px;
   }
-  
+
   .one p, .two p{
 	  font-size: 20px;
   }
   .one span,.two span{
 		font-size: 14px;
   }
-  
+
   .two{
 			margin-bottom: -500px !important;
   }
@@ -138,4 +141,3 @@ p{
 	  position: relative;
 	  min-height: 500px;
   }
- 
