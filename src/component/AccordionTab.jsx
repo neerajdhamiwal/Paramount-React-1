@@ -35,7 +35,7 @@ class AccordionaTab extends React.Component{
                         <div className="medium-2 cell  wow fadeInUp">
                             <ul className="accordion" id="service-tabs">
                                 {this.props.sliderData.map((service, index) => {
-                                        return <li className='tabs-title'><a data-page = {`panel${index}`} id = {index}>{ReactHtmlParser(service.image_slider_title)}</a></li>
+                                        return <li className={`${index==0 ?'tabs-title activeTab':'tabs-title'}`}><a data-page = {`panel${index}`} id = {index}>{ReactHtmlParser(service.image_slider_title)}</a></li>
                                 })}
                             </ul>
                         </div>

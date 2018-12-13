@@ -1,10 +1,17 @@
 
 import React from 'react';
 import Logo from '../assets/img/logo.png';
+import $ from 'jquery';
 
 class Header extends React.Component{
     constructor(props){
         super(props)
+    }
+    componentDidMount(){
+        // $('#menu-tabs').on('click', 'li', function() {
+        //     $('#menu-tabs li.is-active').removeClass('is-active');
+        //     $(this).addClass('is-active');
+        // });
     }
     render(){
         return(
@@ -15,7 +22,7 @@ class Header extends React.Component{
                         <div className="medium-8  small-6 cell text-right">
                             <button className="menu-icon" type="button" data-toggle="offCanvas"></button>
                             <nav className="main-menu show-for-medium">
-                                <ul className="menu align-right dropdown" data-dropdown-menu>
+                                <ul className="menu align-right dropdown" data-dropdown-menu id="menu-tabs">
                                     <li><a href="/expertise?nid=35">About Us</a>
                                         <ul className="menu dropdown-menu-an">
                                             {/*<li><a href="/team?nid=42">Team</a></li>*/}
