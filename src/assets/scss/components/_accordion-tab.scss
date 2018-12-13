@@ -9,6 +9,12 @@
 /*Tab Accordion style starts here*/
 .tab-accordion {
     padding-bottom: 75px;
+    .tab-accordion-content{
+      p{
+        font-size: .95rem;
+        margin-right: 10px;
+      }
+    }
 	.tabs-title {
 		float: none;
 		a {

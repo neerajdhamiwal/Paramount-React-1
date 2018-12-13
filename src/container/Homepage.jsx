@@ -152,15 +152,15 @@ class Home extends React.Component{
                                    {this.state.HomeData['content_slider_id'][0].map((obj, index) => {
                                        return <div className={index === 0 ? "page" : "page hide"}
                                                         id={'panel' + index} data-page={'panel' + index}>
-                                           <div className="grid-x grid-padding-x">
-                                               <div className="medium-5 cell">
-                                                   <div className="pr-100">
+                                           <div className="grid-x grid-padding-x tab-accordion-content">
+                                               <div className="medium-6 cell">
+                                                   <div>
                                                        <h3>{ReactHtmlParser(obj.content_slider_description)}</h3>
                                                        <p className="ptb-40">{ReactHtmlParser(obj.content_slider_body)}</p>
                                                    </div>
                                                    {obj.content_slider_cta_title !==''? <button className="button">{ReactHtmlParser(obj.content_slider_cta_title)}</button>:''}
                                                </div>
-                                               <div className="medium-7 cell no-padding  wow slideInRight">
+                                               <div className="medium-6 cell no-padding  wow slideInRight">
                                                    <div className="img-relative-title-ld">
                                                        <h2 className="relative-title">{ReactHtmlParser(obj.right_image_block_title)}</h2>
                                                        <img src={decodeUri(apiUrl+obj.right_image_block_img)} alt=""/>
