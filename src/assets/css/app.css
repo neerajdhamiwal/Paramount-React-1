@@ -225,12 +225,15 @@ header .header-inner {
       font-family: "Montserrat", sans-serif;
       font-size: 1.125rem;
       font-weight: 700;
-      color: #5b5c5e; }
+      color: #5b5c5e;
+      padding: .25rem 1.5rem 2rem; }
       .tab-accordion .tabs-title a[aria-selected='true'] {
         background: #fff;
-        color: #ff0000; }
-      .tab-accordion .tabs-title a:focus {
-        background: #fff; }
+        color: #ff0000 !important; }
+      .tab-accordion .tabs-title a:hover {
+        color: #ff0000 !important; }
+  .tab-accordion .activeTab a {
+    color: #ff0000 !important; }
   .tab-accordion .tabs-content,
   .tab-accordion .tabs {
     border: 0; }
@@ -280,7 +283,6 @@ header .header-inner {
       font-size: 1.125rem;
       -webkit-transition: all 0.2s linear 0.1s; }
   .block-overlap-custom .cell h3 {
-    position: absolute;
     bottom: 15px;
     width: 100%;
     text-align: center;
@@ -292,6 +294,9 @@ header .header-inner {
 .block-overlap-custom .overlap-grid-hover-effect {
   cursor: pointer;
   overflow: hidden; }
+  .block-overlap-custom .overlap-grid-hover-effect img {
+    height: 295px;
+    width: 100%; }
   .block-overlap-custom .overlap-grid-hover-effect:hover .overlap-hover-box {
     opacity: 1;
     -webkit-transform: scale(1);
@@ -307,7 +312,7 @@ header .header-inner {
     left: 0;
     top: 0;
     right: 0;
-    padding-top: 65px;
+    padding: 65px  15px 0;
     bottom: 0;
     opacity: 0;
     background: red;
@@ -319,7 +324,6 @@ header .header-inner {
       bottom: auto;
       top: 50px; }
     .block-overlap-custom .overlap-grid-hover-effect .overlap-hover-box p {
-      position: absolute;
       bottom: 60px;
       right: 14px;
       left: 15px;
@@ -371,7 +375,7 @@ header .header-inner {
   .img-relative-title-ru h2 {
     background: red;
     color: #fff;
-    font-size: 24px;
+    font-size: 20px;
     font-weight: 400;
     padding: 5px 15px;
     border-radius: 4px;
@@ -379,10 +383,10 @@ header .header-inner {
     @media screen and (min-width: 64em) {
       .img-relative-title-ru h2 {
         position: absolute;
-        top: -75px;
+        top: -110px;
         background: red;
         color: #fff;
-        font-size: 24px;
+        font-size: 22px;
         font-weight: 400;
         width: 285px;
         right: -60px;
@@ -452,6 +456,9 @@ header .header-inner {
       color: #585858;
       line-height: 1.4;
       font-weight: 400; }
+
+.grid-latest-reads h4 {
+  margin-left: 22px; }
 
 .grid-list .latest-read h2 {
   font-size: 1.500rem;
@@ -601,6 +608,10 @@ header .header-inner {
   width: 160px;
   height: 90px; }
 
+@media screen and (max-width: 39.9375em) {
+  footer.bg-color-grey {
+    background: #fff; } }
+
 .contact-form {
   background: #fff;
   padding: 40px 40px;
@@ -610,6 +621,13 @@ header .header-inner {
   position: relative;
   top: 60px;
   z-index: 1; }
+  @media screen and (max-width: 39.9375em) {
+    .contact-form {
+      padding: 40px 15px; } }
+  @media screen and (max-width: 39.9375em) {
+    .contact-form {
+      top: 0px;
+      box-shadow: none; } }
   .contact-form [type='text'],
   .contact-form [type='email'],
   .contact-form textarea {
@@ -642,6 +660,11 @@ header .header-inner {
   .contact-form h5 {
     margin-bottom: 30px; }
 
+footer .footer-icon {
+  float: left;
+  margin-right: 10px;
+  color: #fff;
+  font-size: 22px; }
 footer h5 {
   font-size: 1.125rem;
   color: #303347;
@@ -649,10 +672,23 @@ footer h5 {
 footer.footer-bottom {
   padding-top: 100px;
   padding-bottom: 100px; }
+  @media screen and (max-width: 39.9375em) {
+    footer.footer-bottom {
+      padding-top: 35px; } }
   footer.footer-bottom h5 {
     color: #fff;
     margin-bottom: 60px; }
+    @media screen and (max-width: 39.9375em) {
+      footer.footer-bottom h5 {
+        margin-bottom: 20px; } }
 
+@media screen and (max-width: 39.9375em) {
+  .footer-info {
+    margin-right: -15px;
+    margin-left: -15px;
+    padding: 15px;
+    background: #f6f5f5;
+    border-top: 10px  solid #ececea; } }
 .footer-info ul {
   font-size: 14px;
   font-weight: 700;
@@ -693,6 +729,8 @@ footer.footer-bottom {
     cursor: pointer; }
     .row-slider .slick-dots li.slick-active {
       background: #ff0101; }
+.row-slider .slick-slider {
+  text-align: center; }
 
 .banner-with-content {
   background: url(..//img/banner-with-content.jpeg) no-repeat center;
@@ -886,6 +924,37 @@ footer.footer-bottom {
   .no-padding {
     padding: 0 !important; } }
 
+@media screen and (min-width: 64em) {
+  .no-margin-t {
+    margin-top: 0 !important; } }
+
+@media screen and (min-width: 64em) {
+  .no-margin-b {
+    margin: 0 !important; } }
+
+@media screen and (max-width: 39.9375em) {
+  .mtb-25-mobile {
+    margin-top: 25px;
+    margin-bottom: 25px; } }
+
+@media screen and (max-width: 39.9375em) {
+  .ptb-50-mobile {
+    padding-top: 50px;
+    padding-bottom: 50px; } }
+
+@media screen and (max-width: 39.9375em) {
+  .mtb-50-mobile {
+    margin-top: 50px !important;
+    margin-bottom: 50px !important; } }
+
+@media screen and (max-width: 39.9375em) {
+  .mt-50-mobile {
+    margin-top: 50px !important; } }
+
+@media screen and (max-width: 39.9375em) {
+  .mb-50-mobile {
+    margin-bottom: 50px !important; } }
+
 /*Title style*/
 .title-one {
   font-size: 1.500rem;
@@ -929,6 +998,29 @@ footer.footer-bottom {
   padding-top: 40px;
   padding-bottom: 40px; }
 
+.mtb-15 {
+  margin-top: 15px;
+  margin-bottom: 15px; }
+
+@media screen and (max-width: 39.9375em) {
+  .lm-row-none {
+    margin-left: 0px !important; } }
+
+@media screen and (max-width: 39.9375em) {
+  .rm-row-none {
+    margin-right: 0px !important; } }
+
+@media screen and (max-width: 39.9375em) {
+  .lp-row-none {
+    padding-left: 0px !important; } }
+
+@media screen and (max-width: 39.9375em) {
+  .rp-row-none {
+    padding-right: 0px !important; } }
+
+.image-shadow {
+  box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.2); }
+
 .button {
   font-family: "Montserrat", sans-serif;
   border-radius: 30px;
@@ -938,8 +1030,5 @@ footer.footer-bottom {
   .button.btn-full {
     width: 100%;
     border-radius: 3px; }
-  .activeTab a{
-    color:#d90000 !important;
-  }
 
 /*# sourceMappingURL=app.css.map */

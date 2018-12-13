@@ -48,7 +48,7 @@ class Footer extends React.Component{
              <footer className="footer-top bg-color-grey">
               <div className="grid-container">
                 <div className="grid-x footer-inner align-middle align-center ">
-                  <div className="medium-4 cell">
+                  <div className="medium-4 cell small-order-change">
                     <div className="footer-info">
                         {this.state.footerData.length>0 ?ReactHtmlParser(this.state.footerData[0].block_body): ''}
 
