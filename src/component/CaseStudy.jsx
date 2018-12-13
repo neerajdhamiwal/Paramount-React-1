@@ -55,9 +55,9 @@ class CaseStudy extends React.Component{
                 response.data.forEach((obj,i)=> {
                     if(obj.field_featured)
                     {
+                        this.setState({loading: false});
                         this.setState({featuredActive: obj});
                         response.data.splice(i, 1);
-                        this.setState({loading: false});
                         this.setState({activeCaseStudy: response.data});
                     }
                 })
@@ -66,6 +66,7 @@ class CaseStudy extends React.Component{
                 console.log(err);
             })
     }
+
     componentDidMount(){
         //Foundation.addToJquery($);
         $(document).foundation();
