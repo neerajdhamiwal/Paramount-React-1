@@ -17,7 +17,7 @@ import layer5 from '../assets/img/layers/layer5.png';
 import layer6 from '../assets/img/layers/layer6.png';
 import layer7 from '../assets/img/layers/layer7.png';
 import arrowImg from '../assets/img/logo/arrow.jpg';
-import layerImg from '../assets/img/layertop.png';
+import layerImg from '../assets/img/paramount-edge.png';
 import {jsonMiddleware, apiUrl, decodeUri} from '../services/common';
 import ReactHtmlParser from 'react-html-parser';
 import Loader from 'react-loader-spinner'; // eslint-disable-line no-unused-vars
@@ -103,9 +103,10 @@ class Home extends React.Component{
            <div className="medium-4 small-12 cell wow fadeInUp">
            <h3 className="banner-info"><span>{this.state.HomeData[Object.keys(this.state.HomeData)[0]][0][0].node_title}</span><br/>
                {ReactHtmlParser(this.state.HomeData[Object.keys(this.state.HomeData)[0]][0][0].node_subtitle_title)}<br/>
+               {ReactHtmlParser(this.state.HomeData[Object.keys(this.state.HomeData)[0]][0][0].node_description)}
+              {ReactHtmlParser(this.state.HomeData[Object.keys(this.state.HomeData)[0]][0][0].node_body)}
            </h3>
-               <h6>{ReactHtmlParser(this.state.HomeData[Object.keys(this.state.HomeData)[0]][0][0].node_description)}</h6>
-               <p>{ReactHtmlParser(this.state.HomeData[Object.keys(this.state.HomeData)[0]][0][0].node_body)}</p>
+
                {this.state.HomeData[Object.keys(this.state.HomeData)[0]][0][0].node_cta_button_title !==''? <button className="button">{this.state.HomeData[Object.keys(this.state.HomeData)[0]][0][0].node_cta_button_title}</button>:''}
            <div className="banner-img-link paroller-example">
            <div className="grid-x grid-margin-x grid-margin-y img-shadow-hover hide-for-small-only">

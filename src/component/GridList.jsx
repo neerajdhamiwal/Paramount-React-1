@@ -17,20 +17,33 @@ class GridList extends React.Component{
     componentWillMount(){
         requestService.getService('/latest-reads')
             .then((response) => {
-                this.setState({latestReadData: response.data});
+                this.setState({latestReadData: response.data},()=>{
+                  if ($(window).width() < 767) {
+                    $('#sliderformobile').addClass('mobile-carousel');
+                   } else {
+                      $('#sliderformobile').removeClass('mobile-carousel');
+                  }
+
+                  $('.mobile-carousel').slick({
+                    dots: false,
+                    infinite: true,
+                    speed: 300,
+                    slidesToShow: 1,
+                    centerMode: true,
+                    //variableWidth: true
+                  });
+                });
             })
             .catch((err) => {
                 console.log(err);
             })
     }
-    componentDidMount(){
-
-    }
+    componentDidMount(){}
     render(){
         return(
-          this.state.latestReadData.length>0?<div className="grid-container">
+          this.state.latestReadData.length>0?<div className="grid-container grid-latest-reads">
               <h4>{ReactHtmlParser(this.state.latestReadData[0].block_title)}</h4>
-            <div className="grid-x align-center block-latest-reads">
+            <div className="grid-x align-center block-latest-reads" id="sliderformobile">
                 {this.state.latestReadData.map((obj) => {
                     return <div className="medium-4 cell img-block">
                         <div className="img ">
