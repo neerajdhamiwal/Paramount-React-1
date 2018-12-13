@@ -17,6 +17,7 @@
   "dependencies": {
     "animate.css": "^3.7.0",
     "axios": "^0.18.0",
+    "babel-polyfill": "^6.26.0",
     "foundation": "^4.2.1-1",
     "foundation-sites": "^6.5.1",
     "google-map-react": "^1.1.1",
