@@ -47,7 +47,6 @@ class CaseStudylist extends React.Component {
                         </div>
                     </section>
                 }
-
             })
         }
         </div>

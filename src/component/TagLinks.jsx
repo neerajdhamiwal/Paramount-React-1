@@ -4,6 +4,8 @@ import placeholderImg from '../assets/img/placeholder.png';
 import Placeholder2 from '../assets/img/placeholder2.png';
 import requestService from '../services/request.js';
 import {apiUrl} from '../services/common.js';
+import ReactHtmlParser from 'react-html-parser';
+
 import $ from 'jquery';
 class TagLinks extends React.Component{
 
@@ -44,12 +46,12 @@ constructor(props){
                     <div className="grid-x grid-padding-x">
                       <div className="medium-5 cell">
                         <h3></h3>
-                        <p className="ptb-40">{this.state.activeObject['field_body']}</p>
-                        <a href = {"/casestudy/article?nid="+this.state.activeObject['id']} className="button">Read more</a>
+                        <p className="ptb-40">{ReactHtmlParser(this.state.activeObject['field_body'])}</p>
+                          {this.props.locate === 'resource'?'':<a href = {"/casestudy/article?nid="+this.state.activeObject['id']} className="button">Read more</a>}
                       </div>
                       <div className="medium-7 cell no-padding">
                         <div className="img-relative-title-ld">
-                          <h2 className="relative-title">{this.state.activeObject['title']}</h2>
+                          <h2 className="relative-title">{ReactHtmlParser(this.state.activeObject['title'])}</h2>
                           <img src={apiUrl+this.state.activeObject['image']} alt="" />
                         </div>
                       </div>

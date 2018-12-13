@@ -44,7 +44,7 @@ class FeaturedContent extends React.Component{
                       <div className="grid-x align-right align-middle grid-margin-x">
                           <div className="medium-5 cell small-order-change">
                               <p>{ReactHtmlParser(this.state.activeCaseStudy.field_body)}</p>
-                              <a href = {"/casestudy/article?nid="+this.state.activeCaseStudy.id} className="button">Read more</a>
+                              {this.props.locate === 'resource'?'':<a href = {"/casestudy/article?nid="+this.state.activeCaseStudy.id} className="button">Read more</a>}
                           </div>
                           <div className="medium-5 cell"></div>
                       </div>

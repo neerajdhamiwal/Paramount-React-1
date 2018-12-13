@@ -24,18 +24,19 @@ class CaseStudy extends React.Component{
       }
       this.getTermInfo = this.getTermInfo.bind(this);
   }
+
   componentWillMount(){
       let CaseId = ''
-      if(this.props.location.search){
+
+      if(this.props.location && this.props.location.search){
           let uri = this.props.location.search.replace('%20','')
           CaseId =  uri.substring(uri.indexOf("=")+1)
       }
-      requestService.getService('/case-study-listing')
+      requestService.getService('/blogs-listing-data')
         .then((response) => {
         this.setState({caseStudyList: response.data})
             nid = response.data[0].id.split(',');
         if(CaseId!==''){
-
             this.getTermInfo(parseInt(CaseId));
         }
         else{
@@ -46,8 +47,9 @@ class CaseStudy extends React.Component{
             console.log(err);
           })
   }
+
   getTermInfo(id){
-    let uri = `/taxonomy/term-info/${id}`;
+    let uri = `/taxonomy/term-info-blogs/${id}`;
       requestService.getService(uri.replace(' ',''))
           .then((response) => {
               response.data.forEach((obj,i)=> {
@@ -68,21 +70,23 @@ class CaseStudy extends React.Component{
     //Foundation.addToJquery($);
     $(document).foundation();
   }
+
   render() {
     return(
-        this.state.loading? <center >
+        this.state.loading? <center>
                 <Loader
                     type="ThreeDots"
                     color="#fd302a"
                     height="100"
                     width="100"
                 />
-            </center> : <div>
+            </center> :
+            <div>
       <FeaturedContent activeCaseStudy={this.state.featuredActive}/>
       <TagLinks firstCaseStudy = {this.state.activeCaseStudy[0]} caseStudyList = {this.state.caseStudyList} getTermInfo={this.getTermInfo}/>
       <div className=" bottom-100 clearfix"></div>
-        <CaseStudylist activeCaseStudyData = {this.state.activeCaseStudy}/>
-        <GridList/>
+        {this.props.locate === 'resource'?'':<div><CaseStudylist activeCaseStudyData = {this.state.activeCaseStudy}/>
+                <GridList/></div>}
       </div>
     )
   }

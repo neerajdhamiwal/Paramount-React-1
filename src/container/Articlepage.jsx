@@ -7,7 +7,6 @@ import ReactHtmlParser from 'react-html-parser';
 import Loader from 'react-loader-spinner'; // eslint-disable-line no-unused-vars
 import GridList from '../component/GridList.jsx';
 
-
 const BannerStyle =(url)=> {
     let combinedurl = apiUrl+url
     return {
@@ -22,12 +21,13 @@ class ArticlePage extends React.Component{
             caseStudy: [],
             caseList: {},
             loading: true
-
         }
     }
+
     componentWillMount(){
         let caseStudy = []
-        requestService.getService(`/case-study-contents/${this.props.location.search.substring(this.props.location.search.indexOf("=")+1)}`)
+        console.log(this.props.location.search);
+        requestService.getService(`/blogs-contents/${this.props.location.search.substring(this.props.location.search.indexOf("=")+1)}`)
             .then((response) => {
             caseStudy =  response.data[0];
                 this.setState({loading: false})
@@ -37,7 +37,7 @@ class ArticlePage extends React.Component{
                 console.log(err);
             })
 
-        requestService.getService('/case-study-listing')
+        requestService.getService('/blogs-listing-data')
             .then((response) => {
                 this.setState({caseList: response.data[0]});
             })
