@@ -45,13 +45,13 @@ class AccordionaTab extends React.Component{
                                         return <div className={index === 0 ? "page" : "page hide"}
                                                     id={'panel' + index} data-page={'panel' + index}>
                                             <div className="grid-x grid-padding-x">
-                                                <div className="medium-5 cell">
-                                                    <div className="pr-100">
+                                                <div className="medium-6 cell">
+                                                    <div>
                                                     <p className="ptb-40">{ReactHtmlParser(service.image_slider_description)}</p>
                                                     {service.image_slider_cta_button_title !==''? <button class="button white-btn">{service.image_slider_cta_button_title}</button>:''}
                                                 </div>
                                                 </div>
-                                                <div className="medium-7 cell no-padding wow slideInRight">
+                                                <div className="medium-6 cell no-padding wow slideInRight">
                                                     <ImgSlider imgArray = {service.image_slider_image.split(',')} id={index}/>
                                                 </div>
                                             </div>
