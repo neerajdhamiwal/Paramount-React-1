@@ -143,7 +143,7 @@ class Home extends React.Component{
                            <div className="medium-2 cell wow fadeInUp">
                                <ul className="accordion" data-responsive-accordion-tabs="accordion medium-tabs" id="service-tabs">
                                    {this.state.HomeData['content_slider_id'][0].map((obj, index) => {
-                                   return <li className="tabs-title"><a data-page = {`panel${index}`} id = {index}>{ReactHtmlParser(obj.content_slider_title)}</a></li>
+                                   return <li className={`${index==0 ?'tabs-title activeTab':'tabs-title'}`}><a data-page = {`panel${index}`} id = {index}>{ReactHtmlParser(obj.content_slider_title)}</a></li>
                                    })}
                                </ul>
                            </div>

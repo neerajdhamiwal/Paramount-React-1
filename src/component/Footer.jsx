@@ -2,6 +2,8 @@
 import React from 'react';
 import requestService from '../services/request.js';
 import ReactHtmlParser from 'react-html-parser';
+import {TwitterTweetEmbed, TwitterTimelineEmbed} from 'react-twitter-embed';
+
 
 
 class Footer extends React.Component{
@@ -37,6 +39,9 @@ class Footer extends React.Component{
         this.setState(obj);
     }
 
+    onLoadTweet(){
+        console.log('tweet load');
+    }
     render(){
         return(
           <div>
@@ -81,9 +86,16 @@ class Footer extends React.Component{
                     <div className="social-inner">
                       <h5>Latest happenings</h5>
                       <div className="grid-x grid-margin-x">
-                        <div className="medium-4 cell"><img src={require('../assets/img/socialcards.png')} alt="Social Card" /></div>
-                        <div className="medium-4 cell"><img src={require('../assets/img/socialcards.png')} alt="Social Card" /></div>
-                        <div className="medium-4 cell"><img src={require('../assets/img/socialcards.png')} alt="Social Card" /></div>
+                          <TwitterTimelineEmbed
+                              sourceType="profile"
+                              screenName="opensenselabs"
+                              options={{height: 400}}
+                              noScrollbar="true"
+                          />
+                          {/*<TwitterTweetEmbed   tweetId={'1072590849014419456'}/>*/}
+                        {/*<TwitterTweetEmbed   tweetId={'1072516104419864576'}/>*/}
+                        {/*<div className="medium-4 cell"><img src={require('../assets/img/socialcards.png')} alt="Social Card" /></div>*/}
+                        {/*<div className="medium-4 cell"><img src={require('../assets/img/socialcards.png')} alt="Social Card" /></div>*/}
                       </div>
                     </div>
                   </div>
