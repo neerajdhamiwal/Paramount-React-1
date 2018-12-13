@@ -88,7 +88,7 @@ class Footer extends React.Component{
                       <div className="grid-x grid-margin-x">
                           <TwitterTimelineEmbed
                               sourceType="profile"
-                              screenName="opensenselabs"
+                              screenName="paramount"
                               options={{height: 400}}
                               noScrollbar="true"
                           />
