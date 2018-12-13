@@ -4,17 +4,17 @@
 	h2 {
     background: red;
     color: #fff;
-    font-size: 24px;
+    font-size: 20px;
     font-weight: 400;
     padding: 5px 15px;
     border-radius: 4px;
     width: 285px;
     @include mq(large-screen) {
       position: absolute;
-      top: -75px;
+      top: -110px;
       background: red;
       color: #fff;
-      font-size: 24px;
+      font-size: 22px;
       font-weight: 400;
       width: 285px;
       right: -60px;
