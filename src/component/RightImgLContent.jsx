@@ -22,8 +22,8 @@ class RightImgLContent extends React.Component{
                                 <a class="grid__item">
                                     <div class="box">
                                         <div class="box__shadow"></div>
-                                        <h2>{ReactHtmlParser(this.props.data.secondary_image_description_title)}</h2>
                                         <img class="box__img" src={decodeUri(apiUrl+this.props.data.secondary_image_description_img)} alt="Some image"/>
+                                        <h2>{ReactHtmlParser(this.props.data.secondary_image_description_title)}</h2>
                                     </div>
                                 </a>
                             </div>
@@ -32,7 +32,7 @@ class RightImgLContent extends React.Component{
                 </div>
             </div>: <div class="grid-container custom-grid custom-grid-right">
                     <div class="grid-x grid-padding-x height-750 align-middle">
-                        <div class="medium-4 cell">
+                        <div class="medium-5 cell">
                             {/*<h2 class="relative-title">Our Services</h2>*/}
                             <h3>{ReactHtmlParser(this.props.data.image_description_subheading)}</h3>
                             <p>{ReactHtmlParser(this.props.data.image_description_body)}</p>
@@ -43,8 +43,8 @@ class RightImgLContent extends React.Component{
                                     <a class="grid__item">
                                         <div class="box">
                                             <div class="box__shadow"></div>
-                                            <h2>{ReactHtmlParser(this.props.data.image_description_title)}</h2>
                                             <img class="box__img" src={decodeUri(apiUrl+this.props.data.image_description_img)} alt="Some image"/>
+                                            <h2>{ReactHtmlParser(this.props.data.image_description_title)}</h2>
                                         </div>
                                     </a>
                                 </div>

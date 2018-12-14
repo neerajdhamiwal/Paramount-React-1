@@ -1,4 +1,8 @@
 /*Header Styling Starts Here*/
+.close-button{
+	z-index: 9999;
+}
+
 header {
 	.header-inner {
 		min-height: 70px;
@@ -21,6 +25,8 @@ header {
 			}
 		}
 	}
+
+
 
 	.dropdown.menu.align-right{
 	 .is-dropdown-submenu.first-sub{
