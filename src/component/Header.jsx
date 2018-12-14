@@ -54,9 +54,9 @@ class Header extends React.Component{
                                     <li><a href="/resource">Resources</a>
                                         <ul className="menu dropdown-menu-an">
                                             <li><a href="/blog">Blogs</a></li>
-                                            <li><a href="#">Case Studies</a></li>
+                                            <li><a href="/caseStudy">Case Studies</a></li>
                                             <li><a href="#">White Papers</a></li>
-                                            <li><a href="#">Infographics</a></li>
+                                            <li><a href="/infographic">Infographics</a></li>
                                         </ul>
                                     </li>
                                     <li><a href="/team?nid=51">Contact Us</a></li>

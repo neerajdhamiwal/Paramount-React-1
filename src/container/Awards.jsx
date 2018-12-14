@@ -73,8 +73,6 @@ class About extends React.Component{
 
                 { this.state.awardsData.hasOwnProperty('primary_image_id')?
            <div>
-
-
                {this.props.location.search.substring(this.props.location.search.indexOf("=")+1) == 33?
                    <div>
                        <section className="bottom-100">

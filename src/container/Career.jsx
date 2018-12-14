@@ -24,7 +24,8 @@ class About extends React.Component{
         super(props)
         this.state = {
             awardsData: {},
-            loading: true
+            loading: true,
+            careerData:[]
         }
         this.animation = this.animation.bind(this);
     }
@@ -42,17 +43,21 @@ class About extends React.Component{
     }
 
     componentWillMount(){
-        requestService.getService(`/reinforcement-data/${this.props.location.search.substring(this.props.location.search.indexOf("=")+1)}`)
+        requestService.getService(`/job-data`)
             .then((response) => {
-                let ids = ['primary_image_id','secondary_image_id', 'award_slider_id', 'certificate_slider_id'];
+                let ids = ['job_id'];
+                let data = jsonMiddleware(response.data, ids)
+                this.setState({jobList: data});
+            })
+            .catch((err) => {
+                console.log(err);
+            })
+        requestService.getService(`/career-all-data`)
+            .then((response) => {
+                let ids = ['job_id','nid'];
                 let data = jsonMiddleware(response.data, ids)
                 this.setState({loading: false});
-                this.setState({awardsData: data},()=> {
-                    nid = this.props.location.search.substring(this.props.location.search.indexOf("=")+1);
-                    if(this.props.location.search.substring(this.props.location.search.indexOf("=")+1) == 33){
-                        this.animation()
-                    }
-                });
+                this.setState({careerData: data});
             })
             .catch((err) => {
                 console.log(err);
@@ -97,12 +102,9 @@ class About extends React.Component{
                             {/*<div className="grid-x grid-padding-x">*/}
                                 {/*<div className="medium-2 cell">*/}
                                     {/*<ul className="vertical menu career-page-tab-menu">*/}
-                                        {/*<li><a href="#">All</a></li>*/}
-                                        {/*<li><a href="#">Analyst</a></li>*/}
-                                        {/*<li><a href="#">Cunsultant</a></li>*/}
-                                        {/*<li><a href="#">Management</a></li>*/}
-                                        {/*<li><a href="#">Engineer</a></li>*/}
-                                        {/*<li><a href="#">HR</a></li>*/}
+                                        {/*{this.state.jobList.map((obj, i) => {*/}
+                                            {/*<li><a href="#">{obj.job_name}</a></li>*/}
+                                        {/*})}*/}
                                     {/*</ul>*/}
                                 {/*</div>*/}
                                 {/*<div className="medium-10 cell">*/}
@@ -120,44 +122,40 @@ class About extends React.Component{
                                         {/*</div>*/}
                                     {/*</div>*/}
                                     {/*<ul className="accordion" data-accordion data-allow-all-closed="true">*/}
-                                        {/*<li className="accordion-item" data-accordion-item="">*/}
-                                            {/*<!-- Accordion tab title -->*/}
-                                            {/*<a href="#" className="accordion-title" aria-controls="quwu2w-accordion" role="tab" id="quwu2w-accordion-label" aria-expanded="false" aria-selected="false"><div className="job-title">Job title</div><span className="location-view">Location<div className="view-job-btn">View Job</div></span></a>*/}
-                                            {/*<!-- Accordion tab content: it would start in the open state due to using the `is-active` state className. -->*/}
-                                            {/*<div className="accordion-content" data-tab-content="" role="tabpanel" aria-labelledby="quwu2w-accordion-label" aria-hidden="true" id="quwu2w-accordion" style="display: none;">*/}
-                                                {/*<div className="grid-x align-justify">*/}
-                                                    {/*<div className="cell medium-8">*/}
-                                                        {/*<div className="job-deties-req"><div className="job-duties">Duties</div><div className="job-req">Requirement</div></div>*/}
-                                                        {/*<p>*/}
-                                                            {/*Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.*/}
-                                                            {/*Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.*/}
-                                                            {/*Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.*/}
-                                                            {/*Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint*/}
-                                                        {/*</p>*/}
-                                                    {/*</div>*/}
-                                                    {/*<div className="cell medium-4">*/}
-                                                        {/*<div className="location-block">*/}
-                                                            {/*<h6>Job Sites</h6>*/}
-                                                            {/*<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>*/}
+                                        {/*{this.state.careerData['job_id'][0].map((obj,i) => {*/}
+                                            {/*return <li className="accordion-item " data-accordion-item="">*/}
+                                                {/*<a href="#" className="accordion-title" aria-controls="quwu2w-accordion" role="tab" id="quwu2w-accordion-label" aria-expanded="false" aria-selected="false">*/}
+                                                    {/*<div className="job-title">{obj.node_title}</div>*/}
+                                                    {/*<span className="location-view">{obj.node_job_site}*/}
+                                                        {/*<div className="view-job-btn">{obj.node_duties}</div>*/}
+                                                    {/*</span>*/}
+                                                {/*</a>*/}
+                                                {/*<!-- Accordion tab content: it would start in the open state due to using the `is-active` state className. -->*/}
+                                                {/*<div className="accordion-content" data-tab-content="" role="tabpanel" aria-labelledby="quwu2w-accordion-label" aria-hidden="true" id="quwu2w-accordion" style="display: none;">*/}
+                                                    {/*<div className="grid-x align-justify">*/}
+                                                        {/*<div className="cell medium-8">*/}
+                                                            {/*<div className="job-deties-req"><div className="job-duties">{obj.node_duties}</div>*/}
+                                                                {/*<div className="job-req">{obj.node_requirements}</div>*/}
+                                                            {/*</div>*/}
+                                                            {/*<p>*/}
+                                                                {/*{obj.node_work_hours}*/}
+                                                            {/*</p>*/}
                                                         {/*</div>*/}
-                                                        {/*<div className="work-hour">*/}
-                                                            {/*<h6>Job Sites</h6>*/}
-                                                            {/*<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>*/}
+                                                        {/*<div className="cell medium-4">*/}
+                                                            {/*<div className="location-block">*/}
+                                                                {/*<h6>Job Sites</h6>*/}
+                                                                {/*<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>*/}
+                                                            {/*</div>*/}
+                                                            {/*<div className="work-hour">*/}
+                                                                {/*<h6>Job Sites</h6>*/}
+                                                                {/*<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>*/}
+                                                            {/*</div>*/}
                                                         {/*</div>*/}
                                                     {/*</div>*/}
+                                                    {/*<p><button className="button">Apply Now</button></p>*/}
                                                 {/*</div>*/}
-                                                {/*<p><button className="button">Apply Now</button></p>*/}
-                                            {/*</div>*/}
-                                        {/*</li>*/}
-                                        {/*<li className="accordion-item is-active" data-accordion-item="">*/}
-                                            {/*<!-- Accordion tab title -->*/}
-                                            {/*<a href="#" className="accordion-title" aria-controls="dnt5a2-accordion" role="tab" id="dnt5a2-accordion-label" aria-expanded="true" aria-selected="true"><div className="job-title">Job title</div><span className="location-view">Location<div className="view-job-btn">View Job</div></span></a>*/}
-                                            {/*<!-- Accordion tab content: it would start in the open state due to using the `is-active` state className. -->*/}
-                                            {/*<div className="accordion-content" data-tab-content="" role="tabpanel" aria-labelledby="dnt5a2-accordion-label" aria-hidden="false" id="dnt5a2-accordion" style="display: block;">*/}
-                                                {/*<p>Panel 1. Lorem ipsum dolor</p>*/}
-                                                {/*<a href="#">Nowhere to Go</a>*/}
-                                            {/*</div>*/}
-                                        {/*</li>*/}
+                                            {/*</li>*/}
+                                        {/*})}*/}
                                     {/*</ul>*/}
                                 {/*</div>*/}
                             {/*</div>*/}
@@ -185,14 +183,11 @@ class About extends React.Component{
                                                     {/*<img className="box__img" src={award4} alt="Some image"/>*/}
                                                 {/*</div>*/}
                                             {/*</a>*/}
-
                                         {/*</div>*/}
                                     {/*</div>*/}
                                 {/*</div>*/}
                             {/*</div>*/}
                         {/*</div>*/}
-
-
                     {/*</section>*/}
                     {/*<!-- left-image-right-content Section Ends Here -->*/}
                 </div>
