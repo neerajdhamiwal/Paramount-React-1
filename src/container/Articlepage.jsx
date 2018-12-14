@@ -97,14 +97,14 @@ class ArticlePage extends React.Component{
               </div>
               <div className="tabs-content" data-tabs-content="service-tabs">
                 <div className="tabs-panel is-active" id="panel1">
-                  <div className="grid-x grid-padding-x pl-155">
-                  <div className="medium-6 cell">
-                    <div className="pr-155 ">
+                  <div className="grid-x grid-padding-x">
+                  <div className="medium-8 cell">
+                    <div className="">
                         <p>{ReactHtmlParser(this.state.caseStudy.field_secondary_body)}</p>
 
                     </div>
                 </div>
-                <div className="medium-6 small-12 cell no-padding article-top-content">
+                <div className="medium-4 small-12 cell no-padding article-top-content">
                   <div className="right-sidemenu">
                       {this.state.caseList.hasOwnProperty('name')?<ul>
                         {

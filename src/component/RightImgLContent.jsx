@@ -19,7 +19,7 @@ class RightImgLContent extends React.Component{
                     <div class="medium-7 cell no-padding">
                         <div class="img-relative-title-ld">
                             <div class="grid">
-                                <a class="grid__item" href="#">
+                                <a class="grid__item">
                                     <div class="box">
                                         <div class="box__shadow"></div>
                                         <h2>{ReactHtmlParser(this.props.data.secondary_image_description_title)}</h2>
@@ -40,7 +40,7 @@ class RightImgLContent extends React.Component{
                         <div class="medium-7 cell no-padding">
                             <div class="img-relative-title-ld">
                                 <div class="grid">
-                                    <a class="grid__item" href="#">
+                                    <a class="grid__item">
                                         <div class="box">
                                             <div class="box__shadow"></div>
                                             <h2>{ReactHtmlParser(this.props.data.image_description_title)}</h2>

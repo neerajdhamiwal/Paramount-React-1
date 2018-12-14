@@ -71,10 +71,9 @@ class Resource extends React.Component{
                     <div className="grid-x grid-margin-x align-center">
                         <div className="cell medium-10">
                                 <div className="block">
-                                    <h1>{this.state.infoData[0].node_title}</h1>
-                                    <h3 className="banner-info">{this.state.infoData[0].node_subtitle_title}</h3>
+                                    <h3 className="banner-info"><span>{ReactHtmlParser(this.state.infoData[0].node_title)}</span><br/>{ReactHtmlParser(this.state.infoData[0].node_subtitle_title)}</h3>
                                     <p>{ReactHtmlParser(this.state.infoData[0].node_body)}</p>
-                                    <div className="img">
+                                    <div className="img txt-center">
                                         <img src={apiUrl+this.state.infoData[0].secondary_img}/>
                                     </div>
                                     {this.state.infoData[0].cta_button_title !==''?<div className="bottom">

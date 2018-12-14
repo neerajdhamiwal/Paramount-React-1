@@ -93,10 +93,10 @@ class Resource extends React.Component{
                                             </div>
                                             <div className="medium-8 cell">
                                                 <div className="award-content pr-155">
-                                                    <a href="#">{ReactHtmlParser(obj.node_title)}</a>
+                                                    <a href="#">{ReactHtmlParser(obj.title)}</a>
                                                     <h3>{ReactHtmlParser(obj.node_subtitle_title)}</h3>
                                                     <p>{ReactHtmlParser(obj.node_body)}</p>
-                                                    <a href={`/infographic-article?nid=${obj.nid}`}>Read more..</a>
+                                                    <a href={`/infographic-article?nid=${obj.nid}`}>View</a>
                                                     {obj.cta_button_title!==''?<a href="" className="button">{obj.cta_button_title}</a>:''}
                                                 </div>
                                             </div>

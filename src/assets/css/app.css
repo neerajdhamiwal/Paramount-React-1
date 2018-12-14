@@ -892,7 +892,7 @@ footer.footer-bottom {
     font-size: .8rem; }
 
 .article-top-content .img-relative-title-ld {
-  top: 25%; }
+  top: 2%; }
 .article-top-content .img-relative-title-ld h2 {
   left: auto;
   right: 0px; }
@@ -1150,6 +1150,12 @@ footer.footer-bottom {
   }
   .hide{
     display:none;
+  }
+  .txt-center{
+    text-align: center;
+  }
+  .fs{
+    font-size: 14px;
   }
 
 /*# sourceMappingURL=app.css.map */
