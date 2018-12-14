@@ -24,7 +24,7 @@ class FooterRowSlider extends React.Component{
                 {
                     breakpoint: 1024,
                     settings: {
-                        slidesPerRow: 4,
+                        slidesPerRow: 5,
                         rows: 2,
                         arrows : false,
                     }
@@ -32,7 +32,7 @@ class FooterRowSlider extends React.Component{
                 {
                     breakpoint: 640,
                     settings: {
-                        slidesPerRow: 2,
+                        slidesPerRow: 5,
                         rows: 2,
                         arrows : false,
                     }
