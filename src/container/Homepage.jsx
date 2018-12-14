@@ -136,8 +136,8 @@ class Home extends React.Component{
 
         <div className="top-100 clearfix"></div>
            {this.state.HomeData.hasOwnProperty('content_flip_id')? <GridOverLap data = {this.state.HomeData['content_flip_id'][0]}/>:''}
-            <div className="top-100 bottom-100 clearfix"></div>
-           {this.state.HomeData.hasOwnProperty('content_slider_id')? <section className="tab-accordion bottom-100 mt-50-mobile">
+            <div className="top-100 clearfix"></div>
+           {this.state.HomeData.hasOwnProperty('content_slider_id')? <section className="tab-accordion mt-50-mobile">
                    <div className="grid-container custom-grid custom-grid-right">
                        <div className="grid-x">
                            <div className="medium-2 cell wow fadeInUp">
@@ -162,8 +162,8 @@ class Home extends React.Component{
                                                </div>
                                                <div className="medium-6 cell no-padding  wow slideInRight">
                                                    <div className="img-relative-title-ld">
-                                                       <h2 className="relative-title">{ReactHtmlParser(obj.right_image_block_title)}</h2>
                                                        <img src={decodeUri(apiUrl+obj.right_image_block_img)} alt=""/>
+                                                      <h2 className="relative-title">{ReactHtmlParser(obj.right_image_block_title)}</h2>
                                                    </div>
                                                </div>
                                            </div>
@@ -178,7 +178,7 @@ class Home extends React.Component{
 
         <div className="clearfix"></div>
 
-            <section className="left-image-right-content top-100 bottom-100">
+            <section className="left-image-right-content bottom-100">
                <div className="grid-container custom-grid custom-grid-left">
                    <div className="grid-x align-middle">
                        <div className="large-7 cell no-padding wow slideInLeft">

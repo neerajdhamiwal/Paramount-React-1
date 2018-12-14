@@ -1,6 +1,7 @@
 
 import React from 'react';
 import Headercomp from './component/Header.jsx';
+import MobileHeader from './component/mobileHeader.jsx';
 import FooterRowSlider from './component/FooterRowSlider.jsx';
 import Footer from './component/Footer.jsx';
 import $ from 'jquery';
@@ -13,6 +14,7 @@ class Main extends React.Component{
     render(){
         return(
             <div className="app">
+            <MobileHeader/>
                 <div className="App-intro">
                 <Headercomp/>
                     <main>{this.props.children}</main>
