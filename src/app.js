@@ -10,6 +10,9 @@ import ArticlePage from './container/Articlepage.jsx';
 import ExpertiseArt from './container/ExpertiseArticle.jsx';
 import Awards from './container/Awards.jsx';
 import Career from './container/Career.jsx';
+import CaseStudy from './container/CaseStudyLanding.jsx';
+import InfographicArt from './container/InfographicArticle.jsx';
+import Infographic from './container/Infographic.jsx';
 import Main from './main';
 
 class App extends React.Component{
@@ -27,6 +30,9 @@ class App extends React.Component{
                         <Route exact path="/exp-article" component={ExpertiseArt} />
                         <Route exact path="/awards" component={Awards} />
                         <Route exact path="/career" component={Career} />
+                        <Route exact path="/caseStudy" component={CaseStudy} />
+                        <Route exact path="/infographic" component={Infographic} />
+                        <Route exact path="/infographic-article" component={InfographicArt} />
                     </Switch>
                 </BrowserRouter>
             </Main>
