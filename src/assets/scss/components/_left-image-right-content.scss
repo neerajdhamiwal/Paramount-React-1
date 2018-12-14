@@ -1,6 +1,12 @@
 .img-relative-title-ru {
 	position: relative;
   margin-bottom: 2em;
+	&:hover{
+		img{
+			box-shadow: 5px 5px 0px rgba(0,0,0,.2);
+			@include transition ();
+		}
+	}
 	h2 {
     background: red;
     color: #fff;
@@ -10,26 +16,27 @@
     border-radius: 4px;
     width: 285px;
     @include mq(large-screen) {
-      position: absolute;
-      top: -110px;
-      background: red;
-      color: #fff;
-      font-size: 22px;
-      font-weight: 400;
-      width: 285px;
-      right: -60px;
-      height: 152px;
-      display: flex;
-      align-items: flex-start;
-      padding: 30px 35px 0;
-      border-radius: 4px;
+			position: relative;
+	    top: auto;
+	    bottom: -51px;
+	    background: red;
+	    color: #fff;
+	    font-size: 22px;
+	    font-weight: 400;
+	    right: -60px;
+	    height: auto;
+	    display: flex;
+	    align-items: flex-start;
+	    padding: 30px 35px 60px;
+	    border-radius: 4px;
+	    float: right;
     }
 	}
 	img {
   	position: relative;
   	width: 100%;
-    box-shadow: 5px 5px 0px rgba(0,0,0,.2);
     border-radius: 5px;
+		@include transition ();
 	}
 }
 

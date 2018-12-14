@@ -51,7 +51,7 @@ class AccordionaTab extends React.Component{
                                                     {service.image_slider_cta_button_title !==''? <button class="button white-btn">{service.image_slider_cta_button_title}</button>:''}
                                                 </div>
                                                 </div>
-                                                <div className="medium-6 cell no-padding wow slideInRight">
+                                                <div className="medium-7 cell no-padding wow slideInRight">
                                                     <ImgSlider imgArray = {service.image_slider_image.split(',')} id={index}/>
                                                 </div>
                                             </div>
