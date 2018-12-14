@@ -78,11 +78,11 @@ class About extends React.Component{
                        <section className="bottom-100">
                            <div className="grid-container custom-grid custom-grid-right">
                                <div className="grid-x align-right align-middle grid-margin-x wow fadeInUp">
-                                   <div className="medium-5 cell small-order-change">
+                                   <div className="medium-5 cell ptb-50-mobile">
                                        <h3 className="banner-info"><span>{ReactHtmlParser(this.state.awardsData.primary_image_id[0][0].node_title)}</span><br/>
                                            {ReactHtmlParser(this.state.awardsData.primary_image_id[0][0].node_subtitle_title)}</h3>
                                    </div>
-                                   <div className="medium-6 cell">
+                                   <div className="medium-6 cell mb-50-mobile">
                                        <div id="scene" data-friction-x="0.1" data-friction-y="0.1" data-scalar-x="25" data-scalar-y="15">
                                            <div data-depth="0.3"><img src={award1} alt="" /></div>
                                            <div data-depth="0.8"><img src={award2} alt="" /></div>
@@ -130,10 +130,10 @@ class About extends React.Component{
                     return <section className="award-content-box top-100 bottom-100">
                         <div className="grid-container">
                             <div className="grid-x align-right align-middle grid-margin-x">
-                                <div className="medium-2 cell small-order-change">
+                                <div className="medium-2 small-4 cell">
                                     <img src={apiUrl+obj.primary_image_img}/>
                                 </div>
-                                <div className="medium-8 cell">
+                                <div className="medium-8 small-8 cell">
                                     <div className="award-content pr-155">
                                         <a href="#">{ReactHtmlParser(obj.primary_image_title)}</a>
                                         <h3>{ReactHtmlParser(obj.primary_image_description)}</h3>
@@ -168,10 +168,10 @@ class About extends React.Component{
                     return <section className="award-content-box top-100 bottom-100">
                         <div className="grid-container">
                             <div className="grid-x align-right align-middle grid-margin-x">
-                                <div className="medium-2 cell small-order-change">
+                                <div className="medium-2 small-4 cell">
                                     <img src={apiUrl+obj.secondary_image_img}/>
                                 </div>
-                                <div className="medium-8 cell">
+                                <div className="medium-8 small-8 cell">
                                     <div className="award-content pr-155">
                                         <a href="#">{ReactHtmlParser(obj.secondary_image_title)}</a>
                                         <h3>{ReactHtmlParser(obj.secondary_image_description)}</h3>
