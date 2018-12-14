@@ -1,4 +1,7 @@
 .block-latest-reads{
+	button{
+		display: none!important;
+	}
 	.latest-read{
 		h2{
 			font-size: 1.500rem;
@@ -14,13 +17,14 @@
 		.img{
 			    border: 4px solid;
     			border-color: #0000;
+					width: 100%;
     			&:hover{
     				border-color: #f00;
     				@include transition();
 						border-radius: 5px;
     			}
 			img{
-
+				width: 100%;
 			}
 		}
 		.img-content{
@@ -55,7 +59,5 @@
 
 			}
 		}
-
-
 	}
 }

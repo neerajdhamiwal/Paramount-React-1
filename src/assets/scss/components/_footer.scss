@@ -96,3 +96,10 @@ footer {
     line-height: 3;
 	}
 }
+
+.twiter-update-footer{
+	@include mq(small-screen) {
+		padding-left: 35px;
+		padding-right: 25px;
+	}
+}

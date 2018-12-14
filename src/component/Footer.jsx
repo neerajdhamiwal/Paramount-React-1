@@ -85,7 +85,7 @@ class Footer extends React.Component{
                   <div className="medium-11 cell">
                     <div className="social-inner">
                       <h5>Latest happenings</h5>
-                      <div className="grid-x grid-margin-x">
+                      <div className="grid-x grid-margin-x twiter-update-footer">
                           <TwitterTimelineEmbed
                               sourceType="profile"
                               screenName="paramount"
