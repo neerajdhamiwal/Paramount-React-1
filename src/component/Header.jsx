@@ -60,7 +60,7 @@ class Header extends React.Component{
                                         </ul>
                                     </li>
                                     <li><a href="/team?nid=51">Contact Us</a></li>
-                                    <li><a href="/carreer">Careers</a></li>
+                                    <li><a href="/career">Careers</a></li>
                                 </ul>
                             </nav>
                         </div>
