@@ -6,17 +6,16 @@ import award1 from '../assets/img/awards-02.png';
 import award2 from '../assets/img/awards-03.png';
 import award3 from '../assets/img/awards-04.png';
 import award4 from '../assets/img/awards-05.png';
-import expBanner from '../assets/img/expertise-banner.png';
 import MainBanner from '../component/MainBanner.jsx'
 import AwardSlider from '../component/AwardsBottomSlider.jsx'
 import CertSlider from '../component/CertificationBottomSlider.jsx'
+import BottomFlipBanner from '../component/BottomFlipBanner.jsx'
 import requestService from '../services/request.js';
 import {apiUrl, jsonMiddleware} from '../services/common.js';
 import ReactHtmlParser from 'react-html-parser';
 import WOW from 'wowjs';
 import Loader from 'react-loader-spinner'; // eslint-disable-line no-unused-vars
 import $ from 'jquery';
-
 let nid = '';
 import aboutLayerBannerone from '../assets/img/about-layer1.png';
 import aboutLayerBannertwo from '../assets/img/about-layer2.png';
@@ -27,11 +26,13 @@ class About extends React.Component{
         this.state = {
             awardsData: {},
             loading: true,
-            careerData:[]
+            careerData:[],
+            bannerData:[]
         }
         this.animation = this.animation.bind(this);
         this.change = this.change.bind(this);
         this.getAllJobs = this.getAllJobs.bind(this);
+        this.handleChange = this.handleChange.bind(this);
     }
 
     animation(){
@@ -47,6 +48,18 @@ class About extends React.Component{
     }
 
     componentWillMount(){
+        requestService.getService(`/reach-us-data/131`)
+            .then((response) => {
+                let ids = ['content_ctaflip_id', 'node_flipper_id']
+                let data = jsonMiddleware(response.data, ids)
+                this.setState({bannerData: data},()=>{
+                    // $(document).foundation();
+                });
+            })
+            .catch((err) => {
+                console.log(err);
+            })
+
         requestService.getService(`/job-data`)
             .then((response) => {
                 this.setState({jobList: response.data});
@@ -85,6 +98,14 @@ class About extends React.Component{
                 console.log(err);
             })
     }
+    handleChange(e){
+        $(`.${e.target.id}`).removeClass('hide');
+        $(`.${e.target.id}`).addClass('show');
+        console.log( $(`.${e.target.id}`)[0])
+
+        // $('.'+$(`.${e.target.id}`).nextSibling.classList[0]).addClass('show');
+        // $(`.${e.target.id}`).sibling().removeClass('hide');
+    }
     change(e){
         this.setState({loading: true});
         if(e.target.id=='allJob'){
@@ -106,27 +127,7 @@ class About extends React.Component{
                     />
                 </center> :
                 <div>
-                    <section className="main-banner bottom-100 award-banner team-scnd-banner career-banner">
-                        <div className="grid-container custom-grid custom-grid-right">
-                            <div className="grid-x align-right align-middle grid-margin-x">
-                                <div className="medium-5 cell small-order-change">
-                                    <h3 className="banner-info"><span>Make a</span><br/>
-                                        Career</h3>
-                                    <h6>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type.</h6>
-                                    <div className="banner-img-link">
-                                        <div className="grid-x grid-margin-x grid-margin-y img-shadow-hover">
-                                            <div className="cell shrink team-banner-be"><a href="#">Be Curious</a></div>
-                                            <div className="cell shrink team-banner-be"><a href="#">Be a Leader</a></div>
-                                            <div className="cell shrink team-banner-be"><a href="#">Be Human</a></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="medium-6 cell">
-                                    <img src={expBanner} alt=""/>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
+                    {Object.keys(this.state.bannerData).length>0? <MainBanner node={this.state.bannerData[Object.keys(this.state.bannerData)[0]][0]} nid='career'/>:''}
                     <div className="clearfix"></div>
                     <div className="clearfix top-100 bottom-100"></div>
                     <section className="job-posting-list top-100 bottom-100">
@@ -137,9 +138,7 @@ class About extends React.Component{
                                         <li><a onClick={this.change} id="allJob">All</a></li>
                                         {this.state.jobList.map((obj)=>{
                                             return <li><a onClick={this.change} id={obj.job_id}>{obj.job_name}</a></li>
-
                                         })}
-
                                     </ul>
                                 </div>
                                 <div className="medium-10 cell">
@@ -168,34 +167,29 @@ class About extends React.Component{
                                                 this.state.careerData['nid'][0].map((obj, i)=>{
                                                 return <li className="accordion-item" data-accordion-item="" >
                                                     {/*<!-- Accordion tab title -->*/}
-                                                    <a className="accordion-title" aria-controls={`tab${obj.job_id}`} role="tab" id={`job${obj.job_id}`} aria-expanded="false" aria-selected="false">
+                                                    <a className="accordion-title" aria-controls={`tab${obj.nid}`} role="tab" id={`job${obj.nid}`} aria-expanded="false" aria-selected="false">
                                                         <div className="job-title">{obj.node_title}</div>
                                                         <span className="location-view">Location
                                                             <div className="view-job-btn">View Job</div>
                                                         </span>
                                                     </a>
                                                     {/*<!-- Accordion tab content: it would start in the open state due to using the `is-active` state className. -->*/}
-                                                    <div className="accordion-content" data-tab-content="" role="tabpanel" aria-labelledby={`job${obj.job_id}`} aria-hidden="true" id={`tab${obj.job_id}`}>
+                                                    <div className="accordion-content" data-tab-content="" role="tabpanel" aria-labelledby={`job${obj.nid}`} aria-hidden="true" id={`tab${obj.nid}`}>
                                                         <div className="grid-x align-justify">
                                                             <div className="cell medium-8" id="coltab">
                                                                 <div className="job-deties-req">
-                                                                    <ul id="col-tabs">
-                                                                        <li>
-                                                                            <a> <div className="job-duties" aria-controls={`columntab${obj.job_id}0`} role="tab" aria-expanded="true" aria-selected="true">Duties</div></a>
-                                                                        </li>
-                                                                        <li>
-                                                                            <a> <div className="job-req" aria-controls={`columntab${obj.job_id}1`} role="tab" aria-expanded="false" aria-selected="false">Requirement</div></a>
-                                                                        </li>
-                                                                    </ul>
+
+                                                                            <a> <div className="job-duties" id={`duty${obj.nid}`} onClick={this.handleChange}>Duties</div></a>
+                                                                            <a> <div className="job-req" role="tab" id={`req${obj.nid}`} onClick={this.handleChange}>Requirement</div></a>
+
                                                                 </div>
-                                                                <div data-tabs-content="col-tabs">
-                                                                <p id={`columntab${obj.job_id}0`} aria-hidden="false">
+                                                                <p className={`duty${obj.nid}`}>
                                                                     {ReactHtmlParser(obj.node_duties)}
                                                                 </p>
-                                                                <p id={`columntab${obj.job_id}1`}  aria-hidden="true">
+                                                                <p className={`req${obj.nid} hide`}>
                                                                     {ReactHtmlParser(obj.node_requirements)}
                                                                 </p>
-                                                                </div>
+
                                                             </div>
                                                             <div className="cell medium-4">
                                                                 <div className="location-block">
@@ -216,33 +210,7 @@ class About extends React.Component{
                     </section>
                     {/*<!-- Main Banner Section Ends Here -->*/}
                     {/*<!-- left-image-right-content Section Starts Here -->*/}
-                    <section className="right-image-left-content top-100">
-                        <div className="grid-container custom-grid custom-grid-right">
-                            <div className="grid-x grid-padding-x height-750 pl-100 align-middle">
-                                <div className="medium-6 cell small-order-change">
-                                    <div className="pr-155">
-                                        <h2 className="relative-title title-one">Our Services</h2>
-                                        <h3 className="heading-content ptb-40">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h3>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                                    </div>
-                                </div>
-                                <div className="medium-6 cell no-padding">
-                                    <div className="img-relative-title-ld">
-                                        <div className="grid">
-
-                                            <a className="grid__item" href="#">
-                                                <div className="box">
-                                                    <div className="box__shadow"></div>
-                                                    <img className="box__img" src={award4} alt="Some image"/>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                    {/*<!-- left-image-right-content Section Ends Here -->*/}
+                    {this.state.bannerData.hasOwnProperty('content_ctaflip_id')?<BottomFlipBanner nodeData={this.state.bannerData['content_ctaflip_id'][0]}/>:''}                    {/*<!-- left-image-right-content Section Ends Here -->*/}
                 </div>
         )
     }

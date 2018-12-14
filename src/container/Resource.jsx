@@ -4,7 +4,7 @@ import img4 from '../assets/img/img4.png';
 import $ from 'jquery';
 import Loader from 'react-loader-spinner'; // eslint-disable-line no-unused-vars
 import GridListScnd from '../component/GridListScnd.jsx';
-import CaseStudy from '../component/CaseStudy.jsx';
+import Blog from '../container/Blog.jsx';
 import requestService from '../services/request.js';
 import {apiUrl, jsonMiddleware} from '../services/common.js';
 
@@ -68,7 +68,7 @@ class Resource extends React.Component{
                     {/*<GridListScnd data={this.state.infoData[0]}/>*/}
                 </div>
                 {/*<AccordionTab/>*/}
-                <CaseStudy locate="resource" page="casestudy"/>
+                <Blog locate="resource" page="casestudy"/>
             </div>
         )
     }

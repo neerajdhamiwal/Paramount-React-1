@@ -1145,5 +1145,11 @@ footer.footer-bottom {
   .button.btn-full {
     width: 100%;
     border-radius: 3px; }
+  .show{
+    display: block;
+  }
+  .hide{
+    display:none;
+  }
 
 /*# sourceMappingURL=app.css.map */

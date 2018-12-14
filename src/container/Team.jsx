@@ -12,6 +12,7 @@ import requestService from '../services/request';
 import Loader from 'react-loader-spinner'; // eslint-disable-line no-unused-vars
 
 
+
 import $ from 'jquery';
 //import 'foundation/js/vendor/zepto';
 class Team extends React.Component{
@@ -39,6 +40,7 @@ class Team extends React.Component{
         //Foundation.addToJquery($);
         $(document).foundation();
     }
+
     render(){
         return(
                 <div>{this.state.loading ?
@@ -50,7 +52,8 @@ class Team extends React.Component{
                             width="100"
                         />
                         </center>: <div>
-                        {this.state.teamData.hasOwnProperty('node_flipper_id')?<FlipperBanner nodeData={this.state.teamData['node_flipper_id'][0]}/>: Object.keys(this.state.teamData).length>0?<MainBanner node={this.state.teamData[Object.keys(this.state.teamData)[0]][0]}/>:''}
+                        {Object.keys(this.state.teamData).length>0?
+                                <MainBanner node={this.state.teamData[Object.keys(this.state.teamData)[0]][0]} nid={this.props.location.search.substring(this.props.location.search.indexOf("=")+1)}/>:''}
                         {this.state.teamData.hasOwnProperty('team_member_id') ? <div className="grid-container">
                                 {customDivideData(this.state.teamData['team_member_id'][0], 3).map((subArr) => {
                                     return <div className="grid-x align-center block-latest-reads">
@@ -70,7 +73,7 @@ class Team extends React.Component{
                                 })
                                 }
                             </div> :""}
-                        {this.state.teamData.hasOwnProperty('content_ctaflip_id')?<BottomFlipBanner nodeData={this.state.teamData['content_ctaflip_id'][0]}/>:''}
+                        {/*{this.state.teamData.hasOwnProperty('content_ctaflip_id')?<BottomFlipBanner nodeData={this.state.teamData['content_ctaflip_id'][0]}/>:''}*/}
                         <div className="clear"></div>
                         {this.state.teamData.hasOwnProperty('map_id')? <Map mapData = {this.state.teamData['map_id'][0]}/>: ''}
                         {this.state.teamData.hasOwnProperty('award_slider_id')?this.state.teamData['award_slider_id'][0][0].award_slider_id? <AwardSlider/>: '':''}
