@@ -11,7 +11,6 @@ import ReactHtmlParser from 'react-html-parser';
 import aboutLayerBannerone from '../assets/img/about-layer1.png';
 import aboutLayerBannertwo from '../assets/img/about-layer2.png';
 
-
 //import 'foundation/js/vendor/zepto';
 class Resource extends React.Component{
     constructor(){

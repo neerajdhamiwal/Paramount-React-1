@@ -9,13 +9,14 @@ import PartnerSlider from '../component/PartnerSlider.jsx';
 import GridList from '../component/GridList.jsx';
 import FooterRowSlider from '../component/FooterRowSlider.jsx';
 import FooterHeading from '../component/FooterHeading.jsx';
+import HorizontalScroll from '../component/HorizontalScroll.jsx';
 import RightImgLContent from '../component/RightImgLContent.jsx';
 import LeftImgRContent from '../component/LeftImgRContent.jsx';
 import smallImg from '../assets/img/small-img.png';
-import {jsonMiddleware, apiUrl} from '../services/common';
+import {jsonMiddleware, apiUrl, urlString} from '../services/common';
 import requestService from '../services/request.js';
 import Loader from 'react-loader-spinner'; // eslint-disable-line no-unused-vars
-let nid = ''
+let nid = '';
 import $ from 'jquery';
 
 //import 'foundation/js/vendor/zepto';
@@ -28,10 +29,10 @@ class Expertise extends React.Component{
         }
     }
     componentWillMount(){
-            requestService.getService(`/landing-page-data/${this.props.location.search.substring(this.props.location.search.indexOf("=")+1)}`)
+        requestService.getService(`/landing-page-data/${urlString[this.props.location.pathname]}`)
                 .then((response) => {
                 let ids = ['slider_id','flipper_id','logo_id','sub_block_id','image_description_id','hd_id', 'client_slider_id','award_slider_id','certificate_slider_id','partner_slider_id',];
-                    nid = this.props.location.search.substring(this.props.location.search.indexOf("=")+1);
+                    nid = urlString[this.props.location.pathname]
                     this.setState({loading: false});
                     this.setState({ExpertiseData: jsonMiddleware(response.data, ids)});
                 })
@@ -71,6 +72,7 @@ class Expertise extends React.Component{
                 </div>
                 <div className="top-100 bottom-100 clearfix"></div>
                     {this.state.ExpertiseData.hasOwnProperty('slider_id')? <AccordionTab sliderData = {this.state.ExpertiseData['slider_id'][0]}/>:''}
+                    {this.state.ExpertiseData.hasOwnProperty('hd_id')? <HorizontalScroll standardData = {this.state.ExpertiseData['hd_id'][0]}/>:''}
                 <div className="top-100 bottom-100 clearfix"></div>
                     {
                         this.state.ExpertiseData.hasOwnProperty('image_description_id')? this.state.ExpertiseData['image_description_id'][0].map((obj, i) => {

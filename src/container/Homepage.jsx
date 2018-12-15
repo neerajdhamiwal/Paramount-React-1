@@ -25,7 +25,6 @@ import Loader from 'react-loader-spinner'; // eslint-disable-line no-unused-vars
 import requestService from '../services/request.js';
 import $ from 'jquery';
 const ArrowStyle = {background: `url(${arrowImg}) noRepeat center bottom`, backgroundSize: '1000px'}
-
 //import 'foundation/js/vendor/zepto';
 
 class Home extends React.Component{
@@ -107,15 +106,14 @@ class Home extends React.Component{
               {ReactHtmlParser(this.state.HomeData[Object.keys(this.state.HomeData)[0]][0][0].node_body)}
            </h3>
 
-               {this.state.HomeData[Object.keys(this.state.HomeData)[0]][0][0].node_cta_button_title !==''? <button className="button">{this.state.HomeData[Object.keys(this.state.HomeData)[0]][0][0].node_cta_button_title}</button>:''}
+               {this.state.HomeData[Object.keys(this.state.HomeData)[0]][0][0].node_cta_button_title !==''? <a className="button" href={this.state.HomeData[Object.keys(this.state.HomeData)[0]][0][0].node_cta_button_url}>{this.state.HomeData[Object.keys(this.state.HomeData)[0]][0][0].node_cta_button_title}</a>:''}
            <div className="banner-img-link paroller-example">
            <div className="grid-x grid-margin-x grid-margin-y img-shadow-hover hide-for-small-only">
                {this.state.HomeData.hasOwnProperty('node_flip_id')? this.state.HomeData['node_flip_id'][0].map((data, index) => {
-                   return <div className="cell shrink wow fadeInDown banner-image-effect" data-wow-delay={`${index}s`} ><a href="#"><img src={apiUrl+data.node_flipper_image} alt=""/><span>{data.node_flipper_title}</span></a></div>
+                   return <div className="cell shrink wow fadeInDown banner-image-effect" data-wow-delay={`${index}s`} ><a href={data.node_flipper_url}><img src={apiUrl+data.node_flipper_image} alt=""/><span>{data.node_flipper_title}</span></a></div>
                    }):''}
            </div>
            </div>
-
            </div>
            <div className="medium-6 cell smal-12">
            <div className="medium-6 cell">
@@ -158,7 +156,7 @@ class Home extends React.Component{
                                                        <h3>{ReactHtmlParser(obj.content_slider_description)}</h3>
                                                        <p className="ptb-40">{ReactHtmlParser(obj.content_slider_body)}</p>
                                                    </div>
-                                                   {obj.content_slider_cta_title !==''? <button className="button">{ReactHtmlParser(obj.content_slider_cta_title)}</button>:''}
+                                                   {obj.content_slider_cta_title !==''? <a className="button" href={obj.content_slider_cta_url}>{ReactHtmlParser(obj.content_slider_cta_title)}</a>:''}
                                                </div>
                                                <div className="medium-6 cell no-padding  wow slideInRight">
                                                    <div className="img-relative-title-ld">
@@ -207,7 +205,7 @@ class Home extends React.Component{
                         <h2 className="relative-title title-span">{ReactHtmlParser(this.state.HomeData[Object.keys(this.state.HomeData)[0]][0][0].content_bottom_title)}</h2>
                         <h3 className="ptb-40"> {ReactHtmlParser(this.state.HomeData[Object.keys(this.state.HomeData)[0]][0][0].content_bottom_description)}</h3>
                         <p>{ReactHtmlParser(this.state.HomeData[Object.keys(this.state.HomeData)[0]][0][0].content_bottom_body)}</p>
-                        {this.state.HomeData[Object.keys(this.state.HomeData)[0]][0][0].content_bottom_cta_title!==''? <button className="button">{this.state.HomeData[Object.keys(this.state.HomeData)[0]][0][0].content_bottom_cta_title}</button>:''}
+                        {this.state.HomeData[Object.keys(this.state.HomeData)[0]][0][0].content_bottom_cta_title!==''? <a className="button" href={this.state.HomeData[Object.keys(this.state.HomeData)[0]][0][0].content_bottom_cta_url}>{this.state.HomeData[Object.keys(this.state.HomeData)[0]][0][0].content_bottom_cta_title}</a>:''}
                     </div>
                     <div className="medium-7 cell no-padding hide-for-small-only">
                         <div className="img-relative-title-ld">

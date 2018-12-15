@@ -9,7 +9,7 @@ import MainBanner from '../component/MainBanner.jsx'
 import AwardSlider from '../component/AwardsBottomSlider.jsx'
 import CertSlider from '../component/CertificationBottomSlider.jsx'
 import requestService from '../services/request.js';
-import {apiUrl, jsonMiddleware} from '../services/common.js';
+import {apiUrl, jsonMiddleware, urlString} from '../services/common.js';
 import ReactHtmlParser from 'react-html-parser';
 import WOW from 'wowjs';
 import Loader from 'react-loader-spinner'; // eslint-disable-line no-unused-vars
@@ -40,14 +40,14 @@ class About extends React.Component{
     }
 
     componentWillMount(){
-        requestService.getService(`/reinforcement-data/${this.props.location.search.substring(this.props.location.search.indexOf("=")+1)}`)
+        requestService.getService(`/reinforcement-data/${urlString[this.props.location.pathname]}`)
             .then((response) => {
                 let ids = ['primary_image_id','secondary_image_id', 'award_slider_id', 'certificate_slider_id'];
                 let data = jsonMiddleware(response.data, ids)
                 this.setState({loading: false});
                 this.setState({awardsData: data},()=> {
-                    nid = this.props.location.search.substring(this.props.location.search.indexOf("=")+1);
-                    if(this.props.location.search.substring(this.props.location.search.indexOf("=")+1) == 33){
+                    nid = urlString[this.props.location.pathname];
+                    if(urlString[this.props.location.pathname] == 33){
                         this.animation()
                     }
                 });
@@ -57,7 +57,6 @@ class About extends React.Component{
             })
     }
     render(){
-        console.log(this.props.location.search.substring(this.props.location.search.indexOf("=")+1))
         return(
             this.state.loading? <center >
                     <Loader
@@ -69,11 +68,9 @@ class About extends React.Component{
                 </center> :
             <div>
 
-
-
-                { this.state.awardsData.hasOwnProperty('primary_image_id')?
+                {this.state.awardsData.hasOwnProperty('primary_image_id')?
            <div>
-               {this.props.location.search.substring(this.props.location.search.indexOf("=")+1) == 33?
+               {urlString[this.props.location.pathname] == 33?
                    <div>
                        <section className="bottom-100">
                            <div className="grid-container custom-grid custom-grid-right">
@@ -100,6 +97,8 @@ class About extends React.Component{
                                    <div className="our-certifications-content">
                                        <h3 className="banner-info"><span>{ReactHtmlParser(this.state.awardsData.primary_image_id[0][0].node_title)}</span><br/>
                                            {ReactHtmlParser(this.state.awardsData.primary_image_id[0][0].node_subtitle_title)}</h3>
+                                       <p>{ReactHtmlParser(this.state.awardsData.primary_image_id[0][0].node_description)}</p>
+
                                    </div>
                                </div>
                                <div className="medium-8 cell">
@@ -114,6 +113,7 @@ class About extends React.Component{
                                <div className="medium-5 cell small-order-change">
                                    <h3 className="banner-info"><span>{ReactHtmlParser(this.state.awardsData.primary_image_id[0][0].node_title)}</span><br/>
                                        {ReactHtmlParser(this.state.awardsData.primary_image_id[0][0].node_subtitle_title)}</h3>
+                                   <p>{ReactHtmlParser(this.state.awardsData.primary_image_id[0][0].node_description)}</p>
                                </div>
                                <div className="medium-6 cell">
                                    <div class="rotation-banner">

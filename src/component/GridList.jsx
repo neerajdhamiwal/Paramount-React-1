@@ -51,7 +51,7 @@ class GridList extends React.Component{
                         </div>
                         <div className="img-content">
                             <h6>{ReactHtmlParser(obj.title)}</h6>
-                            <h2><a href="#">{ReactHtmlParser(obj.description)}</a></h2>
+                            <h2><a href={"/casestudy/article?nid="+obj.nid}>{ReactHtmlParser(obj.description)}</a></h2>
                         </div>
                     </div>
                 })}

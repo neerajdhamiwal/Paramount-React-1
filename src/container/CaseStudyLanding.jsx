@@ -64,7 +64,6 @@ class About extends React.Component{
     }
 
     render(){
-        console.log(this.props.location.search.substring(this.props.location.search.indexOf("=")+1))
         return(
             this.state.loading? <center >
                     <Loader
@@ -105,10 +104,10 @@ class About extends React.Component{
                                             </div>
                                             <div className="medium-8 cell">
                                                 <div className="award-content pr-155">
-                                                    <a href="#">{ReactHtmlParser(obj.node_title)}</a>
-                                                    <h3>{ReactHtmlParser(obj.node_subtitle_title)}</h3>
+                                                    <h3>{ReactHtmlParser(obj.node_title)}</h3>
+                                                    <h6>{ReactHtmlParser(obj.node_subtitle_title)}</h6>
                                                     <p>{ReactHtmlParser(obj.node_body)}</p>
-                                                    <a href = "" className="button">{obj.cta_button_title}</a>
+                                                    <a className="button" href={obj.cta_button_url}>{obj.cta_button_title}</a>
                                                 </div>
                                             </div>
                                         </div>

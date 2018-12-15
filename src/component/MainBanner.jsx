@@ -49,7 +49,7 @@ class Home extends React.Component{
                             <h3 className="banner-info"><span>{ReactHtmlParser(this.props.node[0].node_title)}</span><br/>{ReactHtmlParser(this.props.node[0].node_subtitle_title)}</h3>
                             <p>{ReactHtmlParser(this.props.node[0].node_description)}</p>
                             {this.props.node[0].hasOwnProperty('node_cta_button_title')? this.props.node[0].node_cta_button_title !==''?<button className="button">{this.props.node[0].node_cta_button_title}</button>:'':''}
-                            {this.props.node[0].download_link_title !==''?<a>{this.props.node[0].download_link_title}</a>:''}
+                            {this.props.node[0].download_link_title !==''?<a className="button">{this.props.node[0].download_link_title}</a>:''}
                         </div>
                         {this.props.nid ==35?<div className="medium-6 cell about-us-banner">
                                 <div class="rotation-banner">

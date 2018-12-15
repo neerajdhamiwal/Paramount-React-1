@@ -14,7 +14,7 @@ class BFlipperBanner extends React.Component{
                             <h3 className="banner-info"><span>{ReactHtmlParser(this.props.nodeData[0].content_ctaflip_title)}</span><br/></h3>
                             {/*<h6>{this.props.nodeData[0].content_ctaflip_description}</h6><br/>*/}
                             {ReactHtmlParser(this.props.nodeData[0].content_ctaflip_body)}
-                            {this.props.nodeData[0].content_ctaflip_cta_title!==''? <button className="button">{ReactHtmlParser(this.props.nodeData[0].content_ctaflip_cta_title)}</button>:''}
+                            {this.props.nodeData[0].content_ctaflip_cta_title!==''? <a className="button" href={this.props.nodeData[0].content_ctaflip_cta_url}>{ReactHtmlParser(this.props.nodeData[0].content_ctaflip_cta_title)}</a>:''}
                             {this.props.nodeData[0].content_ctaflip_flip_title!==''? <div className="banner-img-link">
                                     <div className="grid-x grid-margin-x grid-margin-y img-shadow-hover">
                                         {this.props.nodeData.map((data) => {

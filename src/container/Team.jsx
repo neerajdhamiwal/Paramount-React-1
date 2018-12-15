@@ -7,12 +7,9 @@ import BottomFlipBanner from '../component/BottomFlipBanner.jsx';
 import Map from '../component/Map.jsx';
 import AwardSlider from '../component/AwardsBottomSlider.jsx';
 import CertSlider from '../component/CertificationBottomSlider.jsx';
-import {customDivideData, apiUrl, jsonMiddleware} from '../services/common';
+import {customDivideData, apiUrl, jsonMiddleware, urlString} from '../services/common';
 import requestService from '../services/request';
 import Loader from 'react-loader-spinner'; // eslint-disable-line no-unused-vars
-
-
-
 import $ from 'jquery';
 //import 'foundation/js/vendor/zepto';
 class Team extends React.Component{
@@ -24,7 +21,7 @@ class Team extends React.Component{
         }
     }
     componentWillMount(){
-        requestService.getService(`/reach-us-data/${this.props.location.search.substring(this.props.location.search.indexOf("=")+1)}`)
+        requestService.getService(`/reach-us-data/${urlString[this.props.location.pathname]}`)
             .then((response) => {
                 let ids = ['map_id','award_slider_id', 'certificate_slider_id', 'team_member_id', 'content_ctaflip_id', 'node_flipper_id'];
                 let data = jsonMiddleware(response.data, ids);
@@ -53,7 +50,7 @@ class Team extends React.Component{
                         />
                         </center>: <div>
                         {Object.keys(this.state.teamData).length>0?
-                                <MainBanner node={this.state.teamData[Object.keys(this.state.teamData)[0]][0]} nid={this.props.location.search.substring(this.props.location.search.indexOf("=")+1)}/>:''}
+                                <MainBanner node={this.state.teamData[Object.keys(this.state.teamData)[0]][0]} nid={urlString[this.props.location.pathname]}/>:''}
                         {this.state.teamData.hasOwnProperty('team_member_id') ? <div className="grid-container">
                                 {customDivideData(this.state.teamData['team_member_id'][0], 3).map((subArr) => {
                                     return <div className="grid-x align-center block-latest-reads">

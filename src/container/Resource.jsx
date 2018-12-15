@@ -63,8 +63,8 @@ class Resource extends React.Component{
         return(
             <div>
                 <div className="grid-container pl-155 pr-155 pt-50">
-                    {this.state.blogData.hasOwnProperty('nid')?<GridListScnd data={this.state.blogData['nid'][0]}/>:''}
-                    {this.state.caseData.hasOwnProperty('id')?<GridListScnd data={this.state.caseData['id'][0]}/>:''}
+                    {this.state.blogData.hasOwnProperty('nid')?<GridListScnd data={this.state.blogData['nid'][0]} node="blog"/>:''}
+                    {this.state.caseData.hasOwnProperty('id')?<GridListScnd data={this.state.caseData['id'][0]} node="case"/>:''}
                     {/*<GridListScnd data={this.state.infoData[0]}/>*/}
                 </div>
                 {/*<AccordionTab/>*/}

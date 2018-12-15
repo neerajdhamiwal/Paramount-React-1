@@ -101,10 +101,8 @@ class About extends React.Component{
     handleChange(e){
         $(`.${e.target.id}`).removeClass('hide');
         $(`.${e.target.id}`).addClass('show');
-        console.log( $(`.${e.target.id}`)[0])
-
-        // $('.'+$(`.${e.target.id}`).nextSibling.classList[0]).addClass('show');
-        // $(`.${e.target.id}`).sibling().removeClass('hide');
+        let sibling = $(`.${e.target.id}`)[0].previousSibling.classList[0];
+        $(`.${sibling}`).addClass('hide');
     }
     change(e){
         this.setState({loading: true});
@@ -169,7 +167,7 @@ class About extends React.Component{
                                                     {/*<!-- Accordion tab title -->*/}
                                                     <a className="accordion-title" aria-controls={`tab${obj.nid}`} role="tab" id={`job${obj.nid}`} aria-expanded="false" aria-selected="false">
                                                         <div className="job-title">{obj.node_title}</div>
-                                                        <span className="location-view">Location
+                                                        <span className="location-view">
                                                             <div className="view-job-btn">View Job</div>
                                                         </span>
                                                     </a>

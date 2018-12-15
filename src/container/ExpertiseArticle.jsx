@@ -4,7 +4,7 @@ import FooterSecndHeading from '../component/FooterSecndHeading.jsx';
 import LeftImgRContent from '../component/LeftImgRContent.jsx';
 import RightImgLContent from '../component/RightImgLContent.jsx';
 import AwardBanner from '../component/AwardBanner.jsx';
-import {jsonMiddleware} from '../services/common';
+import {jsonMiddleware, urlString} from '../services/common';
 import requestService from '../services/request.js';
 import {apiUrl} from '../services/common.js';
 import WOW from 'wowjs';
@@ -29,11 +29,11 @@ class ExpertiseArticle extends React.Component{
     }
 
     componentWillMount(){
-        requestService.getService(`/services-node-data/${this.props.location.search.substring(this.props.location.search.indexOf("=")+1)}`)
+        requestService.getService(`/services-node-data/${urlString[this.props.location.pathname]}`)
             .then((response) => {
                 let ids = ['img_des_id','sub_block_id', 'secondary_sub_block_id','secondary_img_des_id', 'extra_content_id', 'award_slider_id', 'certificate_slider_id','partner_slider_id','client_slider_id'];
                 this.setState({loading: false});
-                nid = this.props.location.search.substring(this.props.location.search.indexOf("=")+1)
+                nid = urlString[this.props.location.pathname];
                 this.setState({ExpertiseGovData: jsonMiddleware(response.data, ids)});
             })
             .catch((err) => {
