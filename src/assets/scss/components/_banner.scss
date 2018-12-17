@@ -9,6 +9,13 @@
 	font-weight: 300;
 	}
 }
+.main-banner{
+	button, a.button{
+		padding: 10px 15px;
+		font-size: .90rem;
+		margin-right: 15px;
+	}
+}
 
 .banner-image-effect{
   position: relative;
@@ -108,7 +115,7 @@
 }
 
 #loading {
-  -webkit-animation: rotation 4s infinite linear;
+  -webkit-animation: rotation 15s infinite linear;
 }
 
 @-webkit-keyframes rotation {

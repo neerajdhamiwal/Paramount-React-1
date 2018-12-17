@@ -2,8 +2,6 @@ import React from 'react';
 import ImgBanner from '../assets/img/paramount-edge.png';
 import ImgBannerTwo from '../assets/img/services-sub-two.png';
 import ImgBannerThree from '../assets/img/expertise-sub-menu.png';
-
-
 import ReactHtmlParser from 'react-html-parser';
 
 

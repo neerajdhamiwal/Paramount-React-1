@@ -5,10 +5,7 @@ import TagLinks from '../component/TagLinks.jsx';
 import GridList from '../component/GridList.jsx';
 import requestService from '../services/request.js';
 import Loader from 'react-loader-spinner'; // eslint-disable-line no-unused-vars
-
 let nid = [];
-
-
 import $ from 'jquery';
 
 class CaseStudy extends React.Component{

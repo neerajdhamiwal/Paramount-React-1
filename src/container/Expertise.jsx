@@ -60,16 +60,25 @@ class Expertise extends React.Component{
                     />
                 </center> : <div>
                 {Object.keys(this.state.ExpertiseData).length>0? <MainBanner nid = {nid} node = {this.state.ExpertiseData[Object.keys(this.state.ExpertiseData)[0]][0]}></MainBanner>: ''}
-                <div className="banner-img-link">
-                    {this.state.ExpertiseData.hasOwnProperty('flipper_id')?<div className="grid-x grid-margin-x grid-margin-y img-shadow-hover hide-for-small-only">
-                            {
-                                this.state.ExpertiseData['flipper_id'][0].map((flip, i) => {
-                                    {/*return <div className="cell wow fadeInDown" data-wow-delay="0.5s"><a href="#"><img src={apiUrl+flip.image_flipper_image} alt=""/></a></div>*/}
-                                    return <div className="cell wow shrink fadeInDown banner-image-effect" data-wow-delay={`${i}s`}><a href="#"><img src={apiUrl+flip.image_flipper_image} alt=""/><span>{flip.image_flipper_title}</span></a></div>
-                                })
-                            }
-                        </div>:''}
+
+                <div className="grid-container">
+                  <div className="grid-x align-right align-middle grid-margin-x">
+                  <div className="medium-11">
+                    <div className="banner-img-link">
+                        {this.state.ExpertiseData.hasOwnProperty('flipper_id')?<div className="grid-x grid-margin-x grid-margin-y img-shadow-hover hide-for-small-only">
+                                {
+                                    this.state.ExpertiseData['flipper_id'][0].map((flip, i) => {
+                                        {/*return <div className="cell wow fadeInDown" data-wow-delay="0.5s"><a href="#"><img src={apiUrl+flip.image_flipper_image} alt=""/></a></div>*/}
+                                        return <div className="cell wow shrink fadeInDown banner-image-effect" data-wow-delay={`${i}s`}><a href="#"><img src={apiUrl+flip.image_flipper_image} alt=""/><span>{flip.image_flipper_title}</span></a></div>
+                                    })
+                                }
+                            </div>:''}
+                    </div>
+
+                  </div>
                 </div>
+                </div>
+
                 <div className="top-100 bottom-100 clearfix"></div>
                     {this.state.ExpertiseData.hasOwnProperty('slider_id')? <AccordionTab sliderData = {this.state.ExpertiseData['slider_id'][0]}/>:''}
                     {this.state.ExpertiseData.hasOwnProperty('hd_id')? <HorizontalScroll standardData = {this.state.ExpertiseData['hd_id'][0]}/>:''}
@@ -84,9 +93,9 @@ class Expertise extends React.Component{
                                 }
                             }): ''
                     }
-                    <div className="top-100 bottom-100 clearfix"></div>
+                    <div className="top-100 clearfix"></div>
                 {this.state.ExpertiseData.hasOwnProperty('sub_block_id')? <FooterHeading subBlockData = {this.state.ExpertiseData['sub_block_id'][0]}/>:''}
-                <div className="top-100 bottom-100 clearfix"></div>
+                <div className="top-100 clearfix"></div>
                     <GridList/>
                     {this.state.ExpertiseData.hasOwnProperty('award_slider_id')?this.state.ExpertiseData['award_slider_id'][0][0].award_slider_id? <AwardSlider/>: '':''}
                     {this.state.ExpertiseData.hasOwnProperty('certificate_slider_id')? this.state.ExpertiseData['certificate_slider_id'][0][0].certificate_slider_id ? <CertSlider/>: '':''}
