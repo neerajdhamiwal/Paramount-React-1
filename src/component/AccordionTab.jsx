@@ -48,7 +48,7 @@ class AccordionaTab extends React.Component{
                                                 <div className="medium-5 cell">
                                                     <div>
                                                     <p className="ptb-40">{ReactHtmlParser(service.image_slider_description)}</p>
-                                                    {service.image_slider_cta_button_title !==''? <a href={service.image_slider_cta_button_url} class="button white-btn">{service.image_slider_cta_button_title}</a>:''}
+                                                    {service.image_slider_cta_button_title !==''? <a href={service.image_slider_cta_button_url.substring(9)} className="button white-btn">{service.image_slider_cta_button_title}</a>:''}
                                                 </div>
                                                 </div>
                                                 <div className="medium-7 cell no-padding wow slideInRight">

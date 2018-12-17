@@ -66,6 +66,11 @@ export const urlString={
     "/services/paramount techadvisory/infrastructure management-and-monitoring": 49,
     "/expertise": 38,
     "/expertise/technologies": 45,
-    "/expertise/government-solutions": 52
+    "/expertise/government-solutions": 52,
+    "/contact": 51
+}
+export const Auth = {
+    username : 'sahil.s',
+    password : 'password System123#'
 }
 

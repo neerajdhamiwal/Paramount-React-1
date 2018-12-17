@@ -2,6 +2,9 @@ import {apiUrl, UserName, Pass} from './common.js';
 
 const apiService = {};
 import axios from 'axios';
+import base64 from 'base-64';
+import {Auth} from './common';
+
 
 
 const handleErrors = function(response) {
@@ -60,18 +63,20 @@ apiService.updateService = function(url) {
 
 apiService.postService = function(url, data, multi) {
     const request = {};
+    let headers = new Headers();
+
     if (multi) {
         request.header = {
             'x-access-token': sessionStorage.getItem('token') //eslint-disable-line
         };
         request.body = data;
     } else {
-        request.header = {
-            Accept: 'application/json',
-            'Content-Type': 'application/json',
-            'x-access-token': sessionStorage.getItem('token') //eslint-disable-line
-
-        };
+        // request.header = {
+        //     Accept: 'application/json',
+        //     'Content-Type': 'application/json',
+        // };
+        headers.set('Content-Type', 'application/json');
+        headers.set('Authorization', 'Basic ' + base64.encode(Auth.username + ":" + Auth.password));
         request.body = JSON.stringify(data);
     }
 
@@ -79,16 +84,13 @@ apiService.postService = function(url, data, multi) {
         fetch(`${apiUrl}${url}`,
             {
                 method: 'POST',
-                headers: request.header,
+                headers: headers,
                 body: request.body
             })
-            .then(handleErrors)
+            // .then(handleErrors)
             .then(response => {
-                if (response.error) {
-
-                } else {
                     resolve(response);
-                }
+
             }, error => {
                 reject(error);
             });

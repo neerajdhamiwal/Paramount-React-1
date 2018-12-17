@@ -88,7 +88,6 @@ class Expertise extends React.Component{
                 {this.state.ExpertiseData.hasOwnProperty('sub_block_id')? <FooterHeading subBlockData = {this.state.ExpertiseData['sub_block_id'][0]}/>:''}
                 <div className="top-100 bottom-100 clearfix"></div>
                     <GridList/>
-                    <div className="top-100 bottom-100 clearfix"></div>
                     {this.state.ExpertiseData.hasOwnProperty('award_slider_id')?this.state.ExpertiseData['award_slider_id'][0][0].award_slider_id? <AwardSlider/>: '':''}
                     {this.state.ExpertiseData.hasOwnProperty('certificate_slider_id')? this.state.ExpertiseData['certificate_slider_id'][0][0].certificate_slider_id ? <CertSlider/>: '':''}
                     {this.state.ExpertiseData.hasOwnProperty('partner_slider_id')? this.state.ExpertiseData['partner_slider_id'][0][0].partner_slider_id ? <PartnerSlider/>: '':''}

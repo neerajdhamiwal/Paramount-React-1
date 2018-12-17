@@ -27,7 +27,8 @@ class About extends React.Component{
             awardsData: {},
             loading: true,
             careerData:[],
-            bannerData:[]
+            bannerData:[],
+            duty: true
         }
         this.animation = this.animation.bind(this);
         this.change = this.change.bind(this);
@@ -48,7 +49,7 @@ class About extends React.Component{
     }
 
     componentWillMount(){
-        requestService.getService(`/reach-us-data/131`)
+        requestService.getService(`/reach-us-data/133`)
             .then((response) => {
                 let ids = ['content_ctaflip_id', 'node_flipper_id']
                 let data = jsonMiddleware(response.data, ids)
@@ -99,10 +100,12 @@ class About extends React.Component{
             })
     }
     handleChange(e){
-        $(`.${e.target.id}`).removeClass('hide');
-        $(`.${e.target.id}`).addClass('show');
-        let sibling = $(`.${e.target.id}`)[0].previousSibling.classList[0];
-        $(`.${sibling}`).addClass('hide');
+        if(this.state.duty){
+            this.setState({duty: false})
+        }
+        else{
+            this.setState({duty: true})
+        }
     }
     change(e){
         this.setState({loading: true});
@@ -176,18 +179,14 @@ class About extends React.Component{
                                                         <div className="grid-x align-justify">
                                                             <div className="cell medium-8" id="coltab">
                                                                 <div className="job-deties-req">
-
-                                                                            <a> <div className="job-duties" id={`duty${obj.nid}`} onClick={this.handleChange}>Duties</div></a>
-                                                                            <a> <div className="job-req" role="tab" id={`req${obj.nid}`} onClick={this.handleChange}>Requirement</div></a>
-
+                                                                            <a> <div className={this.state.duty?'activeTab job-duties':'job-duties'} onClick={this.handleChange}>Duties</div></a>
+                                                                            <a> <div className={!(this.state.duty)?'activeTab job-req':'job-req'} role="tab"  onClick={this.handleChange}>Requirement</div></a>
                                                                 </div>
-                                                                <p className={`duty${obj.nid}`}>
-                                                                    {ReactHtmlParser(obj.node_duties)}
-                                                                </p>
-                                                                <p className={`req${obj.nid} hide`}>
-                                                                    {ReactHtmlParser(obj.node_requirements)}
-                                                                </p>
-
+                                                                {this.state.duty?<p>
+                                                                        {ReactHtmlParser(obj.node_duties)}
+                                                                    </p>: <p>
+                                                                        {ReactHtmlParser(obj.node_requirements)}
+                                                                    </p>}
                                                             </div>
                                                             <div className="cell medium-4">
                                                                 <div className="location-block">
@@ -196,7 +195,7 @@ class About extends React.Component{
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        <p><button className="button">Apply Now</button></p>
+                                                        <p><a className="button" href="mailto:priya.k@opensenselabs.com">Apply Now</a></p>
                                                     </div>
                                                 </li>
                                                 }):''

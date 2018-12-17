@@ -31,7 +31,7 @@ class Header extends React.Component{
                                             <li><a href="/about-paramount/awards-and-certifications">Awards & Certifications</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="">Services</a>
+                                    <li><a >Services</a>
                                       <ul className="menu dropdown-menu-an">
                                         <li><a href="/services/paramount-edge"> Paramount Edge</a></li>
                                         <li><a href="/services/paramount-tech-exec">Paramount TechExec</a></li>
@@ -51,7 +51,7 @@ class Header extends React.Component{
                                             <li><a href="/expertise/government-solutions">Government</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="/resource">Resources</a>
+                                    <li><a href="/resources">Resources</a>
                                         <ul className="menu dropdown-menu-an">
                                             <li><a href="/resources/blogs">Blogs</a></li>
                                             <li><a href="/resources/case studies">Case Studies</a></li>

@@ -136,7 +136,7 @@ class About extends React.Component{
                                 <div className="medium-8 small-8 cell">
                                     <div className="award-content pr-155">
                                         <a href="#">{ReactHtmlParser(obj.primary_image_title)}</a>
-                                        <h3>{ReactHtmlParser(obj.primary_image_description)}</h3>
+                                        {obj.primary_image_description !==''? <h3>{ReactHtmlParser(obj.primary_image_description)}</h3>:''}
                                         <p>{ReactHtmlParser(obj.primary_image_body)}</p>
                                     </div>
                                 </div>

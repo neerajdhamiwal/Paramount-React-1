@@ -59,6 +59,7 @@ class CaseStudy extends React.Component{
                       response.data.splice(i, 1);
                       this.setState({loading: false});
                       this.setState({activeCaseStudy: response.data});
+                      return false;
                   }
               })
           })
