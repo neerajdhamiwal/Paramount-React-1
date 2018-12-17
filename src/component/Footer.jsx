@@ -88,9 +88,9 @@ class Footer extends React.Component{
                     <div className="footer-info">
                         {this.state.footerData.length>0 ?ReactHtmlParser(this.state.footerData[0].block_body): ''}
                         <div>
-                            <a className="cl-blue" href=""> <img src={fb} className="mr-8"/></a>
-                            <a className="cl-blue" href=""> <img src ={ln} className="mr-8"/></a>
-                            <a className="cl-blue" href=""> <img src={tw} className="mr-8"/></a>
+                            <a className="cl-blue" href="https://www.facebook.com/ParamountSoftwareSolutionsInc/"> <img src={fb} className="mr-8"/></a>
+                            <a className="cl-blue" href="https://in.linkedin.com/company/paramount-software-solutions"> <img src ={ln} className="mr-8"/></a>
+                            <a className="cl-blue" href="https://twitter.com/paramountsoft"> <img src={tw} className="mr-8"/></a>
                         </div>
                     </div>
                   </div>

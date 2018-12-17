@@ -37,9 +37,9 @@ class Header extends React.Component{
                                         <li><a href="/services/paramount-tech-exec">Paramount TechExec</a></li>
                                         <li><a href="">Paramount Techadvisory</a>
                                             <ul className="menu dropdown-menu-an">
-                                            <li><a href="/services/paramount techadvisory/cms-and-app-development">Content Management Systems & Mobile App Development</a></li>
-                                            <li><a href="/services/paramount techadvisory/application-maintenance-development-integration">Application Maintenance, Development & Integration</a></li>
-                                            <li><a href="/services/paramount techadvisory/infrastructure management-and-monitoring">Infrastructure Management & Monitoring</a></li>
+                                            <li><a href="/services/paramounttechadvisory/cms-and-app-development">Content Management Systems & Mobile App Development</a></li>
+                                            <li><a href="/services/paramounttechadvisory/application-maintenance-development-integration">Application Maintenance, Development & Integration</a></li>
+                                            <li><a href="/services/paramounttechadvisory/infrastructuremanagement-and-monitoring">Infrastructure Management & Monitoring</a></li>
                                         </ul>
                                         </li>
                                       </ul>
@@ -54,7 +54,7 @@ class Header extends React.Component{
                                     <li><a href="/resources">Resources</a>
                                         <ul className="menu dropdown-menu-an">
                                             <li><a href="/resources/blogs">Blogs</a></li>
-                                            <li><a href="/resources/case studies">Case Studies</a></li>
+                                            <li><a href="/resources/casestudies">Case Studies</a></li>
                                             <li><a >White Papers</a></li>
                                             <li><a href="/infographic">Infographics</a></li>
                                         </ul>
