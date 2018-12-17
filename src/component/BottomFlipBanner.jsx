@@ -17,7 +17,7 @@ class BFlipperBanner extends React.Component{
                             {this.props.nodeData[0].content_ctaflip_flip_title!==''? <div className="banner-img-link">
                                     <div className="grid-x grid-margin-x grid-margin-y img-shadow-hover">
                                         {this.props.nodeData.map((data) => {
-                                            return  <div className="cell shrink team-banner-be"><a href="#">{ReactHtmlParser(data.content_ctaflip_flip_title)}</a></div>
+                                            return  <div className="cell shrink team-banner-be"><a href={data.content_ctaflip_flip_cta_url.substring(9)}>{ReactHtmlParser(data.content_ctaflip_flip_title)}</a></div>
 
                                         })}
                                     </div>

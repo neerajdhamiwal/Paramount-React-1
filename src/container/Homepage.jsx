@@ -110,7 +110,7 @@ class Home extends React.Component{
            <div className="banner-img-link paroller-example">
            <div className="grid-x grid-margin-x grid-margin-y img-shadow-hover hide-for-small-only">
                {this.state.HomeData.hasOwnProperty('node_flip_id')? this.state.HomeData['node_flip_id'][0].map((data, index) => {
-                   return <div className="cell shrink wow fadeInDown banner-image-effect" data-wow-delay={`${index}s`} ><a href={data.node_flipper_url}><img src={apiUrl+data.node_flipper_image} alt=""/><span>{data.node_flipper_title}</span></a></div>
+                   return <div className="cell shrink wow fadeInDown banner-image-effect" data-wow-delay={`${index}s`} ><a href={data.node_flipper_cta_url.substring(9)}><img src={apiUrl+data.node_flipper_image} alt=""/><span>{data.node_flipper_title}</span></a></div>
                    }):''}
            </div>
            </div>

@@ -35,11 +35,6 @@ class Home extends React.Component{
         console.log(nextProp);
     }
     render(){
-        // setTimeout(500, () => {
-        //     if(this.props.nid== 38){
-        //         this.animation();
-        //     }
-        // })
         console.log(this.props.nid)
         return(
             <section className="main-banner award-banner">
@@ -48,8 +43,8 @@ class Home extends React.Component{
                         <div className="medium-5 cell small-order-change">
                             <h3 className="banner-info"><span>{ReactHtmlParser(this.props.node[0].node_title)}</span><br/>{ReactHtmlParser(this.props.node[0].node_subtitle_title)}</h3>
                             <p>{ReactHtmlParser(this.props.node[0].node_description)}</p>
-                            {this.props.node[0].hasOwnProperty('node_cta_button_title')? this.props.node[0].node_cta_button_title !==''?<a className="button" href={this.props.node[0].node_cta_button_url.substring(9)}>{this.props.node[0].node_cta_button_title}</a>:'':''}
-                            {this.props.node[0].download_link_title !==''?<a className="button" href={this.props.node[0].download_link_url}>{this.props.node[0].download_link_title}</a>:''}
+                            {this.props.node[0].hasOwnProperty('node_cta_button_title')? this.props.node[0].node_cta_button_title !==''?<a className="button" href={apiUrl+this.props.node[0].node_cta_button_url.substring(9)}>{this.props.node[0].node_cta_button_title}</a>:'':''}
+                            {this.props.node[0].hasOwnProperty('download_link_title')? this.props.node[0].download_link_title !==''?<a className="button" href={apiUrl+this.props.node[0].download_link_url.substring(9)}>{this.props.node[0].download_link_title}</a>:'':''}
                         </div>
                         {this.props.nid ==35?<div className="medium-6 cell about-us-banner">
                                 <div class="rotation-banner">
@@ -69,12 +64,6 @@ class Home extends React.Component{
 
                         {this.props.nid== 38?<div className="medium-6 cell expertise-banner">
                                 <img src={ImgBannerTwo} alt="Banner"/>
-                                {/*<div id="scenethree" data-friction-x="0.1" data-friction-y="0.1" data-scalar-x="25" data-scalar-y="15">*/}
-                              {/*<div data-depth="0.3"><img src={award1} alt="" /></div>*/}
-                              {/*<div data-depth="0.8"><img src={award2} alt="" /></div>*/}
-                              {/*<div data-depth="0.8"><img src={award3} alt="" /></div>*/}
-                              {/*<div data-depth="0.6"><img src={award4} alt="" /></div>*/}
-                            {/*</div>*/}
                         </div>:''}
                         {this.props.nid==51?<div className="medium-6 cell services-sub-menu-two">
                                 <img src={layerTop} alt="Banner"/>

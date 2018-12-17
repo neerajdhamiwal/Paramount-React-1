@@ -69,7 +69,7 @@ class Expertise extends React.Component{
                                 {
                                     this.state.ExpertiseData['flipper_id'][0].map((flip, i) => {
                                         {/*return <div className="cell wow fadeInDown" data-wow-delay="0.5s"><a href="#"><img src={apiUrl+flip.image_flipper_image} alt=""/></a></div>*/}
-                                        return <div className="cell wow shrink fadeInDown banner-image-effect" data-wow-delay={`${i}s`}><a href="#"><img src={apiUrl+flip.image_flipper_image} alt=""/><span>{flip.image_flipper_title}</span></a></div>
+                                        return <div className="cell wow shrink fadeInDown banner-image-effect" data-wow-delay={`${i}s`}><a href={flip.image_flipper_cta_url.substring(9)}><img src={apiUrl+flip.image_flipper_image} alt=""/><span>{flip.image_flipper_title}</span></a></div>
                                     })
                                 }
                             </div>:''}
