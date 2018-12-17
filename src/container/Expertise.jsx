@@ -51,7 +51,7 @@ class Expertise extends React.Component{
         ).init();
     }
     render(){
-        return( this.state.loading? <center >
+        return( this.state.loading? <center>
                     <Loader
                         type="ThreeDots"
                         color="#fd302a"
