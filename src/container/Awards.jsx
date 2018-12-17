@@ -95,9 +95,9 @@ class About extends React.Component{
                            <div className="grid-x align-right align-middle grid-margin-x our-certifications-bg">
                                <div className="medium-2 cell small-order-change">
                                    <div className="our-certifications-content">
-                                       <h3 className="banner-info"><span>{ReactHtmlParser(this.state.awardsData.primary_image_id[0][0].node_title)}</span><br/>
-                                           {ReactHtmlParser(this.state.awardsData.primary_image_id[0][0].node_subtitle_title)}</h3>
-                                       <p>{ReactHtmlParser(this.state.awardsData.primary_image_id[0][0].node_description)}</p>
+                                       <h3 className="banner-info"><span>Our</span><br/>
+                                           Awards</h3>
+                                       {/*<p>{ReactHtmlParser(this.state.awardsData.primary_image_id[0][0].node_description)}</p>*/}
 
                                    </div>
                                </div>

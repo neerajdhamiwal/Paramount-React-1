@@ -61,9 +61,9 @@ export const urlString={
     "/about-paramount/awards-and-certifications": 33,
     "/services/paramount-edge": 24,
     "/services/paramount-tech-exec": 39,
-    "/services/paramount techadvisory/cms-and-app-development": 47,
-    "/services/paramount techadvisory/application-maintenance-development-integration": 48,
-    "/services/paramount techadvisory/infrastructure management-and-monitoring": 49,
+    "/services/paramounttechadvisory/cms-and-app-development": 47,
+    "/services/paramounttechadvisory/application-maintenance-development-integration": 48,
+    "/services/paramounttechadvisory/infrastructuremanagement-and-monitoring": 49,
     "/expertise": 38,
     "/expertise/technologies": 45,
     "/expertise/government-solutions": 52,
@@ -73,4 +73,5 @@ export const Auth = {
     username : 'sahil.s',
     password : 'password System123#'
 }
+
 

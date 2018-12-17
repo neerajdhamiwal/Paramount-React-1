@@ -8,10 +8,11 @@ class Header extends React.Component{
         super(props)
     }
     componentDidMount(){
-        // $('#menu-tabs').on('click', 'li', function() {
-        //     $('#menu-tabs li.is-active').removeClass('is-active');
-        //     $(this).addClass('is-active');
-        // });
+        $('#menu-tabs').on('click', 'li', function() {
+            console.log($(this))
+            $('#menu-tabs li.activeTab').removeClass('activeTab');
+            $(this).addClass('activeTab');
+        });
     }
     render(){
         return(
@@ -35,7 +36,7 @@ class Header extends React.Component{
                                       <ul className="menu dropdown-menu-an">
                                         <li><a href="/services/paramount-edge"> Paramount Edge</a></li>
                                         <li><a href="/services/paramount-tech-exec">Paramount TechExec</a></li>
-                                        <li><a href="">Paramount Techadvisory</a>
+                                        <li><a>Paramount Techadvisory</a>
                                             <ul className="menu dropdown-menu-an">
                                             <li><a href="/services/paramounttechadvisory/cms-and-app-development">Content Management Systems & Mobile App Development</a></li>
                                             <li><a href="/services/paramounttechadvisory/application-maintenance-development-integration">Application Maintenance, Development & Integration</a></li>

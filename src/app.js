@@ -25,7 +25,7 @@ class App extends React.Component{
                         <Route exact path="/resources" component={Resource} />
                         <Route exact path="/expertise" component={Expertise} />
                         <Route exact path="/about-paramount" component={Expertise}/>
-                        <Route exact path="/services/paramount techadvisory/infrastructuremanagement-and-monitoring" component={Expertise}/>
+                        <Route exact path="/services/paramounttechadvisory/infrastructuremanagement-and-monitoring" component={Expertise}/>
                         <Route exact path="/team" component={Team} />
                         <Route exact path="/contact" component={Team} />
                         <Route exact path="/resources/blogs" component={Blog} />
