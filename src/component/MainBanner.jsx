@@ -48,8 +48,8 @@ class Home extends React.Component{
                         <div className="medium-5 cell small-order-change">
                             <h3 className="banner-info"><span>{ReactHtmlParser(this.props.node[0].node_title)}</span><br/>{ReactHtmlParser(this.props.node[0].node_subtitle_title)}</h3>
                             <p>{ReactHtmlParser(this.props.node[0].node_description)}</p>
-                            {this.props.node[0].hasOwnProperty('node_cta_button_title')? this.props.node[0].node_cta_button_title !==''?<a className="button" href={this.props.node[0].node_cta_button_url.substring(9)}>{this.props.node[0].node_cta_button_title}</a>:'':''}
-                            {this.props.node[0].download_link_title !==''?<a className="button" href={this.props.node[0].download_link_url.substring(9)}>{this.props.node[0].download_link_title}</a>:''}
+                            {this.props.node[0].hasOwnProperty('node_cta_button_title')? this.props.node[0].node_cta_button_title !==''?<a className="button" href={apiUrl+this.props.node[0].node_cta_button_url.substring(9)}>{this.props.node[0].node_cta_button_title}</a>:'':''}
+                            {this.props.node[0].download_link_title !==''?<a className="button" href={apiUrl+this.props.node[0].download_link_url.substring(9)}>{this.props.node[0].download_link_title}</a>:''}
                         </div>
                         {this.props.nid ==35?<div className="medium-6 cell about-us-banner">
                                 <div class="rotation-banner">
