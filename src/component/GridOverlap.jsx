@@ -37,7 +37,7 @@ class GridOverlap extends React.Component{
                     <div className="grid-x align-center align-middle block-overlap-custom height-750" id="gridoverlapslider">
                         {this.props.data.map((obj, index) => {
                             return <div className="medium-3 cell wow fadeInUp" data-wow-delay="0.2s">
-                                <a class="overlap-grid-hover-effect">
+                                <div  class="overlap-grid-hover-effect">
 
                                     {index==0?<img src={Img1} alt=""/>:''}
                                     {index==1?<img src={Img2} alt=""/>:''}
@@ -48,7 +48,7 @@ class GridOverlap extends React.Component{
                                       <h3>{ReactHtmlParser(obj.content_flipper_title)}</h3>
                                       {ReactHtmlParser(obj.content_flipper_description)}
                                     </div>
-                                </a>
+                                </div>
                             </div>
                         })}
                     </div>
