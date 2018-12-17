@@ -98,6 +98,13 @@ p{
 			transform-origin: right top;
 				width: auto;
 	  left: -250px;
+		&::-webkit-scrollbar {
+		width: 0em!important;
+		height: 0em!important;
+		}
+		.one:last-child{
+			top: -300px;
+		}
   }
   .horizontal-scroll-wrapper > div {
 	display: block;
@@ -139,3 +146,22 @@ p{
 	  position: relative;
 	  min-height: 500px;
   }
+
+::-webkit-scrollbar {
+width: 0.5em;
+height: 0.5em;
+}
+
+::-webkit-scrollbar-thumb {
+  background: slategray;
+}
+
+::-webkit-scrollbar-track {
+  background: #b8c0c8;
+}
+
+body {
+  scrollbar-face-color: slategray;
+  scrollbar-track-color: #b8c0c8;
+	overflow-x:hidden;
+}

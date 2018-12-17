@@ -75,6 +75,11 @@ p {
   transform-origin: right top;
   width: auto;
   left: -250px; }
+  .horizontal-scroll-wrapper::-webkit-scrollbar {
+    width: 0em !important;
+    height: 0em !important; }
+  .horizontal-scroll-wrapper .one:last-child {
+    top: -300px; }
 
 .horizontal-scroll-wrapper > div {
   display: block;
@@ -111,6 +116,21 @@ p {
 .scroll-relative {
   position: relative;
   min-height: 500px; }
+
+::-webkit-scrollbar {
+  width: 0.5em;
+  height: 0.5em; }
+
+::-webkit-scrollbar-thumb {
+  background: slategray; }
+
+::-webkit-scrollbar-track {
+  background: #b8c0c8; }
+
+body {
+  scrollbar-face-color: slategray;
+  scrollbar-track-color: #b8c0c8;
+  overflow-x: hidden; }
 
 /*Header Styling Starts Here*/
 .close-button {
@@ -334,7 +354,6 @@ header .header-inner {
 .block-overlap-custom .slick-arrow {
   display: none !important; }
 .block-overlap-custom .overlap-grid-hover-effect {
-  cursor: pointer;
   overflow: hidden; }
   .block-overlap-custom .overlap-grid-hover-effect img {
     height: 295px;
@@ -1179,6 +1198,9 @@ footer.footer-bottom {
 .image-shadow {
   box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.2); }
 
+.grey-bg {
+  background: #f6f4f5; }
+
 .button {
   font-family: "Montserrat", sans-serif;
   border-radius: 30px;
@@ -1188,60 +1210,5 @@ footer.footer-bottom {
   .button.btn-full {
     width: 100%;
     border-radius: 3px; }
-  .show{
-    display: block;
-  }
-  .hide{
-    display:none;
-  }
-  .txt-center{
-    text-align: center;
-  }
-  .fs{
-    font-size: 14px;
-  }
-  .color-white{
-    color: white
-  }
-.activeTab{
-  color: #ff0000 !important;
-}
-.info-graphic .info-graphic-heading {
-  text-align: center;
-  margin-bottom: 40px;
-}
-
-.info-graphic .info-graphic-heading h3 {
-  font-weight: 100;
-}
-
-.info-graphic .info-graphic-heading h3 span {
-  font-weight: 700;
-}
-
-.info-graphic .info-graphic-details {
-  margin-top: 15px;
-  padding-right: 100px;
-}
-
-.info-graphic .info-graphic-details h3 {
-  font-size: 20px;
-  position: relative;
-  font-weight: 600;
-  margin-bottom: 15px;
-  display: block;
-  padding-bottom: 15px;
-}
-
-.info-graphic .info-graphic-details h3:after {
-  content: "";
-  position: absolute;
-  bottom: -4px;
-  width: 50px;
-  height: 6px;
-  background: #999;
-  display: block;
-}
-
 
 /*# sourceMappingURL=app.css.map */

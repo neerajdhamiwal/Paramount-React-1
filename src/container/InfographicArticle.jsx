@@ -57,7 +57,7 @@ class Resource extends React.Component{
                     />
                 </center> :
                 this.state.infoData.length>0? <div>
-                <section className="main-banner banner-with-content article-banner" style={BannerStyle(this.state.infoData[0].hero_image)}>
+                <section className="main-banner banner-with-content article-banner bottom-100" style={BannerStyle(this.state.infoData[0].hero_image)}>
                         <div className="grid-container">
                             <div className="grid-x align-right align-middle grid-margin-x">
                                 <div className="medium-10 cell small-order-change">
@@ -93,4 +93,3 @@ class Resource extends React.Component{
     }
 }
 export default Resource;
-
