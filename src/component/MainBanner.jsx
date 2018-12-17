@@ -45,7 +45,7 @@ class Home extends React.Component{
             <section className="main-banner award-banner">
                 <div className="grid-container">
                     <div className="grid-x align-right align-middle grid-margin-x">
-                        <div className="medium-4 cell small-order-change">
+                        <div className="medium-5 cell small-order-change">
                             <h3 className="banner-info"><span>{ReactHtmlParser(this.props.node[0].node_title)}</span><br/>{ReactHtmlParser(this.props.node[0].node_subtitle_title)}</h3>
                             <p>{ReactHtmlParser(this.props.node[0].node_description)}</p>
                             {this.props.node[0].hasOwnProperty('node_cta_button_title')? this.props.node[0].node_cta_button_title !==''?<button className="button">{this.props.node[0].node_cta_button_title}</button>:'':''}
