@@ -79,7 +79,7 @@ class Resource extends React.Component{
                                     </div>
                                 </div>
                                 <div className="small-12 medium-5">
-                                    <img src={apiUrl+this.state.infoData[0].infographic_sec_image}/>
+                                    <div className="info-graphi-small"<img src={apiUrl+this.state.infoData[0].infographic_sec_image}/></div>
                                         <div className="info-graphic-details">
                                             <h3>{ReactHtmlParser(this.state.infoData[0].infographic_title)}</h3>
                                             {this.state.infoData[0].infographic_subtitle? <h6>{this.state.infoData[0].infographic_subtitle}</h6>:''}
@@ -98,4 +98,3 @@ class Resource extends React.Component{
     }
 }
 export default Resource;
-
