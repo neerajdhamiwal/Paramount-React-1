@@ -56,12 +56,12 @@ class Team extends React.Component{
                                     return <div className="grid-x align-center block-latest-reads">
                                         {subArr.map((obj) => {
                                             return    <div className="medium-4 cell img-block">
-                                                <div className="img ">
+                                                <div className="img">
                                                     <img src={apiUrl+obj.team_member_image}/>
                                                 </div>
                                                 <div className="img-content">
                                                     <h6>{obj.team_member_name}</h6>
-                                                    <h2><a href="#">{obj.team_member_job} </a></h2>
+                                                    <h2><a>{obj.team_member_job} </a></h2>
                                                 </div>
                                             </div>
                                         })

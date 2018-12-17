@@ -1242,6 +1242,14 @@ footer.footer-bottom {
   background: #999;
   display: block;
 }
-
+.grey-bg{
+  background: #f6f4f5;
+}
+.mr-8{
+  margin: 8px;
+}
+.cl-blue{
+  color: blue;
+}
 
 /*# sourceMappingURL=app.css.map */

@@ -5,6 +5,9 @@ import ReactHtmlParser from 'react-html-parser';
 import {TwitterTweetEmbed, TwitterTimelineEmbed} from 'react-twitter-embed';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import fb from '../assets/img/fb.png';
+import ln from '../assets/img/linkedin.png';
+import tw from '../assets/img/twitter.png';
 
 class Footer extends React.Component{
     constructor(props){
@@ -84,13 +87,18 @@ class Footer extends React.Component{
                   <div className="medium-4 cell small-order-change">
                     <div className="footer-info">
                         {this.state.footerData.length>0 ?ReactHtmlParser(this.state.footerData[0].block_body): ''}
+                        <div>
+                            <a className="cl-blue" href=""> <img src={fb} className="mr-8"/></a>
+                            <a className="cl-blue" href=""> <img src ={ln} className="mr-8"/></a>
+                            <a className="cl-blue" href=""> <img src={tw} className="mr-8"/></a>
+                        </div>
                     </div>
                   </div>
                   <div className="medium-5 cell">
                     <div className="form-wrapper">
                       <form className="contact-form">
                         <div className="grid-container">
-                                        <h5>{this.state.footerData.length>0?ReactHtmlParser(this.state.footerData[0].block_title):''}</h5>
+                            <h5>{this.state.footerData.length>0?ReactHtmlParser(this.state.footerData[0].block_title):''}</h5>
                           <div className="grid-x">
                             <div className="medium-12 cell">
                                 <input type="text" placeholder="Name" value={this.state.name} name = "name" onChange = {this.handleChange} required/>
