@@ -176,7 +176,7 @@ class Home extends React.Component{
 
         <div className="clearfix"></div>
 
-            <section className="left-image-right-content bottom-100">
+            <section className="left-image-right-content">
                <div className="grid-container custom-grid custom-grid-left">
                    <div className="grid-x align-middle">
                        <div className="large-7 cell no-padding wow slideInLeft">
@@ -223,7 +223,7 @@ class Home extends React.Component{
             </div>
         </section>
         {/*<HorizontalScroll/>*/}
-        <div className="clearfix top-100 bottom-100"></div>
+        <div className="clearfix bottom-100"></div>
                 <GridList/>
         {/*<FooterRowSlider/>*/}
                 {this.state.HomeData.hasOwnProperty('award_slider_id')?this.state.HomeData['award_slider_id'][0][0].award_slider_id? <AwardSlider/>: '':''}
