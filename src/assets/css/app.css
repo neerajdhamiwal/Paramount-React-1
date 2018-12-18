@@ -236,6 +236,20 @@ header .header-inner {
     transform: translateY(0%);
     transition: all 0.3s ease-in-out 0s, visibility 0s linear 0.3s, z-index 0s linear 0.01s; }
 
+.show-for-small {
+  padding-top: 28px; }
+  .show-for-small ul li {
+    width: 220px; }
+    .show-for-small ul li .js-dropdown-active {
+      height: auto;
+      border: none;
+      background: none;
+      position: relative;
+      top: 0px !important; }
+
+.close-button:focus {
+  outline: none; }
+
 /*Header Styling Ends Here*/
 .main-menu ul li a {
   position: relative;
