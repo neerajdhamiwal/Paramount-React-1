@@ -17,7 +17,8 @@ class Footer extends React.Component{
             email: '',
             message: '',
             footerData: [],
-            isDisable: false
+            isDisable: false,
+            tweets:[]
         }
         this.handleChange = this.handleChange.bind(this);
         this.submit = this.submit.bind(this);
@@ -27,6 +28,15 @@ class Footer extends React.Component{
         requestService.getService('/stay-in-touch')
             .then((response) => {
                 this.setState({footerData: response.data});
+            })
+            .catch((err) => {
+                console.log(err);
+            })
+        requestService.getService('/json-tweet')
+            .then((response) => {
+            console.log(response.data)
+                let data = [1072516104419864576,1072516104419864576, 1072516104419864576]
+                this.setState({tweets: data});
             })
             .catch((err) => {
                 console.log(err);
@@ -88,9 +98,9 @@ class Footer extends React.Component{
                     <div className="footer-info">
                         {this.state.footerData.length>0 ?ReactHtmlParser(this.state.footerData[0].block_body): ''}
                         <div>
-                            <a className="cl-blue" href="https://www.facebook.com/ParamountSoftwareSolutionsInc/"> <img src={fb} className="mr-8"/></a>
-                            <a className="cl-blue" href="https://in.linkedin.com/company/paramount-software-solutions"> <img src ={ln} className="mr-8"/></a>
-                            <a className="cl-blue" href="https://twitter.com/paramountsoft"> <img src={tw} className="mr-8"/></a>
+                            <a className="cl-blue" href="https://www.facebook.com/ParamountSoftwareSolutionsInc/" target="blank"> <img src={fb} className="mr-8"/></a>
+                            <a className="cl-blue" href="https://in.linkedin.com/company/paramount-software-solutions" target="blank"> <img src ={ln} className="mr-8"/></a>
+                            <a className="cl-blue" href="https://twitter.com/paramountsoft" target="blank"> <img src={tw} className="mr-8"/></a>
                         </div>
                     </div>
                   </div>
@@ -124,18 +134,21 @@ class Footer extends React.Component{
                   <div className="medium-11 cell">
                     <div className="social-inner">
                       <h5>Latest happenings</h5>
-                      <div className="grid-x grid-margin-x twiter-update-footer">
-                          <TwitterTimelineEmbed
-                              sourceType="profile"
-                              screenName="paramount"
-                              options={{height: 400}}
-                              noScrollbar="true"
-                          />
-                          {/*<TwitterTweetEmbed   tweetId={'1072590849014419456'}/>*/}
+                        {this.state.tweets.length>0?<div className="grid-x grid-margin-x twiter-update-footer">
+                               <TwitterTweetEmbed
+                                  tweetId={this.state.tweets[0].toString()}
+                                  options={{height: 200, width: 350}}
+                              /><TwitterTweetEmbed
+                                  tweetId={this.state.tweets[1].toString()}
+                                  options={{height: 200, width: 350}}
+                              /><TwitterTweetEmbed
+                                  tweetId={this.state.tweets[2].toString()}
+                                  options={{height: 200, width: 350}}
+                              />
                         {/*<TwitterTweetEmbed   tweetId={'1072516104419864576'}/>*/}
                         {/*<div className="medium-4 cell"><img src={require('../assets/img/socialcards.png')} alt="Social Card" /></div>*/}
                         {/*<div className="medium-4 cell"><img src={require('../assets/img/socialcards.png')} alt="Social Card" /></div>*/}
-                      </div>
+                      </div>:''}
                     </div>
                   </div>
                 </div>

@@ -1214,9 +1214,12 @@ footer.footer-bottom {
   border-radius: 30px;
   font-weight: 300;
   font-size: 1rem;
-  padding: 11px 43px; }
+  }
   .button.btn-full {
     width: 100%;
     border-radius: 3px; }
+  .Tweet-card{
+    display:none
+  }
 
 /*# sourceMappingURL=app.css.map */
