@@ -80,6 +80,26 @@ p {
     height: 0em !important; }
   .horizontal-scroll-wrapper .one:last-child {
     top: -300px; }
+  @media screen and (max-width: 39.9375em) {
+    .horizontal-scroll-wrapper {
+      position: relative;
+      display: block;
+      top: 0;
+      left: 0;
+      width: 251px;
+      max-height: 100%;
+      margin: 0;
+      padding-top: 1px;
+      overflow-y: auto;
+      overflow-x: hidden;
+      -webkit-transform: none;
+      transform: none;
+      -webkit-transform-origin: right top;
+      transform-origin: right top;
+      width: auto;
+      left: 0; }
+      .horizontal-scroll-wrapper .one:last-child {
+        top: 0px; } }
 
 .horizontal-scroll-wrapper > div {
   display: block;
@@ -91,6 +111,9 @@ p {
 
 .squares {
   padding: 100% 0 0 0; }
+  @media screen and (max-width: 39.9375em) {
+    .squares {
+      padding: 15px; } }
 
 .squares > div {
   width: 500px;
@@ -98,6 +121,14 @@ p {
   margin: 50px 0;
   position: relative;
   top: -906px; }
+  @media screen and (max-width: 39.9375em) {
+    .squares > div {
+      width: 100%;
+      height: auto;
+      margin: 50px 0;
+      position: relative;
+      top: 0;
+      transform: none; } }
 
 .one h4, .two h4 {
   font-weight: 300;
@@ -355,10 +386,10 @@ header .header-inner {
       width: 170px;
       left: -22px;
       height: auto;
-      top: -29px;
+      top: -20px;
       display: flex;
       align-items: flex-end;
-      padding: 15px;
+      padding: 27px 15px 15px;
       border-radius: 4px;
       min-height: 90px; } }
   .img-relative-title-ld img {
@@ -703,6 +734,9 @@ header .header-inner {
   padding: 10px 15px;
   font-size: .90rem;
   margin-right: 15px; }
+  @media screen and (max-width: 39.9375em) {
+    .main-banner button, .main-banner a.button {
+      width: 100%; } }
 
 .banner-image-effect {
   position: relative;
@@ -889,6 +923,13 @@ footer.footer-bottom {
   color: #303347;
   line-height: 3; }
 
+.twiter-update-footer .MediaCard-widthConstraint {
+  display: none !important; }
+.twiter-update-footer div {
+  width: 33%; }
+  @media screen and (max-width: 39.9375em) {
+    .twiter-update-footer div {
+      width: 100%; } }
 @media screen and (max-width: 39.9375em) {
   .twiter-update-footer {
     padding-left: 35px;

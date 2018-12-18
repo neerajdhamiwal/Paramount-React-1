@@ -98,6 +98,15 @@ footer {
 }
 
 .twiter-update-footer{
+	.MediaCard-widthConstraint{
+		display: none!important;
+	}
+	div{
+		width: 33%;
+		@include mq(small-screen) {
+			width: 100%;
+		}
+	}
 	@include mq(small-screen) {
 		padding-left: 35px;
 		padding-right: 25px;
