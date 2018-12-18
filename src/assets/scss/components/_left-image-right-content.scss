@@ -31,6 +31,23 @@
 	    border-radius: 4px;
 	    float: right;
     }
+		@include mq(small-screen) {
+			position: relative;
+	    top: auto;
+	    bottom: -50px;
+	    background: red;
+	    color: #fff;
+	    font-size: 22px;
+	    font-weight: 400;
+	    right: -12px;
+	    height: auto;
+	    display: flex;
+	    align-items: flex-start;
+	    padding: 15px 15px 50px;
+	    border-radius: 4px;
+	    float: right;
+			width: 200px;
+		}
 	}
 	img {
   	position: relative;
@@ -43,6 +60,9 @@
 
 .left-image-right-content {
     padding-top: 75px;
+		@include mq(small-screen) {
+			 padding-top: 15px;
+		}
   h3 {
     @include tab-title(18);
   }

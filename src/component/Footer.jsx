@@ -18,8 +18,9 @@ class Footer extends React.Component{
             message: '',
             footerData: [],
             isDisable: false,
-            tweets:[]
-        }
+            tweets: []
+            // tweets:[1006619310184251392, 969195682501283800, 958957522961903600]
+    }
         this.handleChange = this.handleChange.bind(this);
         this.submit = this.submit.bind(this);
     }
@@ -34,8 +35,8 @@ class Footer extends React.Component{
             })
         requestService.getService('/json-tweet')
             .then((response) => {
-            console.log(response.data)
-                let data = [1072516104419864576,1072516104419864576, 1072516104419864576]
+                // const data = response.data;
+                const data = ['1006619310184251392', '969195682501283842', '958957522961903616'];
                 this.setState({tweets: data});
             })
             .catch((err) => {
@@ -134,21 +135,22 @@ class Footer extends React.Component{
                   <div className="medium-11 cell">
                     <div className="social-inner">
                       <h5>Latest happenings</h5>
-                        {this.state.tweets.length>0?<div className="grid-x grid-margin-x twiter-update-footer">
-                               <TwitterTweetEmbed
-                                  tweetId={this.state.tweets[0].toString()}
-                                  options={{height: 200, width: 350}}
-                              /><TwitterTweetEmbed
-                                  tweetId={this.state.tweets[1].toString()}
-                                  options={{height: 200, width: 350}}
-                              /><TwitterTweetEmbed
-                                  tweetId={this.state.tweets[2].toString()}
-                                  options={{height: 200, width: 350}}
-                              />
-                        {/*<TwitterTweetEmbed   tweetId={'1072516104419864576'}/>*/}
-                        {/*<div className="medium-4 cell"><img src={require('../assets/img/socialcards.png')} alt="Social Card" /></div>*/}
-                        {/*<div className="medium-4 cell"><img src={require('../assets/img/socialcards.png')} alt="Social Card" /></div>*/}
-                      </div>:''}
+                        {(() => {
+                            if (this.state.tweets.length>0) {
+                                return (
+                                    <div className="grid-x grid-margin-x twiter-update-footer">
+                                        {this.state.tweets.map((tw, i) => {
+                                            return (
+                                                <TwitterTweetEmbed
+                                                    tweetId={tw}
+                                                    options={{height: 200, width: 350}}
+                                                />
+                                            );
+                                        })}
+                                    </div>
+                                );
+                            }
+                        })()}
                     </div>
                   </div>
                 </div>
