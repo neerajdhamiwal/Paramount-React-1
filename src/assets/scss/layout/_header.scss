@@ -16,8 +16,13 @@ header {
 		}
 		}
 		.main-menu{
+			> ul{
+				>li{
+						padding-bottom: 20px;
+				}
+			}
 			ul {
-				li{
+				 li{
 					a{
 						margin: 0 5px;
 						font-size: 1rem;

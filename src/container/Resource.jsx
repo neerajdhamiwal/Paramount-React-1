@@ -66,7 +66,7 @@ class Resource extends React.Component{
     render(){
         return(
             <div>
-                <div classNameName="grid-container pl-155 pr-155 pt-50">
+                <div className="top-100 resource-page-grid">
                     {this.state.blogData.hasOwnProperty('nid')?<GridListScnd data={this.state.blogData['nid'][0]} node="blog"/>:''}
                     {this.state.caseData.hasOwnProperty('id')?<GridListScnd data={this.state.caseData['id'][0]} node="case"/>:''}
                     {this.state.infoData.length>0? <section className="info-graphic pt-50 pb-50 top-100 bottom-100 grey-bg">

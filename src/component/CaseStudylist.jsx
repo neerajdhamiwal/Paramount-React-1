@@ -19,12 +19,12 @@ class CaseStudylist extends React.Component {
             {this.props.activeCaseStudyData.map((caseStudy, i) => {
                 if(i !== 0){
                   if(i%2 ==0){
-                      return <section className="left-image-right-content top-100 bottom-100">
+                      return <section className="left-image-right-content">
                         <div className="grid-container custom-grid custom-grid-left">
                           <div className="grid-x align-middle">
                             <div className="large-7 cell no-padding">
                               <div className="img-relative-title-ru">
-                                <h2 className="relative-title">{ReactHtmlParser(caseStudy.title)}</h2>
+                              <h2 className="relative-title">{ReactHtmlParser(caseStudy.title)}</h2>
                                 <img src={apiUrl + caseStudy.image} alt="placeholder"/>
                               </div>
                             </div>
@@ -53,8 +53,8 @@ class CaseStudylist extends React.Component {
                               <a class="grid__item">
                                 <div class="box">
                                   <div class="box__shadow"></div>
-                                  <h2>{ReactHtmlParser(caseStudy.title)}</h2>
                                   <img class="box__img" src={apiUrl + caseStudy.image} alt="Some image"/>
+                                  <h2>{ReactHtmlParser(caseStudy.title)}</h2>
                                 </div>
                               </a>
                             </div>

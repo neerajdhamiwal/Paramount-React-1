@@ -1,7 +1,6 @@
 
 
 import React from 'react';
-import Parallax from 'parallax-js';
 import award1 from '../assets/img/awards-02.png';
 import award2 from '../assets/img/awards-03.png';
 import award3 from '../assets/img/awards-04.png';
@@ -45,7 +44,6 @@ class About extends React.Component{
         ).init();
 
         let scene = document.getElementById('scene');
-        let parallaxInstance = new Parallax(scene);
     }
 
     componentWillMount(){
@@ -137,9 +135,9 @@ class About extends React.Component{
                                 <div className="medium-2 cell">
                                     <ul className="vertical menu career-page-tab-menu">
                                         <li><a onClick={this.change} id="allJob">All</a></li>
-                                        {this.state.jobList.map((obj)=>{
+                                        {this.state.jobList ? this.state.jobList.map((obj)=>{
                                             return <li><a onClick={this.change} id={obj.job_id}>{obj.job_name}</a></li>
-                                        })}
+                                        }) : <div></div>}
                                     </ul>
                                 </div>
                                 <div className="medium-10 cell">
