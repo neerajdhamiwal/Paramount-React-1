@@ -19,7 +19,7 @@ class FooterHeading extends React.Component{
 
     render(){
         return(
-            <section className="four-column-outer pt-50 pb-50 top-100 bottom-100">
+            <section className="four-column-outer pt-50 pb-50 ">
                 <div className="grid-container">
                     <div className="grid-x">
                         <div className="heading-four-column">
