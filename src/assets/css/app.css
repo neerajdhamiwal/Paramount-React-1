@@ -267,6 +267,20 @@ header .header-inner {
     transform: translateY(0%);
     transition: all 0.3s ease-in-out 0s, visibility 0s linear 0.3s, z-index 0s linear 0.01s; }
 
+.show-for-small {
+  padding-top: 28px; }
+  .show-for-small ul li {
+    width: 220px; }
+    .show-for-small ul li .js-dropdown-active {
+      height: auto;
+      border: none;
+      background: none;
+      position: relative;
+      top: 0px !important; }
+
+.close-button:focus {
+  outline: none; }
+
 /*Header Styling Ends Here*/
 .main-menu ul li a {
   position: relative;
@@ -818,6 +832,10 @@ header .header-inner {
   width: 160px;
   height: 90px; }
 
+.technologies-government-banner img {
+  position: sticky;
+  top: 0px; }
+
 @media screen and (max-width: 39.9375em) {
   footer.bg-color-grey {
     background: #fff; } }
@@ -940,8 +958,15 @@ footer.footer-bottom {
 .our-certifications-box {
   background: url(..//img/certifications-parallax-03.png) no-repeat top right #f6f4f5;
   background-position: 80% top; }
+  @media screen and (max-width: 39.9375em) {
+    .our-certifications-box {
+      background-position: 50% 80%;
+      background-size: 100%; } }
   .our-certifications-box .our-certifications-content {
     padding: 130px 0 130px; }
+    @media screen and (max-width: 39.9375em) {
+      .our-certifications-box .our-certifications-content {
+        padding: 30px 0px 130px 0px; } }
 
 .row-slider .slick-dots {
   display: flex;
@@ -1128,6 +1153,14 @@ footer.footer-bottom {
     color: #5b5c5e;
     padding: .25rem 0rem .20rem;
     text-align: right; }
+    @media screen and (max-width: 39.9375em) {
+      .job-posting-list .career-page-tab-menu li {
+        display: block;
+        text-align: center;
+        padding: 10px 0;
+        border-right: 2px solid #eee;
+        border-bottom: 2px solid #eee;
+        margin-bottom: 15px; } }
 .job-posting-list .open-position {
   font-family: Montserrat,sans-serif;
   font-size: 1.125rem;
@@ -1147,6 +1180,9 @@ footer.footer-bottom {
     font-size: 1.5rem;
     font-weight: 700;
     color: #666; }
+    @media screen and (max-width: 39.9375em) {
+      .job-posting-list .accordion-title .job-title {
+        font-size: 0.875rem; } }
   .job-posting-list .accordion-title .location-view {
     position: absolute;
     right: 15px;

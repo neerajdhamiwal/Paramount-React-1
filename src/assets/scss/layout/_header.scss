@@ -154,4 +154,21 @@ header {
 		}
 	}
 }
+.show-for-small{
+    padding-top: 28px;
+    ul{
+    	li{width: 220px;
+    		.js-dropdown-active{
+    			height: auto;
+			    border: none;
+			    background: none;
+    			position: relative;
+    			top:0px !important;
+    		}
+    	}
+    }
+}
+.close-button:focus{
+	outline: none;
+}
 /*Header Styling Ends Here*/
