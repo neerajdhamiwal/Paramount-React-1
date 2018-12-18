@@ -35,8 +35,8 @@ class Footer extends React.Component{
             })
         requestService.getService('/json-tweet')
             .then((response) => {
-                const data = response.data;
-                // const data = ['1006619310184251392', '958636841477001216', '958957522961903600'];
+                // const data = response.data;
+                const data = ['1006619310184251392', '969195682501283842', '958957522961903616'];
                 this.setState({tweets: data});
             })
             .catch((err) => {
