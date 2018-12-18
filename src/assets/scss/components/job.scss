@@ -8,6 +8,14 @@
       color: #5b5c5e;
       padding: .25rem 0rem .20rem;
       text-align: right;
+      @include mq(small-screen) {
+    display: block;
+    text-align: center;
+    padding: 10px 0;
+    border-right: 2px solid #eee;
+    border-bottom: 2px solid #eee;
+    margin-bottom: 15px;
+      }
     }
   }
   .open-position{
@@ -33,6 +41,9 @@
       font-size: 1.5rem;
       font-weight: 700;
       color: #666;
+      @include mq(small-screen){
+        font-size: 0.875rem;
+      }
     }
     .location-view{
       position: absolute;
