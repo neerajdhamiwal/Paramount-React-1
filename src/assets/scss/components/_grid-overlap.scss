@@ -13,10 +13,17 @@
     margin: 0px 6px;
     -webkit-transition: all 0.2s linear 0.1s;
     position: relative;
+		@include mq(small-screen) {
+			transition: none!important;
+			margin: 0 10px;
+		}
     &:hover {
     	transform: scale(1.70);
     	z-index: 1;
     	position: inherit;
+			@include mq(small-screen) {
+				transform:none;
+			}
     	-webkit-transition: all 0.2s linear 0.1s;
     	h3 {
     		font-size: 1.125rem;
@@ -29,6 +36,9 @@
 	    text-align: center;
 	    color: #fff;
 	    font-size: 0.875rem;
+			@include mq(small-screen) {
+				transition: none!important;
+			}
 	    -webkit-transition: all 0.2s linear 0.1s;
     }
 	}
@@ -37,9 +47,18 @@
 	}
 		.overlap-grid-hover-effect{
 		  overflow: hidden;
+			@include mq(small-screen) {
+				box-shadow: 0 0 2px #333;
+				min-height: 470px;
+			}
+
 			img{
 				height: 295px;
     		width: 100%;
+				@include mq(small-screen) {
+					height:auto;
+					margin-bottom: 15px;
+				}
 			}
 		  &:hover .overlap-hover-box{
 		    opacity: 1;
@@ -47,6 +66,9 @@
 		    transform: scale(1);
 		    -webkit-transition: transform .5s ease, opacity 1.3s ease;
 		    transition: transform .5s ease, opacity 1.3s ease;
+				@include mq(small-screen) {
+					transform:none;
+				}
 				h3{
 					color: red;
 				}
@@ -56,6 +78,15 @@
 		    text-align: center;
 		    position: absolute;
 		    margin: auto;
+				@include mq(small-screen) {
+					position: relative;
+					color: #fff;
+					background: none;
+					transition: none!important;
+					transform: none!important;
+					opacity: 1!important;
+					padding: 10px  15px 0;
+				}
 		    line-height: 30px;
 		    left: 0;
 		    top: 0;
@@ -72,6 +103,9 @@
 					bottom: auto;
 					top:50px;
 					color: #fff;
+					@include mq(small-screen) {
+						display: none;
+					}
 				}
 				p{
 			    bottom: 60px;
