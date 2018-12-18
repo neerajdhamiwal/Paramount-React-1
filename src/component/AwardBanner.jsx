@@ -15,7 +15,7 @@ class AwardBanner extends React.Component{
         return(
           <section className= {`bottom-100 ${this.props.customClass}` }>
       <div className="grid-container custom-grid custom-grid-right">
-        <div className="grid-x align-right align-middle grid-margin-x wow fadeInUp">
+        <div className="grid-x align-right grid-margin-x wow fadeInUp">
           <div className="medium-5 cell small-order-change">
             <h3 className="banner-info"><span>{ReactHtmlParser(this.props.nodeData[0].node_title)}</span><br/>
                 {ReactHtmlParser(this.props.nodeData[0].node_subtitle_title)}</h3>
