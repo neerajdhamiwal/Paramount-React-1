@@ -9,8 +9,6 @@ import layerTop from '../assets/img/layertop.png';
 import contactBanner from '../assets/img/contact-banner.png';
 import contactBanner2 from '../assets/img/contact-banner2.png';
 import contactBanner3 from '../assets/img/contact-banner3.png';
-import careerBanner from '../assets/img/career-banner.png';
-import careerBanner2 from '../assets/img/career-banner2.png';
 import aboutLayerBannerone from '../assets/img/about-layer1.png';
 import aboutLayerBannertwo from '../assets/img/about-layer2.png';
 import ImgBannerTwo from '../assets/img/services-sub-two.png';
@@ -85,24 +83,7 @@ class Home extends React.Component{
                               {/*<div data-depth="0.6"><img src={award4} alt="" /></div>*/}
                             {/*</div>*/}
                         </div>:''}
-                        {this.props.nid==51 || this.props.nid == 'career'?<div className="medium-6 cell services-sub-menu-two">
 
-                        <div id="scene" data-friction-x="0.1" data-friction-y="0.1" data-scalar-x="25" data-scalar-y="15">
-                          {this.props.nid == 51 ?
-                            <React.Fragment>
-                              <div data-depth="0.3"><img src={contactBanner} alt="" /></div>
-                              <div data-depth="0.8"><img src={contactBanner2} alt="" /></div>
-                              <div data-depth="0.8"><img src={contactBanner3} alt="" /></div>
-                            </React.Fragment>
-                             :
-                             <React.Fragment>
-                               <div data-depth="0.3"><img src={careerBanner} alt="" /></div>
-                               <div data-depth="0.8"><img src={careerBanner2} alt="" /></div>
-                             </React.Fragment>
-                            }
-                        </div>
-
-                            </div>:''}
                     </div>
                 </div>
             </section>

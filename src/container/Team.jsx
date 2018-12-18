@@ -1,6 +1,7 @@
 
 import React from 'react';
 import Header from '../component/Header.jsx';
+import Parallax from 'parallax-js';
 import FlipperBanner from '../component/FlipperBanner.jsx';
 import MainBanner from '../component/MainBanner.jsx';
 import BottomFlipBanner from '../component/BottomFlipBanner.jsx';
@@ -10,6 +11,10 @@ import CertSlider from '../component/CertificationBottomSlider.jsx';
 import {customDivideData, apiUrl, jsonMiddleware, urlString} from '../services/common';
 import requestService from '../services/request';
 import Loader from 'react-loader-spinner'; // eslint-disable-line no-unused-vars
+import contactBanner from '../assets/img/contact-banner.png';
+import contactBanner2 from '../assets/img/contact-banner2.png';
+import contactBanner3 from '../assets/img/contact-banner3.png';
+import ReactHtmlParser from 'react-html-parser';
 import $ from 'jquery';
 //import 'foundation/js/vendor/zepto';
 class Team extends React.Component{
@@ -19,6 +24,7 @@ class Team extends React.Component{
             teamData: {},
             loading: true
         }
+        this.animation = this.animation.bind(this);
     }
     componentWillMount(){
         requestService.getService(`/reach-us-data/${urlString[this.props.location.pathname]}`)
@@ -26,7 +32,9 @@ class Team extends React.Component{
                 let ids = ['map_id','award_slider_id', 'certificate_slider_id', 'team_member_id', 'content_ctaflip_id', 'node_flipper_id'];
                 let data = jsonMiddleware(response.data, ids);
                 this.setState({loading: false});
-                this.setState({teamData: data});
+                this.setState({teamData: data}, ()=> {
+                    this.animation();
+                })
             })
             .catch((err) => {
                 console.log(err);
@@ -36,6 +44,12 @@ class Team extends React.Component{
     componentDidMount(){
         //Foundation.addToJquery($);
         $(document).foundation();
+
+    }
+    animation(){
+        let scene = document.getElementById('scene');
+        console.log(scene);
+        let parallaxInstance = new Parallax(scene);
     }
 
     render(){
@@ -50,7 +64,25 @@ class Team extends React.Component{
                         />
                         </center>: <div>
                         {Object.keys(this.state.teamData).length>0?
-                                <MainBanner node={this.state.teamData[Object.keys(this.state.teamData)[0]][0]} nid={urlString[this.props.location.pathname]}/>:''}
+                        <section className="main-banner award-banner">
+                            <div className="grid-container">
+                                <div className="grid-x align-right align-middle grid-margin-x">
+                                    <div className="medium-5 cell small-order-change">
+                                        <h3 className="banner-info"><span>{ReactHtmlParser(this.state.teamData[Object.keys(this.state.teamData)[0]][0][0].node_title)}</span><br/>{ReactHtmlParser(this.state.teamData[Object.keys(this.state.teamData)[0]][0][0].node_subtitle_title)}</h3>
+                                        <p>{ReactHtmlParser(this.state.teamData[Object.keys(this.state.teamData)[0]][0][0].node_description)}</p>
+                                        {this.state.teamData[Object.keys(this.state.teamData)[0]][0][0].hasOwnProperty('node_cta_button_title')? this.state.teamData[Object.keys(this.state.teamData)[0]][0][0].node_cta_button_title !==''?<a className="button" href={apiUrl+this.state.teamData[Object.keys(this.state.teamData)[0]][0][0].node_cta_button_url.substring(9)}>{this.state.teamData[Object.keys(this.state.teamData)[0]][0][0].node_cta_button_title}</a>:'':''}
+                                        {this.state.teamData[Object.keys(this.state.teamData)[0]][0][0].hasOwnProperty('node_cta_button_title')?this.state.teamData[Object.keys(this.state.teamData)[0]][0][0].download_link_title !==''?<a className="button" href={apiUrl+this.state.teamData[Object.keys(this.state.teamData)[0]][0][0].download_link_url.substring(9)}>{this.state.teamData[Object.keys(this.state.teamData)[0]][0][0].download_link_title}</a>:'':''}
+                                    </div>
+                                    <div className="medium-6 cell services-sub-menu-two">
+                                            <div id="scene" data-friction-x="0.1" data-friction-y="0.1" data-scalar-x="25" data-scalar-y="15">
+                                                        <div data-depth="0.3"><img src={contactBanner} alt="" /></div>
+                                                        <div data-depth="0.8"><img src={contactBanner2} alt="" /></div>
+                                                        <div data-depth="0.8"><img src={contactBanner3} alt="" /></div>
+                                            </div>
+                                        </div>
+                                </div>
+                            </div>
+                        </section>:''}
                         {this.state.teamData.hasOwnProperty('team_member_id') ? <div className="grid-container">
                                 {customDivideData(this.state.teamData['team_member_id'][0], 3).map((subArr) => {
                                     return <div className="grid-x align-center block-latest-reads">
