@@ -11,7 +11,7 @@ class MapCont extends React.Component{
     render(){
         return(
             <section className="left-image-right-content top-200 bottom-100 contact-us-page">
-                <div className="grid-container custom-grid custom-grid-left lp-row-none">
+                <div className="grid-container custom-grid custom-grid-left">
                     <div className="grid-x align-middle">
                         <div className="large-7 cell no-padding">
                             <div className="img-relative-title-ru">
