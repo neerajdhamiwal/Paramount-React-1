@@ -138,7 +138,7 @@ class Home extends React.Component{
         <div className="top-100 clearfix"></div>
            {this.state.HomeData.hasOwnProperty('content_flip_id')? <GridOverLap data = {this.state.HomeData['content_flip_id'][0]}/>:''}
             <div className="top-100 clearfix"></div>
-           {this.state.HomeData.hasOwnProperty('content_slider_id')? <section className="tab-accordion mt-50-mobile">
+           {this.state.HomeData.hasOwnProperty('content_slider_id')? <section className="tab-accordion">
                    <div className="grid-container custom-grid custom-grid-right">
                        <div className="grid-x">
                            <div className="medium-2 cell wow fadeInUp">
