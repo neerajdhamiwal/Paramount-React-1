@@ -140,6 +140,9 @@ body {
   max-height: 300px;
   overflow-y: scroll; }
 
+.contact-us-page .img-relative-title-ru iframe {
+  position: relative; }
+
 /*Header Styling Starts Here*/
 .close-button {
   z-index: 9999; }
@@ -319,9 +322,9 @@ header .header-inner {
       top: -31px;
       display: flex;
       align-items: flex-end;
-      padding: 50px 34px 30px;
+      padding: 26px 34px 35px;
       border-radius: 4px;
-      min-height: 140px; } }
+      min-height: 120px; } }
   .img-relative-title-ld img {
     position: relative;
     width: 100%;
@@ -864,7 +867,8 @@ footer.footer-bottom {
   background-size: cover; }
 
 .four-column-outer {
-  background: #f6f4f5; }
+  background: #f6f4f5;
+  margin: 40px 0; }
   .four-column-outer .heading-four-column {
     text-align: center;
     width: 100%;

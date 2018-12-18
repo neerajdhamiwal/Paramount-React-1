@@ -175,3 +175,11 @@ body {
     max-height: 300px;
     overflow-y: scroll;
 }
+
+.contact-us-page{
+	.img-relative-title-ru{
+		iframe{
+			position: relative;
+		}
+	}
+}
