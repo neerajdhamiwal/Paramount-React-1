@@ -29,7 +29,7 @@ class AwardBanner extends React.Component{
                       <img src={ImgBanner} alt="Banner"/>
                     </div>
                     </div>:''}
-            }
+
             {this.props.nid == 47? <div className="medium-6 cell services-sub-menu-two">
             <img src={ImgBannerTwo} alt="Banner"/>
             </div>:this.props.nid == 48? <div className="medium-6 cell services-sub-menu-two">
