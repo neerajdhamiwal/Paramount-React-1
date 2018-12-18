@@ -236,6 +236,20 @@ header .header-inner {
     transform: translateY(0%);
     transition: all 0.3s ease-in-out 0s, visibility 0s linear 0.3s, z-index 0s linear 0.01s; }
 
+.show-for-small {
+  padding-top: 28px; }
+  .show-for-small ul li {
+    width: 220px; }
+    .show-for-small ul li .js-dropdown-active {
+      height: auto;
+      border: none;
+      background: none;
+      position: relative;
+      top: 0px !important; }
+
+.close-button:focus {
+  outline: none; }
+
 /*Header Styling Ends Here*/
 .main-menu ul li a {
   position: relative;
@@ -262,13 +276,15 @@ header .header-inner {
     font-size: .95rem;
     margin-right: 10px; }
   @media screen and (max-width: 39.9375em) {
-    .tab-accordion ul.accordion li {
-      display: block;
-      text-align: center;
-      padding: 10px 0px;
-      border-right: 2px solid #eee;
-      border-bottom: 2px solid #eee;
-      margin-bottom: 15px; } }
+    .tab-accordion {
+      padding-bottom: 15px; }
+      .tab-accordion ul.accordion li {
+        display: block;
+        text-align: center;
+        padding: 10px 0px;
+        border-right: 2px solid #eee;
+        border-bottom: 2px solid #eee;
+        margin-bottom: 15px; } }
   .tab-accordion .tabs-title {
     float: none; }
     .tab-accordion .tabs-title a {
@@ -328,6 +344,23 @@ header .header-inner {
       padding: 40px 34px 35px;
       border-radius: 4px;
       min-height: 120px; } }
+  @media screen and (max-width: 39.9375em) {
+    .img-relative-title-ld h2 {
+      position: relative;
+      bottom: auto;
+      background: red;
+      color: #fff;
+      font-size: 20px;
+      font-weight: 300;
+      width: 170px;
+      left: -22px;
+      height: auto;
+      top: -29px;
+      display: flex;
+      align-items: flex-end;
+      padding: 15px;
+      border-radius: 4px;
+      min-height: 90px; } }
   .img-relative-title-ld img {
     position: relative;
     width: 100%;
@@ -350,11 +383,18 @@ header .header-inner {
   margin: 0px 6px;
   -webkit-transition: all 0.2s linear 0.1s;
   position: relative; }
+  @media screen and (max-width: 39.9375em) {
+    .block-overlap-custom .cell {
+      transition: none !important;
+      margin: 0 10px; } }
   .block-overlap-custom .cell:hover {
     transform: scale(1.7);
     z-index: 1;
     position: inherit;
     -webkit-transition: all 0.2s linear 0.1s; }
+    @media screen and (max-width: 39.9375em) {
+      .block-overlap-custom .cell:hover {
+        transform: none; } }
     .block-overlap-custom .cell:hover h3 {
       font-size: 1.125rem;
       -webkit-transition: all 0.2s linear 0.1s; }
@@ -365,19 +405,33 @@ header .header-inner {
     color: #fff;
     font-size: 0.875rem;
     -webkit-transition: all 0.2s linear 0.1s; }
+    @media screen and (max-width: 39.9375em) {
+      .block-overlap-custom .cell h3 {
+        transition: none !important; } }
 .block-overlap-custom .slick-arrow {
   display: none !important; }
 .block-overlap-custom .overlap-grid-hover-effect {
   overflow: hidden; }
+  @media screen and (max-width: 39.9375em) {
+    .block-overlap-custom .overlap-grid-hover-effect {
+      box-shadow: 0 0 2px #333;
+      min-height: 470px; } }
   .block-overlap-custom .overlap-grid-hover-effect img {
     height: 295px;
     width: 100%; }
+    @media screen and (max-width: 39.9375em) {
+      .block-overlap-custom .overlap-grid-hover-effect img {
+        height: auto;
+        margin-bottom: 15px; } }
   .block-overlap-custom .overlap-grid-hover-effect:hover .overlap-hover-box {
     opacity: 1;
     -webkit-transform: scale(1);
     transform: scale(1);
     -webkit-transition: transform .5s ease, opacity 1.3s ease;
     transition: transform .5s ease, opacity 1.3s ease; }
+    @media screen and (max-width: 39.9375em) {
+      .block-overlap-custom .overlap-grid-hover-effect:hover .overlap-hover-box {
+        transform: none; } }
     .block-overlap-custom .overlap-grid-hover-effect:hover .overlap-hover-box h3 {
       color: red; }
   .block-overlap-custom .overlap-grid-hover-effect .overlap-hover-box {
@@ -397,10 +451,22 @@ header .header-inner {
     transform: scale(0);
     -webkit-transition: transform .5s ease, opacity .7s ease;
     transition: transform .5s ease, opacity .7s ease; }
+    @media screen and (max-width: 39.9375em) {
+      .block-overlap-custom .overlap-grid-hover-effect .overlap-hover-box {
+        position: relative;
+        color: #fff;
+        background: none;
+        transition: none !important;
+        transform: none !important;
+        opacity: 1 !important;
+        padding: 10px  15px 0; } }
     .block-overlap-custom .overlap-grid-hover-effect .overlap-hover-box h3 {
       bottom: auto;
       top: 50px;
       color: #fff; }
+      @media screen and (max-width: 39.9375em) {
+        .block-overlap-custom .overlap-grid-hover-effect .overlap-hover-box h3 {
+          display: none; } }
     .block-overlap-custom .overlap-grid-hover-effect .overlap-hover-box p {
       bottom: 60px;
       right: 14px;
@@ -480,6 +546,23 @@ header .header-inner {
         padding: 30px 35px 60px;
         border-radius: 4px;
         float: right; } }
+    @media screen and (max-width: 39.9375em) {
+      .img-relative-title-ru h2 {
+        position: relative;
+        top: auto;
+        bottom: -50px;
+        background: red;
+        color: #fff;
+        font-size: 22px;
+        font-weight: 400;
+        right: -12px;
+        height: auto;
+        display: flex;
+        align-items: flex-start;
+        padding: 15px 15px 50px;
+        border-radius: 4px;
+        float: right;
+        width: 200px; } }
   .img-relative-title-ru img {
     position: relative;
     width: 100%;
@@ -491,6 +574,9 @@ header .header-inner {
 
 .left-image-right-content {
   padding-top: 75px; }
+  @media screen and (max-width: 39.9375em) {
+    .left-image-right-content {
+      padding-top: 15px; } }
   .left-image-right-content h3 {
     font-family: "Montserrat", sans-serif;
     font-size: 1.125rem; }
