@@ -105,6 +105,27 @@ p{
 		.one:last-child{
 			top: -300px;
 		}
+		@include mq(small-screen) {
+			.one:last-child{
+				top: 0px;
+			}
+			position: relative;
+			display: block;
+			top: 0;
+			left: 0;
+			width: 251px;
+			max-height: 100%;
+			margin: 0;
+			padding-top: 1px;
+			overflow-y: auto;
+			overflow-x: hidden;
+			-webkit-transform: none;
+			transform: none;
+			-webkit-transform-origin: right top;
+			transform-origin: right top;
+			width: auto;
+			left: 0;
+		}
   }
   .horizontal-scroll-wrapper > div {
 	display: block;
@@ -117,6 +138,9 @@ p{
 
   .squares {
 	padding: 100% 0 0 0;
+	@include mq(small-screen) {
+		padding: 15px;
+	}
   }
   .squares > div {
 	  width: 500px;
@@ -124,6 +148,14 @@ p{
 	  margin: 50px 0;
 	  position: relative;
 	  top: -906px;
+		@include mq(small-screen) {
+			width: 100%;
+			height: auto;
+			margin: 50px 0;
+			position: relative;
+			top: 0;
+			transform: none;
+		}
   }
 
   .one h4, .two h4{
