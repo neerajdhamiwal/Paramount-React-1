@@ -51,8 +51,8 @@ constructor(props){
                       </div>
                       <div className="medium-7 cell no-padding">
                         <div className="img-relative-title-ld">
-                          <h2 className="relative-title">{ReactHtmlParser(this.state.activeObject['title'])}</h2>
                           <img src={apiUrl+this.state.activeObject['image']} alt="" />
+                          <h2 className="relative-title">{ReactHtmlParser(this.state.activeObject['title'])}</h2>
                         </div>
                       </div>
                     </div>

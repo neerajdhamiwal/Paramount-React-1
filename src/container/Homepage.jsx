@@ -2,6 +2,7 @@
 import React from 'react';
 import WOW from 'wowjs';
 import Parallax from 'parallax-js';
+import paroller from 'paroller.js';
 import GridOverLap from '../component/GridOverlap.jsx';
 import HorizontalScroll from '../component/HorizontalScroll.jsx';
 import CertSlider from '../component/CertificationBottomSlider.jsx';
@@ -80,6 +81,8 @@ class Home extends React.Component{
     }
 
     componentDidMount(){
+      console.log(paroller);
+      // $('.my-paroller').paroller();
         //Foundation.addToJquery($);
     }
 

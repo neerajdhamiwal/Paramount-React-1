@@ -141,7 +141,8 @@ body {
   overflow-y: scroll; }
 
 .contact-us-page .img-relative-title-ru iframe {
-  position: relative; }
+  position: relative;
+  width: 100%; }
 
 /*Header Styling Starts Here*/
 .close-button {
@@ -155,6 +156,8 @@ header .header-inner {
   @media screen and (min-width: 40em) {
     header .header-inner .menu-icon {
       display: none; } }
+  header .header-inner .main-menu > ul > li {
+    padding-bottom: 20px; }
   header .header-inner .main-menu ul li a {
     margin: 0 5px;
     font-size: 1rem; }
@@ -322,7 +325,7 @@ header .header-inner {
       top: -31px;
       display: flex;
       align-items: flex-end;
-      padding: 26px 34px 35px;
+      padding: 40px 34px 35px;
       border-radius: 4px;
       min-height: 120px; } }
   .img-relative-title-ld img {
@@ -599,6 +602,9 @@ header .header-inner {
       line-height: 1.4;
       font-weight: 400; }
 
+.resource-page-grid .grid-container h4 {
+  margin-left: 23px; }
+
 .banner-info {
   font-size: 1.875rem;
   color: #575757;
@@ -805,6 +811,8 @@ footer.footer-bottom {
 .award-content-box .award-content a {
   font-size: 20px;
   color: #e93f33; }
+.award-content-box .award-content a.button {
+  color: #fff; }
 .award-content-box .award-content h3 {
   font-family: "Montserrat", sans-serif;
   font-size: 1.125rem;
