@@ -157,7 +157,8 @@ header {
 .show-for-small{
     padding-top: 28px;
     ul{
-    	li{width: 220px;
+    	li{
+				width: 100%;
     		.js-dropdown-active{
     			height: auto;
 			    border: none;
