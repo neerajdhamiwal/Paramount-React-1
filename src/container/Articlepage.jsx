@@ -109,7 +109,7 @@ class ArticlePage extends React.Component{
                       {this.state.caseList.hasOwnProperty('name')?<ul>
                         {
                             this.state.caseList.name.split(',').map((value, index) => {
-                            return <li><a href = {"/casestudy?cid="+this.state.caseList.id.split(',')[index]}>
+                            return <li><a href = {"/resources/blogs?cid="+this.state.caseList.id.split(',')[index]}>
                                 {value}</a></li>
                         })
                         }
@@ -124,10 +124,8 @@ class ArticlePage extends React.Component{
                 </div>
               </div>
             </div>
-
             </div>
           </div>
-
         </section>
         <GridList/>
             </div>

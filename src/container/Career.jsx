@@ -36,10 +36,12 @@ class About extends React.Component{
                 offset:       100,
             }
         ).init();
-
             let scene = document.getElementById('scene');
             let parallaxInstance = new Parallax(scene);
-
+        $('#jobList').on('click', 'li a', function() {
+            $('#jobList a.activeTab').removeClass('activeTab');
+            $(this).addClass('activeTab');
+        });
             }
 
     componentWillMount(){
@@ -84,9 +86,9 @@ class About extends React.Component{
             .then((response) => {
                 let ids = ['job_id','nid'];
                 let data = jsonMiddleware(response.data, ids)
-                this.setState({loading: false});
+                //this.setState({loading: false});
                 this.setState({careerData: data},()=> {
-                    $(document).foundation();
+                    //$(document).foundation();
                 });
             })
             .catch((err) => {
@@ -102,7 +104,7 @@ class About extends React.Component{
         }
     }
     change(e){
-        this.setState({loading: true});
+        //this.setState({loading: true});
         if(e.target.id=='allJob'){
             this.getAllJobs()
         }
@@ -148,7 +150,7 @@ class About extends React.Component{
                         <div className="grid-container">
                             <div className="grid-x grid-padding-x">
                                 <div className="medium-2 cell">
-                                    <ul className="vertical menu career-page-tab-menu">
+                                    <ul className="vertical menu career-page-tab-menu" id="jobList">
                                         <li><a onClick={this.change} id="allJob">All</a></li>
                                         {this.state.jobList.length>0 ? this.state.jobList.map((obj)=>{
                                             return <li><a onClick={this.change} id={obj.job_id}>{obj.job_name}</a></li>
