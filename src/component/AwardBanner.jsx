@@ -20,7 +20,7 @@ class AwardBanner extends React.Component{
           <div className="medium-5 cell small-order-change">
             <h3 className="banner-info"><span>{ReactHtmlParser(this.props.nodeData[0].node_title)}</span><br/>
                 {ReactHtmlParser(this.props.nodeData[0].node_subtitle_title)}</h3>
-            <p>{ReactHtmlParser(this.props.nodeData[0].node_description)}</p>
+            <p>{ReactHtmlParser(imgPath(this.props.nodeData[0].node_description))}</p>
             <p>{ReactHtmlParser(imgPath(this.props.nodeData[0].node_body))}</p>
           </div>
             {this.props.nid == 24? <div><div className="medium-6 cell services-sub-menu">

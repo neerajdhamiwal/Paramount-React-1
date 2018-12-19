@@ -13,7 +13,7 @@ class FlipperBanner extends React.Component{
                         <div className="medium-5 cell small-order-change">
                             <h3 className="banner-info"><span>{ReactHtmlParser(this.props.nodeData[0].node_title)}</span><br/>
                                 {ReactHtmlParser(this.props.nodeData[0].node_subtitle)}</h3>
-                            <h6>{ReactHtmlParser(this.props.nodeData[0].node_description)}</h6>
+                            <h6>{ReactHtmlParser(imgPath(this.props.nodeData[0].node_description))}</h6>
                             <div className="banner-img-link">
                                 <div className="grid-x grid-margin-x grid-margin-y img-shadow-hover">
                                     {this.props.nodeData.map((data) => {

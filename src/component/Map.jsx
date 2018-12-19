@@ -24,7 +24,7 @@ class MapCont extends React.Component{
                         </div>
                         <div className="large-5 cell">
                             <div className="content-inner pl-155">
-                                <h3>{ReactHtmlParser(this.props.node.map_description)}</h3>
+                                <h3>{ReactHtmlParser(imgPath(this.props.node.map_description))}</h3>
                                 <p className="ptb-40">{ReactHtmlParser(imgPath(this.props.node.map_body))}</p>
                             </div>
                         </div>

@@ -2,7 +2,7 @@
 import React from 'react';
 import BottomBanner from '../assets/img/team-banner-bg2.png';
 import ReactHtmlParser from 'react-html-parser';
-import imgPath from '../services/common';
+import {imgPath} from '../services/common';
 
 class BFlipperBanner extends React.Component{
     render(){
