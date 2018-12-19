@@ -37,7 +37,7 @@ class Footer extends React.Component{
             .then((response) => {
                 const data = response.data;
                 // const data = ['1006619310184251392', '969195682501283842', '958957522961903616'];
-                this.setState({tweets: data});
+                this.setState({tweets: response.data});
             })
             .catch((err) => {
                 console.log(err);
