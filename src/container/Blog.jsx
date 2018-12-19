@@ -32,6 +32,7 @@ class CaseStudy extends React.Component{
           let uri = this.props.location.search.replace('%20','')
           CaseId =  uri.substring(uri.indexOf("=")+1)
       }
+      console.log('CaseId', CaseId)
       requestService.getService('/blogs-listing-data')
         .then((response) => {
         this.setState({caseStudyList: response.data})

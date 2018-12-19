@@ -35,8 +35,8 @@ class Footer extends React.Component{
             })
         requestService.getService('/json-tweet')
             .then((response) => {
-                // const data = response.data;
-                const data = ['1006619310184251392', '969195682501283842', '958957522961903616'];
+                const data = response.data;
+                // const data = ['1006619310184251392', '969195682501283842', '958957522961903616'];
                 this.setState({tweets: data});
             })
             .catch((err) => {
@@ -143,7 +143,7 @@ class Footer extends React.Component{
                                             return (
                                                 <TwitterTweetEmbed
                                                     tweetId={tw}
-                                                    options={{height: 200, width: 350}}
+                                                    options={{height: 200, width: 350, maxHeight: 300}}
                                                 />
                                             );
                                         })}
