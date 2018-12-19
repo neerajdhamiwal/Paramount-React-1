@@ -6,7 +6,7 @@ class MobHeader extends React.Component{
         return(
             <div className="off-canvas position-right" id="offCanvas" data-off-canvas>
 
-                <button className="close-button" aria-label="Close menu" type="button" data-close>
+                <button className="close-button" aria-label="Close menu" type="button" data-close="">
                     <span aria-hidden="true">&times;</span>
                 </button>
                 <nav className="main-menu show-for-small">
@@ -57,4 +57,3 @@ class MobHeader extends React.Component{
     }
 }
 export default MobHeader;
-
