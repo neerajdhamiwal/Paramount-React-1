@@ -104,7 +104,7 @@ class Team extends React.Component{
                             </div> :""}
                         {/*{this.state.teamData.hasOwnProperty('content_ctaflip_id')?<BottomFlipBanner nodeData={this.state.teamData['content_ctaflip_id'][0]}/>:''}*/}
                         <div className="clear"></div>
-                        {this.state.teamData.hasOwnProperty('map_id')? <Map mapData = {this.state.teamData['map_id'][0]}/>: ''}
+                        {this.state.teamData.hasOwnProperty('map_id')? <Map node = {this.state.teamData['map_id'][0][0]}/>: ''}
                         {this.state.teamData.hasOwnProperty('award_slider_id')?this.state.teamData['award_slider_id'][0][0].award_slider_id? <AwardSlider/>: '':''}
                         {this.state.teamData.hasOwnProperty('certificate_slider_id')? this.state.teamData['certificate_slider_id'][0][0].certificate_slider_id ? <CertSlider/>: '':''}
                     </div>}

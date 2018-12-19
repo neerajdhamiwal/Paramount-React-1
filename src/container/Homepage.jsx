@@ -19,7 +19,7 @@ import layer6 from '../assets/img/layers/layer6.png';
 import layer7 from '../assets/img/layers/layer7.png';
 import arrowImg from '../assets/img/logo/arrow.jpg';
 import layerImg from '../assets/img/paramount-edge.png';
-import {jsonMiddleware, apiUrl, decodeUri} from '../services/common';
+import {jsonMiddleware, apiUrl, decodeUri, imgPath} from '../services/common';
 import ReactHtmlParser from 'react-html-parser';
 import Loader from 'react-loader-spinner'; // eslint-disable-line no-unused-vars
 
@@ -106,7 +106,7 @@ class Home extends React.Component{
            <h3 className="banner-info"><span>{this.state.HomeData[Object.keys(this.state.HomeData)[0]][0][0].node_title}</span><br/>
                {ReactHtmlParser(this.state.HomeData[Object.keys(this.state.HomeData)[0]][0][0].node_subtitle_title)}<br/>
                {ReactHtmlParser(this.state.HomeData[Object.keys(this.state.HomeData)[0]][0][0].node_description)}
-              {ReactHtmlParser(this.state.HomeData[Object.keys(this.state.HomeData)[0]][0][0].node_body)}
+              {ReactHtmlParser(imgPath(this.state.HomeData[Object.keys(this.state.HomeData)[0]][0][0].node_body))}
            </h3>
 
                {this.state.HomeData[Object.keys(this.state.HomeData)[0]][0][0].node_cta_button_title !==''? <a className="button" href={this.state.HomeData[Object.keys(this.state.HomeData)[0]][0][0].node_cta_button_url.substring(9)}>{this.state.HomeData[Object.keys(this.state.HomeData)[0]][0][0].node_cta_button_title}</a>:''}
@@ -157,7 +157,7 @@ class Home extends React.Component{
                                                <div className="medium-6 cell">
                                                    <div>
                                                        <h3>{ReactHtmlParser(obj.content_slider_description)}</h3>
-                                                       <p className="ptb-40">{ReactHtmlParser(obj.content_slider_body)}</p>
+                                                       <p className="ptb-40">{ReactHtmlParser(imgPath(obj.content_slider_body))}</p>
                                                    </div>
                                                    {obj.content_slider_cta_title !==''? <a className="button" href={obj.content_slider_cta_url.substring(9)}>{ReactHtmlParser(obj.content_slider_cta_title)}</a>:''}
                                                </div>
@@ -192,7 +192,7 @@ class Home extends React.Component{
                            <div className="content-inner pl-155">
                                {/*<h3>{ReactHtmlParser(this.state.HomeData[Object.keys(this.state.HomeData)[0]][0][0].content_flipper_title)}</h3>*/}
                                {/*<h3>{ReactHtmlParser(this.state.HomeData[Object.keys(this.state.HomeData)[0]][0][0].image_content_block_description)}</h3>*/}
-                               <p>{ReactHtmlParser(this.state.HomeData[Object.keys(this.state.HomeData)[0]][0][0].image_content_block_body)}</p>
+                               <p>{ReactHtmlParser(imgPath(this.state.HomeData[Object.keys(this.state.HomeData)[0]][0][0].image_content_block_body))}</p>
                            </div>
                        </div>
                    </div>
@@ -207,7 +207,7 @@ class Home extends React.Component{
                     <div className="medium-5 small-12 cell">
                         <h2 className="relative-title title-span">{ReactHtmlParser(this.state.HomeData[Object.keys(this.state.HomeData)[0]][0][0].content_bottom_title)}</h2>
                         <h3 className="ptb-40"> {ReactHtmlParser(this.state.HomeData[Object.keys(this.state.HomeData)[0]][0][0].content_bottom_description)}</h3>
-                        <p>{ReactHtmlParser(this.state.HomeData[Object.keys(this.state.HomeData)[0]][0][0].content_bottom_body)}</p>
+                        <p>{ReactHtmlParser(imgPath(this.state.HomeData[Object.keys(this.state.HomeData)[0]][0][0].content_bottom_body))}</p>
                         {this.state.HomeData[Object.keys(this.state.HomeData)[0]][0][0].content_bottom_cta_title!==''? <a className="button" href={this.state.HomeData[Object.keys(this.state.HomeData)[0]][0][0].content_bottom_cta_url.substring(9)}>{this.state.HomeData[Object.keys(this.state.HomeData)[0]][0][0].content_bottom_cta_title}</a>:''}
                     </div>
                     <div className="medium-7 cell no-padding hide-for-small-only">

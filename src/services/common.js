@@ -73,5 +73,21 @@ export const Auth = {
     username : 'sahil.s',
     password : 'password System123#'
 }
+export const imgPath = (data)=> {
+    if(data){
+        if (data.includes('img')) {
+            const expression = /src="/g;
+            let match;
+            if(match = expression.exec(data)) {
+                data = data.slice(0, match.index) + 'src="http://paramount.opensenselabs.com' + data.slice(match.index + 5);
+                return data;
+            }
+
+        }
+        else{
+            return data;
+        }
+    }
+}
 
 

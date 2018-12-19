@@ -3,6 +3,7 @@ import ImgBanner from '../assets/img/paramount-edge.png';
 import ImgBannerTwo from '../assets/img/services-sub-two.png';
 import ImgBannerThree from '../assets/img/expertise-sub-menu.png';
 import ReactHtmlParser from 'react-html-parser';
+import {imgPath} from '../services/common';
 
 
 
@@ -20,7 +21,7 @@ class AwardBanner extends React.Component{
             <h3 className="banner-info"><span>{ReactHtmlParser(this.props.nodeData[0].node_title)}</span><br/>
                 {ReactHtmlParser(this.props.nodeData[0].node_subtitle_title)}</h3>
             <p>{ReactHtmlParser(this.props.nodeData[0].node_description)}</p>
-            <p>{ReactHtmlParser(this.props.nodeData[0].node_body)}</p>
+            <p>{ReactHtmlParser(imgPath(this.props.nodeData[0].node_body))}</p>
           </div>
             {this.props.nid == 24? <div><div className="medium-6 cell services-sub-menu">
                   <img src={ImgBanner} alt="Banner"/>

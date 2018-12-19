@@ -2,7 +2,7 @@
 import React from 'react';
 import $ from 'jquery';
 import requestService from '../services/request.js';
-import {apiUrl} from '../services/common.js';
+import {apiUrl, imgPath} from '../services/common.js';
 import ReactHtmlParser from 'react-html-parser';
 import Loader from 'react-loader-spinner'; // eslint-disable-line no-unused-vars
 import GridList from '../component/GridList.jsx';
@@ -76,7 +76,7 @@ class ArticlePage extends React.Component{
            <div className="grid-x grid-padding-x pl-155">
              <div className="medium-6 small-12 cell">
                <div className="pr-155 ">
-                   {ReactHtmlParser(this.state.caseStudy.field_body)}
+                   {ReactHtmlParser(imgPath(this.state.caseStudy.field_body))}
                </div>
            </div>
          <div className="medium-6 cell no-padding article-top-content hide-for-small-only">
@@ -100,7 +100,7 @@ class ArticlePage extends React.Component{
                   <div className="grid-x grid-padding-x">
                   <div className="medium-8 cell">
                     <div className="">
-                        <p>{ReactHtmlParser(this.state.caseStudy.field_secondary_body)}</p>
+                        <p>{ReactHtmlParser(imgPath(this.state.caseStudy.field_secondary_body))}</p>
 
                     </div>
                 </div>

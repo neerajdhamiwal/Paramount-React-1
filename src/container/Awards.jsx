@@ -9,7 +9,7 @@ import MainBanner from '../component/MainBanner.jsx'
 import AwardSlider from '../component/AwardsBottomSlider.jsx'
 import CertSlider from '../component/CertificationBottomSlider.jsx'
 import requestService from '../services/request.js';
-import {apiUrl, jsonMiddleware, urlString} from '../services/common.js';
+import {apiUrl, jsonMiddleware, urlString, imgPath} from '../services/common.js';
 import ReactHtmlParser from 'react-html-parser';
 import WOW from 'wowjs';
 import Loader from 'react-loader-spinner'; // eslint-disable-line no-unused-vars
@@ -137,7 +137,7 @@ class About extends React.Component{
                                     <div className="award-content pr-155">
                                         <h4>{ReactHtmlParser(obj.primary_image_title)}</h4>
                                         {obj.primary_image_description !==''? <h3>{ReactHtmlParser(obj.primary_image_description)}</h3>:''}
-                                        <p>{ReactHtmlParser(obj.primary_image_body)}</p>
+                                        <p>{ReactHtmlParser(imgPath(obj.primary_image_body))}</p>
                                     </div>
                                 </div>
                             </div>
@@ -175,7 +175,7 @@ class About extends React.Component{
                                     <div className="award-content pr-155">
                                         <h4 href="#">{ReactHtmlParser(obj.secondary_image_title)}</h4>
                                         <h3>{ReactHtmlParser(obj.secondary_image_description)}</h3>
-                                        <p>{ReactHtmlParser(obj.secondary_image_body)}</p>
+                                        <p>{ReactHtmlParser(imgPath(obj.secondary_image_body))}</p>
                                     </div>
                                 </div>
                             </div>
