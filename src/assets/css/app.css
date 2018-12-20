@@ -638,7 +638,8 @@ header .header-inner {
       transition: all .2s linear;
       border-radius: 5px; }
     .block-latest-reads .img-block .img img {
-      width: 100%; }
+      width: 100%;
+      min-height: 245px; }
   .block-latest-reads .img-block .img-content {
     margin: 30px 0; }
     .block-latest-reads .img-block .img-content h6 {
@@ -957,7 +958,7 @@ footer.footer-bottom {
 
 .our-certifications-box {
   background: url(..//img/certifications-parallax-03.png) no-repeat top right #f6f4f5;
-  background-position: 80% top; }
+  background-position: -20% top; }
   @media screen and (max-width: 39.9375em) {
     .our-certifications-box {
       background-position: 50% 80%;
