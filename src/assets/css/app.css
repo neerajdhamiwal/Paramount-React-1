@@ -957,8 +957,8 @@ footer.footer-bottom {
     padding: 130px 0 130px; }
 
 .our-certifications-box {
-  background: url(..//img/certifications-parallax-03.png) no-repeat top right #f6f4f5;
-  background-position: -20% top; }
+  background: url(..//img/certifications-parallax-des.png) no-repeat top right #f6f4f5;
+  background-position: 120% top; }
   @media screen and (max-width: 39.9375em) {
     .our-certifications-box {
       background-position: 50% 80%;
