@@ -2,7 +2,7 @@
 import React from 'react';
 import $ from 'jquery';
 import requestService from '../services/request.js';
-import {apiUrl, imgPath} from '../services/common.js';
+import {apiUrl, imgPath, getMeta} from '../services/common.js';
 import ReactHtmlParser from 'react-html-parser';
 import Loader from 'react-loader-spinner'; // eslint-disable-line no-unused-vars
 import GridList from '../component/GridList.jsx';
@@ -20,11 +20,19 @@ class ArticlePage extends React.Component{
         this.state= {
             caseStudy: [],
             caseList: {},
-            loading: true
+            loading: true,
+            meta: {}
         }
+        this.getMeValue = this.getMeValue.bind(this);
+    }
+
+    getMeValue(val) {
+        this.setState({meta: val})
+        // return val;
     }
 
     componentWillMount(){
+        getMeta(this.props.location.search.substring(this.props.location.search.indexOf("=")+1), this.getMeValue);
         let caseStudy = []
         console.log(this.props.location.search);
         requestService.getService(`/blogs-contents/${this.props.location.search.substring(this.props.location.search.indexOf("=")+1)}`)
@@ -60,7 +68,7 @@ class ArticlePage extends React.Component{
                         width="100"
                     />
                 </center> :
-                <div>
+                <DocumentMeta {...this.state.meta}>
             <section className="main-banner banner-with-content article-banner" style={BannerStyle(this.state.caseStudy.field_hero_image)}>
          <div className="grid-container">
            <div className="grid-x align-right align-middle grid-margin-x">
@@ -128,7 +136,7 @@ class ArticlePage extends React.Component{
           </div>
         </section>
         <GridList/>
-            </div>
+                </DocumentMeta>
         )
     }
 }

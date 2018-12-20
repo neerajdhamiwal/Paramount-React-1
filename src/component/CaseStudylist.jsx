@@ -48,6 +48,7 @@ class CaseStudylist extends React.Component {
                             {/*<h2 class="relative-title">Our Services</h2>*/}
                           {/*<h3 class="heading-content">{ReactHtmlParser(this.props.data.image_description_subheading)}</h3>*/}
                           <p>{ReactHtmlParser(imgPath(caseStudy.field_body))}</p>
+                          <a href = {"/casestudy/article?nid="+caseStudy.id} className="button">Read more</a>
                         </div>
                         <div class="medium-7 cell no-padding">
                           <div class="img-relative-title-ld">

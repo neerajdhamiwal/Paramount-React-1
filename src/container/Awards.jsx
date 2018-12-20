@@ -9,10 +9,12 @@ import MainBanner from '../component/MainBanner.jsx'
 import AwardSlider from '../component/AwardsBottomSlider.jsx'
 import CertSlider from '../component/CertificationBottomSlider.jsx'
 import requestService from '../services/request.js';
-import {apiUrl, jsonMiddleware, urlString, imgPath} from '../services/common.js';
+import {apiUrl, jsonMiddleware, urlString, imgPath, getMeta} from '../services/common.js';
 import ReactHtmlParser from 'react-html-parser';
 import WOW from 'wowjs';
 import Loader from 'react-loader-spinner'; // eslint-disable-line no-unused-vars
+import DocumentMeta from 'react-document-meta';
+
 let nid = '';
 import aboutLayerBannerone from '../assets/img/about-layer1.png';
 import aboutLayerBannertwo from '../assets/img/about-layer2.png';
@@ -22,9 +24,12 @@ class About extends React.Component{
         super(props)
         this.state = {
             awardsData: {},
-            loading: true
+            loading: true,
+            meta: {}
         }
         this.animation = this.animation.bind(this);
+        this.getMeValue = this.getMeValue.bind(this);
+
     }
 
     animation(){
@@ -39,7 +44,13 @@ class About extends React.Component{
         let parallaxInstance = new Parallax(scene);
     }
 
+    getMeValue(val) {
+        this.setState({meta: val})
+        // return val;
+    }
+
     componentWillMount(){
+        getMeta(urlString[this.props.location.pathname], this.getMeValue);
         requestService.getService(`/reinforcement-data/${urlString[this.props.location.pathname]}`)
             .then((response) => {
                 let ids = ['primary_image_id','secondary_image_id', 'award_slider_id', 'certificate_slider_id'];
@@ -66,7 +77,7 @@ class About extends React.Component{
                         width="100"
                     />
                 </center> :
-            <div>
+                <DocumentMeta {...this.state.meta}>
 
                 {this.state.awardsData.hasOwnProperty('primary_image_id')?
            <div>
@@ -185,7 +196,7 @@ class About extends React.Component{
                 :''}
                 {this.state.awardsData.hasOwnProperty('award_slider_id')?this.state.awardsData['award_slider_id'][0][0].award_slider_id? <AwardSlider/>: '':''}
                 {this.state.awardsData.hasOwnProperty('certificate_slider_id')? this.state.awardsData['certificate_slider_id'][0][0].certificate_slider_id ? <CertSlider/>: '':''}
-            </div>
+                </DocumentMeta>
         )
     }
 }

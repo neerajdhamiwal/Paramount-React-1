@@ -1,3 +1,6 @@
+import requestService from './request';
+
+
 export const apiUrl = 'http://paramount.opensenselabs.com';
 export const UserName = 'sahil.s';
 export const Pass = 'System123#';
@@ -88,6 +91,25 @@ export const imgPath = (data)=> {
             return data;
         }
     }
+}
+export const getMeta = (nid, cb)=> {
+    requestService.getService(`/json-data/${nid}`)
+        .then((response) => {
+            let meta =   {
+                title: response.data.value.title,
+                description: response.data.value.description,
+                canonical: response.data.value.canonical_url,
+                meta: {
+                    name: {
+                        keywords: response.data.value.keywords
+                    }
+                }
+            };
+            cb(meta);
+        })
+        .catch((err) => {
+            console.log(err);
+        })
 }
 
 

@@ -7,15 +7,12 @@ import Imgm from '../assets/img/brilliance-mobile.png';
 import Imgm2 from '../assets/img/technology-mobile.png';
 import Imgm3 from '../assets/img/advisory-mobile.png';
 
-import {decodeUri} from '../services/common';
+import {decodeUri,imgPath} from '../services/common';
 import ReactHtmlParser from 'react-html-parser';
-
 
 class GridOverlap extends React.Component{
 
   componentDidMount(){
-
-
         if ($(window).width() < 767) {
           $('#gridoverlapslider').addClass('mobile-carousel2');
          } else {
@@ -30,7 +27,6 @@ class GridOverlap extends React.Component{
           centerMode: true,
           //variableWidth: true
         });
-
   }
 
     render(){

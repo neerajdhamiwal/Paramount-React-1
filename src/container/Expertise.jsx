@@ -13,9 +13,10 @@ import HorizontalScroll from '../component/HorizontalScroll.jsx';
 import RightImgLContent from '../component/RightImgLContent.jsx';
 import LeftImgRContent from '../component/LeftImgRContent.jsx';
 import smallImg from '../assets/img/small-img.png';
-import {jsonMiddleware, apiUrl, urlString} from '../services/common';
+import {jsonMiddleware, apiUrl, urlString, getMeta} from '../services/common';
 import requestService from '../services/request.js';
 import Loader from 'react-loader-spinner'; // eslint-disable-line no-unused-vars
+import DocumentMeta from 'react-document-meta';
 let nid = '';
 import $ from 'jquery';
 
@@ -25,10 +26,19 @@ class Expertise extends React.Component{
         super()
         this.state = {
             ExpertiseData: {},
-            loading: true
+            loading: true,
+            meta:{}
         }
+        this.getMeValue = this.getMeValue.bind(this);
+
     }
+    getMeValue(val) {
+        this.setState({meta: val})
+        // return val;
+    }
+
     componentWillMount(){
+        getMeta(urlString[this.props.location.pathname], this.getMeValue);
         requestService.getService(`/landing-page-data/${urlString[this.props.location.pathname]}`)
                 .then((response) => {
                 let ids = ['slider_id','flipper_id','logo_id','sub_block_id','image_description_id','hd_id', 'client_slider_id','award_slider_id','certificate_slider_id','partner_slider_id',];
@@ -58,7 +68,8 @@ class Expertise extends React.Component{
                         height="100"
                         width="100"
                     />
-                </center> : <div>
+                </center> :   <DocumentMeta {...this.state.meta}>
+
                 {Object.keys(this.state.ExpertiseData).length>0? <MainBanner nid = {nid} node = {this.state.ExpertiseData[Object.keys(this.state.ExpertiseData)[0]][0]}></MainBanner>: ''}
 
                 <div className="grid-container">
@@ -101,7 +112,7 @@ class Expertise extends React.Component{
                     {this.state.ExpertiseData.hasOwnProperty('certificate_slider_id')? this.state.ExpertiseData['certificate_slider_id'][0][0].certificate_slider_id ? <CertSlider/>: '':''}
                     {this.state.ExpertiseData.hasOwnProperty('partner_slider_id')? this.state.ExpertiseData['partner_slider_id'][0][0].partner_slider_id ? <PartnerSlider/>: '':''}
                     {this.state.ExpertiseData.hasOwnProperty('client_slider_id')? this.state.ExpertiseData['client_slider_id'][0][0].client_slider_id ? <FooterRowSlider/>: '':''}
-                </div>
+                </DocumentMeta>
 
         )
     }

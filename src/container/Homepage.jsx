@@ -19,10 +19,10 @@ import layer6 from '../assets/img/layers/layer6.png';
 import layer7 from '../assets/img/layers/layer7.png';
 import arrowImg from '../assets/img/logo/arrow.jpg';
 import layerImg from '../assets/img/paramount-edge.png';
-import {jsonMiddleware, apiUrl, decodeUri, imgPath} from '../services/common';
+import {jsonMiddleware, apiUrl, decodeUri, imgPath, getMeta} from '../services/common';
 import ReactHtmlParser from 'react-html-parser';
 import Loader from 'react-loader-spinner'; // eslint-disable-line no-unused-vars
-
+import DocumentMeta from 'react-document-meta';
 import requestService from '../services/request.js';
 import $ from 'jquery';
 const ArrowStyle = {background: `url(${arrowImg}) noRepeat center bottom`, backgroundSize: '1000px'}
@@ -33,10 +33,12 @@ class Home extends React.Component{
         super()
         this.state = {
             HomeData: {},
-            loading: true
+            loading: true,
+            meta: {}
 
         }
         this.animation = this.animation.bind(this);
+        this.getMeValue = this.getMeValue.bind(this);
     }
 
     animation(){
@@ -64,11 +66,18 @@ class Home extends React.Component{
         });
     }
 
+    getMeValue(val) {
+        this.setState({meta: val})
+        // return val;
+    }
+
     componentWillMount(){
+        getMeta(50, this.getMeValue);
         requestService.getService('/homepage-data/50')
             .then((response) => {
                 let ids = ['node_flip_id','content_flip_id', 'content_slider_id', 'award_slider_id', 'certificate_slider_id', 'partner_slider_id', 'client_slider_id'];
                 this.setState({loading: false});
+                // this.setState({meta: meta})
                 this.setState({HomeData: jsonMiddleware(response.data, ids)},()=> {
                     if(Object.keys(this.state.HomeData).length>0){
                         this.animation();
@@ -87,6 +96,7 @@ class Home extends React.Component{
     }
 
     render(){
+        console.log(this.state.meta);
         console.log('Object.keys(this.state.HomeData).length', Object.keys(this.state.HomeData).length)
         return(
             this.state.loading? <center >
@@ -98,8 +108,8 @@ class Home extends React.Component{
                     />
                 </center> :
         Object.keys(this.state.HomeData).length >0 ?
-        <div>
-           <section className="main-banner">
+            <DocumentMeta {...this.state.meta}>
+            <section className="main-banner">
            <div className="grid-container">
            <div className="grid-x align-right align-middle grid-margin-x wow fadeInUp">
            <div className="medium-4 small-12 cell wow fadeInUp">
@@ -178,7 +188,6 @@ class Home extends React.Component{
                :''}
 
         <div className="clearfix"></div>
-
             <section className="left-image-right-content">
                <div className="grid-container custom-grid custom-grid-left">
                    <div className="grid-x align-middle">
@@ -233,7 +242,7 @@ class Home extends React.Component{
                 {this.state.HomeData.hasOwnProperty('certificate_slider_id')? this.state.HomeData['certificate_slider_id'][0][0].certificate_slider_id ? <CertSlider/>: '':''}
                 {this.state.HomeData.hasOwnProperty('partner_slider_id')? this.state.HomeData['partner_slider_id'][0][0].partner_slider_id ? <PartnerSlider/>: '':''}
                 {this.state.HomeData.hasOwnProperty('client_slider_id')? this.state.HomeData['client_slider_id'][0][0].client_slider_id ? <FooterRowSlider/>: '':''}
-        </div> :''
+            </DocumentMeta> :''
         )
     }
 }
