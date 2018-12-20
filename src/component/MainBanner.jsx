@@ -12,7 +12,7 @@ import contactBanner3 from '../assets/img/contact-banner3.png';
 import aboutLayerBannerone from '../assets/img/about-layer1.png';
 import aboutLayerBannertwo from '../assets/img/about-layer2.png';
 import ImgBannerTwo from '../assets/img/services-sub-two.png';
-import {apiUrl} from '../services/common.js';
+import {apiUrl, imgPath} from '../services/common.js';
 import ReactHtmlParser from 'react-html-parser';
 import $ from 'jquery';
 import expBanner from '../assets/img/expertise-banner.png';
@@ -36,7 +36,7 @@ class Home extends React.Component{
                     <div className="grid-x align-right align-middle grid-margin-x">
                         <div className="medium-5 cell small-order-change">
                             <h3 className="banner-info"><span>{ReactHtmlParser(this.props.node[0].node_title)}</span><br/>{ReactHtmlParser(this.props.node[0].node_subtitle_title)}</h3>
-                            <p>{ReactHtmlParser(this.props.node[0].node_description)}</p>
+                            <p>{ReactHtmlParser(imgPath(this.props.node[0].node_description))}</p>
                             {this.props.node[0].hasOwnProperty('node_cta_button_title')? this.props.node[0].node_cta_button_title !==''?<a className="button" href={apiUrl+this.props.node[0].node_cta_button_url.substring(9)}>{this.props.node[0].node_cta_button_title}</a>:'':''}
                             {this.props.node[0].hasOwnProperty('node_cta_button_title')?this.props.node[0].download_link_title !==''?<a className="button" href={apiUrl+this.props.node[0].download_link_url.substring(9)}>{this.props.node[0].download_link_title}</a>:'':''}
                         </div>

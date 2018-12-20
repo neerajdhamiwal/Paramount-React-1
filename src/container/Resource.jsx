@@ -6,7 +6,7 @@ import Loader from 'react-loader-spinner'; // eslint-disable-line no-unused-vars
 import GridListScnd from '../component/GridListScnd.jsx';
 import Blog from '../container/Blog.jsx';
 import requestService from '../services/request.js';
-import {apiUrl, jsonMiddleware} from '../services/common.js';
+import {apiUrl, jsonMiddleware, imgPath} from '../services/common.js';
 import ReactHtmlParser from 'react-html-parser';
 
 
@@ -83,7 +83,7 @@ class Resource extends React.Component{
                                         <div className="info-graphic-details">
                                             <h3>{ReactHtmlParser(this.state.infoData[0].infographic_title)}</h3>
                                             {this.state.infoData[0].infographic_subtitle? <h6>{this.state.infoData[0].infographic_subtitle}</h6>:''}
-                                            <p>{ReactHtmlParser(this.state.infoData[0].infographic_body)}</p>
+                                            <p>{ReactHtmlParser(imgPath(this.state.infoData[0].infographic_body))}</p>
                                         </div>
                                 </div>
                             </div>

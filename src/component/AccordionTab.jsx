@@ -2,6 +2,7 @@ import React from 'react';
 import ImgSlider from './ImgSlider.jsx';
 import $ from 'jquery';
 import ReactHtmlParser from 'react-html-parser';
+import {imgPath} from '../services/common'
 
 class AccordionaTab extends React.Component{
     constructor(props){
@@ -47,7 +48,7 @@ class AccordionaTab extends React.Component{
                                             <div className="grid-x grid-padding-x tab-accordion-content">
                                                 <div className="medium-5 cell">
                                                     <div>
-                                                    <p>{ReactHtmlParser(service.image_slider_description)}</p>
+                                                    <p>{ReactHtmlParser(imgPath(service.image_slider_description))}</p>
                                                     {service.image_slider_cta_button_title !==''? <a href={service.image_slider_cta_button_url.substring(9)} className="button white-btn">{service.image_slider_cta_button_title.replace(/\&amp;/g,'&')}</a>:''}
                                                 </div>
                                                 </div>

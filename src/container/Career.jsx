@@ -3,13 +3,14 @@ import React from 'react';
 import Parallax from 'parallax-js';
 import BottomFlipBanner from '../component/BottomFlipBanner.jsx'
 import requestService from '../services/request.js';
-import {apiUrl, jsonMiddleware} from '../services/common.js';
+import {apiUrl, jsonMiddleware, getMeta} from '../services/common.js';
 import ReactHtmlParser from 'react-html-parser';
 import careerBanner from '../assets/img/career-banner.png';
 import careerBanner2 from '../assets/img/career-banner2.png';
 import WOW from 'wowjs';
 import Loader from 'react-loader-spinner'; // eslint-disable-line no-unused-vars
 import $ from 'jquery';
+import DocumentMeta from 'react-document-meta';
 let nid = '';
 
 class About extends React.Component{
@@ -21,12 +22,15 @@ class About extends React.Component{
             careerData:[],
             bannerData:[],
             duty: true,
-            jobList: []
+            jobList: [],
+            meta: {}
         }
         this.animation = this.animation.bind(this);
         this.change = this.change.bind(this);
         this.getAllJobs = this.getAllJobs.bind(this);
         this.handleChange = this.handleChange.bind(this);
+        this.getMeValue = this.getMeValue.bind(this);
+
     }
 
     animation(){
@@ -44,7 +48,13 @@ class About extends React.Component{
         });
             }
 
+    getMeValue(val) {
+        this.setState({meta: val})
+        // return val;
+    }
+
     componentWillMount(){
+        getMeta(133, this.getMeValue);
         requestService.getService(`/reach-us-data/133`)
             .then((response) => {
                 let ids = ['content_ctaflip_id', 'node_flipper_id']
@@ -123,7 +133,7 @@ class About extends React.Component{
                         width="100"
                     />
                 </center> :
-                <div>
+                <DocumentMeta {...this.state.meta}>
                     {Object.keys(this.state.bannerData).length>0?
                         <section className="main-banner award-banner">
                             <div className="grid-container">
@@ -223,7 +233,7 @@ class About extends React.Component{
                     {/*<!-- Main Banner Section Ends Here -->*/}
                     {/*<!-- left-image-right-content Section Starts Here -->*/}
                     {this.state.bannerData.hasOwnProperty('content_ctaflip_id')?<BottomFlipBanner nodeData={this.state.bannerData['content_ctaflip_id'][0]}/>:''}                    {/*<!-- left-image-right-content Section Ends Here -->*/}
-                </div>
+                </DocumentMeta>
         )
     }
 }

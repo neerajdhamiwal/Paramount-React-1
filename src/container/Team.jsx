@@ -8,13 +8,14 @@ import BottomFlipBanner from '../component/BottomFlipBanner.jsx';
 import Map from '../component/Map.jsx';
 import AwardSlider from '../component/AwardsBottomSlider.jsx';
 import CertSlider from '../component/CertificationBottomSlider.jsx';
-import {customDivideData, apiUrl, jsonMiddleware, urlString} from '../services/common';
+import {customDivideData, apiUrl, jsonMiddleware, urlString, getMeta} from '../services/common';
 import requestService from '../services/request';
 import Loader from 'react-loader-spinner'; // eslint-disable-line no-unused-vars
 import contactBanner from '../assets/img/contact-banner.png';
 import contactBanner2 from '../assets/img/contact-banner2.png';
 import contactBanner3 from '../assets/img/contact-banner3.png';
 import ReactHtmlParser from 'react-html-parser';
+import DocumentMeta from 'react-document-meta';
 import $ from 'jquery';
 //import 'foundation/js/vendor/zepto';
 class Team extends React.Component{
@@ -22,11 +23,20 @@ class Team extends React.Component{
         super(props)
         this.state = {
             teamData: {},
-            loading: true
+            loading: true,
+            meta: {}
         }
         this.animation = this.animation.bind(this);
+        this.getMeValue = this.getMeValue.bind(this);
+
     }
+    getMeValue(val) {
+        this.setState({meta: val})
+        // return val;
+    }
+
     componentWillMount(){
+        getMeta(urlString[this.props.location.pathname], this.getMeValue);
         requestService.getService(`/reach-us-data/${urlString[this.props.location.pathname]}`)
             .then((response) => {
                 let ids = ['map_id','award_slider_id', 'certificate_slider_id', 'team_member_id', 'content_ctaflip_id', 'node_flipper_id'];
@@ -54,7 +64,8 @@ class Team extends React.Component{
 
     render(){
         return(
-                <div>{this.state.loading ?
+            <DocumentMeta {...this.state.meta}>
+                {this.state.loading ?
                     <center >
                         <Loader
                             type="ThreeDots"
@@ -104,11 +115,11 @@ class Team extends React.Component{
                             </div> :""}
                         {/*{this.state.teamData.hasOwnProperty('content_ctaflip_id')?<BottomFlipBanner nodeData={this.state.teamData['content_ctaflip_id'][0]}/>:''}*/}
                         <div className="clear"></div>
-                        {this.state.teamData.hasOwnProperty('map_id')? <Map mapData = {this.state.teamData['map_id'][0]}/>: ''}
+                        {this.state.teamData.hasOwnProperty('map_id')? <Map node = {this.state.teamData['map_id'][0][0]}/>: ''}
                         {this.state.teamData.hasOwnProperty('award_slider_id')?this.state.teamData['award_slider_id'][0][0].award_slider_id? <AwardSlider/>: '':''}
                         {this.state.teamData.hasOwnProperty('certificate_slider_id')? this.state.teamData['certificate_slider_id'][0][0].certificate_slider_id ? <CertSlider/>: '':''}
                     </div>}
-          </div>
+            </DocumentMeta>
         )
     }
 }

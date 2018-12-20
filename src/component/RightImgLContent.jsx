@@ -1,7 +1,7 @@
 
 import React from 'react';
 import Layertop from '../assets/img/layertop.png';
-import {apiUrl, decodeUri} from '../services/common.js';
+import {apiUrl, decodeUri, imgPath} from '../services/common.js';
 import ReactHtmlParser from 'react-html-parser';
 
 class RightImgLContent extends React.Component{
@@ -14,7 +14,7 @@ class RightImgLContent extends React.Component{
                     <div class="medium-5 cell">
                         {/*<h2 class="relative-title">Our Services</h2>*/}
                         <h3 class="heading-content">{ReactHtmlParser(this.props.data.image_description_subheading)}</h3>
-                        <p>{ReactHtmlParser(this.props.data.image_description_body)}</p>
+                        <p>{ReactHtmlParser(imgPath(this.props.data.image_description_body))}</p>
                     </div>
                     <div class="medium-7 cell no-padding">
                         <div class="img-relative-title-ld">
@@ -35,7 +35,7 @@ class RightImgLContent extends React.Component{
                         <div class="medium-5 cell">
                             {/*<h2 class="relative-title">Our Services</h2>*/}
                             <h3>{ReactHtmlParser(this.props.data.image_description_subheading)}</h3>
-                            <p>{ReactHtmlParser(this.props.data.image_description_body)}</p>
+                            <p>{ReactHtmlParser(imgPath(this.props.data.image_description_body))}</p>
                         </div>
                         <div class="medium-7 cell no-padding">
                             <div class="img-relative-title-ld">

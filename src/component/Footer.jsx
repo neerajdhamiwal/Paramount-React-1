@@ -8,6 +8,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import fb from '../assets/img/fb.png';
 import ln from '../assets/img/linkedin.png';
 import tw from '../assets/img/twitter.png';
+import {imgPath} from '../services/common';
 
 class Footer extends React.Component{
     constructor(props){
@@ -97,7 +98,7 @@ class Footer extends React.Component{
                 <div className="grid-x footer-inner align-middle align-center ">
                   <div className="medium-4 cell small-order-change">
                     <div className="footer-info">
-                        {this.state.footerData.length>0 ?ReactHtmlParser(this.state.footerData[0].block_body): ''}
+                        {this.state.footerData.length>0 ?ReactHtmlParser(imgPath(this.state.footerData[0].block_body)): ''}
                         <div>
                             <a className="cl-blue" href="https://www.facebook.com/ParamountSoftwareSolutionsInc/" target="blank"> <img src={fb} className="mr-8"/></a>
                             <a className="cl-blue" href="https://in.linkedin.com/company/paramount-software-solutions" target="blank"> <img src ={ln} className="mr-8"/></a>

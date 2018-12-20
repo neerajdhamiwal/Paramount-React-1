@@ -9,7 +9,7 @@ import MainBanner from '../component/MainBanner.jsx'
 import AwardSlider from '../component/AwardsBottomSlider.jsx'
 import CertSlider from '../component/CertificationBottomSlider.jsx'
 import requestService from '../services/request.js';
-import {apiUrl, jsonMiddleware} from '../services/common.js';
+import {apiUrl, jsonMiddleware, imgPath} from '../services/common.js';
 import ReactHtmlParser from 'react-html-parser';
 import WOW from 'wowjs';
 import Loader from 'react-loader-spinner'; // eslint-disable-line no-unused-vars
@@ -106,7 +106,7 @@ class About extends React.Component{
                                                 <div className="award-content pr-155">
                                                     <h3>{ReactHtmlParser(obj.node_title)}</h3>
                                                     <h6>{ReactHtmlParser(obj.node_subtitle_title)}</h6>
-                                                    <p>{ReactHtmlParser(obj.node_body)}</p>
+                                                    <p>{imgPath(ReactHtmlParser(obj.node_body))}</p>
                                                     <a className="button" href={obj.cta_button_url.substring(9)}>{obj.cta_button_title}</a>
                                                 </div>
                                             </div>

@@ -4,7 +4,7 @@ import FooterSecndHeading from '../component/FooterSecndHeading.jsx';
 import LeftImgRContent from '../component/LeftImgRContent.jsx';
 import RightImgLContent from '../component/RightImgLContent.jsx';
 import AwardBanner from '../component/AwardBanner.jsx';
-import {jsonMiddleware, urlString} from '../services/common';
+import {jsonMiddleware, urlString, getMeta} from '../services/common';
 import requestService from '../services/request.js';
 import {apiUrl} from '../services/common.js';
 import WOW from 'wowjs';
@@ -16,6 +16,8 @@ import AwardSlider from '../component/AwardsBottomSlider.jsx';
 import PartnerSlider from '../component/PartnerSlider.jsx';
 import GridList from '../component/GridList.jsx';
 import FooterRowSlider from '../component/FooterRowSlider.jsx';
+import DocumentMeta from 'react-document-meta';
+
 
 let nid = ''
 class ExpertiseArticle extends React.Component{
@@ -26,9 +28,16 @@ class ExpertiseArticle extends React.Component{
             loading: true
 
         }
+        this.getMeValue = this.getMeValue.bind(this);
+    }
+
+    getMeValue(val) {
+        this.setState({meta: val})
+        // return val;
     }
 
     componentWillMount(){
+        getMeta(urlString[this.props.location.pathname], this.getMeValue);
         requestService.getService(`/services-node-data/${urlString[this.props.location.pathname]}`)
             .then((response) => {
                 let ids = ['img_des_id','sub_block_id', 'secondary_sub_block_id','secondary_img_des_id', 'extra_content_id', 'award_slider_id', 'certificate_slider_id','partner_slider_id','client_slider_id'];
@@ -55,7 +64,7 @@ class ExpertiseArticle extends React.Component{
                         width="100"
                     />
                 </center> :
-             <div>
+                <DocumentMeta {...this.state.meta}>
                  {Object.keys(this.state.ExpertiseGovData).length>0? <AwardBanner customClass = "main-banner award-banner" nid={nid} nodeData = {this.state.ExpertiseGovData[Object.keys(this.state.ExpertiseGovData)[0]][0]}></AwardBanner>: ''}
                 <div className=" clearfix"></div>
                  {this.state.ExpertiseGovData.hasOwnProperty('sub_block_id')? <FooterHeading subBlockData = {this.state.ExpertiseGovData['sub_block_id'][0]}/>:''}
@@ -102,7 +111,7 @@ class ExpertiseArticle extends React.Component{
                  {/*{this.state.ExpertiseGovData.hasOwnProperty('client_slider_id')? this.state.ExpertiseGovData['client_slider_id'][0][0].client_slider_id ? <FooterRowSlider/>: '':''}*/}
                  {/*{this.state.ExpertiseGovData.hasOwnProperty('client_slider_id')? this.state.ExpertiseGovData['client_slider_id'][0][0].client_slider_id ? <FooterRowSlider/>: '':''}*/}
                  {/*{this.state.ExpertiseGovData.hasOwnProperty('client_slider_id')? this.state.ExpertiseGovData['client_slider_id'][0][0].client_slider_id ? <FooterRowSlider/>: '':''}*/}
-             </div>
+                </DocumentMeta>
         )
     }
 }

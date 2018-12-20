@@ -1,6 +1,6 @@
 import React from 'react';
 import $ from 'jquery';
-import {customDivideData} from '../services/common';
+import {customDivideData, imgPath} from '../services/common';
 import ReactHtmlParser from 'react-html-parser';
 
 class FooterHeading extends React.Component{
@@ -35,7 +35,7 @@ class FooterHeading extends React.Component{
                                                         return <div className="medium-5 cell">
                                                             <div className="four-column-content four-col-left four-col-right">
                                                                 <a href="#">{ReactHtmlParser(heading.secondary_sub_block_heading)}</a>
-                                                                <p>{ReactHtmlParser(heading.secondary_sub_block_description)}</p>
+                                                                <p>{ReactHtmlParser(imgPath(heading.secondary_sub_block_description))}</p>
                                                             </div>
                                                         </div>
                                                     }
@@ -43,7 +43,7 @@ class FooterHeading extends React.Component{
                                                         return <div className="medium-5 cell">
                                                             <div className="four-column-content four-col-left">
                                                                 <a href="#">{ReactHtmlParser(heading.secondary_sub_block_heading)}</a>
-                                                                <p>{ReactHtmlParser(heading.secondary_sub_block_description)}</p>
+                                                                <p>{ReactHtmlParser(imgPath(heading.secondary_sub_block_description))}</p>
                                                             </div>
                                                         </div>
                                                     }

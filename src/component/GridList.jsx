@@ -1,7 +1,7 @@
 
 import React from 'react';
 import GridImgPlaceholder from '../assets/img/img4.png';
-import {apiUrl, decodeUri, jsonMiddleware, } from '../services/common.js';
+import {apiUrl, decodeUri, jsonMiddleware,imgPath } from '../services/common.js';
 import requestService from '../services/request.js';
 import $ from 'jquery';
 import ReactHtmlParser from 'react-html-parser';
@@ -51,7 +51,7 @@ class GridList extends React.Component{
                         </div>
                         <div className="img-content">
                             <h6>{ReactHtmlParser(obj.title)}</h6>
-                            <h2><a href={"/casestudy/article?nid="+obj.nid}>{ReactHtmlParser(obj.description)}</a></h2>
+                            <h2><a href={"/casestudy/article?nid="+obj.nid}>{ReactHtmlParser(imgPath(obj.description))}</a></h2>
                         </div>
                     </div>
                 })}

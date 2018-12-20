@@ -2,7 +2,7 @@ import React from 'react';
 import BannerImg from '../assets/img/banner-with-content.jpeg';
 import $ from 'jquery';
 import requestService from '../services/request.js';
-import {apiUrl} from '../services/common.js';
+import {apiUrl, imgPath} from '../services/common.js';
 import ReactHtmlParser from 'react-html-parser';
 
 
@@ -43,7 +43,7 @@ class FeaturedContent extends React.Component{
                   <div className="grid-container">
                       <div className="grid-x align-right align-middle grid-margin-x">
                           <div className="medium-5 cell small-order-change">
-                              <p>{ReactHtmlParser(this.state.activeCaseStudy.field_body)}</p>
+                              <p>{ReactHtmlParser(imgPath(this.state.activeCaseStudy.field_body))}</p>
                               {this.props.locate === 'resource'?'':<a href = {"/casestudy/article?nid="+this.state.activeCaseStudy.id} className="button">Read more</a>}
                           </div>
                           <div className="medium-5 cell"></div>

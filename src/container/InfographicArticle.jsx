@@ -6,8 +6,10 @@ import Loader from 'react-loader-spinner'; // eslint-disable-line no-unused-vars
 import GridListScnd from '../component/GridListScnd.jsx';
 import CaseStudy from '../component/CaseStudy.jsx';
 import requestService from '../services/request.js';
-import {apiUrl, jsonMiddleware} from '../services/common.js';
+import {apiUrl, jsonMiddleware, imgPath} from '../services/common.js';
 import ReactHtmlParser from 'react-html-parser';
+import DocumentMeta from 'react-document-meta';
+
 
 //import 'foundation/js/vendor/zepto';
 const BannerStyle =(url)=> {
@@ -22,7 +24,8 @@ class Resource extends React.Component{
         this.state = {
             loading: true,
             infoData:[],
-            bannerData:[]
+            bannerData:[],
+            meta: {}
         }
         this.getRequest = this.getRequest.bind(this);
     }
@@ -37,8 +40,13 @@ class Resource extends React.Component{
                 console.log(err);
             });
     }
+    getMeValue(val) {
+        this.setState({meta: val})
+        // return val;
+    }
 
     componentWillMount(){
+        getMeta(this.props.location.search.substring(this.props.location.search.indexOf("=")+1), this.getMeValue);
         this.getRequest();
     }
     componentDidMount(){
@@ -56,7 +64,8 @@ class Resource extends React.Component{
                         width="100"
                     />
                 </center> :
-                this.state.infoData.length>0? <div>
+                this.state.infoData.length>0? <DocumentMeta {...this.state.meta}>
+
                 <section className="main-banner banner-with-content article-banner bottom-100" style={BannerStyle(this.state.infoData[0].hero_image)}>
                         <div className="grid-container">
                             <div className="grid-x align-right align-middle grid-margin-x">
@@ -72,7 +81,7 @@ class Resource extends React.Component{
                         <div className="cell medium-10">
                                 <div className="block">
                                     <h3 className="banner-info"><span>{ReactHtmlParser(this.state.infoData[0].node_title)}</span><br/>{ReactHtmlParser(this.state.infoData[0].node_subtitle_title)}</h3>
-                                    <p>{ReactHtmlParser(this.state.infoData[0].node_body)}</p>
+                                    <p>{ReactHtmlParser(imgPath(this.state.infoData[0].node_body))}</p>
                                     <div className="img txt-center">
                                         <img src={apiUrl+this.state.infoData[0].secondary_img}/>
                                     </div>
@@ -88,7 +97,7 @@ class Resource extends React.Component{
                             </div>
                     </div>
                 </div>
-            </div>:''
+                    </DocumentMeta>:''
         )
     }
 }
