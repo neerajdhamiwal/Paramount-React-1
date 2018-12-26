@@ -30,11 +30,21 @@ class Expertise extends React.Component{
             meta:{}
         }
         this.getMeValue = this.getMeValue.bind(this);
+        this.animation = this.animation.bind(this);
 
     }
     getMeValue(val) {
         this.setState({meta: val})
         // return val;
+    }
+    animation(){
+        $(document).foundation();
+        new WOW.WOW(
+            {
+                animateClass: 'animated',
+                offset:       100,
+            }
+        ).init();
     }
 
     componentWillMount(){
@@ -44,22 +54,15 @@ class Expertise extends React.Component{
                 let ids = ['slider_id','flipper_id','logo_id','sub_block_id','image_description_id','hd_id', 'client_slider_id','award_slider_id','certificate_slider_id','partner_slider_id',];
                     nid = urlString[this.props.location.pathname]
                     this.setState({loading: false});
-                    this.setState({ExpertiseData: jsonMiddleware(response.data, ids)});
+                    this.setState({ExpertiseData: jsonMiddleware(response.data, ids)},()=> {
+                        this.animation();
+                    });
                 })
                 .catch((err) => {
                     console.log(err);
                 })
         }
 
-    componentDidMount(){
-        $(document).foundation();
-        new WOW.WOW(
-          {
-            animateClass: 'animated',
-            offset:       100,
-          }
-        ).init();
-    }
     render(){
         return( this.state.loading? <center>
                     <Loader
@@ -85,11 +88,9 @@ class Expertise extends React.Component{
                                 }
                             </div>:''}
                     </div>
-
                   </div>
                 </div>
                 </div>
-
                 <div className="clearfix top-100"></div>
                     {this.state.ExpertiseData.hasOwnProperty('slider_id')? <AccordionTab sliderData = {this.state.ExpertiseData['slider_id'][0]}/>:''}
                     {this.state.ExpertiseData.hasOwnProperty('hd_id')? <HorizontalScroll standardData = {this.state.ExpertiseData['hd_id'][0]}/>:''}
