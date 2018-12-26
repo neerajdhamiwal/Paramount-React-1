@@ -27,7 +27,7 @@ class RightImgLContent extends React.Component{
                                 <a class="grid__item">
                                     <div class="box">
                                         <div class="box__shadow"></div>
-                                        <img class="box__img" src={decodeUri(apiUrl+this.props.data.secondary_image_description_img)} alt="Some image"/>
+                                        <img class="box__img" src={apiUrl+this.props.data.secondary_image_description_img} alt="Some image"/>
                                         <h2>{ReactHtmlParser(this.props.data.secondary_image_description_title)}</h2>
                                     </div>
                                 </a>
@@ -53,7 +53,7 @@ class RightImgLContent extends React.Component{
                                     <a class="grid__item">
                                         <div class="box">
                                             <div class="box__shadow"></div>
-                                            <img class="box__img" src={decodeUri(apiUrl+this.props.data.image_description_img)} alt="Some image"/>
+                                            <img class="box__img" src={apiUrl+this.props.data.image_description_img} alt="Some image"/>
                                             <h2>{ReactHtmlParser(this.props.data.image_description_title)}</h2>
                                         </div>
                                     </a>
