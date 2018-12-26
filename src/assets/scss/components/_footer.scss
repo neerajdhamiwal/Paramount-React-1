@@ -5,52 +5,52 @@ footer.bg-color-grey{
 }
 .contact-form {
 	background: #fff;
-    padding: 40px 40px;
-		@include mq(small-screen) {
-			padding: 40px 15px;
-		}
-    max-width: 440px;
-        margin: 0 0 0 auto;
-    box-shadow: 9px 9px 0 rgba(0,0,0,.1);
-    position: relative;
-    top: 60px;
-		@include mq(small-screen) {
-			top:0px;
-			box-shadow:none;
-		}
-    z-index: 1;
-    [type='text'],
-    [type='email'],
-    textarea {
-    	    border: 1px solid #ff0000;
-    	    box-shadow: 0 0 0;
-    }
-    ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  padding: 40px 40px;
+  @include mq(small-screen) {
+   padding: 40px 15px;
+ }
+ max-width: 440px;
+ margin: 0 0 0 auto;
+ box-shadow: 9px 9px 0 rgba(0,0,0,.1);
+ position: relative;
+ top: 60px;
+ @include mq(small-screen) {
+   top:0px;
+   box-shadow:none;
+ }
+ z-index: 1;
+ [type='text'],
+ [type='email'],
+ textarea {
+   border: 1px solid #ff0000;
+   box-shadow: 0 0 0;
+ }
+ ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
   color: #303347;
   font-size: 14px;
   font-family: $font-primary;
-	-webkit-font-smoothing: auto;
+  -webkit-font-smoothing: auto;
 }
 ::-moz-placeholder { /* Firefox 19+ */
   color: #303347;
   font-size: 14px;
   font-family: $font-primary;
-	-webkit-font-smoothing: auto;
+  -webkit-font-smoothing: auto;
 }
 :-ms-input-placeholder { /* IE 10+ */
   color: #303347;
   font-size: 14px;
   font-family: $font-primary;
-	-webkit-font-smoothing: auto;
+  -webkit-font-smoothing: auto;
 }
 :-moz-placeholder { /* Firefox 18- */
   color: #303347;
   font-size: 14px;
   font-family: $font-primary;
-	-webkit-font-smoothing: auto;
+  -webkit-font-smoothing: auto;
 }
 h5 {
-	 margin-bottom: 30px;
+  margin-bottom: 30px;
 }
 }
 
@@ -58,28 +58,28 @@ footer {
 	.footer-icon {
     float: left;
     margin-right: 10px;
-		color: #fff;
-		font-size: 22px;
-	}
-	h5 {
-		font-size: 1.125rem;
-		color: #303347;
-		margin-bottom: 30px;
-	}
-	&.footer-bottom {
-		padding-top: 100px;
+    color: #fff;
+    font-size: 22px;
+  }
+  h5 {
+    font-size: 1.125rem;
+    color: #303347;
+    margin-bottom: 30px;
+  }
+  &.footer-bottom {
+    padding-top: 100px;
     padding-bottom: 100px;
-		@include mq(small-screen) {
-			padding-top: 35px;
-		}
-		h5 {
-			color: #fff;
-			margin-bottom: 60px;
-			@include mq(small-screen) {
-				margin-bottom: 20px;
-			}
-		}
-	}
+    @include mq(small-screen) {
+     padding-top: 35px;
+   }
+   h5 {
+     color: #fff;
+     margin-bottom: 60px;
+     @include mq(small-screen) {
+      margin-bottom: 20px;
+    }
+  }
+}
 }
 .footer-info {
 	@include mq(small-screen) {
@@ -94,7 +94,7 @@ footer {
     font-weight: 700;
     color: #303347;
     line-height: 3;
-	}
+  }
 }
 
 .twiter-update-footer{
