@@ -81,10 +81,11 @@ export const imgPath = (data)=> {
         if (data.includes('img')) {
             const expression = /src="/g;
             let match;
-            if(match = expression.exec(data)) {
+            while(match = expression.exec(data)) {
                 data = data.slice(0, match.index) + 'src="http://paramount.opensenselabs.com' + data.slice(match.index + 5);
-                return data;
+
             }
+            return data;
 
         }
         else{
