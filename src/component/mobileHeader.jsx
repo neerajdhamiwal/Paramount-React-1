@@ -1,6 +1,5 @@
 
 import React from 'react';
-import socialCard from '../assets/img/socialcards.png';
 class MobHeader extends React.Component{
     render(){
         return(

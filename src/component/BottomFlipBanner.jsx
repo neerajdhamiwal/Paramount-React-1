@@ -2,7 +2,8 @@
 import React from 'react';
 import BottomBanner from '../assets/img/team-banner-bg2.png';
 import ReactHtmlParser from 'react-html-parser';
-import {imgPath} from '../services/common';
+import {imgPath, COUNT} from '../services/common';
+import ShowMore from 'react-show-more';
 
 class BFlipperBanner extends React.Component{
     render(){
@@ -13,7 +14,12 @@ class BFlipperBanner extends React.Component{
                         <div className="medium-5 cell small-order-change">
                             <h3 className="banner-info"><span>{ReactHtmlParser(this.props.nodeData[0].content_ctaflip_title)}</span><br/></h3>
                             {/*<h6>{this.props.nodeData[0].content_ctaflip_description}</h6><br/>*/}
-                            {ReactHtmlParser(imgPath(this.props.nodeData[0].content_ctaflip_body))}
+                            <ShowMore lines={COUNT}
+                                      more='View more'
+                                      less='View less'
+                                      anchorClass=''>
+                                {ReactHtmlParser(imgPath(this.props.nodeData[0].content_ctaflip_body))}
+                            </ShowMore>
                             {this.props.nodeData[0].content_ctaflip_cta_title!==''? <a className="button" href={this.props.nodeData[0].content_ctaflip_cta_url}>{ReactHtmlParser(this.props.nodeData[0].content_ctaflip_cta_title)}</a>:''}
                             {this.props.nodeData[0].content_ctaflip_flip_title!==''? <div className="banner-img-link">
                                     <div className="grid-x grid-margin-x grid-margin-y img-shadow-hover">

@@ -3,9 +3,8 @@ import ImgBanner from '../assets/img/paramount-edge.png';
 import ImgBannerTwo from '../assets/img/services-sub-two.png';
 import ImgBannerThree from '../assets/img/expertise-sub-menu.png';
 import ReactHtmlParser from 'react-html-parser';
-import {imgPath} from '../services/common';
-
-
+import {imgPath, COUNT} from '../services/common';
+import ShowMore from 'react-show-more';
 
 class AwardBanner extends React.Component{
   constructor(props){
@@ -20,8 +19,18 @@ class AwardBanner extends React.Component{
           <div className="medium-5 cell small-order-change">
             <h3 className="banner-info"><span>{ReactHtmlParser(this.props.nodeData[0].node_title)}</span><br/>
                 {ReactHtmlParser(this.props.nodeData[0].node_subtitle_title)}</h3>
-            <p>{ReactHtmlParser(imgPath(this.props.nodeData[0].node_description))}</p>
-            <p>{ReactHtmlParser(imgPath(this.props.nodeData[0].node_body))}</p>
+            <ShowMore lines={COUNT}
+                      more='View more'
+                      less='View less'
+                      anchorClass=''>
+              <p>{ReactHtmlParser(imgPath(this.props.nodeData[0].node_description))}</p>
+            </ShowMore>
+            <ShowMore lines={COUNT}
+                      more='View more'
+                      less='View less'
+                      anchorClass=''>
+              <p>{ReactHtmlParser(imgPath(this.props.nodeData[0].node_body))}</p>
+            </ShowMore>
           </div>
             {this.props.nid == 24? <div><div className="medium-6 cell services-sub-menu">
                   <img src={ImgBanner} alt="Banner"/>

@@ -1,5 +1,4 @@
 import {apiUrl, UserName, Pass} from './common.js';
-
 const apiService = {};
 import axios from 'axios';
 import base64 from 'base-64';

@@ -1,8 +1,9 @@
 
 import React from 'react';
-import teamBanner from '../assets/img/team-banner-bg2.png';
 import ReactHtmlParser from 'react-html-parser';
-import {imgPath} from '../services/common';
+import {imgPath, COUNT} from '../services/common';
+import ShowMore from 'react-show-more';
+
 
 class HorizontalScroll extends React.Component{
     render(){
@@ -12,7 +13,12 @@ class HorizontalScroll extends React.Component{
                 {this.props.standardData.map((obj, i)=>{
                     return <div className="one">
                         <h4>{ReactHtmlParser(obj.field_standard_title_hd)}</h4>
-                        <p>{ReactHtmlParser(imgPath(imgPath(obj.field_standard_description_hd)))}</p>
+                        <ShowMore lines={COUNT}
+                                  more='View more'
+                                  less='View less'
+                                  anchorClass=''>
+                            <p>{ReactHtmlParser(imgPath(imgPath(obj.field_standard_description_hd)))}</p>
+                        </ShowMore>
                     </div>
                 })}
 </div>

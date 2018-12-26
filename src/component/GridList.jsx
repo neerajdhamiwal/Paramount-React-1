@@ -1,7 +1,6 @@
 
 import React from 'react';
-import GridImgPlaceholder from '../assets/img/img4.png';
-import {apiUrl, decodeUri, jsonMiddleware,imgPath } from '../services/common.js';
+import {apiUrl, decodeUri,imgPath } from '../services/common.js';
 import requestService from '../services/request.js';
 import $ from 'jquery';
 import ReactHtmlParser from 'react-html-parser';
@@ -46,13 +45,15 @@ class GridList extends React.Component{
             <div className="grid-x align-center block-latest-reads" id="sliderformobile">
                 {this.state.latestReadData.map((obj) => {
                     return <div className="medium-4 cell img-block">
+                        <a href={"/casestudy/article?nid="+obj.nid}>
                         <div className="img">
                             <img src={decodeUri(apiUrl+obj.image_url)} alt="image" />
                         </div>
                         <div className="img-content">
                             <h6>{ReactHtmlParser(obj.title)}</h6>
-                            <h2><a href={"/casestudy/article?nid="+obj.nid}>{ReactHtmlParser(imgPath(obj.description))}</a></h2>
+                            <h2>{ReactHtmlParser(imgPath(obj.description))}</h2>
                         </div>
+                        </a>
                     </div>
                 })}
               </div>

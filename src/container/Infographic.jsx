@@ -1,15 +1,13 @@
 
 import React from 'react';
-import articleBanner from '../assets/img/article-banner.jpeg';
 import $ from 'jquery';
 import Loader from 'react-loader-spinner'; // eslint-disable-line no-unused-vars
-import GridListScnd from '../component/GridListScnd.jsx';
-import CaseStudy from '../component/CaseStudy.jsx';
 import requestService from '../services/request.js';
-import {apiUrl, jsonMiddleware, imgPath} from '../services/common.js';
+import {apiUrl, jsonMiddleware, imgPath, COUNT} from '../services/common.js';
 import ReactHtmlParser from 'react-html-parser';
 import aboutLayerBannerone from '../assets/img/about-layer1.png';
 import aboutLayerBannertwo from '../assets/img/about-layer2.png';
+import ShowMore from 'react-show-more';
 
 //import 'foundation/js/vendor/zepto';
 class Resource extends React.Component{
@@ -71,7 +69,12 @@ class Resource extends React.Component{
                                             <h3 className="banner-info"><span>{ReactHtmlParser(this.state.bannerData[0].banner_title)}</span><br/>
                                                 {ReactHtmlParser(this.state.bannerData[0].banner_subtitle)}</h3>
                                             <h5>{ReactHtmlParser(this.state.bannerData[0].banner_description)}</h5>
-                                            <p>{ReactHtmlParser(imgPath(this.state.bannerData[0].banner_body))}</p>
+                                            <ShowMore lines={COUNT}
+                                                      more='View more'
+                                                      less='View less'
+                                                      anchorClass=''>
+                                                <p>{ReactHtmlParser(imgPath(this.state.bannerData[0].banner_body))}</p>
+                                            </ShowMore>
                                         </div>
                                         <div className="medium-6 cell">
                                             <div class="rotation-banner">
@@ -94,7 +97,12 @@ class Resource extends React.Component{
                                                 <div className="award-content pr-155">
                                                     <a href="#">{ReactHtmlParser(obj.title)}</a>
                                                     <h3>{ReactHtmlParser(obj.node_subtitle_title)}</h3>
-                                                    <p>{ReactHtmlParser(imgPath(obj.node_body))}</p>
+                                                    <ShowMore lines={COUNT}
+                                                              more='View more'
+                                                              less='View less'
+                                                              anchorClass=''>
+                                                        <p>{ReactHtmlParser(imgPath(obj.node_body))}</p>
+                                                    </ShowMore>
                                                     <a href={`/infographic-article?nid=${obj.nid}`}>View</a>
                                                     {obj.cta_button_title!==''?<a href="" className="button">{obj.cta_button_title}</a>:''}
                                                 </div>

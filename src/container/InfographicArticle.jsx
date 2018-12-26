@@ -1,14 +1,12 @@
 
 import React from 'react';
-import articleBanner from '../assets/img/article-banner.jpeg';
 import $ from 'jquery';
 import Loader from 'react-loader-spinner'; // eslint-disable-line no-unused-vars
-import GridListScnd from '../component/GridListScnd.jsx';
-import CaseStudy from '../component/CaseStudy.jsx';
 import requestService from '../services/request.js';
-import {apiUrl, jsonMiddleware, imgPath} from '../services/common.js';
+import {apiUrl, imgPath, COUNT} from '../services/common.js';
 import ReactHtmlParser from 'react-html-parser';
 import DocumentMeta from 'react-document-meta';
+import ShowMore from 'react-show-more';
 
 
 //import 'foundation/js/vendor/zepto';
@@ -81,7 +79,12 @@ class Resource extends React.Component{
                         <div className="cell medium-10">
                                 <div className="block">
                                     <h3 className="banner-info"><span>{ReactHtmlParser(this.state.infoData[0].node_title)}</span><br/>{ReactHtmlParser(this.state.infoData[0].node_subtitle_title)}</h3>
-                                    <p>{ReactHtmlParser(imgPath(this.state.infoData[0].node_body))}</p>
+                                    <ShowMore lines={COUNT}
+                                              more='View more'
+                                              less='View less'
+                                              anchorClass=''>
+                                        <p>{ReactHtmlParser(imgPath(this.state.infoData[0].node_body))}</p>
+                                    </ShowMore>
                                     <div className="img txt-center">
                                         <img src={apiUrl+this.state.infoData[0].secondary_img}/>
                                     </div>

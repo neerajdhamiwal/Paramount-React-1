@@ -12,13 +12,13 @@ import FooterHeading from '../component/FooterHeading.jsx';
 import HorizontalScroll from '../component/HorizontalScroll.jsx';
 import RightImgLContent from '../component/RightImgLContent.jsx';
 import LeftImgRContent from '../component/LeftImgRContent.jsx';
-import smallImg from '../assets/img/small-img.png';
 import {jsonMiddleware, apiUrl, urlString, getMeta} from '../services/common';
 import requestService from '../services/request.js';
 import Loader from 'react-loader-spinner'; // eslint-disable-line no-unused-vars
 import DocumentMeta from 'react-document-meta';
 let nid = '';
 import $ from 'jquery';
+
 
 //import 'foundation/js/vendor/zepto';
 class Expertise extends React.Component{

@@ -1,17 +1,11 @@
 
 import React from 'react';
-import img4 from '../assets/img/img4.png';
 import $ from 'jquery';
-import Loader from 'react-loader-spinner'; // eslint-disable-line no-unused-vars
 import GridListScnd from '../component/GridListScnd.jsx';
-import Blog from '../container/Blog.jsx';
 import requestService from '../services/request.js';
-import {apiUrl, jsonMiddleware, imgPath} from '../services/common.js';
+import {apiUrl, jsonMiddleware, imgPath, COUNT} from '../services/common.js';
 import ReactHtmlParser from 'react-html-parser';
-
-
-
-
+import ShowMore from 'react-show-more';
 
 //import 'foundation/js/vendor/zepto';
 class Resource extends React.Component{
@@ -83,16 +77,18 @@ class Resource extends React.Component{
                                         <div className="info-graphic-details">
                                             <h3>{ReactHtmlParser(this.state.infoData[0].infographic_title)}</h3>
                                             {this.state.infoData[0].infographic_subtitle? <h6>{this.state.infoData[0].infographic_subtitle}</h6>:''}
-                                            <p>{ReactHtmlParser(imgPath(this.state.infoData[0].infographic_body))}</p>
+                                            <ShowMore lines={COUNT}
+                                                      more='View more'
+                                                      less='View less'
+                                                      anchorClass=''>
+                                                <p>{ReactHtmlParser(imgPath(this.state.infoData[0].infographic_body))}</p>
+                                            </ShowMore>
                                         </div>
                                 </div>
                             </div>
                         </div>
                     </section>:''}
-                    {/*<GridListScnd data={this.state.infoData[0]}/>*/}
                 </div>
-                {/*<AccordionTab/>*/}
-                {/*<Blog locate="resource" page="casestudy"/>*/}
             </div>
         )
     }

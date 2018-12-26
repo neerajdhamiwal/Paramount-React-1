@@ -1,6 +1,6 @@
 
 import React from 'react';
-import {apiUrl, decodeUri, jsonMiddleware, } from '../services/common.js';
+import {apiUrl} from '../services/common.js';
 import requestService from '../services/request.js';
 import $ from 'jquery';
 class FooterRowSlider extends React.Component{

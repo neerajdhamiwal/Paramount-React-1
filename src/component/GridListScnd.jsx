@@ -1,9 +1,6 @@
 
 import React from 'react';
-import GridImgPlaceholder from '../assets/img/img4.png';
 import {apiUrl, decodeUri, jsonMiddleware, } from '../services/common.js';
-import requestService from '../services/request.js';
-import $ from 'jquery';
 import ReactHtmlParser from 'react-html-parser';
 
 

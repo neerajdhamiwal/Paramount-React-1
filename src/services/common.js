@@ -111,5 +111,6 @@ export const getMeta = (nid, cb)=> {
             console.log(err);
         })
 }
+export const COUNT = 5;
 
 

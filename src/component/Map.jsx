@@ -1,6 +1,6 @@
 
 import React from 'react';
-import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
+import {GoogleApiWrapper} from 'google-maps-react';
 import ReactHtmlParser from 'react-html-parser';
 import {imgPath} from '../services/common';
 

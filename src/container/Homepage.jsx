@@ -4,7 +4,6 @@ import WOW from 'wowjs';
 import Parallax from 'parallax-js';
 import paroller from 'paroller.js';
 import GridOverLap from '../component/GridOverlap.jsx';
-import HorizontalScroll from '../component/HorizontalScroll.jsx';
 import CertSlider from '../component/CertificationBottomSlider.jsx';
 import AwardSlider from '../component/AwardsBottomSlider.jsx';
 import FooterRowSlider from '../component/FooterRowSlider.jsx';
@@ -19,9 +18,10 @@ import layer6 from '../assets/img/layers/layer6.png';
 import layer7 from '../assets/img/layers/layer7.png';
 import arrowImg from '../assets/img/logo/arrow.jpg';
 import layerImg from '../assets/img/paramount-edge.png';
-import {jsonMiddleware, apiUrl, decodeUri, imgPath, getMeta} from '../services/common';
+import {jsonMiddleware, apiUrl, decodeUri, imgPath, getMeta, COUNT} from '../services/common';
 import ReactHtmlParser from 'react-html-parser';
 import Loader from 'react-loader-spinner'; // eslint-disable-line no-unused-vars
+import ShowMore from 'react-show-more';
 import DocumentMeta from 'react-document-meta';
 import requestService from '../services/request.js';
 import $ from 'jquery';
@@ -167,7 +167,12 @@ class Home extends React.Component{
                                                <div className="medium-6 cell">
                                                    <div>
                                                        <h3>{ReactHtmlParser(obj.content_slider_description)}</h3>
-                                                       <p className="ptb-40">{ReactHtmlParser(imgPath(obj.content_slider_body))}</p>
+                                                       <ShowMore lines={COUNT}
+                                                                 more='View more'
+                                                                 less='View less'
+                                                                 anchorClass=''>
+                                                           <p className="ptb-40">{ReactHtmlParser(imgPath(obj.content_slider_body))}</p>
+                                                       </ShowMore>
                                                    </div>
                                                    {obj.content_slider_cta_title !==''? <a className="button" href={obj.content_slider_cta_url.substring(9)}>{ReactHtmlParser(obj.content_slider_cta_title)}</a>:''}
                                                </div>
@@ -199,9 +204,12 @@ class Home extends React.Component{
                        </div>
                        <div className="large-5 cell wow fadeInUp">
                            <div className="content-inner pl-155">
-                               {/*<h3>{ReactHtmlParser(this.state.HomeData[Object.keys(this.state.HomeData)[0]][0][0].content_flipper_title)}</h3>*/}
-                               {/*<h3>{ReactHtmlParser(this.state.HomeData[Object.keys(this.state.HomeData)[0]][0][0].image_content_block_description)}</h3>*/}
-                               <p>{ReactHtmlParser(imgPath(this.state.HomeData[Object.keys(this.state.HomeData)[0]][0][0].image_content_block_body))}</p>
+                               <ShowMore lines={COUNT}
+                                         more='View more'
+                                         less='View less'
+                                         anchorClass=''>
+                                   <p>{ReactHtmlParser(imgPath(this.state.HomeData[Object.keys(this.state.HomeData)[0]][0][0].image_content_block_body))}</p>
+                               </ShowMore>
                            </div>
                        </div>
                    </div>
@@ -216,7 +224,12 @@ class Home extends React.Component{
                     <div className="medium-5 small-12 cell">
                         <h2 className="relative-title title-span">{ReactHtmlParser(this.state.HomeData[Object.keys(this.state.HomeData)[0]][0][0].content_bottom_title)}</h2>
                         <h3 className="ptb-40"> {ReactHtmlParser(this.state.HomeData[Object.keys(this.state.HomeData)[0]][0][0].content_bottom_description)}</h3>
-                        <p>{ReactHtmlParser(imgPath(this.state.HomeData[Object.keys(this.state.HomeData)[0]][0][0].content_bottom_body))}</p>
+                        <ShowMore lines={COUNT}
+                                  more='View more'
+                                  less='View less'
+                                  anchorClass=''>
+                            <p>{ReactHtmlParser(imgPath(this.state.HomeData[Object.keys(this.state.HomeData)[0]][0][0].content_bottom_body))}</p>
+                        </ShowMore>
                         {this.state.HomeData[Object.keys(this.state.HomeData)[0]][0][0].content_bottom_cta_title!==''? <a className="button" href={this.state.HomeData[Object.keys(this.state.HomeData)[0]][0][0].content_bottom_cta_url.substring(9)}>{this.state.HomeData[Object.keys(this.state.HomeData)[0]][0][0].content_bottom_cta_title}</a>:''}
                     </div>
                     <div className="medium-7 cell no-padding hide-for-small-only">

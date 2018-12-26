@@ -1,20 +1,14 @@
 
 import React from 'react';
 import Parallax from 'parallax-js';
-import award1 from '../assets/img/awards-02.png';
-import award2 from '../assets/img/awards-03.png';
-import award3 from '../assets/img/awards-04.png';
-import award4 from '../assets/img/awards-05.png';
-import MainBanner from '../component/MainBanner.jsx'
-import AwardSlider from '../component/AwardsBottomSlider.jsx'
-import CertSlider from '../component/CertificationBottomSlider.jsx'
 import requestService from '../services/request.js';
-import {apiUrl, jsonMiddleware, imgPath} from '../services/common.js';
+import {apiUrl, jsonMiddleware, imgPath, COUNT} from '../services/common.js';
 import ReactHtmlParser from 'react-html-parser';
 import WOW from 'wowjs';
 import Loader from 'react-loader-spinner'; // eslint-disable-line no-unused-vars
 import aboutLayerBannerone from '../assets/img/about-layer1.png';
 import aboutLayerBannertwo from '../assets/img/about-layer2.png';
+import ShowMore from 'react-show-more';
 let nid = '';
 //import 'foundation/js/vendor/zepto';
 class About extends React.Component{
@@ -83,7 +77,12 @@ class About extends React.Component{
                                                 <h3 className="banner-info"><span>{ReactHtmlParser(this.state.bannerData[0].banner_title)}</span><br/>
                                                     {ReactHtmlParser(this.state.bannerData[0].banner_subtitle)}</h3>
                                                 <h5>{ReactHtmlParser(this.state.bannerData[0].banner_description)}</h5>
-                                                <p>{ReactHtmlParser(this.state.bannerData[0].banner_body)}</p>
+                                                <ShowMore lines={COUNT}
+                                                          more='View more'
+                                                          less='View less'
+                                                          anchorClass=''>
+                                                    <p>{ReactHtmlParser(this.state.bannerData[0].banner_body)}</p>
+                                                </ShowMore>
                                             </div>
                                             <div className="medium-6 cell">
                                                 <div class="rotation-banner">
@@ -106,7 +105,12 @@ class About extends React.Component{
                                                 <div className="award-content pr-155">
                                                     <h3>{ReactHtmlParser(obj.node_title)}</h3>
                                                     <h6>{ReactHtmlParser(obj.node_subtitle_title)}</h6>
-                                                    <p>{imgPath(ReactHtmlParser(obj.node_body))}</p>
+                                                    <ShowMore lines={COUNT}
+                                                              more='View more'
+                                                              less='View less'
+                                                              anchorClass=''>
+                                                        <p>{imgPath(ReactHtmlParser(obj.node_body))}</p>
+                                                    </ShowMore>
                                                     <a className="button" href={obj.cta_button_url.substring(9)}>{obj.cta_button_title}</a>
                                                 </div>
                                             </div>

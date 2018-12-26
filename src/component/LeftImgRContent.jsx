@@ -1,10 +1,8 @@
 
 import React from 'react';
-import Placeholder2 from '../assets/img/placeholder2.png';
-import {apiUrl, decodeUri, imgPath} from '../services/common.js';
+import {apiUrl, decodeUri, imgPath, COUNT} from '../services/common.js';
 import ReactHtmlParser from 'react-html-parser';
-import $ from 'jquery';
-
+import ShowMore from 'react-show-more';
 
 class LeftImgRContent extends React.Component{
     render(){
@@ -22,7 +20,12 @@ class LeftImgRContent extends React.Component{
                             <div className="large-5 cell wow fadeInUp">
                                 <div className="content-inner pl-155">
                                     <h3>{ReactHtmlParser(this.props.data.secondary_image_description_subheading)}</h3>
-                                    <p>{ReactHtmlParser(imgPath(this.props.data.secondary_image_description_body))}</p>
+                                    <ShowMore lines={COUNT}
+                                              more='View more'
+                                              less='View less'
+                                              anchorClass=''>
+                                        <p>{ReactHtmlParser(imgPath(this.props.data.secondary_image_description_body))}</p>
+                                    </ShowMore>
                                 </div>
                             </div>
                         </div>
@@ -37,7 +40,12 @@ class LeftImgRContent extends React.Component{
                             <div className="large-5 cell wow fadeInUp">
                                 <div className="content-inner pl-155">
                                     <h3>{ReactHtmlParser(this.props.data.image_description_subheading)}</h3>
-                                    <p>{ReactHtmlParser(imgPath(this.props.data.image_description_body))}</p>
+                                    <ShowMore lines={COUNT}
+                                              more='View more'
+                                              less='View less'
+                                              anchorClass=''>
+                                        <p>{ReactHtmlParser(imgPath(this.props.data.image_description_body))}</p>
+                                    </ShowMore>
                                 </div>
                             </div>
                         </div>

@@ -1,10 +1,6 @@
 
 import React from 'react';
-import Header from '../component/Header.jsx';
 import Parallax from 'parallax-js';
-import FlipperBanner from '../component/FlipperBanner.jsx';
-import MainBanner from '../component/MainBanner.jsx';
-import BottomFlipBanner from '../component/BottomFlipBanner.jsx';
 import Map from '../component/Map.jsx';
 import AwardSlider from '../component/AwardsBottomSlider.jsx';
 import CertSlider from '../component/CertificationBottomSlider.jsx';

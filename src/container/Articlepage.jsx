@@ -2,10 +2,12 @@
 import React from 'react';
 import $ from 'jquery';
 import requestService from '../services/request.js';
-import {apiUrl, imgPath, getMeta} from '../services/common.js';
+import {apiUrl, imgPath, getMeta, COUNT} from '../services/common.js';
 import ReactHtmlParser from 'react-html-parser';
 import Loader from 'react-loader-spinner'; // eslint-disable-line no-unused-vars
 import GridList from '../component/GridList.jsx';
+import ShowMore from 'react-show-more';
+import DocumentMeta from 'react-document-meta';
 
 const BannerStyle =(url)=> {
     let combinedurl = apiUrl+url
@@ -33,13 +35,15 @@ class ArticlePage extends React.Component{
 
     componentWillMount(){
         getMeta(this.props.location.search.substring(this.props.location.search.indexOf("=")+1), this.getMeValue);
-        let caseStudy = []
+        let caseStudy = [];
         console.log(this.props.location.search);
         requestService.getService(`/blogs-contents/${this.props.location.search.substring(this.props.location.search.indexOf("=")+1)}`)
             .then((response) => {
-            caseStudy =  response.data[0];
                 this.setState({loading: false})
+                if(response.data.length> 0){
+                caseStudy =  response.data[0];
                 this.setState({caseStudy: caseStudy});
+            }
             })
             .catch((err) => {
                 console.log(err);
@@ -69,7 +73,7 @@ class ArticlePage extends React.Component{
                     />
                 </center> :
                 <DocumentMeta {...this.state.meta}>
-            <section className="main-banner banner-with-content article-banner" style={BannerStyle(this.state.caseStudy.field_hero_image)}>
+                    {this.state.caseStudy.length>0?<section className="main-banner banner-with-content article-banner" style={BannerStyle(this.state.caseStudy.field_hero_image)}>
          <div className="grid-container">
            <div className="grid-x align-right align-middle grid-margin-x">
              <div className="medium-10 cell small-order-change">
@@ -78,13 +82,18 @@ class ArticlePage extends React.Component{
              </div>
            </div>
          </div>
-       </section>
+       </section>:''}
        <section className="left-image-right-content top-100 bottom-100">
          <div className="grid-container custom-grid custom-grid-right">
            <div className="grid-x grid-padding-x pl-155">
              <div className="medium-6 small-12 cell">
                <div className="pr-155 ">
-                   {ReactHtmlParser(imgPath(this.state.caseStudy.field_body))}
+                   <ShowMore lines={COUNT}
+                             more='View more'
+                             less='View less'
+                             anchorClass=''>
+                       {ReactHtmlParser(imgPath(this.state.caseStudy.field_body))}
+                   </ShowMore>
                </div>
            </div>
          <div className="medium-6 cell no-padding article-top-content hide-for-small-only">
@@ -108,8 +117,12 @@ class ArticlePage extends React.Component{
                   <div className="grid-x grid-padding-x">
                   <div className="medium-8 cell">
                     <div className="">
-                        <p>{ReactHtmlParser(imgPath(this.state.caseStudy.field_secondary_body))}</p>
-
+                        <ShowMore lines={COUNT}
+                                  more='View more'
+                                  less='View less'
+                                  anchorClass=''>
+                            <p>{ReactHtmlParser(imgPath(this.state.caseStudy.field_secondary_body))}</p>
+                        </ShowMore>
                     </div>
                 </div>
                 <div className="medium-4 small-12 cell no-padding article-top-content">

@@ -3,7 +3,6 @@ import React from 'react';
 import ReactHtmlParser from 'react-html-parser';
 import {imgPath} from '../services/common';
 
-
 class TextContent extends React.Component{
     render(){
         return(

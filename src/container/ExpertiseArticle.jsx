@@ -6,18 +6,14 @@ import RightImgLContent from '../component/RightImgLContent.jsx';
 import AwardBanner from '../component/AwardBanner.jsx';
 import {jsonMiddleware, urlString, getMeta} from '../services/common';
 import requestService from '../services/request.js';
-import {apiUrl} from '../services/common.js';
-import WOW from 'wowjs';
 import $ from 'jquery';
 import Loader from 'react-loader-spinner'; // eslint-disable-line no-unused-vars
 import TextContent from '../component/TextContent.jsx';
 import CertSlider from '../component/CertificationBottomSlider.jsx';
 import AwardSlider from '../component/AwardsBottomSlider.jsx';
 import PartnerSlider from '../component/PartnerSlider.jsx';
-import GridList from '../component/GridList.jsx';
 import FooterRowSlider from '../component/FooterRowSlider.jsx';
 import DocumentMeta from 'react-document-meta';
-
 
 let nid = ''
 class ExpertiseArticle extends React.Component{

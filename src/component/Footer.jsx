@@ -20,10 +20,10 @@ class Footer extends React.Component{
             footerData: [],
             isDisable: false,
             tweets: []
-            // tweets:[1006619310184251392, 969195682501283800, 958957522961903600]
     }
         this.handleChange = this.handleChange.bind(this);
         this.submit = this.submit.bind(this);
+        this.ValidateEmail = this.ValidateEmail.bind(this);
     }
 
     componentWillMount(){
@@ -37,18 +37,27 @@ class Footer extends React.Component{
         requestService.getService('/json-tweet')
             .then((response) => {
                 const data = response.data;
-                // const data = ['1006619310184251392', '969195682501283842', '958957522961903616'];
                 this.setState({tweets: response.data});
             })
             .catch((err) => {
                 console.log(err);
             })
     }
+    ValidateEmail() {
+        if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(this.state.email))
+        {
+            return true
+        }
+        toast.error("Enter Valid Email", {
+            position: toast.POSITION.TOP_RIGHT
+        });
+        return false
+    }
 
     submit(e){
-        this.setState({isDisable: true})
         e.preventDefault();
-        if(this.state.name && this.state.email && this.state.message){
+        if(this.state.name && this.ValidateEmail && this.state.message){
+            this.setState({isDisable: true})
             let postData = {
                 "contact_form":[{"target_id":"feedback"}],
                 "name":[{"value":this.state.name}],
@@ -64,7 +73,6 @@ class Footer extends React.Component{
                     });
                     this.setState({name:'', email: '', message:''})
                     this.setState({isDisable: false})
-
                 })
                 .catch(()=> {
                     toast.error("There is some internal issue !", {
@@ -80,7 +88,6 @@ class Footer extends React.Component{
     }
 
     handleChange(e){
-        console.log(e.target.value, this.state);
         let obj = {}
         obj[e.target.name] = e.target.value
         this.setState(obj);

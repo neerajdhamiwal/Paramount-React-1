@@ -1,6 +1,6 @@
 
 import React from 'react';
-import {apiUrl, decodeUri} from '../services/common.js';
+import {apiUrl} from '../services/common.js';
 import ReactHtmlParser from 'react-html-parser';
 import requestService from '../services/request.js';
 
