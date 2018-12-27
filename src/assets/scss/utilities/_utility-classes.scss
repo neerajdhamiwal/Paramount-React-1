@@ -191,35 +191,22 @@
 	background: #f6f4f5;
 }
 
-/**
- * @file
- * Alignment classes for text and block level elements.
- */
-
-.custom-text-align-left {
+.text-align-left {
 	text-align: left;
 }
-.custom-text-align-right {
+.text-align-right {
 	text-align: right;
 }
-.custom-text-align-center {
+.text-align-center {
 	text-align: center;
 }
-.custom-text-align-justify {
+.text-align-justify {
 	text-align: justify;
 }
 
-/**
- * Alignment classes for block level elements (images, videos, blockquotes, etc.)
- */
-.custom-align-left {
+.align-left {
 	float: left;
 }
-.custom-align-right {
+.align-right {
 	float: right;
-}
-.custom-align-center {
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
 }
