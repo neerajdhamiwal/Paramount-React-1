@@ -1371,24 +1371,6 @@ footer.footer-bottom {
 .grey-bg {
   background: #f6f4f5; }
 
-.text-align-left {
-  text-align: left; }
-
-.text-align-right {
-  text-align: right; }
-
-.text-align-center {
-  text-align: center; }
-
-.text-align-justify {
-  text-align: justify; }
-
-.align-left {
-  float: left; }
-
-.align-right {
-  float: right; }
-
 .button {
   font-family: "Montserrat", sans-serif;
   border-radius: 30px;
