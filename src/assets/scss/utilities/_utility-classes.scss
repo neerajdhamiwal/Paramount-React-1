@@ -191,26 +191,34 @@
 	background: #f6f4f5;
 }
 
-.text-align-left {
+/**
+ * @file
+ * Alignment classes for text and block level elements.
+ */
+
+.custom-text-align-left {
 	text-align: left;
 }
-.text-align-right {
+.custom-text-align-right {
 	text-align: right;
 }
-.text-align-center {
+.custom-text-align-center {
 	text-align: center;
 }
-.text-align-justify {
+.custom-text-align-justify {
 	text-align: justify;
 }
 
-.align-left {
+/**
+ * Alignment classes for block level elements (images, videos, blockquotes, etc.)
+ */
+.custom-align-left {
 	float: left;
 }
-.align-right {
+.custom-align-right {
 	float: right;
 }
-.align-center {
+.custom-align-center {
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
