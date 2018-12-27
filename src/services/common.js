@@ -1,6 +1,6 @@
 import requestService from './request';
 
-
+let menu = 'IT'
 export const apiUrl = 'http://paramount.opensenselabs.com';
 export const UserName = 'sahil.s';
 export const Pass = 'System123#';
@@ -112,6 +112,11 @@ export const getMeta = (nid, cb)=> {
             console.log(err);
         })
 }
-export const COUNT = 5;
-
+export const COUNT = 20;
+export const setActiveBlogMenu = (menu)=> {
+    menu = menu;
+}
+export const getActiveBlogMenu = ()=> {
+    return menu;
+}
 

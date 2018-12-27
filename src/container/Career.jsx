@@ -161,7 +161,7 @@ class About extends React.Component{
                             <div className="grid-x grid-padding-x">
                                 <div className="medium-2 cell">
                                     <ul className="vertical menu career-page-tab-menu" id="jobList">
-                                        <li><a onClick={this.change} id="allJob">All</a></li>
+                                        <li><a onClick={this.change} id="allJob" className="activeTab">All</a></li>
                                         {this.state.jobList.length>0 ? this.state.jobList.map((obj)=>{
                                             return <li><a onClick={this.change} id={obj.job_id}>{obj.job_name}</a></li>
                                         }) : <div></div>}

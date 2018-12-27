@@ -1,5 +1,5 @@
 import React from 'react';
-import {apiUrl, COUNT} from '../services/common.js';
+import {apiUrl, COUNT,} from '../services/common.js';
 import ReactHtmlParser from 'react-html-parser';
 import ShowMore from 'react-show-more';
 
@@ -13,6 +13,7 @@ constructor(props){
     }
     this.clickHandler = this.clickHandler.bind(this);
 }
+
     componentWillReceiveProps(nextProps){
         if(nextProps.caseStudyList !== 'undefined'){
             this.setState({name: nextProps.caseStudyList[0].name.split(',')})
@@ -20,6 +21,10 @@ constructor(props){
         if(nextProps.firstCaseStudy !=='undefined'){
           this.setState({activeObject: nextProps.firstCaseStudy})
         }
+        $('#service').on('click', 'li a', function() {
+            $('#service a.activeTab').removeClass('activeTab');
+            $(this).addClass('activeTab');
+        });
     }
     clickHandler(e){
       this.props.getTermInfo(this.props.caseStudyList[0].id.split(',')[e.target.id]);
@@ -30,9 +35,9 @@ constructor(props){
         <div className="grid-container  custom-grid custom-grid-right">
           <div className="grid-x">
             <div className="medium-2 cell">
-              <ul className="vertical menu">
+              <ul className="vertical menu" id="service">
                   {this.state.name.map((value, index) => {
-                      return <li onClick={this.clickHandler} ><a id={index}>
+                      return <li onClick={this.clickHandler} ><a id={index} className={index===0?'activeTab':''}>
                           {value}</a></li>
                   })
                   }
