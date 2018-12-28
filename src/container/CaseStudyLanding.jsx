@@ -8,7 +8,9 @@ import WOW from 'wowjs';
 import Loader from 'react-loader-spinner'; // eslint-disable-line no-unused-vars
 import aboutLayerBannerone from '../assets/img/about-layer1.png';
 import aboutLayerBannertwo from '../assets/img/about-layer2.png';
-import ShowMore from 'react-show-more';
+import ShowMore from '../component/ShowMore.jsx';
+import DocumentMeta from 'react-document-meta';
+
 let nid = '';
 //import 'foundation/js/vendor/zepto';
 class About extends React.Component{
@@ -17,7 +19,17 @@ class About extends React.Component{
         this.state = {
             listingData: {},
             bannerData: [],
-            loading: true
+            loading: true,
+            meta: {
+                title: 'Case Studies | Paramount Software Solutions',
+                description: 'Read the cases we have addressed using our sheer technical acumen, delivered applications and solutions across various industries and sectors.',
+                canonical: 'http://paramountreact.opensenselabs.com/caseStudy',
+                meta: {
+                    name: {
+                        keywords: ''
+                    }
+                }
+            }
         }
         this.animation = this.animation.bind(this);
     }
@@ -67,8 +79,8 @@ class About extends React.Component{
                         width="100"
                     />
                 </center> :
-                <div>
-                    { this.state.bannerData.length>0?
+                <DocumentMeta {...this.state.meta}>
+                { this.state.bannerData.length>0?
                         <div>
                             <section className="bottom-100">
                                     <div className="grid-container custom-grid custom-grid-right">
@@ -77,12 +89,8 @@ class About extends React.Component{
                                                 <h3 className="banner-info"><span>{ReactHtmlParser(this.state.bannerData[0].banner_title)}</span><br/>
                                                     {ReactHtmlParser(this.state.bannerData[0].banner_subtitle)}</h3>
                                                 <h5>{ReactHtmlParser(this.state.bannerData[0].banner_description)}</h5>
-                                                <ShowMore lines={COUNT}
-                                                          more='View more'
-                                                          less='View less'
-                                                          anchorClass=''>
-                                                    <p>{ReactHtmlParser(this.state.bannerData[0].banner_body)}</p>
-                                                </ShowMore>
+                                                    <ShowMore id="caseBnnr" longText= {this.state.bannerData[0].banner_body}>
+                                                    </ShowMore>
                                             </div>
                                             <div className="medium-6 cell">
                                                 <div class="rotation-banner">
@@ -94,7 +102,7 @@ class About extends React.Component{
                                     </div>
                                 </section>
 
-                            {this.state.listingData.hasOwnProperty('nid')?this.state.listingData['nid'][0].map((obj) => {
+                            {this.state.listingData.hasOwnProperty('nid')?this.state.listingData['nid'][0].map((obj, i) => {
                                 return <section className="award-content-box top-100 bottom-100">
                                     <div className="grid-container">
                                         <div className="grid-x align-right align-middle grid-margin-x">
@@ -105,11 +113,7 @@ class About extends React.Component{
                                                 <div className="award-content pr-155">
                                                     <h3>{ReactHtmlParser(obj.node_title)}</h3>
                                                     <h6>{ReactHtmlParser(obj.node_subtitle_title)}</h6>
-                                                    <ShowMore lines={COUNT}
-                                                              more='View more'
-                                                              less='View less'
-                                                              anchorClass=''>
-                                                        <p>{imgPath(ReactHtmlParser(obj.node_body))}</p>
+                                                    <ShowMore id={`caseList${i}`} longText= {obj.node_body}>
                                                     </ShowMore>
                                                     <a className="button" href={obj.cta_button_url.substring(9)}>{obj.cta_button_title}</a>
                                                 </div>
@@ -143,7 +147,7 @@ class About extends React.Component{
                         {/*:''}*/}
                     {/*{this.state.awardsData.hasOwnProperty('award_slider_id')?this.state.awardsData['award_slider_id'][0][0].award_slider_id? <AwardSlider/>: '':''}*/}
                     {/*{this.state.awardsData.hasOwnProperty('certificate_slider_id')? this.state.awardsData['certificate_slider_id'][0][0].certificate_slider_id ? <CertSlider/>: '':''}*/}
-                </div>
+                </DocumentMeta>
         )
     }
 }

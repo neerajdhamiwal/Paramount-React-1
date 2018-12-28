@@ -9,7 +9,7 @@ import AwardSlider from '../component/AwardsBottomSlider.jsx'
 import CertSlider from '../component/CertificationBottomSlider.jsx'
 import requestService from '../services/request.js';
 import {apiUrl, jsonMiddleware, urlString, imgPath, getMeta, COUNT} from '../services/common.js';
-import ShowMore from 'react-show-more';
+import ShowMore from '../component/ShowMore.jsx';
 import ReactHtmlParser from 'react-html-parser';
 import WOW from 'wowjs';
 import Loader from 'react-loader-spinner'; // eslint-disable-line no-unused-vars
@@ -123,12 +123,8 @@ class About extends React.Component{
                                <div className="medium-5 cell small-order-change">
                                    <h3 className="banner-info"><span>{ReactHtmlParser(this.state.awardsData.primary_image_id[0][0].node_title)}</span><br/>
                                        {ReactHtmlParser(this.state.awardsData.primary_image_id[0][0].node_subtitle_title)}</h3>
-                                   <ShowMore lines={COUNT}
-                                             more='View more'
-                                             less='View less'
-                                             anchorClass=''>
-                                       <p>{ReactHtmlParser(this.state.awardsData.primary_image_id[0][0].node_description)}</p>
-                                   </ShowMore>
+                                       <ShowMore id={`awards${this.state.awardsData.primary_image_id[0][0].node_title}`} longText= {imgPath(this.state.awardsData.primary_image_id[0][0].node_description)}>
+                                       </ShowMore>
                                </div>
                                <div className="medium-6 cell">
                                    <div class="rotation-banner">
@@ -141,7 +137,7 @@ class About extends React.Component{
                    </section>
                }
 
-                {this.state.awardsData['primary_image_id'][0].map((obj) => {
+                {this.state.awardsData['primary_image_id'][0].map((obj, i) => {
                     return <section className="award-content-box top-100 bottom-100">
                         <div className="grid-container">
                             <div className="grid-x align-right align-middle grid-margin-x">
@@ -152,11 +148,7 @@ class About extends React.Component{
                                     <div className="award-content pr-155">
                                         <h4>{ReactHtmlParser(obj.primary_image_title)}</h4>
                                         {obj.primary_image_description !==''? <h3>{ReactHtmlParser(obj.primary_image_description)}</h3>:''}
-                                        <ShowMore lines={COUNT}
-                                                  more='View more'
-                                                  less='View less'
-                                                  anchorClass=''>
-                                            <p>{ReactHtmlParser(imgPath(obj.primary_image_body))}</p>
+                                        <ShowMore id={`awardsPrimaryImg${i}`} longText= {obj.primary_image_body}>
                                         </ShowMore>
                                     </div>
                                 </div>
@@ -184,7 +176,7 @@ class About extends React.Component{
            </div> :''}
 
                 {this.state.awardsData.hasOwnProperty('secondary_image_id')?
-                    this.state.awardsData['secondary_image_id'][0].map((obj) => {
+                    this.state.awardsData['secondary_image_id'][0].map((obj, i) => {
                     return <section className="award-content-box top-100 bottom-100">
                         <div className="grid-container">
                             <div className="grid-x align-right align-middle grid-margin-x">
@@ -195,11 +187,7 @@ class About extends React.Component{
                                     <div className="award-content pr-155">
                                         <h4 href="#">{ReactHtmlParser(obj.secondary_image_title)}</h4>
                                         <h3>{ReactHtmlParser(obj.secondary_image_description)}</h3>
-                                        <ShowMore lines={COUNT}
-                                                  more='View more'
-                                                  less='View less'
-                                                  anchorClass=''>
-                                            <p>{ReactHtmlParser(imgPath(obj.secondary_image_body))}</p>
+                                        <ShowMore id={`awardsScndryImg${i}`} longText= {obj.secondary_image_body}>
                                         </ShowMore>
                                     </div>
                                 </div>

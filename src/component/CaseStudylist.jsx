@@ -2,8 +2,7 @@ import React from 'react';
 import { Link } from 'react-router';
 import {apiUrl, COUNT} from '../services/common.js';
 import ReactHtmlParser from 'react-html-parser';
-import {imgPath} from '../services/common.js';
-import ShowMore from 'react-show-more';
+import ShowMore from './ShowMore.jsx';
 
 class CaseStudylist extends React.Component {
   constructor(props){
@@ -30,12 +29,8 @@ class CaseStudylist extends React.Component {
                             <div className="large-5 cell">
                               <div className="content-inner pl-155">
                                 <h3></h3>
-                                <ShowMore lines={COUNT}
-                                          more='View more'
-                                          less='View less'
-                                          anchorClass=''>
-                                  <p className="ptb-40">{ReactHtmlParser(imgPath(caseStudy.field_body))}</p>
-                                </ShowMore>
+                                  <ShowMore id={`caseList${i}`} longText= {caseStudy.field_body}>
+                                  </ShowMore>
                                 <a href = {"/casestudy/article?nid="+caseStudy.id} className="button">Read more</a>
                               </div>
                             </div>
@@ -49,11 +44,7 @@ class CaseStudylist extends React.Component {
                         <div class="medium-5 cell">
                             {/*<h2 class="relative-title">Our Services</h2>*/}
                           {/*<h3 class="heading-content">{ReactHtmlParser(this.props.data.image_description_subheading)}</h3>*/}
-                          <ShowMore lines={COUNT}
-                                    more='View more'
-                                    less='View less'
-                                    anchorClass=''>
-                            <p>{ReactHtmlParser(imgPath(caseStudy.field_body))}</p>
+                          <ShowMore id={`caseListOdd${i}`} longText= {caseStudy.field_body}>
                           </ShowMore>
                           <a href = {"/casestudy/article?nid="+caseStudy.id} className="button">Read more</a>
                         </div>
