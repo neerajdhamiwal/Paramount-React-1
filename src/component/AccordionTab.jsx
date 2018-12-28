@@ -49,7 +49,7 @@ class AccordionaTab extends React.Component{
                                             <div className="grid-x grid-padding-x tab-accordion-content">
                                                 <div className="medium-5 cell p-right-45">
                                                     <div>
-                                                        <ShowMore id={`showMore${index}`} longText= {service.image_slider_description}>
+                                                        <ShowMore id={`showMore${index}`} longText= {service.image_slider_description} hiddenHeight = '340px'>
                                                         </ShowMore>
                                                     {service.image_slider_cta_button_title !==''? <a href={service.image_slider_cta_button_url.substring(9)} className="button white-btn">{service.image_slider_cta_button_title.replace(/\&amp;/g,'&')}</a>:''}
                                                 </div>

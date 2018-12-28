@@ -3,6 +3,7 @@ import React from 'react';
 import ReactHtmlParser from 'react-html-parser';
 import {imgPath, COUNT} from '../services/common';
 import ShowMore from './ShowMore.jsx';
+import img from '../assets/img/award-img.png'
 
 
 class HorizontalScroll extends React.Component{

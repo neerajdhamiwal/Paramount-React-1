@@ -32,6 +32,7 @@ class Resource extends React.Component{
         }
         this.getRequest = this.getRequest.bind(this);
     }
+
     getRequest(){
         let caseData = [];
         requestService.getService('/banner-block-infographic')
@@ -56,6 +57,7 @@ class Resource extends React.Component{
     componentWillMount(){
         this.getRequest();
     }
+
     componentDidMount(){
         //Foundation.addToJquery($);
         $(document).foundation();

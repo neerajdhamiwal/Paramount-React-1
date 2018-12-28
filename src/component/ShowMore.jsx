@@ -30,7 +30,7 @@ class ShowMore extends React.Component {
 
     render(){
         return(
-            <div id={this.props.id}>
+            <div id={this.props.id} height={this.props.hiddenHeight}>
                 <p style={{maxHeight: this.state.maxHeight, overflow: this.state.overflow}}>{ReactHtmlParser(imgPath(this.props.longText))}</p>
                 {(() => {
                     if (this.state.showOptions) {
