@@ -176,7 +176,14 @@ body {
   width: 100%; }
 
 p ul {
-  list-style-image: url(../img/list-arrow.png); }
+  list-style: none; }
+  p ul li:before {
+    content: "\2022";
+    color: red;
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em; }
 
 /*Header Styling Starts Here*/
 .close-button {
@@ -1373,6 +1380,12 @@ footer.footer-bottom {
 
 .grey-bg {
   background: #f6f4f5; }
+
+.p-right-45 {
+  padding-right: 45px !important; }
+  @media screen and (max-width: 39.9375em) {
+    .p-right-45 {
+      padding-right: 15px !important; } }
 
 img.align-right {
   float: right;
