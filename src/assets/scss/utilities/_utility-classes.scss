@@ -191,6 +191,13 @@
 	background: #f6f4f5;
 }
 
+.p-right-45{
+	padding-right: 45px!important;
+	@include mq(small-screen) {
+		padding-right: 15px!important;
+	}
+}
+
 img.align-right{
 	float: right;
 	margin-left:15px;
