@@ -175,6 +175,9 @@ body {
   position: relative;
   width: 100%; }
 
+p ul {
+  list-style-image: url(../img/list-arrow.png); }
+
 /*Header Styling Starts Here*/
 .close-button {
   z-index: 9999; }
@@ -1370,6 +1373,14 @@ footer.footer-bottom {
 
 .grey-bg {
   background: #f6f4f5; }
+
+img.align-right {
+  float: right;
+  margin-left: 15px; }
+
+img.align-left {
+  float: left;
+  margin-right: 15px; }
 
 .button {
   font-family: "Montserrat", sans-serif;
