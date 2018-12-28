@@ -24,10 +24,7 @@ class ShowMore extends React.Component {
     componentDidMount() {
         // console.log(nextProps);
         const height = document.getElementById(this.props.id).clientHeight;
-        console.log('this.props.id', this.props.id, height, document.getElementById(this.props.id));
-
         this.setState({showOptions: (height > (this.props.hiddenHeight || this.HIDDEN_HEIGHT))}, ()=> {
-            console.log('showOptions', this.state.showOptions);
         });
     }
 

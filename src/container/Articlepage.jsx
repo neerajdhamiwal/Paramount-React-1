@@ -2,7 +2,7 @@
 import React from 'react';
 import $ from 'jquery';
 import requestService from '../services/request.js';
-import {apiUrl, imgPath, getMeta, COUNT} from '../services/common.js';
+import {apiUrl, imgPath, getMeta, COUNT, getActiveBlogMenu} from '../services/common.js';
 import ReactHtmlParser from 'react-html-parser';
 import Loader from 'react-loader-spinner'; // eslint-disable-line no-unused-vars
 import GridList from '../component/GridList.jsx';
@@ -122,7 +122,7 @@ class ArticlePage extends React.Component{
                       {this.state.caseList.hasOwnProperty('name')?<ul>
                         {
                             this.state.caseList.name.split(',').map((value, index) => {
-                            return <li><a href = {"/resources/blogs?cid="+this.state.caseList.id.split(',')[index]}>
+                            return <li onClick={() => localStorage.setItem('activeMenu', this.state.caseList.name.split(',')[index])}><a href = {"/resources/blogs?cid="+this.state.caseList.id.split(',')[index]} id={index} className={localStorage.getItem('activeMenu')? value === localStorage.getItem('activeMenu')?'activeTab':'': index===0?'activeTab':''}>
                                 {value}</a></li>
                         })
                         }

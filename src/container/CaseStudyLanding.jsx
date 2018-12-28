@@ -9,6 +9,8 @@ import Loader from 'react-loader-spinner'; // eslint-disable-line no-unused-vars
 import aboutLayerBannerone from '../assets/img/about-layer1.png';
 import aboutLayerBannertwo from '../assets/img/about-layer2.png';
 import ShowMore from '../component/ShowMore.jsx';
+import DocumentMeta from 'react-document-meta';
+
 let nid = '';
 //import 'foundation/js/vendor/zepto';
 class About extends React.Component{
@@ -17,7 +19,17 @@ class About extends React.Component{
         this.state = {
             listingData: {},
             bannerData: [],
-            loading: true
+            loading: true,
+            meta: {
+                title: 'Case Studies | Paramount Software Solutions',
+                description: 'Read the cases we have addressed using our sheer technical acumen, delivered applications and solutions across various industries and sectors.',
+                canonical: 'http://paramountreact.opensenselabs.com/caseStudy',
+                meta: {
+                    name: {
+                        keywords: ''
+                    }
+                }
+            }
         }
         this.animation = this.animation.bind(this);
     }
@@ -67,8 +79,8 @@ class About extends React.Component{
                         width="100"
                     />
                 </center> :
-                <div>
-                    { this.state.bannerData.length>0?
+                <DocumentMeta {...this.state.meta}>
+                { this.state.bannerData.length>0?
                         <div>
                             <section className="bottom-100">
                                     <div className="grid-container custom-grid custom-grid-right">
@@ -135,7 +147,7 @@ class About extends React.Component{
                         {/*:''}*/}
                     {/*{this.state.awardsData.hasOwnProperty('award_slider_id')?this.state.awardsData['award_slider_id'][0][0].award_slider_id? <AwardSlider/>: '':''}*/}
                     {/*{this.state.awardsData.hasOwnProperty('certificate_slider_id')? this.state.awardsData['certificate_slider_id'][0][0].certificate_slider_id ? <CertSlider/>: '':''}*/}
-                </div>
+                </DocumentMeta>
         )
     }
 }

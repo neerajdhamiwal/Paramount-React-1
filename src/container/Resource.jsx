@@ -6,6 +6,8 @@ import requestService from '../services/request.js';
 import {apiUrl, jsonMiddleware, imgPath, COUNT} from '../services/common.js';
 import ReactHtmlParser from 'react-html-parser';
 import ShowMore from '../component/ShowMore.jsx';
+import DocumentMeta from 'react-document-meta';
+
 
 //import 'foundation/js/vendor/zepto';
 class Resource extends React.Component{
@@ -16,6 +18,16 @@ class Resource extends React.Component{
             caseData:[],
             blogData:[],
             infoData:[],
+            meta: {
+                title: 'Resources | Paramount Software Solutions ',
+                description: 'Explore through our expert blogs, whitepapers, infographics, and case studies to get a better understanding into the technological landscape. ',
+                canonical: 'http://paramountreact.opensenselabs.com/resource',
+                meta: {
+                    name: {
+                        keywords: ''
+                    }
+                }
+            }
         }
         this.getRequest = this.getRequest.bind(this);
     }
@@ -59,7 +71,7 @@ class Resource extends React.Component{
 
     render(){
         return(
-            <div>
+            <DocumentMeta {...this.state.meta}>
                 <div className="top-100 resource-page-grid">
                     {this.state.blogData.hasOwnProperty('nid')?<GridListScnd data={this.state.blogData['nid'][0]} node="blog"/>:''}
                     {this.state.caseData.hasOwnProperty('id')?<GridListScnd data={this.state.caseData['id'][0]} node="case"/>:''}
@@ -85,7 +97,7 @@ class Resource extends React.Component{
                         </div>
                     </section>:''}
                 </div>
-            </div>
+            </DocumentMeta>
         )
     }
 }

@@ -5,6 +5,8 @@ import TagLinks from '../component/TagLinks.jsx';
 import GridList from '../component/GridList.jsx';
 import requestService from '../services/request.js';
 import Loader from 'react-loader-spinner'; // eslint-disable-line no-unused-vars
+import DocumentMeta from 'react-document-meta';
+
 let nid = [];
 
 import $ from 'jquery';
@@ -17,7 +19,17 @@ class CaseStudy extends React.Component{
           activeCaseStudy: [],
           firstCaseStudy: [],
           featuredActive: {},
-          loading: true
+          loading: true,
+          meta: {
+              title: 'Blogs | Paramount Software Solutions ',
+              description: 'Blogs that cover our point of view on various technical advancements happening around the world, and its impact in several industries and business overall.',
+              canonical: 'http://paramountreact.opensenselabs.com/blog',
+              meta: {
+                  name: {
+                      keywords: ''
+                  }
+              }
+          }
 
       }
       this.getTermInfo = this.getTermInfo.bind(this);
@@ -30,6 +42,7 @@ class CaseStudy extends React.Component{
           let uri = this.props.location.search.replace('%20','')
           CaseId =  uri.substring(uri.indexOf("=")+1)
       }
+
       requestService.getService('/blogs-listing-data')
         .then((response) => {
         this.setState({caseStudyList: response.data})
@@ -39,6 +52,8 @@ class CaseStudy extends React.Component{
         }
         else{
             this.getTermInfo(nid[0]);
+            localStorage.setItem('activeMenu', response.data[0].name.split(',')[0])
+
         }
       })
           .catch((err) => {
@@ -80,13 +95,13 @@ class CaseStudy extends React.Component{
                     width="100"
                 />
             </center> :
-            <div>
-      <FeaturedContent activeCaseStudy={this.state.featuredActive}/>
+            <DocumentMeta {...this.state.meta}>
+            <FeaturedContent activeCaseStudy={this.state.featuredActive}/>
       <TagLinks firstCaseStudy = {this.state.activeCaseStudy[0]} caseStudyList = {this.state.caseStudyList} getTermInfo={this.getTermInfo}/>
       <div className=" bottom-100 clearfix"></div>
         {this.props.locate === 'resource'?'':<div><CaseStudylist activeCaseStudyData = {this.state.activeCaseStudy}/>
                 <GridList/></div>}
-      </div>
+            </DocumentMeta>
     )
   }
 }

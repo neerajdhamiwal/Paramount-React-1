@@ -8,6 +8,8 @@ import ReactHtmlParser from 'react-html-parser';
 import aboutLayerBannerone from '../assets/img/about-layer1.png';
 import aboutLayerBannertwo from '../assets/img/about-layer2.png';
 import ShowMore from '../component/ShowMore.jsx';
+import DocumentMeta from 'react-document-meta';
+
 
 //import 'foundation/js/vendor/zepto';
 class Resource extends React.Component{
@@ -16,7 +18,17 @@ class Resource extends React.Component{
         this.state = {
             loading: true,
             listingData:[],
-            bannerData:[]
+            bannerData:[],
+            meta: {
+                title: 'Info Graphics| Paramount Software Solutions  ',
+                description: '',
+                canonical: '',
+                meta: {
+                    name: {
+                        keywords: ''
+                    }
+                }
+            }
         }
         this.getRequest = this.getRequest.bind(this);
     }
@@ -59,7 +71,7 @@ class Resource extends React.Component{
                         width="100"
                     />
                 </center> :
-                <div>
+                <DocumentMeta {...this.state.meta}>
                     { this.state.bannerData.length>0?
                         <div>
                             <section className="bottom-100">
@@ -105,7 +117,7 @@ class Resource extends React.Component{
                             }):''
                             }
                         </div> :''}
-                </div>
+                </DocumentMeta>
         )
     }
 }
