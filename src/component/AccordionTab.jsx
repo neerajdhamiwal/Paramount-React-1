@@ -47,7 +47,7 @@ class AccordionaTab extends React.Component{
                                         return <div className={index === 0 ? "page" : "page hide"}
                                                     id={'panel' + index} data-page={'panel' + index}>
                                             <div className="grid-x grid-padding-x tab-accordion-content">
-                                                <div className="medium-5 cell">
+                                                <div className="medium-5 cell p-right-45">
                                                     <div>
                                                         <ShowMore lines={COUNT}
                                                                   more='View more'

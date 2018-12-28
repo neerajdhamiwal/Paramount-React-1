@@ -164,7 +164,7 @@ class Home extends React.Component{
                                        return <div className={index === 0 ? "page" : "page hide"}
                                                         id={'panel' + index} data-page={'panel' + index}>
                                            <div className="grid-x grid-padding-x tab-accordion-content">
-                                               <div className="medium-6 cell">
+                                               <div className="medium-6 cell p-right-45">
                                                    <div>
                                                        <h3>{ReactHtmlParser(obj.content_slider_description)}</h3>
                                                        <ShowMore lines={COUNT}
