@@ -1,8 +1,8 @@
 import React from 'react';
 import $ from 'jquery';
-import {apiUrl, imgPath, COUNT} from '../services/common.js';
+import {apiUrl} from '../services/common.js';
 import ReactHtmlParser from 'react-html-parser';
-import ShowMore from 'react-show-more';
+import ShowMore from './ShowMore.jsx';
 
 const BannerStyle =(url)=> {
     let combinedurl = apiUrl+url
@@ -41,11 +41,7 @@ class FeaturedContent extends React.Component{
                   <div className="grid-container">
                       <div className="grid-x align-right align-middle grid-margin-x">
                           <div className="medium-5 cell small-order-change">
-                              <ShowMore lines={COUNT}
-                                        more='View more'
-                                        less='View less'
-                                        anchorClass=''>
-                                  <p>{ReactHtmlParser(imgPath(this.state.activeCaseStudy.field_body))}</p>
+                              <ShowMore id={`featured${this.state.activeCaseStudy.id}`} longText= {this.state.activeCaseStudy.field_body}>
                               </ShowMore>
                               {this.props.locate === 'resource'?'':<a href = {"/casestudy/article?nid="+this.state.activeCaseStudy.id} className="button">Read more</a>}
                           </div>

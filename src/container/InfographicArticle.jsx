@@ -6,7 +6,7 @@ import requestService from '../services/request.js';
 import {apiUrl, imgPath, COUNT} from '../services/common.js';
 import ReactHtmlParser from 'react-html-parser';
 import DocumentMeta from 'react-document-meta';
-import ShowMore from 'react-show-more';
+import ShowMore from '../component/ShowMore.jsx';
 
 
 //import 'foundation/js/vendor/zepto';
@@ -79,11 +79,7 @@ class Resource extends React.Component{
                         <div className="cell medium-10">
                                 <div className="block">
                                     <h3 className="banner-info"><span>{ReactHtmlParser(this.state.infoData[0].node_title)}</span><br/>{ReactHtmlParser(this.state.infoData[0].node_subtitle_title)}</h3>
-                                    <ShowMore lines={COUNT}
-                                              more='View more'
-                                              less='View less'
-                                              anchorClass=''>
-                                        <p>{ReactHtmlParser(imgPath(this.state.infoData[0].node_body))}</p>
+                                    <ShowMore id="infoArt" longText= {this.state.infoData[0].node_body}>
                                     </ShowMore>
                                     <div className="img txt-center">
                                         <img src={apiUrl+this.state.infoData[0].secondary_img}/>

@@ -2,7 +2,7 @@
 import React from 'react';
 import {apiUrl, decodeUri, imgPath, COUNT} from '../services/common.js';
 import ReactHtmlParser from 'react-html-parser';
-import ShowMore from 'react-show-more';
+import ShowMore from './ShowMore.jsx';
 
 class LeftImgRContent extends React.Component{
     render(){
@@ -20,11 +20,9 @@ class LeftImgRContent extends React.Component{
                             <div className="large-5 cell wow fadeInUp">
                                 <div className="content-inner pl-155">
                                     <h3>{ReactHtmlParser(this.props.data.secondary_image_description_subheading)}</h3>
-                                    <ShowMore lines={COUNT}
-                                              more='View more'
-                                              less='View less'
-                                              anchorClass=''>
-                                        <p>{ReactHtmlParser(imgPath(this.props.data.secondary_image_description_body))}</p>
+
+                                    <ShowMore id={`leftImgRcnt${this.props.data.secondary_image_description_id}`} longText= {this.props.data.secondary_image_description_body}>
+
                                     </ShowMore>
                                 </div>
                             </div>
@@ -40,12 +38,8 @@ class LeftImgRContent extends React.Component{
                             <div className="large-5 cell wow fadeInUp">
                                 <div className="content-inner pl-155">
                                     <h3>{ReactHtmlParser(this.props.data.image_description_subheading)}</h3>
-                                    <ShowMore lines={COUNT}
-                                              more='View more'
-                                              less='View less'
-                                              anchorClass=''>
-                                        <p>{ReactHtmlParser(imgPath(this.props.data.image_description_body))}</p>
-                                    </ShowMore>
+                                        <ShowMore id={`leftImgRcnt${this.props.data.image_description_id}`} longText= {this.props.data.image_description_body}>
+                                        </ShowMore>
                                 </div>
                             </div>
                         </div>

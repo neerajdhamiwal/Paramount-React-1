@@ -5,7 +5,7 @@ import GridListScnd from '../component/GridListScnd.jsx';
 import requestService from '../services/request.js';
 import {apiUrl, jsonMiddleware, imgPath, COUNT} from '../services/common.js';
 import ReactHtmlParser from 'react-html-parser';
-import ShowMore from 'react-show-more';
+import ShowMore from '../component/ShowMore.jsx';
 
 //import 'foundation/js/vendor/zepto';
 class Resource extends React.Component{
@@ -77,11 +77,7 @@ class Resource extends React.Component{
                                         <div className="info-graphic-details">
                                             <h3>{ReactHtmlParser(this.state.infoData[0].infographic_title)}</h3>
                                             {this.state.infoData[0].infographic_subtitle? <h6>{this.state.infoData[0].infographic_subtitle}</h6>:''}
-                                            <ShowMore lines={COUNT}
-                                                      more='View more'
-                                                      less='View less'
-                                                      anchorClass=''>
-                                                <p>{ReactHtmlParser(imgPath(this.state.infoData[0].infographic_body))}</p>
+                                            <ShowMore id="resource" longText= {this.state.infoData[0].infographic_body}>
                                             </ShowMore>
                                         </div>
                                 </div>

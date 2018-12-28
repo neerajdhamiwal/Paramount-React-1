@@ -1,7 +1,7 @@
 import React from 'react';
 import {apiUrl, COUNT,} from '../services/common.js';
 import ReactHtmlParser from 'react-html-parser';
-import ShowMore from 'react-show-more';
+import ShowMore from './ShowMore.jsx';
 
 class TagLinks extends React.Component{
 
@@ -47,11 +47,7 @@ constructor(props){
                     <div className="grid-x grid-padding-x">
                       <div className="medium-5 cell">
                         <h3></h3>
-                          <ShowMore lines={COUNT}
-                                    more='View more'
-                                    less='View less'
-                                    anchorClass=''>
-                              <p className="ptb-40">{ReactHtmlParser(this.state.activeObject['field_body'])}</p>
+                          <ShowMore id={`tagLink${this.state.activeObject['id']}`} longText= {this.state.activeObject['field_body']}>
                           </ShowMore>
                           {this.props.locate === 'resource'?'':<a href = {"/casestudy/article?nid="+this.state.activeObject['id']} className="button">Read more</a>}
                       </div>

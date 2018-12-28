@@ -5,17 +5,12 @@ import aboutLayerBannertwo from '../assets/img/about-layer2.png';
 import ImgBannerTwo from '../assets/img/services-sub-two.png';
 import {apiUrl, imgPath, COUNT} from '../services/common.js';
 import ReactHtmlParser from 'react-html-parser';
-import ShowMore from  'react-show-more';
+import ShowMore from  './ShowMore.jsx';
 
 //import 'foundation/js/vendor/zepto';
 class Home extends React.Component{
     constructor(props) {
         super(props)
-    }
-    componentDidMount(){
-    }
-    componentWillReceiveProps(nextProp){
-        console.log(nextProp);
     }
     render(){
         return(
@@ -24,12 +19,8 @@ class Home extends React.Component{
                     <div className="grid-x align-right align-middle grid-margin-x">
                         <div className="medium-5 cell small-order-change">
                             <h3 className="banner-info"><span>{ReactHtmlParser(this.props.node[0].node_title)}</span><br/>{ReactHtmlParser(this.props.node[0].node_subtitle_title)}</h3>
-                            <ShowMore lines={COUNT}
-                                      more='View more'
-                                      less='View less'
-                                      anchorClass=''>
-                                <p>{ReactHtmlParser(imgPath(this.props.node[0].node_description))}</p>
-                            </ShowMore>
+                                <ShowMore id={`bannr${this.props.node[0].node_title}`} longText= {this.props.node[0].node_description}>
+                                 </ShowMore>
                             {this.props.node[0].hasOwnProperty('node_cta_button_title')? this.props.node[0].node_cta_button_title !==''?<a className="button" href={apiUrl+this.props.node[0].node_cta_button_url.substring(9)}>{this.props.node[0].node_cta_button_title}</a>:'':''}
                             {this.props.node[0].hasOwnProperty('node_cta_button_title')?this.props.node[0].download_link_title !==''?<a className="button" href={apiUrl+this.props.node[0].download_link_url.substring(9)}>{this.props.node[0].download_link_title}</a>:'':''}
                         </div>

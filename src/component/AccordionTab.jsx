@@ -3,7 +3,7 @@ import ImgSlider from './ImgSlider.jsx';
 import $ from 'jquery';
 import ReactHtmlParser from 'react-html-parser';
 import {imgPath, COUNT} from '../services/common';
-import ShowMore from 'react-show-more';
+import ShowMore from './ShowMore.jsx';
 
 class AccordionaTab extends React.Component{
     constructor(props){
@@ -49,11 +49,7 @@ class AccordionaTab extends React.Component{
                                             <div className="grid-x grid-padding-x tab-accordion-content">
                                                 <div className="medium-5 cell">
                                                     <div>
-                                                        <ShowMore lines={COUNT}
-                                                                  more='View more'
-                                                                  less='View less'
-                                                                  anchorClass=''>
-                                                            <p>{ReactHtmlParser(imgPath(service.image_slider_description))}</p>
+                                                        <ShowMore id={`showMore${index}`} longText= {service.image_slider_description}>
                                                         </ShowMore>
                                                     {service.image_slider_cta_button_title !==''? <a href={service.image_slider_cta_button_url.substring(9)} className="button white-btn">{service.image_slider_cta_button_title.replace(/\&amp;/g,'&')}</a>:''}
                                                 </div>

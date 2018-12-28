@@ -7,7 +7,7 @@ import {apiUrl, jsonMiddleware, imgPath, COUNT} from '../services/common.js';
 import ReactHtmlParser from 'react-html-parser';
 import aboutLayerBannerone from '../assets/img/about-layer1.png';
 import aboutLayerBannertwo from '../assets/img/about-layer2.png';
-import ShowMore from 'react-show-more';
+import ShowMore from '../component/ShowMore.jsx';
 
 //import 'foundation/js/vendor/zepto';
 class Resource extends React.Component{
@@ -69,11 +69,7 @@ class Resource extends React.Component{
                                             <h3 className="banner-info"><span>{ReactHtmlParser(this.state.bannerData[0].banner_title)}</span><br/>
                                                 {ReactHtmlParser(this.state.bannerData[0].banner_subtitle)}</h3>
                                             <h5>{ReactHtmlParser(this.state.bannerData[0].banner_description)}</h5>
-                                            <ShowMore lines={COUNT}
-                                                      more='View more'
-                                                      less='View less'
-                                                      anchorClass=''>
-                                                <p>{ReactHtmlParser(imgPath(this.state.bannerData[0].banner_body))}</p>
+                                            <ShowMore id={`info${this.state.bannerData[0].banner_title}`} longText= {this.state.bannerData[0].banner_body}>
                                             </ShowMore>
                                         </div>
                                         <div className="medium-6 cell">
@@ -86,7 +82,7 @@ class Resource extends React.Component{
                                 </div>
                             </section>
 
-                            {this.state.listingData.hasOwnProperty('nid')?this.state.listingData['nid'][0].map((obj) => {
+                            {this.state.listingData.hasOwnProperty('nid')?this.state.listingData['nid'][0].map((obj, i) => {
                                 return <section className="award-content-box top-100 bottom-100">
                                     <div className="grid-container">
                                         <div className="grid-x align-right align-middle grid-margin-x">
@@ -95,13 +91,9 @@ class Resource extends React.Component{
                                             </div>
                                             <div className="medium-8 cell">
                                                 <div className="award-content pr-155">
-                                                    <a href="#">{ReactHtmlParser(obj.title)}</a>
+                                                    <a>{ReactHtmlParser(obj.title)}</a>
                                                     <h3>{ReactHtmlParser(obj.node_subtitle_title)}</h3>
-                                                    <ShowMore lines={COUNT}
-                                                              more='View more'
-                                                              less='View less'
-                                                              anchorClass=''>
-                                                        <p>{ReactHtmlParser(imgPath(obj.node_body))}</p>
+                                                    <ShowMore id={`info${obj.nid}`} longText= {obj.node_body}>
                                                     </ShowMore>
                                                     <a href={`/infographic-article?nid=${obj.nid}`}>View</a>
                                                     {obj.cta_button_title!==''?<a href="" className="button">{obj.cta_button_title}</a>:''}

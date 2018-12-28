@@ -6,7 +6,7 @@ import {apiUrl, imgPath, getMeta, COUNT} from '../services/common.js';
 import ReactHtmlParser from 'react-html-parser';
 import Loader from 'react-loader-spinner'; // eslint-disable-line no-unused-vars
 import GridList from '../component/GridList.jsx';
-import ShowMore from 'react-show-more';
+import ShowMore from '../component/ShowMore.jsx';
 import DocumentMeta from 'react-document-meta';
 
 const BannerStyle =(url)=> {
@@ -88,11 +88,7 @@ class ArticlePage extends React.Component{
            <div className="grid-x grid-padding-x pl-155">
              <div className="medium-6 small-12 cell">
                <div className="pr-155 ">
-                   <ShowMore lines={COUNT}
-                             more='View more'
-                             less='View less'
-                             anchorClass=''>
-                       {ReactHtmlParser(imgPath(this.state.caseStudy.field_body))}
+                   <ShowMore id="Article1" longText= {this.state.caseStudy.field_body}>
                    </ShowMore>
                </div>
            </div>
@@ -117,12 +113,8 @@ class ArticlePage extends React.Component{
                   <div className="grid-x grid-padding-x">
                   <div className="medium-8 cell">
                     <div className="">
-                        <ShowMore lines={COUNT}
-                                  more='View more'
-                                  less='View less'
-                                  anchorClass=''>
-                            <p>{ReactHtmlParser(imgPath(this.state.caseStudy.field_secondary_body))}</p>
-                        </ShowMore>
+                            <ShowMore id="Article2" longText= {this.state.caseStudy.field_secondary_body}>
+                            </ShowMore>
                     </div>
                 </div>
                 <div className="medium-4 small-12 cell no-padding article-top-content">

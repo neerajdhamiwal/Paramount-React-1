@@ -2,7 +2,7 @@
 import React from 'react';
 import {apiUrl, decodeUri, imgPath, COUNT} from '../services/common.js';
 import ReactHtmlParser from 'react-html-parser';
-import ShowMore from 'react-show-more';
+import ShowMore from './ShowMore.jsx';
 
 class RightImgLContent extends React.Component{
     render(){
@@ -14,11 +14,7 @@ class RightImgLContent extends React.Component{
                     <div class="medium-5 cell">
                         {/*<h2 class="relative-title">Our Services</h2>*/}
                         <h3 class="heading-content">{ReactHtmlParser(this.props.data.image_description_subheading)}</h3>
-                        <ShowMore lines={COUNT}
-                                  more='View more'
-                                  less='View less'
-                                  anchorClass=''>
-                            <p>{ReactHtmlParser(imgPath(this.props.data.image_description_body))}</p>
+                        <ShowMore id={`rightImgLcon${this.props.data.secondary_image_description_id}`} longText= {this.props.data.secondary_image_description_body}>
                         </ShowMore>
                     </div>
                     <div class="medium-7 cell no-padding">
@@ -40,12 +36,8 @@ class RightImgLContent extends React.Component{
                         <div class="medium-5 cell">
                             {/*<h2 class="relative-title">Our Services</h2>*/}
                             <h3>{ReactHtmlParser(this.props.data.image_description_subheading)}</h3>
-                            <ShowMore lines={COUNT}
-                                      more='View more'
-                                      less='View less'
-                                      anchorClass=''>
-                                <p>{ReactHtmlParser(imgPath(this.props.data.image_description_body))}</p>
-                            </ShowMore>
+                                <ShowMore id={`rightImgLcon${this.props.data.image_description_id}`} longText= {this.props.data.image_description_body}>
+                                </ShowMore>
                         </div>
                         <div class="medium-7 cell no-padding">
                             <div class="img-relative-title-ld">
