@@ -12,24 +12,18 @@
     box-shadow: 4px 4px 0px #b90101;
     margin: 0px 6px;
     -webkit-transition: all 0.2s linear 0.1s;
+		 -moz--transition: all 0.2s linear 0.1s;
+		 -o--transition: all 0.2s linear 0.1s;
+		 transition: all 0.2s linear 0.1s;
+
     position: relative;
 		@include mq(small-screen) {
 			transition: none!important;
 			margin: 0 10px;
+			-webkit-transition: none!important;
+			 -moz--transition:  none!important;
+			 -o--transition: none!important;
 		}
-    &:hover {
-    	transform: scale(1.70);
-    	z-index: 1;
-    	position: inherit;
-			@include mq(small-screen) {
-				transform:none;
-			}
-    	-webkit-transition: all 0.2s linear 0.1s;
-    	h3 {
-    		font-size: 1.125rem;
-    		-webkit-transition: all 0.2s linear 0.1s;
-    	}
-    }
     h3 {
 	    bottom: 15px;
 	    width: 100%;
@@ -47,6 +41,49 @@
 	}
 		.overlap-grid-hover-effect{
 		  overflow: hidden;
+			&:hover {
+	    	transform: scale(1.70);
+				-webkit-transform: scale(1.70);
+				 -moz--transform: scale(1.70);
+				 -o--transform: scale(1.70);
+	    	z-index: 1;
+	    	position: inherit;
+				@include mq(small-screen) {
+					transform:none;
+					-webkit-transition: none!important;
+					 -moz--transition:  none!important;
+					 -o--transition: none!important;
+				}
+	    	transition: all 0.2s linear 0.1s;
+				-webkit-transition: all 0.2s linear 0.1s;
+				 -moz--transition:  all 0.2s linear 0.1s;
+				 -o--transition: all 0.2s linear 0.1s;
+	    	h3 {
+	    		font-size: 1.125rem;
+					transition: all 0.2s linear 0.1s;
+					-webkit-transition: all 0.2s linear 0.1s;
+					 -moz--transition:  all 0.2s linear 0.1s;
+					 -o--transition: all 0.2s linear 0.1s;
+	    	}
+				.overlap-hover-box{
+					opacity: 1;
+					-webkit-transform: scale(1);
+					transform: scale(1);
+					-moz--transform: scale(1);
+					-o--transform: scale(1);
+
+					-webkit-transition: transform .5s ease, opacity 1.3s ease;
+					transition: transform .5s ease, opacity 1.3s ease;
+					-moz--transition:  transform .5s ease, opacity 1.3s ease;
+					-o--transition: transform .5s ease, opacity 1.3s ease;
+					@include mq(small-screen) {
+						transform:none;
+					}
+					h3{
+						color: red;
+					}
+				}
+	    }
 			@include mq(small-screen) {
 				box-shadow: 0 0 2px #333;
 				min-height: 470px;
@@ -60,19 +97,6 @@
 					margin-bottom: 15px;
 				}
 			}
-		  &:hover .overlap-hover-box{
-		    opacity: 1;
-		    -webkit-transform: scale(1);
-		    transform: scale(1);
-		    -webkit-transition: transform .5s ease, opacity 1.3s ease;
-		    transition: transform .5s ease, opacity 1.3s ease;
-				@include mq(small-screen) {
-					transform:none;
-				}
-				h3{
-					color: red;
-				}
-		  }
 		  .overlap-hover-box{
 		    color: red;
 		    text-align: center;
