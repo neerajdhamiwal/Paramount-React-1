@@ -16,6 +16,7 @@ class GridListScnd extends React.Component{
                     <div className="grid-x align-center block-latest-reads">
                         {this.props.data.map((obj) => {
                             return <div className="medium-4 cell img-block">
+                            <a className="letest-read-link" href={"/casestudy/article?nid="+obj.nid}>
                                 <div className="img ">
                                     <img src={apiUrl+obj.image_url} alt="image" />
                                 </div>
@@ -23,6 +24,7 @@ class GridListScnd extends React.Component{
                                     <h6>{ReactHtmlParser(obj.title)}</h6>
                                     {obj.id?<h2><a>{ReactHtmlParser(obj.description)} <div className="fs">Read more..</div></a></h2>:obj.nid?<h2><a href={"/casestudy/article?nid="+obj.nid}>{ReactHtmlParser(obj.description)} <div className="fs" href="/resources/blogs">Read more..</div></a></h2>:''}
                                 </div>
+                                </a>
                             </div>
                         })}
                     </div>

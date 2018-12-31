@@ -13,7 +13,7 @@ class AwardBanner extends React.Component{
 
     render(){
         return(
-          <section className= {`bottom-100 ${this.props.customClass}` }>
+          <section className= {`mb-50 ${this.props.customClass}` }>
       <div className="grid-container custom-grid custom-grid-right">
         <div className="grid-x align-right grid-margin-x wow fadeInUp">
           <div className="medium-5 cell small-order-change">

@@ -224,6 +224,9 @@ p ul {
   .view-more:hover {
     opacity: 0.7; }
 
+.activeTab {
+  color: red !important; }
+
 /*Header Styling Starts Here*/
 .close-button {
   z-index: 9999; }
@@ -703,17 +706,36 @@ header .header-inner {
     border: 4px solid;
     border-color: #0000;
     width: 100%; }
-    .block-latest-reads .img-block .img:hover {
-      border-color: #f00;
-      -webkit-transition: all .2s linear;
-      -moz-transition: all .2s linear;
-      -o-transition: all .2s linear;
-      transition: all .2s linear;
-      border-radius: 5px; }
     .block-latest-reads .img-block .img img {
       width: 100%;
       min-height: 245px;
       height: 20vh; }
+  .block-latest-reads .img-block .letest-read-link:hover .img {
+    border-color: #f00;
+    -webkit-transition: all .2s linear;
+    -moz-transition: all .2s linear;
+    -o-transition: all .2s linear;
+    transition: all .2s linear;
+    border-radius: 5px; }
+  .block-latest-reads .img-block .letest-read-link:hover h6 {
+    color: #000000;
+    position: relative;
+    -webkit-transition: all .2s linear;
+    -moz-transition: all .2s linear;
+    -o-transition: all .2s linear;
+    transition: all .2s linear; }
+    .block-latest-reads .img-block .letest-read-link:hover h6::before {
+      content: "";
+      height: 4px;
+      width: 40px;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      background: #f00; }
+  .block-latest-reads .img-block .letest-read-link:hover a {
+    color: #db0000; }
+  .block-latest-reads .img-block .letest-read-link:hover p {
+    color: #db0000; }
   .block-latest-reads .img-block .img-content {
     margin: 30px 0; }
     .block-latest-reads .img-block .img-content h6 {
@@ -721,21 +743,6 @@ header .header-inner {
       color: #acb6c6;
       padding-bottom: 14px;
       margin-bottom: 16px; }
-      .block-latest-reads .img-block .img-content h6:hover {
-        color: #000000;
-        position: relative;
-        -webkit-transition: all .2s linear;
-        -moz-transition: all .2s linear;
-        -o-transition: all .2s linear;
-        transition: all .2s linear; }
-        .block-latest-reads .img-block .img-content h6:hover::before {
-          content: "";
-          height: 4px;
-          width: 40px;
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          background: #f00; }
     .block-latest-reads .img-block .img-content h2 {
       font-size: 1.500rem;
       color: #585858;
