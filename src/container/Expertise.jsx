@@ -75,23 +75,26 @@ class Expertise extends React.Component{
 
                 {Object.keys(this.state.ExpertiseData).length>0? <MainBanner nid = {nid} node = {this.state.ExpertiseData[Object.keys(this.state.ExpertiseData)[0]][0]}></MainBanner>: ''}
 
-                <div className="grid-container">
-                  <div className="grid-x align-right align-middle grid-margin-x">
-                  <div className="medium-11">
-                    <div className="banner-img-link">
-                        {this.state.ExpertiseData.hasOwnProperty('flipper_id')?<div className="grid-x grid-margin-x grid-margin-y img-shadow-hover hide-for-small-only">
-                                {
-                                    this.state.ExpertiseData['flipper_id'][0].map((flip, i) => {
-                                        {/*return <div className="cell wow fadeInDown" data-wow-delay="0.5s"><a href="#"><img src={apiUrl+flip.image_flipper_image} alt=""/></a></div>*/}
-                                        return <div className="cell wow shrink fadeInDown banner-image-effect" data-wow-delay={`${i}s`}><a href={flip.image_flipper_cta_url.substring(9)}><img src={apiUrl+flip.image_flipper_image} alt=""/><span>{flip.image_flipper_title}</span></a></div>
-                                    })
-                                }
-                            </div>:''}
+                <section className="banner-thumb-img bottom-100">
+                  <div className="grid-container">
+                    <div className="grid-x align-right align-middle grid-margin-x">
+                    <div className="medium-11">
+                      <div className="banner-img-link">
+                          {this.state.ExpertiseData.hasOwnProperty('flipper_id')?<div className="grid-x grid-margin-x grid-margin-y img-shadow-hover hide-for-small-only">
+                                  {
+                                      this.state.ExpertiseData['flipper_id'][0].map((flip, i) => {
+                                          {/*return <div className="cell wow fadeInDown" data-wow-delay="0.5s"><a href="#"><img src={apiUrl+flip.image_flipper_image} alt=""/></a></div>*/}
+                                          return <div className="cell wow shrink fadeInDown banner-image-effect" data-wow-delay={`${i}s`}><a href={flip.image_flipper_cta_url.substring(9)}><img src={apiUrl+flip.image_flipper_image} alt=""/><span>{flip.image_flipper_title}</span></a></div>
+                                      })
+                                  }
+                              </div>:''}
+                      </div>
                     </div>
                   </div>
-                </div>
-                </div>
-                <div className="clearfix top-100"></div>
+                  </div>
+                </section>
+
+                <div className="clearfix"></div>
                     {this.state.ExpertiseData.hasOwnProperty('slider_id')? <AccordionTab sliderData = {this.state.ExpertiseData['slider_id'][0]}/>:''}
                     {this.state.ExpertiseData.hasOwnProperty('hd_id')? <HorizontalScroll standardData = {this.state.ExpertiseData['hd_id'][0]}/>:''}
                 <div className="clearfix"></div>

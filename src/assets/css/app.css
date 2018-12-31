@@ -165,11 +165,42 @@ body {
 
 .resource-big-charge {
   max-height: 500px;
-  overflow-y: scroll; }
+  overflow-y: scroll;
+  padding-right: 30px; }
+  @media screen and (max-width: 39.9375em) {
+    .resource-big-charge {
+      padding-right: 0px; } }
 
 .info-graphi-small {
   max-height: 300px;
   overflow-y: scroll; }
+
+.info-graphic .info-graphic-heading {
+  text-align: center;
+  margin-bottom: 40px; }
+  .info-graphic .info-graphic-heading h3 {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 100; }
+    .info-graphic .info-graphic-heading h3 span {
+      font-weight: 700; }
+.info-graphic .info-graphic-details {
+  margin-top: 15px;
+  padding-right: 100px; }
+  .info-graphic .info-graphic-details h3 {
+    font-size: 20px;
+    position: relative;
+    font-weight: 600;
+    margin-bottom: 15px;
+    display: block;
+    padding-bottom: 15px; }
+    .info-graphic .info-graphic-details h3:after {
+      content: "";
+      position: absolute;
+      bottom: -4px;
+      width: 50px;
+      height: 6px;
+      background: #999;
+      display: block; }
 
 .contact-us-page .img-relative-title-ru iframe {
   position: relative;
@@ -320,7 +351,7 @@ header .header-inner {
 
 /*Tab Accordion style starts here*/
 .tab-accordion {
-  padding-bottom: 75px; }
+  padding-bottom: 50px; }
   .tab-accordion .tab-accordion-content p {
     font-size: .95rem;
     margin-right: 10px; }
@@ -644,7 +675,7 @@ header .header-inner {
     transition: all .2s linear; }
 
 .left-image-right-content {
-  padding-top: 75px; }
+  padding-top: 50px; }
   @media screen and (max-width: 39.9375em) {
     .left-image-right-content {
       padding-top: 15px; } }
@@ -658,6 +689,8 @@ header .header-inner {
 
 .block-latest-reads button {
   display: none !important; }
+.block-latest-reads .fs {
+  font-size: 16px; }
 .block-latest-reads .latest-read h2 {
   font-size: 1.500rem;
   padding-left: 70px;
