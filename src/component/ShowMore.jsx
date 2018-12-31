@@ -36,11 +36,11 @@ class ShowMore extends React.Component {
                     if (this.state.showOptions) {
                         if (this.state.viewType === 1) {
                             return(
-                                <a href="javascript:void(0)" onClick={() => this.setState({viewType: 2, maxHeight: '100%', overflow: 'visible'})}>View More..</a>
+                                <a className="view-more" href="javascript:void(0)" onClick={() => this.setState({viewType: 2, maxHeight: '100%', overflow: 'visible'})}>View More..</a>
                             );
                         } else {
                             return(
-                                <a href="javascript:void(0)" onClick={() => this.setState({viewType: 1, maxHeight: `${this.props.hiddenHeight || this.HIDDEN_HEIGHT}px`, overflow: 'hidden'})}>View Less..</a>
+                                <a className="view-more" href="javascript:void(0)" onClick={() => this.setState({viewType: 1, maxHeight: `${this.props.hiddenHeight || this.HIDDEN_HEIGHT}px`, overflow: 'hidden'})}>View Less..</a>
                             );
                         }
                     }

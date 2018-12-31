@@ -230,3 +230,14 @@ p{
 		}
 	}
 }
+
+.view-more{
+	text-align: right;
+	color: red;
+	font-size: 16px;
+	display: block;
+	&:hover{
+		opacity: 0.7;
+	}
+
+}
