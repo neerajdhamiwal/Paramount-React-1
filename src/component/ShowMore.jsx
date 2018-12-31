@@ -12,7 +12,7 @@ import {imgPath, COUNT} from '../services/common.js';
 class ShowMore extends React.Component {
     constructor(props){
         super(props);
-        this.HIDDEN_HEIGHT = 300;
+        this.HIDDEN_HEIGHT = 563.2;
         this.state = {
             viewType: 1,
             showOptions: true,
@@ -24,13 +24,14 @@ class ShowMore extends React.Component {
     componentDidMount() {
         // console.log(nextProps);
         const height = document.getElementById(this.props.id).clientHeight;
+        console.log('height', height, this.props.id);
         this.setState({showOptions: (height > (this.props.hiddenHeight || this.HIDDEN_HEIGHT))}, ()=> {
         });
     }
 
     render(){
         return(
-            <div id={this.props.id} height={this.props.hiddenHeight}>
+            <div id={this.props.id}>
                 <p style={{maxHeight: this.state.maxHeight, overflow: this.state.overflow}}>{ReactHtmlParser(imgPath(this.props.longText))}</p>
                 {(() => {
                     if (this.state.showOptions) {

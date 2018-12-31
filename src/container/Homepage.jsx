@@ -164,7 +164,7 @@ class Home extends React.Component{
                                        return <div className={index === 0 ? "page" : "page hide"}
                                                         id={'panel' + index} data-page={'panel' + index}>
                                            <div className="grid-x grid-padding-x tab-accordion-content">
-                                               <div className="medium-6 cell p-right-45">
+                                               <div className="medium-6 cell">
                                                    <div>
                                                        <h3>{ReactHtmlParser(obj.content_slider_description)}</h3>
                                                        <ShowMore id={`contentSlider${index}`} longText= {obj.content_slider_body}>
@@ -215,20 +215,20 @@ class Home extends React.Component{
                 <div className="grid-x grid-padding-x height-750 align-middle pl-155">
                     <div className="medium-5 small-12 cell">
                         <h2 className="relative-title title-span">{ReactHtmlParser(this.state.HomeData[Object.keys(this.state.HomeData)[0]][0][0].content_bottom_title)}</h2>
-                        <h3 className="ptb-40"> {ReactHtmlParser(this.state.HomeData[Object.keys(this.state.HomeData)[0]][0][0].content_bottom_description)}</h3>
-                        <ShowMore id="contBottom" longText= {this.state.HomeData[Object.keys(this.state.HomeData)[0]][0][0].content_bottom_body}>
+                        {this.state.HomeData[Object.keys(this.state.HomeData)[0]][0][0].content_bottom_description !==''? <h3 className="ptb-40"> {ReactHtmlParser(this.state.HomeData[Object.keys(this.state.HomeData)[0]][0][0].content_bottom_description)}</h3>:''}
+                        <ShowMore id="imgLConBlock" longText= {this.state.HomeData[Object.keys(this.state.HomeData)[0]][0][0].content_bottom_body}>
                         </ShowMore>
                         {this.state.HomeData[Object.keys(this.state.HomeData)[0]][0][0].content_bottom_cta_title!==''? <a className="button" href={this.state.HomeData[Object.keys(this.state.HomeData)[0]][0][0].content_bottom_cta_url.substring(9)}>{this.state.HomeData[Object.keys(this.state.HomeData)[0]][0][0].content_bottom_cta_title}</a>:''}
                     </div>
                     <div className="medium-7 cell no-padding hide-for-small-only">
                         <div className="img-relative-title-ld">
                             <div className="grid">
-                                <a className="grid__item" href="#preview-7">
+                                <div className="grid__item" href="#preview-7">
                                     <div className="box">
                                         <div className="box__shadow"></div>
                                         <img className="box__img" src={layerImg} alt="Some image"/>
                                     </div>
-                                </a>
+                                </div>
                             </div>
                         </div>
                     </div>
