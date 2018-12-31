@@ -155,7 +155,6 @@ class About extends React.Component{
                         </section>
                         :''}
                     <div className="clearfix"></div>
-                    <div className="clearfix top-100 bottom-100"></div>
                     <section className="job-posting-list top-100 bottom-100">
                         <div className="grid-container">
                             <div className="grid-x grid-padding-x">
