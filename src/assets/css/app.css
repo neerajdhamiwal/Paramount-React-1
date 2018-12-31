@@ -165,11 +165,42 @@ body {
 
 .resource-big-charge {
   max-height: 500px;
-  overflow-y: scroll; }
+  overflow-y: scroll;
+  padding-right: 30px; }
+  @media screen and (max-width: 39.9375em) {
+    .resource-big-charge {
+      padding-right: 0px; } }
 
 .info-graphi-small {
   max-height: 300px;
   overflow-y: scroll; }
+
+.info-graphic .info-graphic-heading {
+  text-align: center;
+  margin-bottom: 40px; }
+  .info-graphic .info-graphic-heading h3 {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 100; }
+    .info-graphic .info-graphic-heading h3 span {
+      font-weight: 700; }
+.info-graphic .info-graphic-details {
+  margin-top: 15px;
+  padding-right: 100px; }
+  .info-graphic .info-graphic-details h3 {
+    font-size: 20px;
+    position: relative;
+    font-weight: 600;
+    margin-bottom: 15px;
+    display: block;
+    padding-bottom: 15px; }
+    .info-graphic .info-graphic-details h3:after {
+      content: "";
+      position: absolute;
+      bottom: -4px;
+      width: 50px;
+      height: 6px;
+      background: #999;
+      display: block; }
 
 .contact-us-page .img-relative-title-ru iframe {
   position: relative;
@@ -184,6 +215,14 @@ p ul {
     display: inline-block;
     width: 1em;
     margin-left: -1em; }
+
+.view-more {
+  text-align: right;
+  color: red;
+  font-size: 16px;
+  display: block; }
+  .view-more:hover {
+    opacity: 0.7; }
 
 /*Header Styling Starts Here*/
 .close-button {
@@ -312,7 +351,7 @@ header .header-inner {
 
 /*Tab Accordion style starts here*/
 .tab-accordion {
-  padding-bottom: 75px; }
+  padding-bottom: 50px; }
   .tab-accordion .tab-accordion-content p {
     font-size: .95rem;
     margin-right: 10px; }
@@ -636,7 +675,7 @@ header .header-inner {
     transition: all .2s linear; }
 
 .left-image-right-content {
-  padding-top: 75px; }
+  padding-top: 50px; }
   @media screen and (max-width: 39.9375em) {
     .left-image-right-content {
       padding-top: 15px; } }
@@ -650,6 +689,8 @@ header .header-inner {
 
 .block-latest-reads button {
   display: none !important; }
+.block-latest-reads .fs {
+  font-size: 16px; }
 .block-latest-reads .latest-read h2 {
   font-size: 1.500rem;
   padding-left: 70px;
@@ -671,7 +712,8 @@ header .header-inner {
       border-radius: 5px; }
     .block-latest-reads .img-block .img img {
       width: 100%;
-      min-height: 245px; }
+      min-height: 245px;
+      height: 20vh; }
   .block-latest-reads .img-block .img-content {
     margin: 30px 0; }
     .block-latest-reads .img-block .img-content h6 {
@@ -1426,8 +1468,5 @@ img.align-left {
   .button.btn-full {
     width: 100%;
     border-radius: 3px; }
-.activeTab{
-  color: #ff0000 !important;
-}
 
 /*# sourceMappingURL=app.css.map */

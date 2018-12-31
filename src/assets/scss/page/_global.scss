@@ -201,11 +201,51 @@ body {
 .resource-big-charge {
     max-height: 500px;
     overflow-y: scroll;
+		padding-right: 30px;
+		@include mq(small-screen) {
+			padding-right: 0px;
+		}
 }
 
 .info-graphi-small {
     max-height: 300px;
     overflow-y: scroll;
+}
+
+.info-graphic{
+  .info-graphic-heading{
+    text-align: center;
+    margin-bottom: 40px;
+    h3{
+      font-family: $font-primary;
+      font-weight: 100;
+      span{
+        font-weight: 700;
+      }
+    }
+  }
+
+  .info-graphic-details {
+    margin-top: 15px;
+    padding-right: 100px;
+    h3{
+      font-size: 20px;
+      position: relative;
+      font-weight: 600;
+      margin-bottom: 15px;
+      display: block;
+      padding-bottom: 15px;
+      &:after{
+        content: "";
+        position: absolute;
+        bottom: -4px;
+        width: 50px;
+        height: 6px;
+        background: #999;
+        display: block;
+      }
+    }
+  }
 }
 
 .contact-us-page{
@@ -229,4 +269,15 @@ p{
 			margin-left: -1em;
 		}
 	}
+}
+
+.view-more{
+	text-align: right;
+	color: red;
+	font-size: 16px;
+	display: block;
+	&:hover{
+		opacity: 0.7;
+	}
+
 }

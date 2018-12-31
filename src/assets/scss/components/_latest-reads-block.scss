@@ -2,6 +2,9 @@
 	button{
 		display: none!important;
 	}
+	.fs {
+    font-size: 16px;
+	}
 	.latest-read{
 		h2{
 			font-size: 1.500rem;
@@ -26,6 +29,7 @@
 			img{
 				width: 100%;
         min-height: 245px;
+				height: 20vh;
 			}
 		}
 		.img-content{
