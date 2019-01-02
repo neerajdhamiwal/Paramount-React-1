@@ -45,7 +45,7 @@ class GridList extends React.Component{
             <div className="grid-x align-center block-latest-reads" id="sliderformobile">
                 {this.state.latestReadData.map((obj) => {
                     return <div className="medium-4 cell img-block">
-                        <a href={"/casestudy/article?nid="+obj.nid}>
+                        <a className="letest-read-link" href={"/casestudy/article?nid="+obj.nid}>
                         <div className="img">
                             <img src={decodeUri(apiUrl+obj.image_url)} alt="image" />
                         </div>
