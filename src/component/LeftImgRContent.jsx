@@ -21,7 +21,7 @@ class LeftImgRContent extends React.Component{
                                 <div className="content-inner pl-155">
                                     <h3>{ReactHtmlParser(this.props.data.secondary_image_description_subheading)}</h3>
 
-                                    <ShowMore id={`leftImgRcnt${this.props.data.secondary_image_description_id}`} longText= {this.props.data.secondary_image_description_body}>
+                                    <ShowMore id={`leftImgRcnt${this.props.data.secondary_img_des_id}`} longText= {this.props.data.secondary_image_description_body} hiddenHeight={403}>
 
                                     </ShowMore>
                                 </div>
@@ -38,7 +38,7 @@ class LeftImgRContent extends React.Component{
                             <div className="large-5 cell wow fadeInUp">
                                 <div className="content-inner pl-155">
                                     <h3>{ReactHtmlParser(this.props.data.image_description_subheading)}</h3>
-                                        <ShowMore id={`leftImgRcnt${this.props.data.image_description_id}`} longText= {this.props.data.image_description_body}>
+                                        <ShowMore id={`leftImgRcnt${this.props.data.img_des_id}`} longText= {this.props.data.image_description_body} hiddenHeight={403}>
                                         </ShowMore>
                                 </div>
                             </div>

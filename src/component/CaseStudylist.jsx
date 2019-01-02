@@ -22,7 +22,7 @@ class CaseStudylist extends React.Component {
                           <div className="medium-5 cell">
                               {/*<h2 className="relative-title">Our Services</h2>*/}
                               {/*<h3 className="heading-content">{ReactHtmlParser(this.props.data.image_description_subheading)}</h3>*/}
-                            <ShowMore id={`caseListOdd${i}`} longText= {caseStudy.field_body}>
+                            <ShowMore id={`caseList${i}`} longText= {caseStudy.field_body}>
                             </ShowMore>
                             <a href = {"/casestudy/article?nid="+caseStudy.id} className="button">Read more</a>
                           </div>
