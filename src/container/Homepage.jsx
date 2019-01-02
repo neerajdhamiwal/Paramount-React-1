@@ -34,7 +34,8 @@ class Home extends React.Component{
         this.state = {
             HomeData: {},
             loading: true,
-            meta: {}
+            meta: {},
+            update: true
 
         }
         this.animation = this.animation.bind(this);
@@ -154,7 +155,7 @@ class Home extends React.Component{
                            <div className="medium-2 cell wow fadeInUp">
                                <ul className="accordion" data-responsive-accordion-tabs="accordion medium-tabs" id="service-tabs">
                                    {this.state.HomeData['content_slider_id'][0].map((obj, index) => {
-                                   return <li className={`${index==0 ?'tabs-title activeTab':'tabs-title'}`}><a data-page = {`panel${index}`} id = {index}>{ReactHtmlParser(obj.content_slider_title)}</a></li>
+                                   return <li className={`${index==0 ?'tabs-title activeTab':'tabs-title'}`} onClick={() => this.setState({update: `contentSlider${index}`})}><a data-page = {`panel${index}`} id = {index}>{ReactHtmlParser(obj.content_slider_title)}</a></li>
                                    })}
                                </ul>
                            </div>
@@ -167,7 +168,7 @@ class Home extends React.Component{
                                                <div className="medium-6 cell">
                                                    <div>
                                                        <h3>{ReactHtmlParser(obj.content_slider_description)}</h3>
-                                                       <ShowMore id={`contentSlider${index}`} longText= {obj.content_slider_body}>
+                                                       <ShowMore id={`contentSlider${index}`} longText= {obj.content_slider_body}  update={this.state.update}>
                                                        </ShowMore>
                                                    </div>
                                                    {obj.content_slider_cta_title !==''? <a className="button" href={obj.content_slider_cta_url.substring(9)}>{ReactHtmlParser(obj.content_slider_cta_title)}</a>:''}

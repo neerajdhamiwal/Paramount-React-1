@@ -15,7 +15,6 @@ class CaseStudy extends React.Component{
   constructor(){
     super()
       this.state = {
-          caseStudyList: [],
           activeCaseStudy: [],
           firstCaseStudy: [],
           featuredActive: {},
@@ -32,6 +31,7 @@ class CaseStudy extends React.Component{
           }
 
       }
+      this.caseStudyList = [];
       this.getTermInfo = this.getTermInfo.bind(this);
   }
 
@@ -45,7 +45,7 @@ class CaseStudy extends React.Component{
 
       requestService.getService('/blogs-listing-data')
         .then((response) => {
-        this.setState({caseStudyList: response.data})
+        this.caseStudyList =  response.data;
             nid = response.data[0].id.split(',');
         if(CaseId!==''){
             this.getTermInfo(parseInt(CaseId));
@@ -68,10 +68,10 @@ class CaseStudy extends React.Component{
               response.data.forEach((obj,i)=> {
                   if(obj.field_featured)
                   {
-                      this.setState({featuredActive: obj});
+                      // this.setState({featuredActive: obj});
                       response.data.splice(i, 1);
-                      this.setState({loading: false});
-                      this.setState({activeCaseStudy: response.data});
+                      // this.setState({loading: false});
+                      this.setState({featuredActive: obj,loading: false, activeCaseStudy: response.data});
                       return false;
                   }
               })
@@ -97,7 +97,7 @@ class CaseStudy extends React.Component{
             </center> :
             <DocumentMeta {...this.state.meta}>
             <FeaturedContent activeCaseStudy={this.state.featuredActive}/>
-                {this.props.locate === 'resource'?'':<TagLinks firstCaseStudy = {this.state.activeCaseStudy[0]} caseStudyList = {this.state.caseStudyList} getTermInfo={this.getTermInfo}/>}
+                {this.props.locate === 'resource'?'':<TagLinks firstCaseStudy = {this.state.activeCaseStudy[0]} caseStudyList = {this.caseStudyList} getTermInfo={this.getTermInfo}/>}
       <div className=" bottom-100 clearfix"></div>
         {this.props.locate === 'resource'?'':<div><CaseStudylist activeCaseStudyData = {this.state.activeCaseStudy}/>
                 <GridList/></div>}
