@@ -21,7 +21,15 @@ class GridListScnd extends React.Component{
                                 </div>
                                 <div className="img-content">
                                     <h6>{ReactHtmlParser(obj.title)}</h6>
-                                    {obj.id?<h2><a>{ReactHtmlParser(obj.description)} <div className="fs">Read more..</div></a></h2>:obj.nid?<h2><a href={"/casestudy/article?nid="+obj.nid}>{ReactHtmlParser(obj.description)} <div className="fs" href="/resources/blogs">Read more..</div></a></h2>:''}
+                                    {obj.id?<h2>
+                                            <a href="/resources/casestudies">{ReactHtmlParser(obj.description)}
+                                    <div className="fs">Read more..</div></a>
+                                        </h2>:obj.nid?
+                                            <h2>
+                                                <a href={"/casestudy/article?nid="+obj.nid}>{ReactHtmlParser(obj.description)}
+                                                    <div className="fs" href="/resources/blogs">Read more..</div>
+                                                </a>
+                                            </h2>:''}
                                 </div>
                             </div>
                         })}

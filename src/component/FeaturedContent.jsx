@@ -41,7 +41,7 @@ class FeaturedContent extends React.Component{
                   <div className="grid-container">
                       <div className="grid-x align-right align-middle grid-margin-x">
                           <div className="medium-5 cell small-order-change">
-                              <ShowMore id={`featured${this.state.activeCaseStudy.id}`} longText= {this.state.activeCaseStudy.field_body}>
+                              <ShowMore id={`featured`} longText= {this.state.activeCaseStudy.field_body}>
                               </ShowMore>
                               {this.props.locate === 'resource'?'':<a href = {"/casestudy/article?nid="+this.state.activeCaseStudy.id} className="button">Read more</a>}
                           </div>

@@ -12,7 +12,7 @@ import {imgPath, COUNT} from '../services/common.js';
 class ShowMore extends React.Component {
     constructor(props){
         super(props);
-        this.HIDDEN_HEIGHT = 563.2;
+        this.HIDDEN_HEIGHT = 422;
         this.state = {
             viewType: 1,
             showOptions: true,
@@ -23,16 +23,24 @@ class ShowMore extends React.Component {
 
     componentDidMount() {
         // console.log(nextProps);
-        const height = document.getElementById(this.props.id).clientHeight;
-        console.log('height', height, this.props.id);
-        this.setState({showOptions: (height > (this.props.hiddenHeight || this.HIDDEN_HEIGHT))}, ()=> {
-        });
+        setTimeout(() => {
+            const height = document.getElementById(this.props.id).clientHeight;
+            console.log('height', height, this.props.id, $(`#${this.props.id}`)[0].clientHeight, document.getElementById(this.props.id).clientHeight);
+            // if(height!==0 &&height< this.HIDDEN_HEIGHT){
+            //     this.setState({maxHeight: height})
+            // }
+            this.setState({showOptions: (height > (this.props.hiddenHeight || this.HIDDEN_HEIGHT))}, ()=> {
+            });
+        }, 300)
+
     }
 
     render(){
         return(
-            <div id={this.props.id}>
-                <p style={{maxHeight: this.state.maxHeight, overflow: this.state.overflow}}>{ReactHtmlParser(imgPath(this.props.longText))}</p>
+            <div>
+                <div  style={{height: this.state.maxHeight, overflow: this.state.overflow}}>
+                <p id={this.props.id}>{ReactHtmlParser(imgPath(this.props.longText))}</p>
+                </div>
                 {(() => {
                     if (this.state.showOptions) {
                         if (this.state.viewType === 1) {

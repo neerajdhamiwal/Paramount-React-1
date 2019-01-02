@@ -3,11 +3,10 @@ import React from 'react';
 import $ from 'jquery';
 import Loader from 'react-loader-spinner'; // eslint-disable-line no-unused-vars
 import requestService from '../services/request.js';
-import {apiUrl, imgPath, COUNT} from '../services/common.js';
+import {apiUrl, imgPath, COUNT, getMeta} from '../services/common.js';
 import ReactHtmlParser from 'react-html-parser';
 import DocumentMeta from 'react-document-meta';
 import ShowMore from '../component/ShowMore.jsx';
-
 
 //import 'foundation/js/vendor/zepto';
 const BannerStyle =(url)=> {

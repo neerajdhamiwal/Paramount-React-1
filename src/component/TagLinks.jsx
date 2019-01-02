@@ -48,7 +48,7 @@ constructor(props){
                     <div className="grid-x grid-padding-x">
                       <div className="medium-5 cell">
                         <h3></h3>
-                          <ShowMore id={`tagLink${this.state.activeObject['id']}`} longText= {this.state.activeObject['field_body']}>
+                          <ShowMore id={`tagLink`} longText= {this.state.activeObject['field_body']} >
                           </ShowMore>
                           {this.props.locate === 'resource'?'':<a href = {"/casestudy/article?nid="+this.state.activeObject['id']} className="button">Read more</a>}
                       </div>

@@ -49,7 +49,6 @@ class About extends React.Component{
     componentWillMount(){
         requestService.getService('/banner-block-casestudy')
             .then((response) => {
-                this.setState({loading: false});
                 this.setState({bannerData: response.data});
             })
             .catch((err) => {
@@ -113,8 +112,7 @@ class About extends React.Component{
                                                 <div className="award-content pr-155">
                                                     <h3>{ReactHtmlParser(obj.node_title)}</h3>
                                                     <h6>{ReactHtmlParser(obj.node_subtitle_title)}</h6>
-                                                    <ShowMore id={`caseList${i}`} longText= {obj.node_body}>
-                                                    </ShowMore>
+                                                    <p>{ReactHtmlParser(imgPath(obj.node_body))}</p>
                                                     <a className="button" href={obj.cta_button_url.substring(9)}>{obj.cta_button_title}</a>
                                                 </div>
                                             </div>
@@ -124,29 +122,6 @@ class About extends React.Component{
                             })
                             :''}
                         </div> :''}
-
-                    {/*{this.state.awardsData.hasOwnProperty('secondary_image_id')?*/}
-                        {/*this.state.awardsData['secondary_image_id'][0].map((obj) => {*/}
-                            {/*return <section className="award-content-box top-100 bottom-100">*/}
-                                {/*<div className="grid-container">*/}
-                                    {/*<div className="grid-x align-right align-middle grid-margin-x">*/}
-                                        {/*<div className="medium-2 cell small-order-change">*/}
-                                            {/*<img src={apiUrl+obj.secondary_image_img}/>*/}
-                                        {/*</div>*/}
-                                        {/*<div className="medium-8 cell">*/}
-                                            {/*<div className="award-content pr-155">*/}
-                                                {/*<a href="#">{ReactHtmlParser(obj.secondary_image_title)}</a>*/}
-                                                {/*<h3>{ReactHtmlParser(obj.secondary_image_description)}</h3>*/}
-                                                {/*<p>{ReactHtmlParser(obj.secondary_image_body)}</p>*/}
-                                            {/*</div>*/}
-                                        {/*</div>*/}
-                                    {/*</div>*/}
-                                {/*</div>*/}
-                            {/*</section>*/}
-                        {/*})*/}
-                        {/*:''}*/}
-                    {/*{this.state.awardsData.hasOwnProperty('award_slider_id')?this.state.awardsData['award_slider_id'][0][0].award_slider_id? <AwardSlider/>: '':''}*/}
-                    {/*{this.state.awardsData.hasOwnProperty('certificate_slider_id')? this.state.awardsData['certificate_slider_id'][0][0].certificate_slider_id ? <CertSlider/>: '':''}*/}
                 </DocumentMeta>
         )
     }

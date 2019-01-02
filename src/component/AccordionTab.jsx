@@ -8,6 +8,7 @@ import ShowMore from './ShowMore.jsx';
 class AccordionaTab extends React.Component{
     constructor(props){
         super(props)
+        this.clickHandler = this.clickHandler.bind(this)
     }
     active(e){
         console.log(e)
@@ -27,6 +28,9 @@ class AccordionaTab extends React.Component{
             $('#service-tabs li.activeTab').removeClass('activeTab');
             $(this).addClass('activeTab');
         });
+    }
+    clickHandler(){
+
     }
 
     render(){

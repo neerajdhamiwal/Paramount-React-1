@@ -11,6 +11,7 @@ import DocumentMeta from 'react-document-meta';
 
 const BannerStyle =(url)=> {
     let combinedurl = apiUrl+url
+    console.log('apiUrl+url', apiUrl+url)
     return {
         backgroundImage: `url(${combinedurl})`
     }
@@ -73,7 +74,7 @@ class ArticlePage extends React.Component{
                     />
                 </center> :
                 <DocumentMeta {...this.state.meta}>
-                    {this.state.caseStudy.length>0?<section className="main-banner banner-with-content article-banner" style={BannerStyle(this.state.caseStudy.field_hero_image)}>
+                    <section className="main-banner banner-with-content article-banner" style={BannerStyle(this.state.caseStudy.field_hero_image)}>
          <div className="grid-container">
            <div className="grid-x align-right align-middle grid-margin-x">
              <div className="medium-10 cell small-order-change">
@@ -82,14 +83,15 @@ class ArticlePage extends React.Component{
              </div>
            </div>
          </div>
-       </section>:''}
+       </section>
        <section className="left-image-right-content top-100 bottom-100">
          <div className="grid-container custom-grid custom-grid-right">
            <div className="grid-x grid-padding-x pl-155">
              <div className="medium-6 small-12 cell">
                <div className="pr-155 ">
-                   <ShowMore id="Article1" longText= {this.state.caseStudy.field_body}>
-                   </ShowMore>
+                   <p>{ReactHtmlParser(imgPath(this.state.caseStudy.field_body))}</p>
+                   {/*<ShowMore id="Article1" longText= {this.state.caseStudy.field_body}>*/}
+                   {/*</ShowMore>*/}
                </div>
            </div>
          <div className="medium-6 cell no-padding article-top-content hide-for-small-only">
@@ -113,8 +115,10 @@ class ArticlePage extends React.Component{
                   <div className="grid-x grid-padding-x">
                   <div className="medium-8 cell">
                     <div className="">
-                            <ShowMore id="Article2" longText= {this.state.caseStudy.field_secondary_body}>
-                            </ShowMore>
+                            {/*<ShowMore id="Article2" longText= {this.state.caseStudy.field_secondary_body}>*/}
+                            {/*</ShowMore>*/}
+                        <p>{ReactHtmlParser(imgPath(this.state.caseStudy.field_secondary_body))}</p>
+
                     </div>
                 </div>
                 <div className="medium-4 small-12 cell no-padding article-top-content">

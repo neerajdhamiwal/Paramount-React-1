@@ -23,9 +23,9 @@ class AwardBanner extends React.Component{
             {/*<a href="javascript:void(0)">Show Toggle...</a>*/}
 
             <ShowMore
-                longText={this.props.nodeData[0].node_description} id="bannerDesc"/>
+                longText={this.props.nodeData[0].node_description} id="bannerDesc" hiddenHeight= {428}/>
             <ShowMore
-                longText={this.props.nodeData[0].node_body} id="bannerBody"/>
+                longText={this.props.nodeData[0].node_body} id="bannerBody" hiddenHeight= {428}/>
             {/*<ShowMore lines={COUNT}*/}
                       {/*more='View more'*/}
                       {/*less='View less'*/}

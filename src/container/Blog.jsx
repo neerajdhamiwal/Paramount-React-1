@@ -97,7 +97,7 @@ class CaseStudy extends React.Component{
             </center> :
             <DocumentMeta {...this.state.meta}>
             <FeaturedContent activeCaseStudy={this.state.featuredActive}/>
-      <TagLinks firstCaseStudy = {this.state.activeCaseStudy[0]} caseStudyList = {this.state.caseStudyList} getTermInfo={this.getTermInfo}/>
+                {this.props.locate === 'resource'?'':<TagLinks firstCaseStudy = {this.state.activeCaseStudy[0]} caseStudyList = {this.state.caseStudyList} getTermInfo={this.getTermInfo}/>}
       <div className=" bottom-100 clearfix"></div>
         {this.props.locate === 'resource'?'':<div><CaseStudylist activeCaseStudyData = {this.state.activeCaseStudy}/>
                 <GridList/></div>}
