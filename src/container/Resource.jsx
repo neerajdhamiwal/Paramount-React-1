@@ -7,6 +7,7 @@ import {apiUrl, jsonMiddleware, imgPath, COUNT} from '../services/common.js';
 import ReactHtmlParser from 'react-html-parser';
 import ShowMore from '../component/ShowMore.jsx';
 import DocumentMeta from 'react-document-meta';
+import Blog from './Blog.jsx';
 
 
 //import 'foundation/js/vendor/zepto';
@@ -96,6 +97,7 @@ class Resource extends React.Component{
                             </div>
                         </div>
                     </section>:''}
+                    <Blog locate = 'resource'/>
                 </div>
             </DocumentMeta>
         )

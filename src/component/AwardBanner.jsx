@@ -22,10 +22,10 @@ class AwardBanner extends React.Component{
             {/*<p className="toggle-1">{ReactHtmlParser(imgPath(this.props.nodeData[0].node_description))}</p>*/}
             {/*<a href="javascript:void(0)">Show Toggle...</a>*/}
 
-            <ShowMore
-                longText={this.props.nodeData[0].node_description} id="bannerDesc"/>
-            <ShowMore
-                longText={this.props.nodeData[0].node_body} id="bannerBody"/>
+              {this.props.nodeData[0].node_description !==''? <ShowMore
+                longText={this.props.nodeData[0].node_description} id="bannerDesc" hiddenHeight= {430}/>:''}
+              {this.props.nodeData[0].node_body!==''? <ShowMore
+                longText={this.props.nodeData[0].node_body} id="bannerBody" hiddenHeight= {430}/>:''}
             {/*<ShowMore lines={COUNT}*/}
                       {/*more='View more'*/}
                       {/*less='View less'*/}
