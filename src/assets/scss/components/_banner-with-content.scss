@@ -4,9 +4,22 @@
 	position: relative;
 	height: 600px;
 
+	&::after{
+		content: '';
+		width: 100%;
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		right: 0px;
+		height: 100%;
+		background: rgba(0, 0, 0, 0.6);
+	}
+
 	h3.banner-info{
 		color: #fff;
 		margin-top: 184px;
+		position: relative;
+		z-index: 1;
 	}
 
 	.banner-with-content-right{

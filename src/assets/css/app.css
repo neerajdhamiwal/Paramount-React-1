@@ -19,7 +19,11 @@ a {
     background: transparent; }
 
 .custom-grid {
-  max-width: 1300px; }
+  margin: 0 auto;
+  max-width: 1920px; }
+  @media (max-width: 1480px) {
+    .custom-grid {
+      max-width: 1300px; } }
   @media screen and (min-width: 64em) {
     .custom-grid.custom-grid-right {
       margin-right: 0;
@@ -220,9 +224,16 @@ p ul {
   text-align: right;
   color: red;
   font-size: 16px;
-  display: block; }
-  .view-more:hover {
-    opacity: 0.7; }
+  display: block;
+  position: relative; }
+  .view-more::before {
+    content: '';
+    width: 100%;
+    height: 58px;
+    display: block;
+    position: absolute;
+    box-shadow: 0px -12px 14px #fefefe;
+    top: 0px; }
 
 .activeTab {
   color: red !important; }
@@ -815,7 +826,8 @@ header .header-inner {
 .main-banner button, .main-banner a.button {
   padding: 10px 15px;
   font-size: .90rem;
-  margin-right: 15px; }
+  margin-right: 15px;
+  margin-top: 15px; }
   @media screen and (max-width: 39.9375em) {
     .main-banner button, .main-banner a.button {
       width: 100%; } }
@@ -1072,9 +1084,20 @@ footer.footer-bottom {
   background-size: cover;
   position: relative;
   height: 600px; }
+  .banner-with-content::after {
+    content: '';
+    width: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); }
   .banner-with-content h3.banner-info {
     color: #fff;
-    margin-top: 184px; }
+    margin-top: 184px;
+    position: relative;
+    z-index: 1; }
   .banner-with-content .banner-with-content-right {
     position: absolute;
     right: 0;
@@ -1209,13 +1232,34 @@ footer.footer-bottom {
     margin-bottom: 25px; }
 .content-with-sidemenu .relative-title {
   text-transform: uppercase; }
-.content-with-sidemenu .img-relative-title-ld h2 {
-  left: auto;
-  right: -64px; }
+.content-with-sidemenu .article-top-content {
+  position: relative; }
+.content-with-sidemenu .img-relative-title-ld {
+  top: 60px;
+  float: right;
+  right: 0;
+  position: absolute; }
+  @media (max-width: 1024px) {
+    .content-with-sidemenu .img-relative-title-ld {
+      display: none; } }
+  @media screen and (max-width: 39.9375em) {
+    .content-with-sidemenu .img-relative-title-ld {
+      display: none; } }
+  .content-with-sidemenu .img-relative-title-ld h2 {
+    left: auto;
+    right: 0px;
+    width: 210px;
+    border-radius: 5px 0px 0px 5px; }
 .content-with-sidemenu .right-sidemenu {
   float: right;
   margin-right: 250px;
   text-align: right; }
+  @media (max-width: 1024px) {
+    .content-with-sidemenu .right-sidemenu {
+      margin-right: 0px; } }
+  @media screen and (max-width: 39.9375em) {
+    .content-with-sidemenu .right-sidemenu {
+      margin-right: 0px; } }
   .content-with-sidemenu .right-sidemenu ul {
     margin: 0px;
     padding: 0px;
@@ -1255,8 +1299,12 @@ footer.footer-bottom {
   box-shadow: none !important;
   margin-bottom: .6rem; }
 .job-posting-list .accordion-title {
-  box-shadow: 5px 6px 2px #eae9e8;
-  border: none; }
+  box-shadow: 4px 4px 0px #e4e4e4;
+  border: none;
+  -webkit-transition: all .2s linear;
+  -moz-transition: all .2s linear;
+  -o-transition: all .2s linear;
+  transition: all .2s linear; }
   .job-posting-list .accordion-title .job-title {
     font-family: Montserrat,sans-serif;
     font-size: 1.5rem;
@@ -1303,8 +1351,27 @@ footer.footer-bottom {
 .job-posting-list .accordion-title:hover, .job-posting-list .accordion-title:focus {
   background-color: transparent;
   border: none; }
+.job-posting-list li.accordion-item {
+  box-shadow: 4px 4px 0px #e4e4e4;
+  -webkit-transition: all .2s linear;
+  -moz-transition: all .2s linear;
+  -o-transition: all .2s linear;
+  transition: all .2s linear; }
 .job-posting-list li.accordion-item.is-active {
-  box-shadow: 5px 6px 2px #eae9e8; }
+  box-shadow: 4px 6px 0px #e4e4e4;
+  -webkit-transition: all .2s linear;
+  -moz-transition: all .2s linear;
+  -o-transition: all .2s linear;
+  transition: all .2s linear; }
+  .job-posting-list li.accordion-item.is-active .view-job-btn {
+    background: red !important;
+    color: #fff !important; }
+  .job-posting-list li.accordion-item.is-active .accordion-title {
+    box-shadow: none;
+    -webkit-transition: all .2s linear;
+    -moz-transition: all .2s linear;
+    -o-transition: all .2s linear;
+    transition: all .2s linear; }
 .job-posting-list .accordion-content {
   border: none; }
 

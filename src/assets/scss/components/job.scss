@@ -34,8 +34,9 @@
     }
   }
   .accordion-title{
-    box-shadow: 5px 6px 2px #eae9e8;
+    box-shadow: 4px 4px 0px #e4e4e4;
     border: none;
+    @include transition ();
     .job-title{
       font-family: Montserrat,sans-serif;
       font-size: 1.5rem;
@@ -93,8 +94,23 @@
     background-color: transparent;
     border: none;
   }
+
+  li.accordion-item{
+    box-shadow: 4px 4px 0px #e4e4e4;
+    @include transition ();
+  }
+
   li.accordion-item.is-active {
-    box-shadow: 5px 6px 2px #eae9e8;
+    box-shadow: 4px 6px 0px #e4e4e4;
+    @include transition ();
+    .view-job-btn{
+      background: red!important;
+      color: #fff!important;
+    }
+    .accordion-title{
+      box-shadow: none;
+      @include transition ();
+    }
   }
   .accordion-content{
     border: none;
