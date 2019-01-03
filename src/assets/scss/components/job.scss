@@ -95,6 +95,10 @@
   }
   li.accordion-item.is-active {
     box-shadow: 5px 6px 2px #eae9e8;
+    .view-job-btn{
+      background: red!important;
+      color: #fff!important;
+    }
   }
   .accordion-content{
     border: none;

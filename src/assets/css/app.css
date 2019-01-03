@@ -1305,6 +1305,9 @@ footer.footer-bottom {
   border: none; }
 .job-posting-list li.accordion-item.is-active {
   box-shadow: 5px 6px 2px #eae9e8; }
+  .job-posting-list li.accordion-item.is-active .view-job-btn {
+    background: red !important;
+    color: #fff !important; }
 .job-posting-list .accordion-content {
   border: none; }
 
