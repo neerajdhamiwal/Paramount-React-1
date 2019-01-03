@@ -12,14 +12,37 @@
   .relative-title{
     text-transform: uppercase;
   }
-  .img-relative-title-ld h2 {
-      left: auto;
-      right: -64px;
+  .article-top-content{
+    position: relative;
   }
+  .img-relative-title-ld{
+    top: 60px;
+    float: right;
+    right: 0;
+    position: absolute;
+    @media (max-width: 1024px) {
+      display: none;
+    }
+    @include mq(small-screen) {
+      display: none;
+    }
+       h2 {
+          left: auto;
+          right: 0px;
+          width: 210px;
+          border-radius: 5px 0px 0px 5px;
+      }
+    }
   .right-sidemenu{
     float: right;
     margin-right: 250px;
     text-align: right;
+    @media (max-width: 1024px) {
+      margin-right: 0px;
+    }
+    @include mq(small-screen) {
+      margin-right: 0px;
+    }
     ul{
       margin: 0px;
       padding: 0px;
