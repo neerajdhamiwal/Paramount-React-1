@@ -6,11 +6,10 @@ import GridList from '../component/GridList.jsx';
 import requestService from '../services/request.js';
 import Loader from 'react-loader-spinner'; // eslint-disable-line no-unused-vars
 import DocumentMeta from 'react-document-meta';
-
-let nid = [];
-
+import InfiniteScroll from 'react-infinite-scroll-component';
 import $ from 'jquery';
 
+let nid = [];
 class CaseStudy extends React.Component{
   constructor(){
     super()
@@ -18,6 +17,7 @@ class CaseStudy extends React.Component{
           activeCaseStudy: [],
           firstCaseStudy: [],
           featuredActive: {},
+          caseStudyList:[],
           loading: true,
           meta: {
               title: 'Blogs | Paramount Software Solutions ',
@@ -28,11 +28,15 @@ class CaseStudy extends React.Component{
                       keywords: ''
                   }
               }
-          }
+          },
+          blogList:[]
 
       }
-      this.caseStudyList = [];
+       this.caseStudyList = [];
+      this.ff = {};
+      this.lastIndex = 5;
       this.getTermInfo = this.getTermInfo.bind(this);
+      this.fetchMoreData = this.fetchMoreData.bind(this);
   }
 
   componentWillMount(){
@@ -60,21 +64,27 @@ class CaseStudy extends React.Component{
             console.log(err);
           })
   }
+    fetchMoreData(){
+      this.lastIndex = this.lastIndex+5;
+        this.setState({activeCaseStudy:this.state.blogList.slice(0, this.lastIndex)});
+    console.log('this.lastIndex',this.lastIndex);
+    }
 
   getTermInfo(id){
     let uri = `/taxonomy/term-info-blogs/${id}`;
       requestService.getService(uri.replace(' ',''))
           .then((response) => {
               response.data.forEach((obj,i)=> {
-                  if(obj.field_featured)
+                  if(obj.field_featured ==='On')
                   {
                       // this.setState({featuredActive: obj});
+                      this.ff = obj;
                       response.data.splice(i, 1);
                       // this.setState({loading: false});
-                      this.setState({featuredActive: obj,loading: false, activeCaseStudy: response.data});
                       return false;
                   }
               })
+              this.setState({featuredActive: this.ff,loading: false, blogList: response.data, caseStudyList: this.caseStudyList, activeCaseStudy: response.data});
           })
           .catch((err) => {
               console.log(err);
@@ -96,12 +106,20 @@ class CaseStudy extends React.Component{
                 />
             </center> :
             <DocumentMeta {...this.state.meta}>
-            <FeaturedContent activeCaseStudy={this.state.featuredActive}/>
-                {this.props.locate === 'resource'?'':<TagLinks firstCaseStudy = {this.state.activeCaseStudy[0]} caseStudyList = {this.caseStudyList} getTermInfo={this.getTermInfo}/>}
+                {Object.keys(this.ff).length>0? <FeaturedContent activeCaseStudy={this.state.featuredActive}/>:''}
+                {this.props.locate === 'resource'?'':<TagLinks firstCaseStudy = {this.state.activeCaseStudy[0]} caseStudyList = {this.state.caseStudyList} getTermInfo={this.getTermInfo}/>}
       <div className=" bottom-100 clearfix"></div>
-        {this.props.locate === 'resource'?'':<div><CaseStudylist activeCaseStudyData = {this.state.activeCaseStudy}/>
-                <GridList/></div>}
-            </DocumentMeta>
+        {this.props.locate === 'resource'?'':<div>
+               {/*<InfiniteScroll*/}
+                   {/*dataLength={this.state.activeCaseStudy.length}*/}
+                   {/*next={this.fetchMoreData}*/}
+                   {/*hasMore={true}*/}
+                   {/*loader={<h2>Loading...</h2>}*/}
+               {/*>*/}
+                <CaseStudylist activeCaseStudyData = {this.state.activeCaseStudy}/>
+               {/*</InfiniteScroll>*/}
+               </div>}
+                <GridList/></DocumentMeta>
     )
   }
 }

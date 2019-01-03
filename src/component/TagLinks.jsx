@@ -15,12 +15,7 @@ constructor(props){
 }
 
     componentWillReceiveProps(nextProps){
-        if(nextProps.caseStudyList !== 'undefined'){
-            this.setState({name: nextProps.caseStudyList[0].name.split(',')})
-        }
-        if(nextProps.firstCaseStudy !=='undefined'){
-          this.setState({activeObject: nextProps.firstCaseStudy})
-        }
+    console.log('nextProps', nextProps)
         $('#service').on('click', 'li a', function() {
             $('#service a.activeTab').removeClass('activeTab');
             $(this).addClass('activeTab');
@@ -37,25 +32,25 @@ constructor(props){
           <div className="grid-x">
             <div className="medium-2 cell">
               <ul className="vertical menu" id="service">
-                  {this.state.name.map((value, index) => {
+                  {this.props.caseStudyList[0].name.split(',').map((value, index) => {
                       return <li onClick={this.clickHandler}><a id={index} className={localStorage.getItem('activeMenu')? (value === localStorage.getItem('activeMenu')?'activeTab':''): (index===0?'activeTab':'')}>
                           {value}</a></li>
                   })
                   }
               </ul>
             </div>
-              {this.state.activeObject? <div className="medium-10 cell">
+              {this.props.firstCaseStudy? <div className="medium-10 cell">
                     <div className="grid-x grid-padding-x">
                       <div className="medium-5 cell">
                         <h3></h3>
-                          <ShowMore id={`tagLink`} longText= {this.state.activeObject['field_body']} >
+                          <ShowMore id={`tagLink`} longText= {this.props.firstCaseStudy['field_body']} >
                           </ShowMore>
-                          {this.props.locate === 'resource'?'':<a href = {"/casestudy/article?nid="+this.state.activeObject['id']} className="button">Read more</a>}
+                          {this.props.locate === 'resource'?'':<a href = {"/casestudy/article?nid="+this.props.firstCaseStudy['id']} className="button">Read more</a>}
                       </div>
                       <div className="medium-7 cell no-padding">
                         <div className="img-relative-title-ld">
-                          <img src={apiUrl+this.state.activeObject['image']} alt="" />
-                          <h2 className="relative-title">{ReactHtmlParser(this.state.activeObject['title'])}</h2>
+                          <img src={apiUrl+this.props.firstCaseStudy['image']} alt="" />
+                          <h2 className="relative-title">{ReactHtmlParser(this.props.firstCaseStudy['title'])}</h2>
                         </div>
                       </div>
                     </div>
