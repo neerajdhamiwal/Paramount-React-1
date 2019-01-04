@@ -2,15 +2,29 @@
 import React from 'react';
 import aboutLayerBannerone from '../assets/img/about-layer1.png';
 import aboutLayerBannertwo from '../assets/img/about-layer2.png';
+import layer1 from '../assets/img/exp-banner.png';
+import layer2 from '../assets/img/exp-banner2.png';
+import layer3 from '../assets/img/exp-banner3.png';
 import ImgBannerTwo from '../assets/img/services-sub-two.png';
 import {apiUrl, imgPath, COUNT} from '../services/common.js';
 import ReactHtmlParser from 'react-html-parser';
 import ShowMore from  './ShowMore.jsx';
+import Parallax from 'parallax-js';
+
 
 //import 'foundation/js/vendor/zepto';
 class Home extends React.Component{
     constructor(props) {
         super(props)
+        this.animation = this.animation.bind(this);
+    }
+    animation(){
+       new Parallax(document.getElementById('scene'));
+    }
+    componentDidMount(){
+      if(this.props.nid==38){
+        this.animation();
+      }
     }
     render(){
         return(
@@ -41,7 +55,11 @@ class Home extends React.Component{
                     </div>:''}
 
                         {this.props.nid== 38?<div className="medium-6 cell expertise-banner">
-                                <img src={ImgBannerTwo} alt="Banner"/>
+                        <div id="scene" data-friction-x="0.1" data-friction-y="0.1" data-scalar-x="25" data-scalar-y="15">
+                          <div data-depth="0.2"><img src={layer1} alt="" /></div>
+                          <div data-depth="0.4"><img src={layer2} alt="" /></div>
+                          <div data-depth="0.2"><img src={layer3} alt="" /></div>
+                        </div>
                         </div>:''}
 
                     </div>

@@ -7,9 +7,9 @@ class TextContent extends React.Component{
     render(){
         return(
             <section className="text-centent">
-            <div className="grid-container custom-grid custom-grid-right">
+            <div className="grid-container ">
               <div className="grid-x align-middle grid-margin-x">
-                <div className="medium-12 cell pr-155">
+                <div className="medium-12 cell">
                     <h3 className="banner-info"><span>{this.props.data.extra_content_title}</span></h3>
                   <h6>{ReactHtmlParser(imgPath(this.props.data.extra_content_description))}</h6>
                   <p>{ReactHtmlParser(imgPath(this.props.data.extra_content_body))}</p>
