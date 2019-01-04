@@ -86,14 +86,14 @@ class Resource extends React.Component{
                                             <ShowMore id={`info${this.state.bannerData[0].banner_title}`} longText= {this.state.bannerData[0].banner_body}>
                                             </ShowMore>
                                         </div>
-
-                                        <div className="medium-6 cell">
-                                            <div class="rotation-banner">
-                                                <img id="loading" src={aboutLayerBannerone} alt="" />
-                                                <img class="over-img" src={aboutLayerBannertwo} alt="" />
-                                            </div>
-                                        </div>
-
+                                        <div>
+                                          <div className="medium-6 cell">
+                                              <div class="rotation-banner">
+                                                  <img id="loading" src={aboutLayerBannerone} alt="" />
+                                                  <img class="over-img" src={aboutLayerBannertwo} alt="" />
+                                              </div>
+                                          </div>
+                                        </div>  
                                     </div>
                                 </div>
                             </section>
