@@ -58,8 +58,8 @@ class About extends React.Component{
             .then((response) => {
                 let ids = ['nid'];
                 let data = jsonMiddleware(response.data, ids)
-                this.setState({loading: false});
-                this.setState({listingData: data},()=> {
+                // this.setState({});
+                this.setState({loading: false, listingData: data,},()=> {
                         // this.animation()
                 });
             })
@@ -85,8 +85,8 @@ class About extends React.Component{
                                     <div className="grid-container custom-grid custom-grid-right">
                                         <div className="grid-x align-right align-middle grid-margin-x wow fadeInUp">
                                             <div className="medium-5 cell small-order-change">
-                                                <h3 className="banner-info"><span>{ReactHtmlParser(this.state.bannerData[0].banner_title)}</span><br/>
-                                                    {ReactHtmlParser(this.state.bannerData[0].banner_subtitle)}</h3>
+                                                <h3 className="banner-info">{ReactHtmlParser(this.state.bannerData[0].banner_title)}<br/>
+                                                    <span>{ReactHtmlParser(this.state.bannerData[0].banner_subtitle)}</span></h3>
                                                 <h5>{ReactHtmlParser(this.state.bannerData[0].banner_description)}</h5>
                                                     <ShowMore id="caseBnnr" longText= {this.state.bannerData[0].banner_body}>
                                                     </ShowMore>

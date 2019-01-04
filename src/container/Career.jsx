@@ -59,13 +59,13 @@ class About extends React.Component{
             .then((response) => {
                 let ids = ['content_ctaflip_id', 'node_flipper_id']
                 let data = jsonMiddleware(response.data, ids)
-                this.setState({loading: false});
-                this.setState({bannerData: data},()=>{
+                // this.setState({loading: false});
+                this.setState({bannerData: data, loading: false},()=>{
                     this.animation();
                 });
             })
             .catch((err) => {
-                console.log(err);
+                //console.log(err);
             })
 
         requestService.getService(`/job-data`)
@@ -73,7 +73,7 @@ class About extends React.Component{
                 this.setState({jobList: response.data});
             })
             .catch((err) => {
-                console.log(err);
+                //console.log(err);
             })
         this.getAllJobs();
     }
@@ -87,7 +87,7 @@ class About extends React.Component{
                 });
             })
             .catch((err) => {
-                console.log(err);
+                //console.log(err);
             })
     }
 
@@ -102,7 +102,7 @@ class About extends React.Component{
                 });
             })
             .catch((err) => {
-                console.log(err);
+                //console.log(err);
             })
     }
     handleChange(e){
@@ -139,7 +139,7 @@ class About extends React.Component{
                             <div className="grid-container">
                         <div className="grid-x align-right align-middle grid-margin-x">
                         <div className="medium-5 cell small-order-change">
-                        <h3 className="banner-info"><span>{ReactHtmlParser(this.state.bannerData[Object.keys(this.state.bannerData)[0]][0][0].node_title)}</span><br/>{ReactHtmlParser(this.state.bannerData[Object.keys(this.state.bannerData)[0]][0][0].node_subtitle_title)}</h3>
+                            <h3 className="banner-info">{ReactHtmlParser(this.state.bannerData[Object.keys(this.state.bannerData)[0]][0][0].node_title)}<br/><span>{ReactHtmlParser(this.state.bannerData[Object.keys(this.state.bannerData)[0]][0][0].node_subtitle_title)}</span></h3>
                         <p>{ReactHtmlParser(this.state.bannerData[Object.keys(this.state.bannerData)[0]][0][0].node_description)}</p>
                         {this.state.bannerData[Object.keys(this.state.bannerData)[0]][0][0].hasOwnProperty('node_cta_button_title')? this.state.bannerData[Object.keys(this.state.bannerData)[0]][0][0].node_cta_button_title !==''?<a className="button" href={apiUrl+this.state.bannerData[Object.keys(this.state.bannerData)[0]][0][0].node_cta_button_url.substring(9)}>{this.state.bannerData[Object.keys(this.state.bannerData)[0]][0][0].node_cta_button_title}</a>:'':''}
                         {this.state.bannerData[Object.keys(this.state.bannerData)[0]][0][0].hasOwnProperty('node_cta_button_title')?this.state.bannerData[Object.keys(this.state.bannerData)[0]][0][0].download_link_title !==''?<a className="button" href={apiUrl+this.state.bannerData[Object.keys(this.state.bannerData)[0]][0][0].download_link_url.substring(9)}>{this.state.bannerData[Object.keys(this.state.bannerData)[0]][0][0].download_link_title}</a>:'':''}

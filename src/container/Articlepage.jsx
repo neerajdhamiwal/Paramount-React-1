@@ -11,7 +11,6 @@ import DocumentMeta from 'react-document-meta';
 
 const BannerStyle =(url)=> {
     let combinedurl = apiUrl+url
-    console.log('apiUrl+url', apiUrl+url)
     return {
         backgroundImage: `url(${combinedurl})`
     }
@@ -37,17 +36,15 @@ class ArticlePage extends React.Component{
     componentWillMount(){
         getMeta(this.props.location.search.substring(this.props.location.search.indexOf("=")+1), this.getMeValue);
         let caseStudy = [];
-        console.log(this.props.location.search);
         requestService.getService(`/blogs-contents/${this.props.location.search.substring(this.props.location.search.indexOf("=")+1)}`)
             .then((response) => {
-                this.setState({loading: false})
                 if(response.data.length> 0){
                 caseStudy =  response.data[0];
-                this.setState({caseStudy: caseStudy});
+                this.setState({caseStudy: caseStudy, loading: false});
             }
             })
             .catch((err) => {
-                console.log(err);
+                //console.log(err);
             })
 
         requestService.getService('/blogs-listing-data')
@@ -55,7 +52,7 @@ class ArticlePage extends React.Component{
                 this.setState({caseList: response.data[0]});
             })
             .catch((err) => {
-                console.log(err);
+                //console.log(err);
             })
     }
     componentDidMount(){

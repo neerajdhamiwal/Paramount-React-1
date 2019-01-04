@@ -30,8 +30,8 @@ class Resource extends React.Component{
         let caseData = [];
         requestService.getService(`/infographic-node/${this.props.location.search.substring(this.props.location.search.indexOf("=")+1)}`)
             .then((response) => {
-                this.setState({loading: false});
-                this.setState({infoData: response.data});
+                // this.setState({loading: false});
+                this.setState({infoData: response.data, loading: false});
             })
             .catch((err) => {
                 console.log(err);

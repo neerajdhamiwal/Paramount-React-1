@@ -54,8 +54,8 @@ class About extends React.Component{
             .then((response) => {
                 let ids = ['primary_image_id','secondary_image_id', 'award_slider_id', 'certificate_slider_id'];
                 let data = jsonMiddleware(response.data, ids)
-                this.setState({loading: false});
-                this.setState({awardsData: data},()=> {
+                // this.setState({});
+                this.setState({awardsData: data,loading: false},()=> {
                     nid = urlString[this.props.location.pathname];
                     if(urlString[this.props.location.pathname] == 33){
                         this.animation()
@@ -63,7 +63,7 @@ class About extends React.Component{
                 });
             })
             .catch((err) => {
-                console.log(err);
+                //console.log(err);
             })
     }
     render(){
@@ -86,8 +86,8 @@ class About extends React.Component{
                            <div className="grid-container custom-grid custom-grid-right">
                                <div className="grid-x align-right align-middle grid-margin-x wow fadeInUp">
                                    <div className="medium-5 cell ptb-50-mobile">
-                                       <h3 className="banner-info"><span>{ReactHtmlParser(this.state.awardsData.primary_image_id[0][0].node_title)}</span><br/>
-                                           {ReactHtmlParser(this.state.awardsData.primary_image_id[0][0].node_subtitle_title)}</h3>
+                                       <h3 className="banner-info">{ReactHtmlParser(this.state.awardsData.primary_image_id[0][0].node_title)}<br/>
+                                       <span>{ReactHtmlParser(this.state.awardsData.primary_image_id[0][0].node_subtitle_title)}</span></h3>
                                    </div>
                                    <div className="medium-6 cell mb-50-mobile">
                                        <div id="scene" data-friction-x="0.1" data-friction-y="0.1" data-scalar-x="25" data-scalar-y="15">
@@ -105,7 +105,7 @@ class About extends React.Component{
                            <div className="grid-x align-right align-middle grid-margin-x our-certifications-bg">
                                <div className="medium-2 cell small-order-change">
                                    <div className="our-certifications-content">
-                                       <h3 className="banner-info"><span>Our</span><br/>
+                                       <h3 className="banner-info"><br/>
                                            Awards</h3>
                                        {/*<p>{ReactHtmlParser(this.state.awardsData.primary_image_id[0][0].node_description)}</p>*/}
 
@@ -121,8 +121,8 @@ class About extends React.Component{
                        <div className="grid-container custom-grid custom-grid-right">
                            <div className="grid-x align-right align-middle grid-margin-x wow fadeInUp">
                                <div className="medium-5 cell small-order-change">
-                                   <h3 className="banner-info"><span>{ReactHtmlParser(this.state.awardsData.primary_image_id[0][0].node_title)}</span><br/>
-                                       {ReactHtmlParser(this.state.awardsData.primary_image_id[0][0].node_subtitle_title)}</h3>
+                                   <h3 className="banner-info">{ReactHtmlParser(this.state.awardsData.primary_image_id[0][0].node_title)}<br/>
+                                       <span> {ReactHtmlParser(this.state.awardsData.primary_image_id[0][0].node_subtitle_title)}</span></h3>
                                        <ShowMore id={`awards${this.state.awardsData.primary_image_id[0][0].node_title}`} longText= {imgPath(this.state.awardsData.primary_image_id[0][0].node_description)}>
                                        </ShowMore>
                                </div>

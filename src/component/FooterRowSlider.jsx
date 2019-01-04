@@ -20,7 +20,7 @@ class FooterRowSlider extends React.Component{
                 });
             })
             .catch((err) => {
-                console.log(err);
+                //console.log(err);
             })
     }
     slider(){

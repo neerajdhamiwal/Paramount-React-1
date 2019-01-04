@@ -23,7 +23,7 @@ class FooterRowSlider extends React.Component{
                 });
             })
             .catch((err) => {
-                console.log(err);
+                //console.log(err);
             })
     }
 
@@ -52,10 +52,6 @@ class FooterRowSlider extends React.Component{
                 }
             ]
         });
-    }
-
-    componentWillReceiveProps(nextProps){
-        console.log(nextProps);
     }
 
     render(){

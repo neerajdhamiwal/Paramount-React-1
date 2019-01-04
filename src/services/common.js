@@ -11,7 +11,7 @@ export const jsonMiddleware = (json, ids)=> {
     let notEmpty = true;
     ids.forEach((idType) => {
         json.forEach((obj)=> {
-            if(obj[idType] !==''){
+            if(obj[idType] !=='' &&obj[idType] !=='0'){
                 notEmpty = true;
                 if(customJson.hasOwnProperty(obj[idType])){
 
@@ -32,7 +32,6 @@ export const jsonMiddleware = (json, ids)=> {
             uniqueArray=[];
         }
     })
-    console.log('customJsonJson', customJsonJson)
     return customJsonJson;
 }
 export const decodeUri = (uri)=> {

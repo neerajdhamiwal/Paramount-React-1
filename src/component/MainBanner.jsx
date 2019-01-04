@@ -32,7 +32,7 @@ class Home extends React.Component{
                 <div className="grid-container">
                     <div className="grid-x align-right align-middle grid-margin-x">
                         <div className="medium-5 cell small-order-change">
-                            <h3 className="banner-info"><span>{ReactHtmlParser(this.props.node[0].node_title)}</span><br/>{ReactHtmlParser(this.props.node[0].node_subtitle_title)}</h3>
+                            <h3 className="banner-info">{ReactHtmlParser(this.props.node[0].node_title)}<br/><span>{ReactHtmlParser(this.props.node[0].node_subtitle_title)}</span></h3>
                                 <ShowMore id='bannr' longText= {this.props.node[0].node_description} hiddenHeight={406}>
                                  </ShowMore>
                             {this.props.node[0].hasOwnProperty('node_cta_button_title')? this.props.node[0].node_cta_button_title !==''?<a className="button" href={apiUrl+this.props.node[0].node_cta_button_url.substring(9)}>{this.props.node[0].node_cta_button_title}</a>:'':''}

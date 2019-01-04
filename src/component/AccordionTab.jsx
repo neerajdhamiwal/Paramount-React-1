@@ -14,7 +14,7 @@ class AccordionaTab extends React.Component{
         this.clickHandler = this.clickHandler.bind(this)
     }
     active(e){
-        console.log(e)
+        //console.log(e)
     }
     componentDidMount(){
         $("#service-tabs li a").on('click', function(e) {
@@ -58,7 +58,7 @@ class AccordionaTab extends React.Component{
                                                     <div>
                                                         <ShowMore id={`showMore${index}`} longText= {service.image_slider_description} update={this.state.update}>
                                                         </ShowMore>
-                                                    {service.image_slider_cta_button_title !==''? <a href={service.image_slider_cta_button_url.substring(9)} className="button white-btn">{service.image_slider_cta_button_title.replace(/\&amp;/g,'&')}</a>:''}
+                                                    {service.image_slider_cta_button_title !==''? <a href={service.image_slider_cta_button_url.substring(9)} className="button mt-15 white-btn">{service.image_slider_cta_button_title.replace(/\&amp;/g,'&')}</a>:''}
                                                 </div>
                                                 </div>
                                                 <div className="medium-7 cell no-padding wow slideInRight" id={`showMore${index}`}>
