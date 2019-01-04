@@ -9,7 +9,6 @@ class Header extends React.Component{
     }
     componentDidMount(){
         $('#menu-tabs').on('click', 'li', function() {
-            console.log($(this))
             $('#menu-tabs li.activeTab').removeClass('activeTab');
             $(this).addClass('activeTab');
         });
@@ -24,30 +23,28 @@ class Header extends React.Component{
                             <button className="menu-icon" type="button" data-toggle="offCanvas"></button>
                             <nav className="main-menu show-for-medium">
                                 <ul className="menu align-right dropdown" data-dropdown-menu id="menu-tabs">
-                                    <li><a href="/about-paramount">About Us</a>
+                                    <li><a className="cursorDefault">About Us</a>
                                         <ul className="menu dropdown-menu-an">
-                                            {/*<li><a href="/team?nid=42">Team</a></li>*/}
-                                            {/*<li><a href="#">Leadership</a></li>*/}
+                                            <li><a href="/about-paramount">Our Story</a></li>
                                             <li><a href="/about-paramount/community">Community</a></li>
                                             <li><a href="/about-paramount/awards-and-certifications">Awards & Certifications</a></li>
                                         </ul>
                                     </li>
-                                    <li><a >Services</a>
+                                    <li><a className="cursorDefault">Services</a>
                                       <ul className="menu dropdown-menu-an">
-                                        <li><a href="/services/paramount-edge"> Paramount Edge</a></li>
-                                        <li><a href="/services/paramount-tech-exec">Paramount TechExec</a></li>
-                                        <li><a>Paramount Techadvisory</a>
+                                        <li><a href="/services/paramount-edge">TechEdge</a></li>
+                                        <li><a href="/services/paramount-tech-exec">TechExec</a></li>
+                                        <li><a className="cursorDefault">TechAdvisory</a>
                                             <ul className="menu dropdown-menu-an">
-                                            <li><a href="/services/paramounttechadvisory/cms-and-app-development">Content Management Systems & Mobile App Development</a></li>
-                                            <li><a href="/services/paramounttechadvisory/application-maintenance-development-integration">Application Maintenance, Development & Integration</a></li>
+                                            <li><a href="/services/paramounttechadvisory/application-maintenance-development-integration">Application, Development & Integration</a></li>
                                             <li><a href="/services/paramounttechadvisory/infrastructuremanagement-and-monitoring">Infrastructure Management & Monitoring</a></li>
-                                        </ul>
+                                            <li><a href="/services/paramounttechadvisory/cms-and-app-development">Content Management Systems & Mobile App Development</a></li>
+                                            </ul>
                                         </li>
                                       </ul>
                                     </li>
                                     <li><a href="/expertise">Expertise</a>
                                         <ul className="menu dropdown-menu-an">
-                                            {/*<li><a href="/exp-article?nid=45">Industries</a></li>*/}
                                             <li><a href="/expertise/technologies">Technologies</a></li>
                                             <li><a href="/expertise/government-solutions">Government</a></li>
                                         </ul>

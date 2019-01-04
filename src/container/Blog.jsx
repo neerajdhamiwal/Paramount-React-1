@@ -57,23 +57,22 @@ class CaseStudy extends React.Component{
         else{
             this.getTermInfo(nid[0]);
             localStorage.setItem('activeMenu', response.data[0].name.split(',')[0])
-
         }
       })
           .catch((err) => {
-            console.log(err);
+            //console.log(err);
           })
   }
     fetchMoreData(){
       this.lastIndex = this.lastIndex+5;
         this.setState({activeCaseStudy:this.state.blogList.slice(0, this.lastIndex)});
-    console.log('this.lastIndex',this.lastIndex);
     }
 
   getTermInfo(id){
     let uri = `/taxonomy/term-info-blogs/${id}`;
       requestService.getService(uri.replace(' ',''))
           .then((response) => {
+              this.ff = {};
               response.data.forEach((obj,i)=> {
                   if(obj.field_featured ==='On')
                   {
@@ -87,7 +86,7 @@ class CaseStudy extends React.Component{
               this.setState({featuredActive: this.ff,loading: false, blogList: response.data, caseStudyList: this.caseStudyList, activeCaseStudy: response.data});
           })
           .catch((err) => {
-              console.log(err);
+              //console.log(err);
           })
   }
   componentDidMount(){

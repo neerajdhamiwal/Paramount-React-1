@@ -14,7 +14,7 @@ class RightImgLContent extends React.Component{
                     <div className="medium-5 cell">
                         {/*<h2 className="relative-title">Our Services</h2>*/}
                         <h3 className="heading-content">{ReactHtmlParser(this.props.data.image_description_subheading)}</h3>
-                        <ShowMore id={`rightImgLcon${this.props.data.secondary_image_description_id}`} longText= {this.props.data.secondary_image_description_body}>
+                        <ShowMore id={`rightImgLcon${this.props.data.secondary_img_des_id}`} longText= {this.props.data.secondary_image_description_body}>
                         </ShowMore>
                     </div>
                     <div className="medium-7 cell no-padding">
@@ -36,7 +36,7 @@ class RightImgLContent extends React.Component{
                         <div className="medium-5 cell">
                             {/*<h2 className="relative-title">Our Services</h2>*/}
                             <h3>{ReactHtmlParser(this.props.data.image_description_subheading)}</h3>
-                                <ShowMore id={`rightImgLcon${this.props.data.image_description_id}`} longText= {this.props.data.image_description_body}>
+                                <ShowMore id={`rightImgLcon${this.props.data.img_des_id}`} longText= {this.props.data.image_description_body}>
                                 </ShowMore>
                         </div>
                         <div className="medium-7 cell no-padding">

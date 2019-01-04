@@ -32,7 +32,7 @@ class Footer extends React.Component{
                 this.setState({footerData: response.data});
             })
             .catch((err) => {
-                console.log(err);
+                //console.log(err);
             })
         requestService.getService('/json-tweet')
             .then((response) => {
@@ -40,7 +40,7 @@ class Footer extends React.Component{
                 this.setState({tweets: response.data});
             })
             .catch((err) => {
-                console.log(err);
+                //console.log(err);
             })
     }
     ValidateEmail() {
@@ -67,7 +67,6 @@ class Footer extends React.Component{
             }
             requestService.postService('/contact_message?_format=json', postData)
                 .then((res)=> {
-                console.log('successful');
                     toast.success("Successfully Submit Form", {
                         position: toast.POSITION.TOP_RIGHT
                     });
@@ -91,10 +90,6 @@ class Footer extends React.Component{
         let obj = {}
         obj[e.target.name] = e.target.value
         this.setState(obj);
-    }
-
-    onLoadTweet(){
-        console.log('tweet load');
     }
 
     render(){

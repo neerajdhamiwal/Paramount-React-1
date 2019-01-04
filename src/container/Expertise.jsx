@@ -53,8 +53,8 @@ class Expertise extends React.Component{
                 .then((response) => {
                 let ids = ['slider_id','flipper_id','logo_id','sub_block_id','image_description_id','hd_id', 'client_slider_id','award_slider_id','certificate_slider_id','partner_slider_id',];
                     nid = urlString[this.props.location.pathname]
-                    this.setState({loading: false});
-                    this.setState({ExpertiseData: jsonMiddleware(response.data, ids)},()=> {
+                    // this.setState({});
+                    this.setState({ExpertiseData: jsonMiddleware(response.data, ids), loading: false},()=> {
                         this.animation();
                     });
                 })

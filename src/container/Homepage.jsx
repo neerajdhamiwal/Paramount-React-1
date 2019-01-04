@@ -77,9 +77,9 @@ class Home extends React.Component{
         requestService.getService('/homepage-data/50')
             .then((response) => {
                 let ids = ['node_flip_id','content_flip_id', 'content_slider_id', 'award_slider_id', 'certificate_slider_id', 'partner_slider_id', 'client_slider_id'];
-                this.setState({loading: false});
+                // this.setState({});
                 // this.setState({meta: meta})
-                this.setState({HomeData: jsonMiddleware(response.data, ids)},()=> {
+                this.setState({HomeData: jsonMiddleware(response.data, ids), loading: false},()=> {
                     if(Object.keys(this.state.HomeData).length>0){
                         this.animation();
                     }
@@ -90,15 +90,7 @@ class Home extends React.Component{
             })
     }
 
-    componentDidMount(){
-      console.log(paroller);
-      // $('.my-paroller').paroller();
-        //Foundation.addToJquery($);
-    }
-
     render(){
-        console.log(this.state.meta);
-        console.log('Object.keys(this.state.HomeData).length', Object.keys(this.state.HomeData).length)
         return(
             this.state.loading? <center >
                     <Loader
@@ -114,8 +106,8 @@ class Home extends React.Component{
            <div className="grid-container">
            <div className="grid-x align-right align-middle grid-margin-x wow fadeInUp">
            <div className="medium-4 small-12 cell wow fadeInUp">
-           <h3 className="banner-info"><span>{this.state.HomeData[Object.keys(this.state.HomeData)[0]][0][0].node_title}</span><br/>
-               {ReactHtmlParser(this.state.HomeData[Object.keys(this.state.HomeData)[0]][0][0].node_subtitle_title)}<br/>
+           <h3 className="banner-info">{this.state.HomeData[Object.keys(this.state.HomeData)[0]][0][0].node_title}<br/>
+               <span>{ReactHtmlParser(this.state.HomeData[Object.keys(this.state.HomeData)[0]][0][0].node_subtitle_title)}</span><br/>
                {ReactHtmlParser(this.state.HomeData[Object.keys(this.state.HomeData)[0]][0][0].node_description)}
               {ReactHtmlParser(imgPath(this.state.HomeData[Object.keys(this.state.HomeData)[0]][0][0].node_body))}
            </h3>
@@ -159,29 +151,29 @@ class Home extends React.Component{
                                    })}
                                </ul>
                            </div>
-                           <div className="medium-10 cell wow fadeInUp" id="pages">
+                           <div className="medium-5 cell wow fadeInUp" id="pages">
                                <div className="tabs-content" data-tabs-content="service-tabs">
                                    {this.state.HomeData['content_slider_id'][0].map((obj, index) => {
                                        return <div className={index === 0 ? "page" : "page hide"}
                                                         id={'panel' + index} data-page={'panel' + index}>
                                            <div className="grid-x grid-padding-x tab-accordion-content">
-                                               <div className="medium-6 cell">
+                                               <div className="medium-12 cell">
                                                    <div>
                                                        <h3>{ReactHtmlParser(obj.content_slider_description)}</h3>
                                                        <ShowMore id={`contentSlider${index}`} longText= {obj.content_slider_body}  update={this.state.update}>
                                                        </ShowMore>
                                                    </div>
-                                                   {obj.content_slider_cta_title !==''? <a className="button" href={obj.content_slider_cta_url.substring(9)}>{ReactHtmlParser(obj.content_slider_cta_title)}</a>:''}
-                                               </div>
-                                               <div className="medium-6 cell no-padding  wow slideInRight">
-                                                   <div className="img-relative-title-ld">
-                                                       <img src={decodeUri(apiUrl+obj.right_image_block_img)} alt=""/>
-                                                      <h2 className="relative-title">{ReactHtmlParser(obj.right_image_block_title)}</h2>
-                                                   </div>
+                                                   {obj.content_slider_cta_title !==''? <a className="button mt-15" href={obj.content_slider_cta_url.substring(9)}>{ReactHtmlParser(obj.content_slider_cta_title)}</a>:''}
                                                </div>
                                            </div>
                                        </div>
                                    })}
+                               </div>
+                           </div>
+                           <div className="medium-5 cell no-padding  wow slideInRight">
+                               <div className="img-relative-title-ld">
+                                   <img src={decodeUri(apiUrl+this.state.HomeData['content_slider_id'][0][0].right_image_block_img)} alt=""/>
+                                   <h2 className="relative-title">{ReactHtmlParser(this.state.HomeData['content_slider_id'][0][0].right_image_block_title)}</h2>
                                </div>
                            </div>
                        </div>

@@ -15,7 +15,6 @@ constructor(props){
 }
 
     componentWillReceiveProps(nextProps){
-    console.log('nextProps', nextProps)
         $('#service').on('click', 'li a', function() {
             $('#service a.activeTab').removeClass('activeTab');
             $(this).addClass('activeTab');

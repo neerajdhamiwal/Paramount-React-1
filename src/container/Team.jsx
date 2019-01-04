@@ -37,8 +37,8 @@ class Team extends React.Component{
             .then((response) => {
                 let ids = ['map_id','award_slider_id', 'certificate_slider_id', 'team_member_id', 'content_ctaflip_id', 'node_flipper_id'];
                 let data = jsonMiddleware(response.data, ids);
-                this.setState({loading: false});
-                this.setState({teamData: data}, ()=> {
+                // this.setState({loading: false});
+                this.setState({teamData: data, loading: false}, ()=> {
                     this.animation();
                 })
             })
@@ -54,7 +54,6 @@ class Team extends React.Component{
     }
     animation(){
         let scene = document.getElementById('scene');
-        console.log(scene);
         let parallaxInstance = new Parallax(scene);
     }
 

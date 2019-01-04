@@ -9,7 +9,6 @@ class GridListScnd extends React.Component{
         super(props)
     }
     render(){
-        console.log('this.props.data.length',this.props.data.length)
         return(
             this.props.data.length>0? <div className="grid-container">
                     <h4>{ReactHtmlParser(this.props.data[0].block_title)}</h4>
