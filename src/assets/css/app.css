@@ -238,6 +238,12 @@ p ul {
 .activeTab {
   color: red !important; }
 
+.mt-15 {
+  margin-top: 15px; }
+
+.cursorDefault {
+  cursor: default !important; }
+
 /*Header Styling Starts Here*/
 .close-button {
   z-index: 9999; }
@@ -930,6 +936,9 @@ header .header-inner {
   position: sticky;
   top: 0px; }
 
+@media (min-width: 1600px) {
+  .services-sub-menu-two {
+    width: 40% !important; } }
 @media screen and (max-width: 39.9375em) {
   footer.bg-color-grey {
     background: #fff; } }

@@ -89,6 +89,7 @@ class About extends React.Component{
                                        <h3 className="banner-info">{ReactHtmlParser(this.state.awardsData.primary_image_id[0][0].node_title)}<br/>
                                        <span>{ReactHtmlParser(this.state.awardsData.primary_image_id[0][0].node_subtitle_title)}</span></h3>
                                    </div>
+                                   <div>
                                    <div className="medium-6 cell mb-50-mobile">
                                        <div id="scene" data-friction-x="0.1" data-friction-y="0.1" data-scalar-x="25" data-scalar-y="15">
                                            <div data-depth="0.3"><img src={award1} alt="" /></div>
@@ -96,6 +97,7 @@ class About extends React.Component{
                                            <div data-depth="0.8"><img src={award3} alt="" /></div>
                                            <div data-depth="0.6"><img src={award4} alt="" /></div>
                                        </div>
+                                   </div>
                                    </div>
                                </div>
                            </div>
@@ -126,12 +128,16 @@ class About extends React.Component{
                                        <ShowMore id={`awards${this.state.awardsData.primary_image_id[0][0].node_title}`} longText= {imgPath(this.state.awardsData.primary_image_id[0][0].node_description)}>
                                        </ShowMore>
                                </div>
-                               <div className="medium-6 cell">
-                                   <div class="rotation-banner">
-                                       <img id="loading" src={aboutLayerBannerone} alt="" />
-                                       <img class="over-img" src={aboutLayerBannertwo} alt="" />
-                                   </div>
+
+                               <div>
+                                 <div className="medium-6 cell">
+                                     <div class="rotation-banner">
+                                         <img id="loading" src={aboutLayerBannerone} alt="" />
+                                         <img class="over-img" src={aboutLayerBannertwo} alt="" />
+                                     </div>
+                                 </div>
                                </div>
+
                            </div>
                        </div>
                    </section>

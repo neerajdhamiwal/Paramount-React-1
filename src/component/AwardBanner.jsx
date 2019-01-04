@@ -57,11 +57,11 @@ class AwardBanner extends React.Component{
                       <img src={ImgBannerThree} alt="Banner"/>
                     </div>:''}
 
-            {this.props.nid == 45?<div className="medium-6 cell technologies-government-banner">
+            {this.props.nid == 45?<div><div className="medium-6 cell technologies-government-banner">
             <img src={ImgBannerTwo} alt="Banner"/>
-          </div>: this.props.nid== 52? <div className="medium-6 cell technologies-government-banner">
+          </div></div>: this.props.nid== 52? <div><div className="medium-6 cell technologies-government-banner">
                       <img src={ImgBannerTwo} alt="Banner"/>
-                    </div>:''}
+                    </div></div>:''}
         </div>
       </div>
     </section>
