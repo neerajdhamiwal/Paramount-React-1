@@ -300,3 +300,29 @@ p{
 .cursorDefault{
 	cursor: default!important;
 }
+
+.pagination{
+	width: 100%;
+	text-align: center;
+	li{
+		vertical-align: top;
+		padding: 0px!important;
+		a{
+			border: 1px solid #ccc;
+			background: #f6f6f7;
+			padding:7px 17px;
+			height: 40px;
+		}
+	}
+	.previous a, .next a{
+		width: 100px;
+	}
+	.active{
+		a{
+			background: red;
+			color: #fff;
+			padding: 7px 17px;
+			border: 1px solid red;
+		}
+	}
+}
