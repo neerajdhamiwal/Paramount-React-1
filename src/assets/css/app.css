@@ -244,6 +244,25 @@ p ul {
 .cursorDefault {
   cursor: default !important; }
 
+.pagination {
+  width: 100%;
+  text-align: center; }
+  .pagination li {
+    vertical-align: top;
+    padding: 0px !important; }
+    .pagination li a {
+      border: 1px solid #ccc;
+      background: #f6f6f7;
+      padding: 7px 17px;
+      height: 40px; }
+  .pagination .previous a, .pagination .next a {
+    width: 100px; }
+  .pagination .active a {
+    background: red;
+    color: #fff;
+    padding: 7px 17px;
+    border: 1px solid red; }
+
 /*Header Styling Starts Here*/
 .close-button {
   z-index: 9999; }
@@ -1561,9 +1580,5 @@ img.align-left {
   .button.btn-full {
     width: 100%;
     border-radius: 3px; }
-
-strong span{
-  color:red!important;
-}
 
 /*# sourceMappingURL=app.css.map */
