@@ -40,11 +40,16 @@
     margin: auto;
     width:160px;
     height:160px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		ms-flex-align: center;
+		-ms-flex-pack: center;
     line-height: 30px;
     left: 0;
     top: 0;
     right: 0;
-    padding-top: 65px;
+    padding-top: 0px;
     bottom: 0;
     opacity: 0;
     background: $paramount-red;
