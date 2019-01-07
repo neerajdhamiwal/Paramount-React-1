@@ -53,14 +53,14 @@ module.exports={
               loader: 'svg-inline-loader'
           },
 
-        //     {
-        //         test: /\.(scss|sass)$/i,
-        //         include: [
-        //             path.resolve(__dirname, 'node_modules'),
-        //             path.resolve(__dirname, 'node_modules/foundation-sites/scss'),
-        //                   ],
-        //             loader: ["sass-loader"]
-        // },
+            {
+                test: /\.(scss|sass)$/i,
+                include: [
+                    path.resolve(__dirname, 'node_modules'),
+                    path.resolve(__dirname, 'node_modules/foundation-sites/scss'),
+                          ],
+                    loader: ["sass-loader"]
+        },
 
           {
             test: /\.(html)$/,
