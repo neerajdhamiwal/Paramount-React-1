@@ -1383,6 +1383,11 @@ footer.footer-bottom {
     transition: all .2s linear; }
 .job-posting-list .accordion-content {
   border: none; }
+.job-posting-list p.career-info-btn {
+  display: block;
+  text-align: center; }
+  .job-posting-list p.career-info-btn .button {
+    margin: 0 auto; }
 
 @media screen and (min-width: 64em) {
   .pl-100 {
