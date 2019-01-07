@@ -211,7 +211,7 @@ class Home extends React.Component{
                         {this.state.HomeData[Object.keys(this.state.HomeData)[0]][0][0].content_bottom_description !==''? <h3 className="ptb-40"> {ReactHtmlParser(this.state.HomeData[Object.keys(this.state.HomeData)[0]][0][0].content_bottom_description)}</h3>:''}
                         <ShowMore id="imgLConBlock" longText= {this.state.HomeData[Object.keys(this.state.HomeData)[0]][0][0].content_bottom_body}>
                         </ShowMore>
-                        {this.state.HomeData[Object.keys(this.state.HomeData)[0]][0][0].content_bottom_cta_title!==''? <a className="button" href={this.state.HomeData[Object.keys(this.state.HomeData)[0]][0][0].content_bottom_cta_url.substring(9)}>{this.state.HomeData[Object.keys(this.state.HomeData)[0]][0][0].content_bottom_cta_title}</a>:''}
+                        {this.state.HomeData[Object.keys(this.state.HomeData)[0]][0][0].content_bottom_cta_title!==''? <a className="button mt-15" href={this.state.HomeData[Object.keys(this.state.HomeData)[0]][0][0].content_bottom_cta_url.substring(9)}>{this.state.HomeData[Object.keys(this.state.HomeData)[0]][0][0].content_bottom_cta_title}</a>:''}
                     </div>
                     <div className="medium-7 cell no-padding hide-for-small-only">
                         <div className="img-relative-title-ld">
