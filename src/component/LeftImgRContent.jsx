@@ -14,7 +14,7 @@ class LeftImgRContent extends React.Component{
                             <div className="large-7 cell no-padding wow slideInLeft">
                                 <div className="img-relative-title-ru">
                                     <h2 className="relative-title">{ReactHtmlParser(this.props.data.secondary_image_description_title)}</h2>
-                                    <img src={decodeUri(apiUrl+this.props.data.secondary_image_description_img)} alt=""/>
+                                    <img src={apiUrl+this.props.data.secondary_image_description_img} alt=""/>
                                 </div>
                             </div>
                             <div className="large-5 cell wow fadeInUp">
@@ -32,7 +32,7 @@ class LeftImgRContent extends React.Component{
                             <div className="large-7 cell no-padding wow slideInLeft">
                                 <div className="img-relative-title-ru">
                                     <h2 className="relative-title">{ReactHtmlParser(this.props.data.image_description_title)}</h2>
-                                    <img src={decodeUri(apiUrl+this.props.data.image_description_img)} alt=""/>
+                                    <img src={apiUrl+this.props.data.image_description_img} alt=""/>
                                 </div>
                             </div>
                             <div className="large-5 cell wow fadeInUp">
