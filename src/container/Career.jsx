@@ -219,7 +219,7 @@ class About extends React.Component{
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        <p><a className="button" href="mailto:career@paramountsoft.net">Apply Now</a></p>
+                                                        <p><a className="button" href="mailto:careers@paramountsoft.net">Apply Now</a></p>
                                                     </div>
                                                 </li>
                                                 }):''
