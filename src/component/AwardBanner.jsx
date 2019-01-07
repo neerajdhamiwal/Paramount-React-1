@@ -26,20 +26,6 @@ class AwardBanner extends React.Component{
                 longText={this.props.nodeData[0].node_description} id="bannerDesc" hiddenHeight= {430}/>:''}
               {this.props.nodeData[0].node_body!==''? <ShowMore
                 longText={this.props.nodeData[0].node_body} id="bannerBody" hiddenHeight= {430}/>:''}
-            {/*<ShowMore lines={COUNT}*/}
-                      {/*more='View more'*/}
-                      {/*less='View less'*/}
-                      {/*anchorClass=''>*/}
-              {/*<p>{ReactHtmlParser(imgPath(this.props.nodeData[0].node_description))}</p>*/}
-            {/*</ShowMore>*/}
-            {/*<ShowMore lines={COUNT}*/}
-                      {/*more='View more'*/}
-                      {/*less='View less'*/}
-                      {/*anchorClass=''>*/}
-              {/*<p>{ReactHtmlParser(imgPath(this.props.nodeData[0].node_body))}</p>*/}
-            {/*</ShowMore>*/}
-            {/*<p className="toggle-1">{ReactHtmlParser(imgPath(this.props.nodeData[0].node_body))}</p>*/}
-            {/*<a href="javascript:void(0)">Show Toggle...</a>*/}
           </div>
             {this.props.nid == 24? <div><div className="medium-6 cell services-sub-menu">
                   <img src={ImgBanner} alt="Banner"/>
