@@ -4,7 +4,7 @@ import Parallax from 'parallax-js';
 import Map from '../component/Map.jsx';
 import AwardSlider from '../component/AwardsBottomSlider.jsx';
 import CertSlider from '../component/CertificationBottomSlider.jsx';
-import {customDivideData, apiUrl, jsonMiddleware, urlString, getMeta} from '../services/common';
+import {customDivideData, apiUrl, jsonMiddleware, urlString, getMeta, imgPath} from '../services/common';
 import requestService from '../services/request';
 import Loader from 'react-loader-spinner'; // eslint-disable-line no-unused-vars
 import contactBanner from '../assets/img/contact-banner.png';
@@ -70,7 +70,7 @@ class Team extends React.Component{
                         />
                         </center>: <div>
                         {Object.keys(this.state.teamData).length>0?
-                        <section className="main-banner award-banner">
+                       <div> <section className="main-banner award-banner">
                             <div className="grid-container">
                                 <div className="grid-x align-right align-middle grid-margin-x">
                                     <div className="medium-5 cell small-order-change">
@@ -88,7 +88,17 @@ class Team extends React.Component{
                                         </div>
                                 </div>
                             </div>
-                        </section>:''}
+                        </section>{this.state.teamData[Object.keys(this.state.teamData)[0]][0][0].node_content_block!==''? <section className="text-centent">
+                                <div className="grid-container ">
+                            <div className="grid-x align-middle grid-margin-x">
+                            <div className="medium-12 cell">
+                            <h3 className="banner-info"><span></span></h3>
+                            <p>{ReactHtmlParser(imgPath(this.state.teamData[Object.keys(this.state.teamData)[0]][0][0].node_content_block))}</p>
+                            </div>
+                            </div>
+                            </div>
+                       </section>:''}</div>:''}
+
                         {this.state.teamData.hasOwnProperty('team_member_id') ? <div className="grid-container">
                                 {customDivideData(this.state.teamData['team_member_id'][0], 3).map((subArr) => {
                                     return <div className="grid-x align-center block-latest-reads">

@@ -32,6 +32,7 @@ export const jsonMiddleware = (json, ids)=> {
             uniqueArray=[];
         }
     })
+    console.log(customJsonJson)
     return customJsonJson;
 }
 export const decodeUri = (uri)=> {
