@@ -1579,5 +1579,8 @@ img.align-left {
   .button.btn-full {
     width: 100%;
     border-radius: 3px; }
+strong span {
+  color: red;
+}
 
 /*# sourceMappingURL=app.css.map */
