@@ -1,10 +1,19 @@
 
 import React from 'react';
+import WOW from 'wowjs';
 import {apiUrl, decodeUri, imgPath, COUNT} from '../services/common.js';
 import ReactHtmlParser from 'react-html-parser';
 import ShowMore from './ShowMore.jsx';
 
 class RightImgLContent extends React.Component{
+    componentDidMount(){
+        new WOW.WOW(
+            {
+                animateClass: 'animated',
+                offset:       100,
+            }
+        ).init();
+    }
     render(){
         return(
              // left-image-right-content Section Starts Here
@@ -17,7 +26,7 @@ class RightImgLContent extends React.Component{
                         <ShowMore id={`rightImgLcon${this.props.data.secondary_img_des_id}`} longText= {this.props.data.secondary_image_description_body}>
                         </ShowMore>
                     </div>
-                    <div className="medium-7 cell no-padding">
+                    <div className="medium-7 cell no-padding wow slideInRight">
                         <div className="img-relative-title-ld">
                             <div className="grid">
                                 <div className="grid__item">
@@ -39,7 +48,7 @@ class RightImgLContent extends React.Component{
                                 <ShowMore id={`rightImgLcon${this.props.data.img_des_id}`} longText= {this.props.data.image_description_body}>
                                 </ShowMore>
                         </div>
-                        <div className="medium-7 cell no-padding">
+                        <div className="medium-7 cell no-padding wow slideInRight">
                             <div className="img-relative-title-ld">
                                 <div className="grid">
                                     <div className="grid__item">

@@ -77,6 +77,7 @@ class ExpertiseArticle extends React.Component{
                             return <LeftImgRContent data={obj}/>
                         }
                         else {
+
                             return <RightImgLContent data={obj}/>
                         }
                     }): ''

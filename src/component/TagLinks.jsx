@@ -2,6 +2,8 @@ import React from 'react';
 import {apiUrl, COUNT, getActiveBlogMenu, setActiveBlogMenu} from '../services/common.js';
 import ReactHtmlParser from 'react-html-parser';
 import ShowMore from './ShowMore.jsx';
+import WOW from 'wowjs';
+
 
 class TagLinks extends React.Component{
 
@@ -12,7 +14,15 @@ constructor(props){
     activeObject:{}
     }
     this.clickHandler = this.clickHandler.bind(this);
-}
+ }
+    componentDidMount(){
+        new WOW.WOW(
+            {
+                animateClass: 'animated',
+                offset:       100,
+            }
+        ).init();
+    }
 
     componentWillReceiveProps(nextProps){
         $('#service').on('click', 'li a', function() {
@@ -46,7 +56,7 @@ constructor(props){
                           </ShowMore>
                           {this.props.locate === 'resource'?'':<a href = {"/casestudy/article?nid="+this.props.firstCaseStudy['id']} className="button">Read more</a>}
                       </div>
-                      <div className="medium-7 cell no-padding">
+                      <div className="medium-7 cell no-padding wow slideInRight">
                         <div className="img-relative-title-ld">
                           <img src={apiUrl+this.props.firstCaseStudy['image']} alt="" />
                           <h2 className="relative-title">{ReactHtmlParser(this.props.firstCaseStudy['title'])}</h2>

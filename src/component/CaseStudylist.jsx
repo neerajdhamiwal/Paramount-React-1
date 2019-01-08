@@ -3,6 +3,8 @@ import { Link } from 'react-router';
 import {apiUrl, COUNT} from '../services/common.js';
 import ReactHtmlParser from 'react-html-parser';
 import ShowMore from './ShowMore.jsx';
+import WOW from 'wowjs';
+
 
 class CaseStudylist extends React.Component {
   constructor(props){
@@ -10,6 +12,14 @@ class CaseStudylist extends React.Component {
       this.state = {
         caseStudyData: []
       }
+  }
+  componentDidMount(){
+      new WOW.WOW(
+          {
+              animateClass: 'animated',
+              offset:       100,
+          }
+      ).init();
   }
   render(){
     return(
@@ -26,7 +36,7 @@ class CaseStudylist extends React.Component {
                             </ShowMore>
                             <a href = {"/casestudy/article?nid="+caseStudy.id} className="button">Read more</a>
                           </div>
-                          <div class="medium-7 cell no-padding">
+                          <div class="medium-7 cell no-padding wow slideInRight">
                             <div class="img-relative-title-ld">
                               <div class="grid">
                                 <a class="grid__item">
@@ -46,7 +56,7 @@ class CaseStudylist extends React.Component {
                    return <section className="left-image-right-content">
                           <div className="grid-container custom-grid custom-grid-left">
                           <div className="grid-x align-middle">
-                          <div className="large-7 cell no-padding">
+                          <div className="large-7 cell no-padding wow slideInLeft">
                           <div className="img-relative-title-ru">
                           <h2 className="relative-title">{ReactHtmlParser(caseStudy.title)}</h2>
                     <img src={apiUrl + caseStudy.image} alt="placeholder"/>

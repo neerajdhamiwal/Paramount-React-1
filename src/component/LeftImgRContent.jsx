@@ -3,8 +3,18 @@ import React from 'react';
 import {apiUrl, decodeUri, imgPath, COUNT} from '../services/common.js';
 import ReactHtmlParser from 'react-html-parser';
 import ShowMore from './ShowMore.jsx';
+import WOW from 'wowjs';
+
 
 class LeftImgRContent extends React.Component{
+    componentDidMount(){
+        new WOW.WOW(
+            {
+                animateClass: 'animated',
+                offset:       100,
+            }
+        ).init();
+    }
     render(){
         return(
              // left-image-right-content Section Starts Here

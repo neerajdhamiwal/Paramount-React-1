@@ -3,12 +3,20 @@ import ImgBanner from '../assets/img/paramount-edge.png';
 import ImgBannerTwo from '../assets/img/services-sub-two.png';
 import ImgBannerThree from '../assets/img/expertise-sub-menu.png';
 import ReactHtmlParser from 'react-html-parser';
-// import ShowMore from 'react-show-more';
+import WOW from 'wowjs';
 import ShowMore from './ShowMore.jsx';
 
 class AwardBanner extends React.Component{
   constructor(props){
     super(props);
+  }
+  componentDidMount(){
+      new WOW.WOW(
+          {
+              animateClass: 'animated',
+              offset:       100,
+          }
+      ).init();
   }
 
     render(){
