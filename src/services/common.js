@@ -85,7 +85,6 @@ export const imgPath = (data)=> {
 
             }
             return data;
-
         }
         else{
             return data;

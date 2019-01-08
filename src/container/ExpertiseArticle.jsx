@@ -64,6 +64,13 @@ class ExpertiseArticle extends React.Component{
                  {Object.keys(this.state.ExpertiseGovData).length>0? <AwardBanner customClass = "main-banner award-banner" nid={nid} nodeData = {this.state.ExpertiseGovData[Object.keys(this.state.ExpertiseGovData)[0]][0]}></AwardBanner>: ''}
                 <div className=" clearfix"></div>
                  {this.state.ExpertiseGovData.hasOwnProperty('sub_block_id')? <FooterHeading subBlockData = {this.state.ExpertiseGovData['sub_block_id'][0]}/>:''}
+                    {nid===52? this.state.ExpertiseGovData.hasOwnProperty('extra_content_id')? this.state.ExpertiseGovData['extra_content_id'][0].map((obj, i) => {
+
+                            return <div><TextContent data = {obj}/>
+                                <hr/>
+                            </div>
+
+                        }) :'':''}
                 {
                     this.state.ExpertiseGovData.hasOwnProperty('img_des_id')? this.state.ExpertiseGovData['img_des_id'][0].map((obj, i) => {
                         if ((i + 1) % 2 === 0) {
@@ -75,13 +82,13 @@ class ExpertiseArticle extends React.Component{
                     }): ''
                 }
                  {this.state.ExpertiseGovData.hasOwnProperty('secondary_sub_block_id')? <FooterSecndHeading subBlockData = {this.state.ExpertiseGovData['secondary_sub_block_id'][0]}/>:''}
-                 {this.state.ExpertiseGovData.hasOwnProperty('extra_content_id')? this.state.ExpertiseGovData['extra_content_id'][0].map((obj, i) => {
+                 {nid!==52?this.state.ExpertiseGovData.hasOwnProperty('extra_content_id')? this.state.ExpertiseGovData['extra_content_id'][0].map((obj, i) => {
 
                          return <div><TextContent data = {obj}/>
                              <hr/>
                              </div>
 
-                     }) :''}
+                     }) :'':''}
                  {
                      this.state.ExpertiseGovData.hasOwnProperty('secondary_img_des_id')? this.state.ExpertiseGovData['img_des_id'][0].map((obj, i) => {
                              if ((i + 1) % 2 === 0) {

@@ -35,8 +35,8 @@ class Home extends React.Component{
                             <h3 className="banner-info">{ReactHtmlParser(this.props.node[0].node_title)}<br/><span>{ReactHtmlParser(this.props.node[0].node_subtitle_title)}</span></h3>
                                 <ShowMore id='bannr' longText= {this.props.node[0].node_description} hiddenHeight={406}>
                                  </ShowMore>
-                            {this.props.node[0].hasOwnProperty('node_cta_button_title')? this.props.node[0].node_cta_button_title !==''?<a className="button mt-15" href={apiUrl+this.props.node[0].node_cta_button_url.substring(9)}>{this.props.node[0].node_cta_button_title}</a>:'':''}
-                            {this.props.node[0].hasOwnProperty('node_cta_button_title')?this.props.node[0].download_link_title !==''?<a className="button mt-15" href={apiUrl+this.props.node[0].download_link_url.substring(9)}>{this.props.node[0].download_link_title}</a>:'':''}
+                            {this.props.node[0].hasOwnProperty('node_cta_button_title')? this.props.node[0].node_cta_button_title !==''?<a className="button" target="_blank" href={apiUrl+this.props.node[0].node_cta_button_url.substring(9)}>{this.props.node[0].node_cta_button_title}</a>:'':''}
+                            {this.props.node[0].hasOwnProperty('node_cta_button_title')?this.props.node[0].download_link_title !==''?<a className="button" target="_blank" href={apiUrl+this.props.node[0].download_link_url.substring(9)}>{this.props.node[0].download_link_title}</a>:'':''}
                         </div>
                         {this.props.nid ==35?<div className="medium-6 cell about-us-banner">
                                 <div class="rotation-banner">
