@@ -84,7 +84,7 @@ class ArticlePage extends React.Component{
        <section className="left-image-right-content top-100 bottom-100">
          <div className="grid-container custom-grid custom-grid-right">
            <div className="grid-x grid-padding-x pl-155">
-             <div className="medium-6 small-12 cell">
+             <div className="medium-6 small-12 cell p-right-45">
                <div className="pr-155 ">
                    <p>{ReactHtmlParser(imgPath(this.state.caseStudy.field_body))}</p>
                    {/*<ShowMore id="Article1" longText= {this.state.caseStudy.field_body}>*/}

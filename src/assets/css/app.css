@@ -262,6 +262,9 @@ p ul {
     padding: 7px 17px;
     border: 1px solid red; }
 
+strong span {
+  color: red; }
+
 /*Header Styling Starts Here*/
 .close-button {
   z-index: 9999; }
@@ -393,6 +396,11 @@ header .header-inner {
   .tab-accordion .tab-accordion-content p {
     font-size: .95rem;
     margin-right: 10px; }
+  .tab-accordion .tab-accordion-content .slick-slide .slide-img {
+    height: 358px; }
+    .tab-accordion .tab-accordion-content .slick-slide .slide-img img {
+      object-fit: cover;
+      height: 100%; }
   @media screen and (max-width: 39.9375em) {
     .tab-accordion {
       padding-bottom: 15px; }
@@ -451,9 +459,9 @@ header .header-inner {
       bottom: auto;
       background: red;
       color: #fff;
-      font-size: 20px;
+      font-size: 18px;
       font-weight: 300;
-      width: 285px;
+      width: 245px;
       left: -33px;
       height: auto;
       top: -31px;
@@ -665,11 +673,11 @@ header .header-inner {
   .img-relative-title-ru h2 {
     background: red;
     color: #fff;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 400;
     padding: 5px 15px;
     border-radius: 4px;
-    width: 285px; }
+    width: 245px; }
     @media screen and (min-width: 64em) {
       .img-relative-title-ru h2 {
         position: relative;
@@ -1562,6 +1570,12 @@ footer.footer-bottom {
     .p-right-45 {
       padding-right: 15px !important; } }
 
+.p-left-45 {
+  padding-left: 45px !important; }
+  @media screen and (max-width: 39.9375em) {
+    .p-left-45 {
+      padding-left: 15px !important; } }
+
 img.align-right {
   float: right;
   margin-left: 15px; }
@@ -1579,8 +1593,5 @@ img.align-left {
   .button.btn-full {
     width: 100%;
     border-radius: 3px; }
-strong span {
-  color: red;
-}
 
 /*# sourceMappingURL=app.css.map */
