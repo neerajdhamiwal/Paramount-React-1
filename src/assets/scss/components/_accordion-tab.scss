@@ -6,6 +6,14 @@
   }
 }
 
+.tab-img-h{
+  height: 358px;
+  img {
+      object-fit: cover;
+      height: 100%;
+  }
+}
+
 /*Tab Accordion style starts here*/
 .tab-accordion {
     padding-bottom: 50px;
