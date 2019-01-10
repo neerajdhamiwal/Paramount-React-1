@@ -36,7 +36,7 @@ constructor(props){
     }
     render(){
         return(
-          <section className="category-link left-image-right-content">
+          <section className="category-link left-image-right-content bottom-50">
         <div className="grid-container  custom-grid custom-grid-right">
           <div className="grid-x">
             <div className="medium-2 cell">
@@ -54,10 +54,10 @@ constructor(props){
                         <h3></h3>
                           <ShowMore id={`tagLink`} longText= {this.props.firstCaseStudy['field_body']} >
                           </ShowMore>
-                          {this.props.locate === 'resource'?'':<a href = {"/casestudy/article?nid="+this.props.firstCaseStudy['id']} className="button">Read more</a>}
+                          {this.props.locate === 'resource'?'':<a href = {"/casestudy/article?nid="+this.props.firstCaseStudy['id']} className="button mt-15">Read more</a>}
                       </div>
                       <div className="medium-7 cell no-padding wow slideInRight">
-                        <div className="img-relative-title-ld">
+                        <div className="img-relative-title-ld tab-img-h">
                           <img src={apiUrl+this.props.firstCaseStudy['image']} alt="" />
                           <h2 className="relative-title">{ReactHtmlParser(this.props.firstCaseStudy['title'])}</h2>
                         </div>

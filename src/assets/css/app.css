@@ -390,6 +390,12 @@ header .header-inner {
   .main-menu ul li a:hover::before {
     width: 100%; }
 
+.tab-img-h {
+  height: 358px; }
+  .tab-img-h img {
+    object-fit: cover;
+    height: 100%; }
+
 /*Tab Accordion style starts here*/
 .tab-accordion {
   padding-bottom: 50px; }
