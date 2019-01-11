@@ -71,6 +71,10 @@ p {
   width: 1px;
   height: 1px; }
 
+@media screen and (max-width: 39.9375em) {
+  .jumbotron {
+    background: none !important; } }
+
 .horizontal-scroll-wrapper {
   position: absolute;
   display: block;
@@ -78,9 +82,9 @@ p {
   left: 0;
   width: calc(250px + 1px);
   max-height: 750px;
-  margin: 0;
+  margin: 50px 0 0;
   padding-top: 1px;
-  overflow-y: auto;
+  overflow-y: hidden;
   overflow-x: hidden;
   -webkit-transform: rotate(-90deg) translateY(-250px);
   transform: rotate(-90deg) translateY(-250px);
@@ -92,7 +96,7 @@ p {
     width: 0em !important;
     height: 0em !important; }
   .horizontal-scroll-wrapper .one:last-child {
-    top: -300px; }
+    top: -710px; }
   @media screen and (max-width: 39.9375em) {
     .horizontal-scroll-wrapper {
       position: relative;
@@ -133,7 +137,7 @@ p {
   height: 500px;
   margin: 50px 0;
   position: relative;
-  top: -906px; }
+  top: -810px; }
   @media screen and (max-width: 39.9375em) {
     .squares > div {
       width: 100%;
@@ -215,6 +219,32 @@ body {
       background: #999;
       display: block; }
 
+@media (max-width: 1360px) and (min-width: 1024px) {
+  .horizontal-scroll-wrapper {
+    width: 470px;
+    max-height: 761px;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    left: -223px; }
+
+  .squares > div {
+    width: 450px;
+    top: -545px; }
+
+  .horizontal-scroll-wrapper .one:last-child {
+    top: -595px; } }
+@media (max-width: 1023px) and (min-width: 768px) {
+  .horizontal-scroll-wrapper {
+    width: 380px;
+    max-height: 850px;
+    left: -120px; }
+
+  .squares > div {
+    width: 363px;
+    top: -453px; }
+
+  .horizontal-scroll-wrapper .one:last-child {
+    top: -638px; } }
 .contact-us-page .img-relative-title-ru iframe {
   position: relative;
   width: 100%; }
@@ -491,7 +521,7 @@ header .header-inner {
       bottom: auto;
       background: red;
       color: #fff;
-      font-size: 20px;
+      font-size: 18px;
       font-weight: 300;
       width: 170px;
       left: -10px;
@@ -700,7 +730,7 @@ header .header-inner {
         bottom: -51px;
         background: red;
         color: #fff;
-        font-size: 22px;
+        font-size: 18px;
         font-weight: 400;
         right: -60px;
         height: auto;
@@ -716,7 +746,7 @@ header .header-inner {
         bottom: -50px;
         background: red;
         color: #fff;
-        font-size: 22px;
+        font-size: 18px;
         font-weight: 400;
         right: -12px;
         height: auto;
