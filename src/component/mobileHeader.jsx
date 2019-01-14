@@ -10,23 +10,22 @@ class MobHeader extends React.Component{
                 </button>
                 <nav className="main-menu show-for-small">
                                 <ul className="menu align-start dropdown" data-dropdown-menu id="menu-tabs">
-                                    <li><a href="/about-paramount">About Us</a>
+                                    <li><a>About Us</a>
                                         <ul className="menu dropdown-menu-an">
-                                            {/*<li><a href="/team?nid=42">Team</a></li>*/}
-                                            {/*<li><a href="#">Leadership</a></li>*/}
-                                            <li><a href="/about-paramount/community">Community</a></li>
-                                            <li><a href="/about-paramount/awards-and-certifications">Awards & Certifications</a></li>
+                                        <li><a href="/about-paramount">Our Story</a></li>
+                                        <li><a href="/about-paramount/community">Community</a></li>
+                                        <li><a href="/about-paramount/awards-and-certifications">Awards & Certifications</a></li>
                                         </ul>
                                     </li>
-                                    <li><a >Services</a>
+                                    <li><a>Services</a>
                                       <ul className="menu dropdown-menu-an">
-                                        <li><a href="/services/paramount-edge"> Paramount Edge</a></li>
-                                        <li><a href="/services/paramount-tech-exec">Paramount TechExec</a></li>
+                                      <li><a href="/services/paramount-edge">TechEdge</a></li>
+                                      <li><a href="/services/paramount-tech-exec">TechExec</a></li>
                                         <li><a>Paramount Techadvisory</a>
                                             <ul className="menu dropdown-menu-an">
-                                            <li><a href="/services/paramounttechadvisory/cms-and-app-development">Content Management Systems & Mobile App Development</a></li>
-                                            <li><a href="/services/paramounttechadvisory/application-maintenance-development-integration">Application Maintenance, Development & Integration</a></li>
+                                            <li><a href="/services/paramounttechadvisory/application-maintenance-development-integration">Application, Development & Integration</a></li>
                                             <li><a href="/services/paramounttechadvisory/infrastructuremanagement-and-monitoring">Infrastructure Management & Monitoring</a></li>
+                                            <li><a href="/services/paramounttechadvisory/cms-and-app-development">Content Management Systems & Mobile App Development</a></li>
                                         </ul>
                                         </li>
                                       </ul>

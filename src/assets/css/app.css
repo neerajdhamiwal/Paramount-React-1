@@ -18,22 +18,31 @@ a {
     outline: 0;
     background: transparent; }
 
-.custom-grid {
-  margin: 0 auto;
-  max-width: 1920px; }
-  @media (max-width: 1480px) {
-    .custom-grid {
-      max-width: 1300px; } }
-  @media screen and (min-width: 64em) {
-    .custom-grid.custom-grid-right {
-      margin-right: 0;
-      margin-left: auto;
-      padding-right: 0; } }
-  @media screen and (min-width: 64em) {
-    .custom-grid.custom-grid-left {
-      margin-right: auto;
-      margin-left: 0;
-      padding-left: 0; } }
+@media (max-width: 1480px) {
+  .custom-grid {
+    max-width: 1300px; } }
+@media screen and (min-width: 64em) {
+  .custom-grid.custom-grid-right {
+    margin-right: 0;
+    margin-left: auto;
+    padding-right: 0; } }
+@media (min-width: 1481px) {
+  .custom-grid.custom-grid-right {
+    margin-right: auto;
+    margin-left: auto; } }
+@media screen and (min-width: 64em) {
+  .custom-grid.custom-grid-left {
+    margin-right: auto;
+    margin-left: 0;
+    padding-left: 0; } }
+@media (min-width: 1481px) {
+  .custom-grid.custom-grid-left {
+    margin-right: auto;
+    margin-left: auto; } }
+@media (min-width: 1481px) {
+  .custom-grid {
+    margin: 0 auto;
+    max-width: 1600px; } }
 
 p {
   font-size: 1.1rem; }
@@ -62,6 +71,10 @@ p {
   width: 1px;
   height: 1px; }
 
+@media screen and (max-width: 39.9375em) {
+  .jumbotron {
+    background: none !important; } }
+
 .horizontal-scroll-wrapper {
   position: absolute;
   display: block;
@@ -69,9 +82,9 @@ p {
   left: 0;
   width: calc(250px + 1px);
   max-height: 750px;
-  margin: 0;
+  margin: 50px 0 0;
   padding-top: 1px;
-  overflow-y: auto;
+  overflow-y: hidden;
   overflow-x: hidden;
   -webkit-transform: rotate(-90deg) translateY(-250px);
   transform: rotate(-90deg) translateY(-250px);
@@ -83,7 +96,7 @@ p {
     width: 0em !important;
     height: 0em !important; }
   .horizontal-scroll-wrapper .one:last-child {
-    top: -300px; }
+    top: -710px; }
   @media screen and (max-width: 39.9375em) {
     .horizontal-scroll-wrapper {
       position: relative;
@@ -124,7 +137,7 @@ p {
   height: 500px;
   margin: 50px 0;
   position: relative;
-  top: -906px; }
+  top: -810px; }
   @media screen and (max-width: 39.9375em) {
     .squares > div {
       width: 100%;
@@ -206,6 +219,32 @@ body {
       background: #999;
       display: block; }
 
+@media (max-width: 1360px) and (min-width: 1024px) {
+  .horizontal-scroll-wrapper {
+    width: 470px;
+    max-height: 761px;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    left: -223px; }
+
+  .squares > div {
+    width: 450px;
+    top: -545px; }
+
+  .horizontal-scroll-wrapper .one:last-child {
+    top: -595px; } }
+@media (max-width: 1023px) and (min-width: 768px) {
+  .horizontal-scroll-wrapper {
+    width: 380px;
+    max-height: 850px;
+    left: -120px; }
+
+  .squares > div {
+    width: 363px;
+    top: -453px; }
+
+  .horizontal-scroll-wrapper .one:last-child {
+    top: -638px; } }
 .contact-us-page .img-relative-title-ru iframe {
   position: relative;
   width: 100%; }
@@ -261,6 +300,16 @@ p ul {
     color: #fff;
     padding: 7px 17px;
     border: 1px solid red; }
+
+strong span {
+  color: red; }
+
+.slick-slide .logo-icon {
+  display: inline-block;
+  vertical-align: middle; }
+  .slick-slide .logo-icon img {
+    display: inline-block;
+    vertical-align: middle; }
 
 /*Header Styling Starts Here*/
 .close-button {
@@ -387,12 +436,23 @@ header .header-inner {
   .main-menu ul li a:hover::before {
     width: 100%; }
 
+.tab-img-h {
+  height: 358px; }
+  .tab-img-h img {
+    object-fit: cover;
+    height: 100%; }
+
 /*Tab Accordion style starts here*/
 .tab-accordion {
   padding-bottom: 50px; }
   .tab-accordion .tab-accordion-content p {
     font-size: .95rem;
     margin-right: 10px; }
+  .tab-accordion .tab-accordion-content .slick-slide .slide-img {
+    height: 358px; }
+    .tab-accordion .tab-accordion-content .slick-slide .slide-img img {
+      object-fit: cover;
+      height: 100%; }
   @media screen and (max-width: 39.9375em) {
     .tab-accordion {
       padding-bottom: 15px; }
@@ -451,9 +511,9 @@ header .header-inner {
       bottom: auto;
       background: red;
       color: #fff;
-      font-size: 20px;
+      font-size: 18px;
       font-weight: 300;
-      width: 285px;
+      width: 245px;
       left: -33px;
       height: auto;
       top: -31px;
@@ -468,7 +528,7 @@ header .header-inner {
       bottom: auto;
       background: red;
       color: #fff;
-      font-size: 20px;
+      font-size: 18px;
       font-weight: 300;
       width: 170px;
       left: -10px;
@@ -665,11 +725,11 @@ header .header-inner {
   .img-relative-title-ru h2 {
     background: red;
     color: #fff;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 400;
     padding: 5px 15px;
     border-radius: 4px;
-    width: 285px; }
+    width: 245px; }
     @media screen and (min-width: 64em) {
       .img-relative-title-ru h2 {
         position: relative;
@@ -677,7 +737,7 @@ header .header-inner {
         bottom: -51px;
         background: red;
         color: #fff;
-        font-size: 22px;
+        font-size: 18px;
         font-weight: 400;
         right: -60px;
         height: auto;
@@ -693,7 +753,7 @@ header .header-inner {
         bottom: -50px;
         background: red;
         color: #fff;
-        font-size: 22px;
+        font-size: 18px;
         font-weight: 400;
         right: -12px;
         height: auto;
@@ -1214,26 +1274,26 @@ footer.footer-bottom {
       transition: all .2s linear;
       border-bottom: 5px solid #ccc;
       border-left: 5px solid #ccc; }
-      .four-column-outer .four-col-right:hover a {
+      .four-column-outer .four-col-right:hover h3 {
         -webkit-transition: all .2s linear;
         -moz-transition: all .2s linear;
         -o-transition: all .2s linear;
         transition: all .2s linear;
         color: #ff0000; }
-        .four-column-outer .four-col-right:hover a:after {
+        .four-column-outer .four-col-right:hover h3:after {
           -webkit-transition: all .2s linear;
           -moz-transition: all .2s linear;
           -o-transition: all .2s linear;
           transition: all .2s linear;
           background: #ff0000; }
-  .four-column-outer .four-column-content a {
+  .four-column-outer .four-column-content h3 {
     font-size: 20px;
     position: relative;
     font-weight: 600;
     margin-bottom: 15px;
     display: block;
     padding-bottom: 15px; }
-    .four-column-outer .four-column-content a:after {
+    .four-column-outer .four-column-content h3:after {
       content: "";
       position: absolute;
       bottom: -4px;
@@ -1241,7 +1301,7 @@ footer.footer-bottom {
       height: 6px;
       background: #999;
       display: block; }
-    .four-column-outer .four-column-content a:hover:after {
+    .four-column-outer .four-column-content h3:hover:after {
       background: #ff0000; }
   .four-column-outer .four-column-content p {
     color: rgba(0, 0, 0, 0.6);
@@ -1562,6 +1622,12 @@ footer.footer-bottom {
     .p-right-45 {
       padding-right: 15px !important; } }
 
+.p-left-45 {
+  padding-left: 45px !important; }
+  @media screen and (max-width: 39.9375em) {
+    .p-left-45 {
+      padding-left: 15px !important; } }
+
 img.align-right {
   float: right;
   margin-left: 15px; }
@@ -1579,8 +1645,5 @@ img.align-left {
   .button.btn-full {
     width: 100%;
     border-radius: 3px; }
-strong span {
-  color: red;
-}
 
 /*# sourceMappingURL=app.css.map */

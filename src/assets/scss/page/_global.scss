@@ -28,8 +28,6 @@ a {
 }
 
 .custom-grid {
-		margin: 0 auto;
-		max-width: 1920px;
 	@media(max-width: 1480px){
 		max-width: 1300px;
 	}
@@ -39,6 +37,10 @@ a {
 	  margin-left:auto;
 	  padding-right: 0;
 	}
+	@media(min-width: 1481px){
+		margin-right: auto;
+		margin-left:auto;
+	}
 	}
 	&.custom-grid-left {
 		@include mq(large-screen) {
@@ -46,6 +48,14 @@ a {
 	  margin-left:0;
 	  padding-left: 0;
 	}
+	@media(min-width: 1481px){
+		margin-right: auto;
+		margin-left:auto;
+	}
+	}
+	@media(min-width: 1481px){
+		margin: 0 auto;
+		max-width: 1600px;
 	}
 }
 
@@ -73,7 +83,6 @@ p{
     content: '';
 }
 
-
 // Horizontal scroll
 ::-webkit-scrollbar {
 	width: 1px;
@@ -84,6 +93,11 @@ p{
 	height: 1px;
   }
 
+.jumbotron{
+	@include mq(small-screen) {
+		background: none!important;
+	}
+}
 
   .horizontal-scroll-wrapper {
 	position: absolute;
@@ -92,9 +106,9 @@ p{
 	left: 0;
 	width: calc(250px + 1px);
 	max-height: 750px;
-	margin: 0;
+	margin: 50px 0 0;
 	padding-top: 1px;
-	overflow-y: auto;
+	overflow-y: hidden;
 	overflow-x: hidden;
 	-webkit-transform: rotate(-90deg) translateY(-250px);
 			transform: rotate(-90deg) translateY(-250px);
@@ -107,7 +121,7 @@ p{
 		height: 0em!important;
 		}
 		.one:last-child{
-			top: -300px;
+			top: -710px;
 		}
 		@include mq(small-screen) {
 			.one:last-child{
@@ -151,7 +165,7 @@ p{
 	  height: 500px;
 	  margin: 50px 0;
 	  position: relative;
-	  top: -906px;
+	  top: -810px;
 		@include mq(small-screen) {
 			width: 100%;
 			height: auto;
@@ -252,6 +266,42 @@ body {
   }
 }
 
+@media(max-width: 1360px) and (min-width: 1024px){
+	.horizontal-scroll-wrapper {
+    width: 470px;
+    max-height: 761px;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    left: -223px;
+}
+
+.squares>div {
+    width: 450px;
+    top: -545px;
+}
+
+.horizontal-scroll-wrapper .one:last-child {
+    top: -595px;
+}
+}
+
+@media(max-width: 1023px) and (min-width: 768px){
+	.horizontal-scroll-wrapper {
+	    width: 380px;
+	    max-height: 850px;
+	    left: -120px;
+	}
+
+	.squares>div {
+	    width: 363px;
+	    top: -453px;
+	}
+
+	.horizontal-scroll-wrapper .one:last-child {
+	    top: -638px;
+	}
+}
+
 .contact-us-page{
 	.img-relative-title-ru{
 		iframe{
@@ -328,5 +378,16 @@ p{
 strong{
 	span{
 		color: red;
+	}
+}
+
+.slick-slide{
+	.logo-icon{
+		display: inline-block;
+		vertical-align: middle;
+		img{
+			display: inline-block;
+			vertical-align: middle;
+		}
 	}
 }

@@ -198,6 +198,13 @@
 	}
 }
 
+.p-left-45{
+	padding-left: 45px!important;
+	@include mq(small-screen) {
+		padding-left: 15px!important;
+	}
+}
+
 img.align-right{
 	float: right;
 	margin-left:15px;
