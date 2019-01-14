@@ -11,6 +11,7 @@ import WOW from 'wowjs';
 import Loader from 'react-loader-spinner'; // eslint-disable-line no-unused-vars
 import $ from 'jquery';
 import DocumentMeta from 'react-document-meta';
+import JobComponent from  '../component/Jobcomponent.jsx';
 let nid = '';
 
 class About extends React.Component{
@@ -34,12 +35,6 @@ class About extends React.Component{
     }
 
     animation(){
-        new WOW.WOW(
-            {
-                animateClass: 'animated',
-                offset:       100,
-            }
-        ).init();
             let scene = document.getElementById('scene');
             let parallaxInstance = new Parallax(scene);
         $('#jobList').on('click', 'li a', function() {
@@ -75,15 +70,14 @@ class About extends React.Component{
             .catch((err) => {
                 //console.log(err);
             })
-        this.getAllJobs();
+        this.getAllJobs('not');
     }
-    getAllJobs(){
+    getAllJobs(flag){
         requestService.getService(`/career-all-data`)
             .then((response) => {
                 let ids = ['job_id','nid'];
-                let data = jsonMiddleware(response.data, ids)
-                this.setState({careerData: data},()=>{
-                    $(document).foundation();
+                let data = jsonMiddleware(response.data, ids);
+                this.setState({careerData: data},()=> {
                 });
             })
             .catch((err) => {
@@ -95,10 +89,10 @@ class About extends React.Component{
         requestService.getService(`/career-type-data/${id}`)
             .then((response) => {
                 let ids = ['job_id','nid'];
-                let data = jsonMiddleware(response.data, ids)
+                let data = jsonMiddleware(response.data, ids);
                 //this.setState({loading: false});
                 this.setState({careerData: data},()=> {
-                    //$(document).foundation();
+                    // $(document).foundation();
                 });
             })
             .catch((err) => {
@@ -114,9 +108,8 @@ class About extends React.Component{
         }
     }
     change(e){
-        //this.setState({loading: true});
         if(e.target.id=='allJob'){
-            this.getAllJobs()
+            this.getAllJobs('NotReinitialize')
         }
         else{
             this.requestJob(e.target.id);
@@ -167,64 +160,13 @@ class About extends React.Component{
                                     </ul>
                                 </div>
                                 <div className="medium-10 cell">
-                                    {/*<div className="grid-x grid-padding-x align-justify align-middle">*/}
-                                        {/*<div className="cell small-3 open-position">Open Position ></div>*/}
-                                        {/*<div className="cell small-3">*/}
-                                            {/*<label className="job-select">*/}
-                                                {/*<select>*/}
-                                                    {/*<option value="husker">Job Location</option>*/}
-                                                    {/*<option value="starbuck">Starbuck</option>*/}
-                                                    {/*<option value="hotdog">Hot Dog</option>*/}
-                                                    {/*<option value="apollo">Apollo</option>*/}
-                                                {/*</select>*/}
-                                            {/*</label>*/}
-                                        {/*</div>*/}
-                                    {/*</div>*/}
                                     {this.state.loading?
                                         <Loader
                                             type="ThreeDots"
                                             color="#fd302a"
                                             height="100"
                                             width="100"
-                                        />:
-                                        <ul className="accordion" data-accordion data-allow-all-closed="true" id="job-tabs">
-                                            {this.state.careerData.hasOwnProperty('nid')?
-                                                this.state.careerData['nid'][0].map((obj, i)=>{
-                                                return <li className="accordion-item" data-accordion-item="" >
-                                                    {/*<!-- Accordion tab title -->*/}
-                                                    <a className="accordion-title" aria-controls={`tab${obj.nid}`} role="tab" id={`job${obj.nid}`} aria-expanded="false" aria-selected="false">
-                                                        <div className="job-title">{obj.node_title}</div>
-                                                        <span className="location-view">
-                                                            <div className="view-job-btn">View Job</div>
-                                                        </span>
-                                                    </a>
-                                                    {/*<!-- Accordion tab content: it would start in the open state due to using the `is-active` state className. -->*/}
-                                                    <div className="accordion-content" data-tab-content="" role="tabpanel" aria-labelledby={`job${obj.nid}`} aria-hidden="true" id={`tab${obj.nid}`}>
-                                                        <div className="grid-x align-justify">
-                                                            <div className="cell medium-8" id="coltab">
-                                                                <div className="job-deties-req">
-                                                                            <a> <div className={this.state.duty?'activeTab job-duties':'job-duties'} onClick={this.handleChange}>Duties</div></a>
-                                                                            <a> <div className={!(this.state.duty)?'activeTab job-req':'job-req'} role="tab"  onClick={this.handleChange}>Requirement</div></a>
-                                                                </div>
-                                                                {this.state.duty?<p>
-                                                                        {ReactHtmlParser(obj.node_duties)}
-                                                                    </p>: <p>
-                                                                        {ReactHtmlParser(obj.node_requirements)}
-                                                                    </p>}
-                                                            </div>
-                                                            <div className="cell medium-4">
-                                                                <div className="location-block">
-                                                                    <h6>Job Sites</h6>
-                                                                    <p>{ReactHtmlParser(obj.node_job_site)}</p>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <p className="career-info-btn"><a className="button" href="mailto:careers@paramountsoft.net">Apply Now</a></p>
-                                                    </div>
-                                                </li>
-                                                }):''
-                                            }
-                                        </ul>}
+                                        />:this.state.careerData.hasOwnProperty('nid')?<JobComponent careerData={this.state.careerData} duty={this.state.duty}/>:''}
                                 </div>
                             </div>
                         </div>

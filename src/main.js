@@ -2,6 +2,7 @@
 import React from 'react';
 import Headercomp from './component/Header.jsx';
 import MobileHeader from './component/mobileHeader.jsx';
+import FooterRowSlider from './component/FooterRowSlider.jsx';
 import Footer from './component/Footer.jsx';
 import $ from 'jquery';
 //import 'foundation/js/vendor/zepto';

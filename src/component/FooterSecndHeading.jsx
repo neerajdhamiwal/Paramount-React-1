@@ -34,7 +34,7 @@ class FooterHeading extends React.Component{
                                                     if(i==1) {
                                                         return <div className="medium-5 cell">
                                                             <div className="four-column-content four-col-left four-col-right">
-                                                                <a href="#">{ReactHtmlParser(heading.secondary_sub_block_heading)}</a>
+                                                                <h3 href="#">{ReactHtmlParser(heading.secondary_sub_block_heading)}</h3>
                                                                 <p>{ReactHtmlParser(imgPath(heading.secondary_sub_block_description))}</p>
                                                             </div>
                                                         </div>
@@ -42,7 +42,7 @@ class FooterHeading extends React.Component{
                                                     else{
                                                         return <div className="medium-5 cell">
                                                             <div className="four-column-content four-col-left">
-                                                                <a href="#">{ReactHtmlParser(heading.secondary_sub_block_heading)}</a>
+                                                                <h3 href="#">{ReactHtmlParser(heading.secondary_sub_block_heading)}</h3>
                                                                 <p>{ReactHtmlParser(imgPath(heading.secondary_sub_block_description))}</p>
                                                             </div>
                                                         </div>
