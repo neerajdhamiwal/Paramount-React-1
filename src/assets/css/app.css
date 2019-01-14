@@ -304,6 +304,13 @@ p ul {
 strong span {
   color: red; }
 
+.slick-slide .logo-icon {
+  display: inline-block;
+  vertical-align: middle; }
+  .slick-slide .logo-icon img {
+    display: inline-block;
+    vertical-align: middle; }
+
 /*Header Styling Starts Here*/
 .close-button {
   z-index: 9999; }
@@ -1267,26 +1274,26 @@ footer.footer-bottom {
       transition: all .2s linear;
       border-bottom: 5px solid #ccc;
       border-left: 5px solid #ccc; }
-      .four-column-outer .four-col-right:hover a {
+      .four-column-outer .four-col-right:hover h3 {
         -webkit-transition: all .2s linear;
         -moz-transition: all .2s linear;
         -o-transition: all .2s linear;
         transition: all .2s linear;
         color: #ff0000; }
-        .four-column-outer .four-col-right:hover a:after {
+        .four-column-outer .four-col-right:hover h3:after {
           -webkit-transition: all .2s linear;
           -moz-transition: all .2s linear;
           -o-transition: all .2s linear;
           transition: all .2s linear;
           background: #ff0000; }
-  .four-column-outer .four-column-content a {
+  .four-column-outer .four-column-content h3 {
     font-size: 20px;
     position: relative;
     font-weight: 600;
     margin-bottom: 15px;
     display: block;
     padding-bottom: 15px; }
-    .four-column-outer .four-column-content a:after {
+    .four-column-outer .four-column-content h3:after {
       content: "";
       position: absolute;
       bottom: -4px;
@@ -1294,7 +1301,7 @@ footer.footer-bottom {
       height: 6px;
       background: #999;
       display: block; }
-    .four-column-outer .four-column-content a:hover:after {
+    .four-column-outer .four-column-content h3:hover:after {
       background: #ff0000; }
   .four-column-outer .four-column-content p {
     color: rgba(0, 0, 0, 0.6);
