@@ -56,7 +56,7 @@
       @include transition () ;
       border-bottom: 5px solid #ccc;
       border-left: 5px solid #ccc;
-        a{
+        h3{
           @include transition () ;
           color: #ff0000;
           &:after{
@@ -68,7 +68,7 @@
   }
 
   .four-column-content{
-    a{
+    h3{
       font-size: 20px;
       position: relative;
       font-weight: 600;
