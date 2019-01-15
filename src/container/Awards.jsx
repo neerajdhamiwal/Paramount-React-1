@@ -52,7 +52,7 @@ class About extends React.Component{
         getMeta(urlString[this.props.location.pathname], this.getMeValue);
         requestService.getService(`/reinforcement-data/${urlString[this.props.location.pathname]}`)
             .then((response) => {
-                let ids = ['primary_image_id','secondary_image_id', 'award_slider_id', 'certificate_slider_id'];
+                let ids = ['primary_image_id','secondary_image_id', 'award_slider_id', 'certificate_slider_id', 'client_slider_id','partner_slider_id'];
                 let data = jsonMiddleware(response.data, ids)
                 // this.setState({});
                 this.setState({awardsData: data,loading: false},()=> {

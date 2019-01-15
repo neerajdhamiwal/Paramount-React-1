@@ -39,13 +39,13 @@ class CaseStudylist extends React.Component {
                           <div class="medium-7 cell no-padding wow slideInRight">
                             <div class="img-relative-title-ld">
                               <div class="grid">
-                                <a class="grid__item">
+                                <div class="grid__item">
                                   <div class="box">
                                     <div class="box__shadow"></div>
                                     <img class="box__img" src={apiUrl + caseStudy.image} alt="Some image"/>
                                     <h2>{ReactHtmlParser(caseStudy.title)}</h2>
                                   </div>
-                                </a>
+                                </div>
                               </div>
                             </div>
                           </div>
