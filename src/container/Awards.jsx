@@ -5,8 +5,10 @@ import award1 from '../assets/img/awards-02.png';
 import award2 from '../assets/img/awards-03.png';
 import award3 from '../assets/img/awards-04.png';
 import award4 from '../assets/img/awards-05.png';
-import AwardSlider from '../component/AwardsBottomSlider.jsx'
-import CertSlider from '../component/CertificationBottomSlider.jsx'
+import AwardSlider from '../component/AwardsBottomSlider.jsx';
+import CertSlider from '../component/CertificationBottomSlider.jsx';
+import FooterRowSlider from '../component/FooterRowSlider.jsx';
+import PartnerSlider from '../component/PartnerSlider.jsx';
 import requestService from '../services/request.js';
 import {apiUrl, jsonMiddleware, urlString, imgPath, getMeta, COUNT} from '../services/common.js';
 import ShowMore from '../component/ShowMore.jsx';
