@@ -204,6 +204,8 @@ class About extends React.Component{
                 :''}
                 {this.state.awardsData.hasOwnProperty('award_slider_id')?this.state.awardsData['award_slider_id'][0][0].award_slider_id? <AwardSlider/>: '':''}
                 {this.state.awardsData.hasOwnProperty('certificate_slider_id')? this.state.awardsData['certificate_slider_id'][0][0].certificate_slider_id ? <CertSlider/>: '':''}
+                    {this.state.awardsData.hasOwnProperty('partner_slider_id')? this.state.awardsData['partner_slider_id'][0][0].partner_slider_id ? <PartnerSlider/>: '':''}
+                    {this.state.awardsData.hasOwnProperty('client_slider_id')? this.state.awardsData['client_slider_id'][0][0].client_slider_id ? <FooterRowSlider/>: '':''}
                 </DocumentMeta>
         )
     }
