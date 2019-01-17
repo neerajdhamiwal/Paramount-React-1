@@ -26,6 +26,7 @@ class Header extends React.Component{
                                     <li><a className="cursorDefault">About Us</a>
                                         <ul className="menu dropdown-menu-an">
                                             <li><a href="/about-paramount">Our Story</a></li>
+                                            <li><a href="/team">Team</a></li>
                                             <li><a href="/about-paramount/community">Community</a></li>
                                             <li><a href="/about-paramount/awards-and-certifications">Awards & Certifications</a></li>
                                         </ul>

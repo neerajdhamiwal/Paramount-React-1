@@ -4,6 +4,8 @@ import Parallax from 'parallax-js';
 import Map from '../component/Map.jsx';
 import AwardSlider from '../component/AwardsBottomSlider.jsx';
 import CertSlider from '../component/CertificationBottomSlider.jsx';
+import PartnerSlider from '../component/PartnerSlider.jsx';
+import FooterRowSlider from '../component/FooterRowSlider.jsx';
 import {customDivideData, apiUrl, jsonMiddleware, urlString, getMeta, imgPath} from '../services/common';
 import requestService from '../services/request';
 import Loader from 'react-loader-spinner'; // eslint-disable-line no-unused-vars
@@ -123,6 +125,9 @@ class Team extends React.Component{
                         {this.state.teamData.hasOwnProperty('map_id')? <Map node = {this.state.teamData['map_id'][0][0]}/>: ''}
                         {this.state.teamData.hasOwnProperty('award_slider_id')?this.state.teamData['award_slider_id'][0][0].award_slider_id? <AwardSlider/>: '':''}
                         {this.state.teamData.hasOwnProperty('certificate_slider_id')? this.state.teamData['certificate_slider_id'][0][0].certificate_slider_id ? <CertSlider/>: '':''}
+                        {this.state.teamData.hasOwnProperty('partner_slider_id')? this.state.teamData['partner_slider_id'][0][0].partner_slider_id ? <PartnerSlider/>: '':''}
+                        {this.state.teamData.hasOwnProperty('client_slider_id')? this.state.teamData['client_slider_id'][0][0].client_slider_id ? <FooterRowSlider/>: '':''}
+
                     </div>}
             </DocumentMeta>
         )

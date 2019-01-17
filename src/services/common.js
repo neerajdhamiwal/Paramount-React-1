@@ -70,7 +70,8 @@ export const urlString={
     "/expertise": 38,
     "/expertise/technologies": 45,
     "/expertise/government-solutions": 52,
-    "/contact": 51
+    "/contact": 51,
+    "/team": 42
 }
 export const Auth = {
     username : 'sahil.s',
