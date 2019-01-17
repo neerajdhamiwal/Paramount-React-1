@@ -1245,13 +1245,13 @@ footer.footer-bottom {
       transition: all .2s linear;
       border-bottom: 5px solid #ccc;
       border-right: 5px solid #ccc; }
-      .four-column-outer .four-col-left:hover a {
+      .four-column-outer .four-col-left:hover h3 {
         color: #ff0000;
         -webkit-transition: all .2s linear;
         -moz-transition: all .2s linear;
         -o-transition: all .2s linear;
         transition: all .2s linear; }
-        .four-column-outer .four-col-left:hover a:after {
+        .four-column-outer .four-col-left:hover h3:after {
           -webkit-transition: all .2s linear;
           -moz-transition: all .2s linear;
           -o-transition: all .2s linear;
