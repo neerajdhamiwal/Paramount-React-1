@@ -114,7 +114,7 @@ class CaseStudy extends React.Component{
                     width="100"
                 />
             </center> :
-            <DocumentMeta {...this.state.meta}>
+            <DocumentMeta {...this.state.meta}><div className="blogList">
                 {Object.keys(this.ff).length>0? <FeaturedContent activeCaseStudy={this.state.featuredActive}/>:''}
                 {this.props.locate === 'resource'?'':<TagLinks firstCaseStudy = {this.state.activeCaseStudy[0]} caseStudyList = {this.state.caseStudyList} getTermInfo={this.getTermInfo}/>}
              <div className=" bottom-100 clearfix"></div>
@@ -133,7 +133,10 @@ class CaseStudy extends React.Component{
                                    activeClassName={"active"} />
             </div>
         }
-                <GridList/></DocumentMeta>
+                <GridList/>
+                </div>
+                </DocumentMeta>
+
     )
   }
 }

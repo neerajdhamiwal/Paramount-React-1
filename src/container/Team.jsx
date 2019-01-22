@@ -101,9 +101,9 @@ class Team extends React.Component{
                             </div>
                        </section>:''}</div>:''}
 
-                        {this.state.teamData.hasOwnProperty('team_member_id') ? <div className="grid-container">
+                        {this.state.teamData.hasOwnProperty('team_member_id') ? <div className="grid-container pt-50 ">
                                 {customDivideData(this.state.teamData['team_member_id'][0], 3).map((subArr) => {
-                                    return <div className="grid-x align-center block-latest-reads">
+                                    return <div className="grid-x align-center block-latest-reads team-page">
                                         {subArr.map((obj) => {
                                             return    <div className="medium-4 cell img-block">
                                                 <div className="img">

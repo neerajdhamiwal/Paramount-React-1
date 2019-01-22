@@ -27,7 +27,7 @@ class CaseStudylist extends React.Component {
             {this.props.activeCaseStudyData.map((caseStudy, i) => {
                 if(i !== 0){
                   if(i%2 ==0){
-                      return <div class="grid-container custom-grid custom-grid-right">
+                      return <div class="grid-container custom-grid custom-grid-right ">
                         <div class="grid-x grid-padding-x height-750 align-middle">
                           <div class="medium-5 cell">
                               {/*<h2 class="relative-title">Our Services</h2>*/}
