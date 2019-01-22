@@ -34,7 +34,7 @@ class CaseStudylist extends React.Component {
                               {/*<h3 class="heading-content">{ReactHtmlParser(this.props.data.image_description_subheading)}</h3>*/}
                             <ShowMore id={`caseListOdd${i}`} longText= {caseStudy.field_body}>
                             </ShowMore>
-                            <a href = {"/casestudy/article?nid="+caseStudy.id} className="button">Read more</a>
+                            <a href = {"/casestudy/article?nid="+caseStudy.id} className="button mt-15">Read more</a>
                           </div>
                           <div class="medium-7 cell no-padding wow slideInRight">
                             <div class="img-relative-title-ld">
@@ -67,7 +67,7 @@ class CaseStudylist extends React.Component {
                         <h3></h3>
                         <ShowMore id={`caseList${i}`} longText= {caseStudy.field_body}>
                         </ShowMore>
-                        <a href = {"/casestudy/article?nid="+caseStudy.id} className="button">Read more</a>
+                        <a href = {"/casestudy/article?nid="+caseStudy.id} className="button mt-15">Read more</a>
                       </div>
                     </div>
                   </div>

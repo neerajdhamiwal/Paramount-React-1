@@ -2,6 +2,9 @@
 	position: relative;
   margin-bottom: 2em;
 	height: 450px;
+	@include mq(small-screen) {
+		height: auto;
+	}
 	&:hover{
 		img{
 			box-shadow: 5px 5px 0px rgba(0,0,0,.2);
@@ -66,6 +69,7 @@
 		padding-bottom: 150px;
 		@include mq(small-screen) {
 			 padding-top: 15px;
+			 padding-bottom: auto;
 		}
   h3 {
     @include tab-title(18);
