@@ -107,6 +107,23 @@
 
 .img-relative-title-ld {
 	position: relative;
+  height: 450px;
+  border-radius: 4px;
+  .box{
+    height: 450px;
+    border-radius: 4px;
+    &:hover{
+      img{
+        box-shadow: -5px 5px 0px rgba(0,0,0,.2);
+        @include transition ();
+      }
+    }
+    img{
+      height: 100%;
+      object-fit: cover;
+      border-radius: 4px;
+    }
+  }
 	h2 {
 		@include mq(large-screen) {
       position: relative;
@@ -146,7 +163,10 @@
 	img {
 		position: relative;
 		width: 100%;
+    border-radius: 4px;
     @include transition ();
     z-index: 1;
+    height: 100%;
+    object-fit: cover;
 	}
 }
