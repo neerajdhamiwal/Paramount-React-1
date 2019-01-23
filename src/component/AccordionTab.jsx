@@ -2,7 +2,6 @@ import React from 'react';
 import ImgSlider from './ImgSlider.jsx';
 import $ from 'jquery';
 import ReactHtmlParser from 'react-html-parser';
-import {imgPath, COUNT} from '../services/common';
 import ShowMore from './ShowMore.jsx';
 
 class AccordionaTab extends React.Component{
@@ -11,10 +10,6 @@ class AccordionaTab extends React.Component{
         this.state = {
             update: true
         }
-        this.clickHandler = this.clickHandler.bind(this)
-    }
-    active(e){
-        //console.log(e)
     }
     componentDidMount(){
         $("#service-tabs li a").on('click', function(e) {
@@ -32,9 +27,6 @@ class AccordionaTab extends React.Component{
             $(this).addClass('activeTab');
         });
     }
-    clickHandler(){
-
-    }
 
     render(){
         return(
@@ -44,21 +36,22 @@ class AccordionaTab extends React.Component{
                         <div className="medium-2 cell  wow fadeInUp">
                             <ul className="accordion" id="service-tabs">
                                 {this.props.sliderData.map((service, index) => {
-                                        return <li className={`${index==0 ?'tabs-title activeTab':'tabs-title'}`} onClick={() => this.setState({update: `showMore${index}`})}><a data-page = {`panel${index}`} id = {index}>{ReactHtmlParser(service.image_slider_title)}</a></li>
+                                        return <li key = {index} className={`${index===0 ?'tabs-title activeTab':'tabs-title'}`} onClick={() => this.setState({update: `showMore${index}`})}><a data-page = {`panel${index}`} id = {index}>{ReactHtmlParser(service.image_slider_title)}</a></li> //eslint-disable-line
                                 })}
                             </ul>
                         </div>
                         <div className="medium-10 cell  wow fadeInUp" id="pages">
                             <div className="tabs-content">
                                 {this.props.sliderData.map((service, index) => {
-                                        return <div className={index === 0 ? "page" : "page hide"}
+                                        return <div  key ={index} className={index === 0 ? "page" : "page hide"}
                                                     id={'panel' + index} data-page={'panel' + index}>
                                             <div className="grid-x grid-padding-x tab-accordion-content">
                                                 <div className="medium-5 cell p-right-45">
                                                     <div>
                                                         <ShowMore id={`showMore${index}`} longText= {service.image_slider_description} update={this.state.update}>
                                                         </ShowMore>
-                                                    {service.image_slider_cta_button_title !==''? <a href={service.image_slider_cta_button_url.substring(9)} className="button mt-15 white-btn">{service.image_slider_cta_button_title.replace(/\&amp;/g,'&')}</a>:''}
+                                                    {service.image_slider_cta_button_title !==''? <a href={service.image_slider_cta_button_url.substring(9)} className="button mt-15 white-btn">{service.image_slider_cta_button_title.replace(/\&amp;/g,'&')}</a>:'' //eslint-disable-line
+                                                         }
                                                 </div>
                                                 </div>
                                                 <div className="medium-7 cell no-padding wow slideInRight" id={`showMore${index}`}>

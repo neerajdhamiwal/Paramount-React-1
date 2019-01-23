@@ -5,7 +5,6 @@ import requestService from '../services/request.js';
 import $ from 'jquery';
 import ReactHtmlParser from 'react-html-parser';
 
-
 class GridList extends React.Component{
     constructor(){
         super()
@@ -43,11 +42,11 @@ class GridList extends React.Component{
           this.state.latestReadData.length>0?<div className="grid-container grid-latest-reads">
               <h4>{ReactHtmlParser(this.state.latestReadData[0].block_title)}</h4>
             <div className="grid-x align-center block-latest-reads" id="sliderformobile">
-                {this.state.latestReadData.map((obj) => {
-                    return <div className="medium-4 cell img-block">
+                {this.state.latestReadData.map((obj, i) => {
+                    return <div key = {i} className="medium-4 cell img-block">
                         <a className="letest-read-link" href={"/casestudy/article?nid="+obj.nid}>
                         <div className="img">
-                            <img src={decodeUri(apiUrl+obj.image_url)} alt="image" />
+                            <img src={decodeUri(apiUrl+obj.image_url)} alt="" />
                         </div>
                         <div className="img-content">
                             <h6>{ReactHtmlParser(obj.title)}</h6>

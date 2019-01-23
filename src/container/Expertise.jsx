@@ -12,12 +12,10 @@ import FooterHeading from '../component/FooterHeading.jsx';
 import HorizontalScroll from '../component/HorizontalScroll.jsx';
 import RightImgLContent from '../component/RightImgLContent.jsx';
 import LeftImgRContent from '../component/LeftImgRContent.jsx';
-import {jsonMiddleware, apiUrl, urlString, getMeta} from '../services/common';
+import {jsonMiddleware, apiUrl, getMeta} from '../services/common';
 import requestService from '../services/request.js';
 import Loader from 'react-loader-spinner'; // eslint-disable-line no-unused-vars
 import DocumentMeta from 'react-document-meta';
-let nid = '';
-import $ from 'jquery';
 
 
 //import 'foundation/js/vendor/zepto';
@@ -38,7 +36,6 @@ class Expertise extends React.Component{
         // return val;
     }
     animation(){
-        $(document).foundation();
         new WOW.WOW(
             {
                 animateClass: 'animated',
@@ -48,12 +45,10 @@ class Expertise extends React.Component{
     }
 
     componentWillMount(){
-        getMeta(urlString[this.props.location.pathname], this.getMeValue);
-        requestService.getService(`/landing-page-data/${urlString[this.props.location.pathname]}`)
+        getMeta(this.props.nid, this.getMeValue);
+        requestService.getService(`/landing-page-data/${this.props.nid}`)
                 .then((response) => {
                 let ids = ['slider_id','flipper_id','logo_id','sub_block_id','image_description_id','hd_id', 'client_slider_id','award_slider_id','certificate_slider_id','partner_slider_id',];
-                    nid = urlString[this.props.location.pathname]
-                    this.setState({});
                     this.setState({ExpertiseData: jsonMiddleware(response.data, ids), loading: false},()=> {
                         this.animation();
                     });
@@ -73,8 +68,7 @@ class Expertise extends React.Component{
                     />
                 </center> :   <DocumentMeta {...this.state.meta}>
 
-                {Object.keys(this.state.ExpertiseData).length>0? <MainBanner nid = {nid} node = {this.state.ExpertiseData[Object.keys(this.state.ExpertiseData)[0]][0]}></MainBanner>: ''}
-
+                {Object.keys(this.state.ExpertiseData).length>0? <MainBanner nid = {this.props.nid} node = {this.state.ExpertiseData[Object.keys(this.state.ExpertiseData)[0]][0]}></MainBanner>: ''}
                 <section className="banner-thumb-img bottom-100">
                   <div className="grid-container">
                     <div className="grid-x align-right align-middle grid-margin-x">
@@ -83,8 +77,7 @@ class Expertise extends React.Component{
                           {this.state.ExpertiseData.hasOwnProperty('flipper_id')?<div className="grid-x grid-margin-x grid-margin-y img-shadow-hover hide-for-small-only">
                                   {
                                       this.state.ExpertiseData['flipper_id'][0].map((flip, i) => {
-                                          {/*return <div className="cell wow fadeInDown" data-wow-delay="0.5s"><a href="#"><img src={apiUrl+flip.image_flipper_image} alt=""/></a></div>*/}
-                                          return <div className="cell wow shrink fadeInDown banner-image-effect" data-wow-delay={`${i}s`}><a href={flip.image_flipper_cta_url.substring(9)}><img src={apiUrl+flip.image_flipper_image} alt=""/><span>{flip.image_flipper_title}</span></a></div>
+                                          return <div key={i} className="cell wow shrink fadeInDown banner-image-effect" data-wow-delay={`${i}s`}><a href={flip.image_flipper_cta_url.substring(9)}><img src={apiUrl+flip.image_flipper_image} alt=""/><span>{flip.image_flipper_title}</span></a></div>
                                       })
                                   }
                               </div>:''}
@@ -101,10 +94,10 @@ class Expertise extends React.Component{
                     {
                         this.state.ExpertiseData.hasOwnProperty('image_description_id')? this.state.ExpertiseData['image_description_id'][0].map((obj, i) => {
                                 if ((i + 1) % 2 === 0) {
-                                    return <LeftImgRContent data={obj}/>
+                                    return <LeftImgRContent key={i} data={obj}/>
                                 }
                                 else {
-                                    return <RightImgLContent data={obj}/>
+                                    return <RightImgLContent key = {i} data={obj}/>
                                 }
                             }): ''
                     }

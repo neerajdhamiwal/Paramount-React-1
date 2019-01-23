@@ -1,5 +1,4 @@
 import React from 'react';
-import $ from 'jquery';
 import {apiUrl} from '../services/common.js';
 import ReactHtmlParser from 'react-html-parser';
 import ShowMore from './ShowMore.jsx';

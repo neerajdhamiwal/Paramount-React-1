@@ -1,9 +1,8 @@
 
 import React from 'react';
-import $ from 'jquery';
 import GridListScnd from '../component/GridListScnd.jsx';
 import requestService from '../services/request.js';
-import {apiUrl, jsonMiddleware, imgPath, COUNT} from '../services/common.js';
+import {apiUrl, jsonMiddleware} from '../services/common.js';
 import ReactHtmlParser from 'react-html-parser';
 import ShowMore from '../component/ShowMore.jsx';
 import DocumentMeta from 'react-document-meta';
@@ -33,7 +32,6 @@ class Resource extends React.Component{
         this.getRequest = this.getRequest.bind(this);
     }
     getRequest(){
-        let caseData = [];
         requestService.getService('/latest-case-study-data')
             .then((response) => {
                 let ids = ['id'];
@@ -65,10 +63,7 @@ class Resource extends React.Component{
     componentWillMount(){
         this.getRequest();
     }
-    componentDidMount(){
-        //Foundation.addToJquery($);
-        $(document).foundation();
-    }
+
 
     render(){
         return(
@@ -82,11 +77,11 @@ class Resource extends React.Component{
                                 <div className="info-graphic-heading small-12"><h3>Info<span>graphics</span></h3></div>
                                 <div className="small-12 medium-7">
                                     <div className="resource-big-charge">
-                                        <img src={apiUrl+this.state.infoData[0].infographic_hero_image}/>
+                                        <img src={apiUrl+this.state.infoData[0].infographic_hero_image} alt=""/>
                                     </div>
                                 </div>
                                 <div className="small-12 medium-5">
-                                    <div className="info-graphi-small"><img src={apiUrl+this.state.infoData[0].infographic_sec_image}/></div>
+                                    <div className="info-graphi-small"><img src={apiUrl+this.state.infoData[0].infographic_sec_image} alt=""/></div>
                                         <div className="info-graphic-details">
                                             <h3>{ReactHtmlParser(this.state.infoData[0].infographic_title)}</h3>
                                             {this.state.infoData[0].infographic_subtitle? <h6>{this.state.infoData[0].infographic_subtitle}</h6>:''}

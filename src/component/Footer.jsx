@@ -2,7 +2,7 @@
 import React from 'react';
 import requestService from '../services/request.js';
 import ReactHtmlParser from 'react-html-parser';
-import {TwitterTweetEmbed, TwitterTimelineEmbed} from 'react-twitter-embed';
+import {TwitterTweetEmbed} from 'react-twitter-embed';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import fb from '../assets/img/fb.png';
@@ -36,7 +36,6 @@ class Footer extends React.Component{
             })
         requestService.getService('/json-tweet')
             .then((response) => {
-                const data = response.data;
                 this.setState({tweets: response.data});
             })
             .catch((err) => {
@@ -44,14 +43,15 @@ class Footer extends React.Component{
             })
     }
     ValidateEmail() {
-        if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(this.state.email))
+        if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(this.state.email)) //eslint-disable-line
         {
             return true
+        }else{
+            toast.error("Enter Valid Email", {
+                position: toast.POSITION.TOP_RIGHT
+            });
+            return false
         }
-        toast.error("Enter Valid Email", {
-            position: toast.POSITION.TOP_RIGHT
-        });
-        return false
     }
 
     submit(e){
@@ -101,10 +101,12 @@ class Footer extends React.Component{
                   <div className="medium-4 cell small-order-change">
                     <div className="footer-info">
                         {this.state.footerData.length>0 ?ReactHtmlParser(imgPath(this.state.footerData[0].block_body)): ''}
-                        <div>
-                            <a className="cl-blue" href="https://www.facebook.com/ParamountSoftwareSolutionsInc/" target="blank"> <img src={fb} className="mr-8"/></a>
-                            <a className="cl-blue" href="https://in.linkedin.com/company/paramount-software-solutions" target="blank"> <img src ={ln} className="mr-8"/></a>
-                            <a className="cl-blue" href="https://twitter.com/paramountsoft" target="blank"> <img src={tw} className="mr-8"/></a>
+                        <div>{ //eslint-disable-next-line
+                        }<a className="cl-blue" href="https://www.facebook.com/ParamountSoftwareSolutionsInc/" target="blank"> <img src={fb} className="mr-8"/></a>
+                            { //eslint-disable-next-line
+                            }<a className="cl-blue" href="https://in.linkedin.com/company/paramount-software-solutions" target="blank"> <img src ={ln} className="mr-8"/></a>
+                            { //eslint-disable-next-line
+                            }<a className="cl-blue" href="https://twitter.com/paramountsoft" target="blank"> <img src={tw} className="mr-8"/></a>
                         </div>
                     </div>
                   </div>
@@ -145,6 +147,7 @@ class Footer extends React.Component{
                                         {this.state.tweets.map((tw, i) => {
                                             return (
                                                 <TwitterTweetEmbed
+                                                    key={i}
                                                     tweetId={tw}
                                                     options={{height: 200, width: 350, maxHeight: 300}}
                                                 />

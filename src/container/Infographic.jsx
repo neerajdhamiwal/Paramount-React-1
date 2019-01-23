@@ -1,9 +1,8 @@
 
 import React from 'react';
-import $ from 'jquery';
 import Loader from 'react-loader-spinner'; // eslint-disable-line no-unused-vars
 import requestService from '../services/request.js';
-import {apiUrl, jsonMiddleware, imgPath, COUNT} from '../services/common.js';
+import {apiUrl, jsonMiddleware} from '../services/common.js';
 import ReactHtmlParser from 'react-html-parser';
 import aboutLayerBannerone from '../assets/img/about-layer1.png';
 import aboutLayerBannertwo from '../assets/img/about-layer2.png';
@@ -34,7 +33,6 @@ class Resource extends React.Component{
     }
 
     getRequest(){
-        let caseData = [];
         requestService.getService('/banner-block-infographic')
             .then((response) => {
                 this.setState({bannerData:response.data})
@@ -56,11 +54,6 @@ class Resource extends React.Component{
 
     componentWillMount(){
         this.getRequest();
-    }
-
-    componentDidMount(){
-        //Foundation.addToJquery($);
-        $(document).foundation();
     }
 
     render(){
@@ -93,7 +86,7 @@ class Resource extends React.Component{
                                                   <img class="over-img" src={aboutLayerBannertwo} alt="" />
                                               </div>
                                           </div>
-                                        </div>  
+                                        </div>
                                     </div>
                                 </div>
                             </section>
@@ -103,16 +96,19 @@ class Resource extends React.Component{
                                     <div className="grid-container">
                                         <div className="grid-x align-right align-middle grid-margin-x">
                                             <div className="medium-2 cell small-order-change">
-                                                <img src={apiUrl + obj.hero_image}/>
+                                                <img src={apiUrl + obj.hero_image} alt=""/>
                                             </div>
                                             <div className="medium-8 cell">
                                                 <div className="award-content pr-155">
-                                                    <a>{ReactHtmlParser(obj.title)}</a>
+                                                    { //eslint-disable-next-line
+                                                         }<a>{ReactHtmlParser(obj.title)}</a>
                                                     <h3>{ReactHtmlParser(obj.node_subtitle_title)}</h3>
                                                     <ShowMore id={`info${obj.nid}`} longText= {obj.node_body}>
                                                     </ShowMore>
-                                                    <a href={`/infographic-article?nid=${obj.nid}`}>View</a>
-                                                    {obj.cta_button_title!==''?<a href="" className="button">{obj.cta_button_title}</a>:''}
+                                                    { //eslint-disable-next-line
+                                                    }<a href={`/infographic-article?nid=${obj.nid}`}>View</a>
+                                                    {//eslint-disable-next-line
+                                                         obj.cta_button_title!==''?<a href="" className="button">{obj.cta_button_title}</a>:''}
                                                 </div>
                                             </div>
                                         </div>

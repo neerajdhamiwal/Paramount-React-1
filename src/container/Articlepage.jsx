@@ -1,12 +1,10 @@
 
 import React from 'react';
-import $ from 'jquery';
 import requestService from '../services/request.js';
-import {apiUrl, imgPath, getMeta, COUNT, getActiveBlogMenu} from '../services/common.js';
+import {apiUrl, imgPath, getMeta} from '../services/common.js';
 import ReactHtmlParser from 'react-html-parser';
 import Loader from 'react-loader-spinner'; // eslint-disable-line no-unused-vars
 import GridList from '../component/GridList.jsx';
-import ShowMore from '../component/ShowMore.jsx';
 import DocumentMeta from 'react-document-meta';
 
 const BannerStyle =(url)=> {
@@ -34,9 +32,9 @@ class ArticlePage extends React.Component{
     }
 
     componentWillMount(){
-        getMeta(this.props.location.search.substring(this.props.location.search.indexOf("=")+1), this.getMeValue);
+        getMeta(this.props.nid, this.getMeValue);
         let caseStudy = [];
-        requestService.getService(`/blogs-contents/${this.props.location.search.substring(this.props.location.search.indexOf("=")+1)}`)
+        requestService.getService(`/blogs-contents/${this.props.nid}`)
             .then((response) => {
                 if(response.data.length> 0){
                 caseStudy =  response.data[0];
@@ -55,10 +53,7 @@ class ArticlePage extends React.Component{
                 //console.log(err);
             })
     }
-    componentDidMount(){
-        //Foundation.addToJquery($);
-        $(document).foundation();
-    }
+
 
     render(){
         return(
@@ -87,8 +82,6 @@ class ArticlePage extends React.Component{
              <div className="medium-6 small-12 cell p-right-45">
                <div className="pr-155 ">
                    <p>{ReactHtmlParser(imgPath(this.state.caseStudy.field_body))}</p>
-                   {/*<ShowMore id="Article1" longText= {this.state.caseStudy.field_body}>*/}
-                   {/*</ShowMore>*/}
                </div>
            </div>
          <div className="medium-6 cell no-padding article-top-content hide-for-small-only">
@@ -112,8 +105,6 @@ class ArticlePage extends React.Component{
                   <div className="grid-x grid-padding-x">
                   <div className="medium-8 cell">
                     <div className="">
-                            {/*<ShowMore id="Article2" longText= {this.state.caseStudy.field_secondary_body}>*/}
-                            {/*</ShowMore>*/}
                         <p>{ReactHtmlParser(imgPath(this.state.caseStudy.field_secondary_body))}</p>
 
                     </div>

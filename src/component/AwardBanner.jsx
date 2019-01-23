@@ -7,9 +7,6 @@ import WOW from 'wowjs';
 import ShowMore from './ShowMore.jsx';
 
 class AwardBanner extends React.Component{
-  constructor(props){
-    super(props);
-  }
   componentDidMount(){
       new WOW.WOW(
           {
@@ -35,25 +32,25 @@ class AwardBanner extends React.Component{
               {this.props.nodeData[0].node_body!==''? <ShowMore
                 longText={this.props.nodeData[0].node_body} id="bannerBody" hiddenHeight= {430}/>:''}
           </div>
-            {this.props.nid == 24? <div><div className="medium-6 cell services-sub-menu">
+            {this.props.nid === '24'? <div><div className="medium-6 cell services-sub-menu">
                   <img src={ImgBanner} alt="Banner"/>
                 </div>
-                </div>: this.props.nid == 39? <div><div className="medium-6 cell services-sub-menu">
+                </div>: this.props.nid === '39'? <div><div className="medium-6 cell services-sub-menu">
                       <img src={ImgBanner} alt="Banner"/>
                     </div>
                     </div>:''}
 
-            {this.props.nid == 47? <div className="medium-6 cell services-sub-menu-two">
+            {this.props.nid === '47'? <div className="medium-6 cell services-sub-menu-two">
             <img src={ImgBannerThree} alt="Banner"/>
-            </div>:this.props.nid == 48? <div className="medium-6 cell services-sub-menu-two">
+            </div>:this.props.nid === '48'? <div className="medium-6 cell services-sub-menu-two">
                       <img src={ImgBannerThree} alt="Banner"/>
-                    </div>: this.props.nid== 49?<div className="medium-6 cell services-sub-menu-two">
+                    </div>: this.props.nid=== '49'?<div className="medium-6 cell services-sub-menu-two">
                       <img src={ImgBannerThree} alt="Banner"/>
                     </div>:''}
 
-            {this.props.nid == 45?<div className="medium-6 cell technologies-government-banner">
+            {this.props.nid === '45'?<div className="medium-6 cell technologies-government-banner">
             <img src={ImgBannerTwo} alt="Banner"/>
-          </div>: this.props.nid== 52? <div className="medium-6 cell technologies-government-banner">
+          </div>: this.props.nid=== '52'? <div className="medium-6 cell technologies-government-banner">
                       <img src={ImgBannerTwo} alt="Banner"/>
                     </div>:''}
         </div>

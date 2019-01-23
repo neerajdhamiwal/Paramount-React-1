@@ -10,16 +10,14 @@ import CertSlider from '../component/CertificationBottomSlider.jsx';
 import FooterRowSlider from '../component/FooterRowSlider.jsx';
 import PartnerSlider from '../component/PartnerSlider.jsx';
 import requestService from '../services/request.js';
-import {apiUrl, jsonMiddleware, urlString, imgPath, getMeta, COUNT} from '../services/common.js';
+import {apiUrl, jsonMiddleware, imgPath, getMeta} from '../services/common.js';
 import ShowMore from '../component/ShowMore.jsx';
 import ReactHtmlParser from 'react-html-parser';
 import WOW from 'wowjs';
 import Loader from 'react-loader-spinner'; // eslint-disable-line no-unused-vars
 import DocumentMeta from 'react-document-meta';
-let nid = '';
 import aboutLayerBannerone from '../assets/img/about-layer1.png';
 import aboutLayerBannertwo from '../assets/img/about-layer2.png';
-//import 'foundation/js/vendor/zepto';
 class About extends React.Component{
     constructor(props) {
         super(props)
@@ -30,7 +28,6 @@ class About extends React.Component{
         }
         this.animation = this.animation.bind(this);
         this.getMeValue = this.getMeValue.bind(this);
-
     }
 
     animation(){
@@ -42,24 +39,22 @@ class About extends React.Component{
         ).init();
 
         let scene = document.getElementById('scene');
-        let parallaxInstance = new Parallax(scene);
+         new Parallax(scene);
     }
 
     getMeValue(val) {
         this.setState({meta: val})
-        // return val;
     }
 
     componentWillMount(){
-        getMeta(urlString[this.props.location.pathname], this.getMeValue);
-        requestService.getService(`/reinforcement-data/${urlString[this.props.location.pathname]}`)
+        getMeta(this.props.nid, this.getMeValue);
+        requestService.getService(`/reinforcement-data/${this.props.nid}`)
             .then((response) => {
                 let ids = ['primary_image_id','secondary_image_id', 'award_slider_id', 'certificate_slider_id', 'client_slider_id','partner_slider_id'];
                 let data = jsonMiddleware(response.data, ids)
                 // this.setState({});
                 this.setState({awardsData: data,loading: false},()=> {
-                    nid = urlString[this.props.location.pathname];
-                    if(urlString[this.props.location.pathname] == 33){
+                    if(this.props.nid === 33){
                         this.animation()
                     }
                 });
@@ -82,7 +77,7 @@ class About extends React.Component{
 
                 {this.state.awardsData.hasOwnProperty('primary_image_id')?
            <div>
-               {urlString[this.props.location.pathname] == 33?
+               {this.props.nid === 33?
                    <div>
                        <section className="bottom-100">
                            <div className="grid-container custom-grid custom-grid-right">
@@ -133,9 +128,9 @@ class About extends React.Component{
 
                                <div>
                                  <div className="medium-6 cell">
-                                     <div class="rotation-banner">
+                                     <div className="rotation-banner">
                                          <img id="loading" src={aboutLayerBannerone} alt="" />
-                                         <img class="over-img" src={aboutLayerBannertwo} alt="" />
+                                         <img className="over-img" src={aboutLayerBannertwo} alt="" />
                                      </div>
                                  </div>
                                </div>
@@ -146,11 +141,11 @@ class About extends React.Component{
                }
 
                 {this.state.awardsData['primary_image_id'][0].map((obj, i) => {
-                    return <section className="award-content-box top-100 bottom-100">
+                    return <section key={i} className="award-content-box top-100 bottom-100">
                         <div className="grid-container">
                             <div className="grid-x align-right align-middle grid-margin-x">
                                 <div className="medium-2 small-4 cell">
-                                    <img src={apiUrl+obj.primary_image_img}/>
+                                    <img src={apiUrl+obj.primary_image_img} alt=""/>
                                 </div>
                                 <div className="medium-8 small-8 cell">
                                     <div className="award-content pr-155">
@@ -185,11 +180,11 @@ class About extends React.Component{
 
                 {this.state.awardsData.hasOwnProperty('secondary_image_id')?
                     this.state.awardsData['secondary_image_id'][0].map((obj, i) => {
-                    return <section className="award-content-box top-100 bottom-100">
+                    return <section key = {i} className="award-content-box top-100 bottom-100">
                         <div className="grid-container">
                             <div className="grid-x align-right align-middle grid-margin-x">
                                 <div className="medium-2 small-4 cell">
-                                    <img src={apiUrl+obj.secondary_image_img}/>
+                                    <img src={apiUrl+obj.secondary_image_img} alt=""/>
                                 </div>
                                 <div className="medium-8 small-8 cell">
                                     <div className="award-content pr-155">

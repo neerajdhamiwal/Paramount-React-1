@@ -63,11 +63,6 @@ class CaseStudy extends React.Component{
                 //console.log(err);
             })
     }
-
-    componentDidMount(){
-        //Foundation.addToJquery($);
-        $(document).foundation();
-    }
     render() {
         return(
             this.state.loading? <center >

@@ -4,9 +4,8 @@ import FooterSecndHeading from '../component/FooterSecndHeading.jsx';
 import LeftImgRContent from '../component/LeftImgRContent.jsx';
 import RightImgLContent from '../component/RightImgLContent.jsx';
 import AwardBanner from '../component/AwardBanner.jsx';
-import {jsonMiddleware, urlString, getMeta} from '../services/common';
+import {jsonMiddleware, getMeta} from '../services/common';
 import requestService from '../services/request.js';
-import $ from 'jquery';
 import Loader from 'react-loader-spinner'; // eslint-disable-line no-unused-vars
 import TextContent from '../component/TextContent.jsx';
 import CertSlider from '../component/CertificationBottomSlider.jsx';
@@ -14,8 +13,6 @@ import AwardSlider from '../component/AwardsBottomSlider.jsx';
 import PartnerSlider from '../component/PartnerSlider.jsx';
 import FooterRowSlider from '../component/FooterRowSlider.jsx';
 import DocumentMeta from 'react-document-meta';
-
-let nid = ''
 class ExpertiseArticle extends React.Component{
     constructor(props){
         super(props)
@@ -33,22 +30,16 @@ class ExpertiseArticle extends React.Component{
     }
 
     componentWillMount(){
-        getMeta(urlString[this.props.location.pathname], this.getMeValue);
-        requestService.getService(`/services-node-data/${urlString[this.props.location.pathname]}`)
+        getMeta(this.props.nid, this.getMeValue);
+        requestService.getService(`/services-node-data/${this.props.nid}`)
             .then((response) => {
                 let ids = ['img_des_id','sub_block_id', 'secondary_sub_block_id','secondary_img_des_id', 'extra_content_id', 'award_slider_id', 'certificate_slider_id','partner_slider_id','client_slider_id'];
                 // this.setState({});
-                nid = urlString[this.props.location.pathname];
                 this.setState({ExpertiseGovData: jsonMiddleware(response.data, ids), loading: false});
             })
             .catch((err) => {
                 console.log(err);
             })
-    }
-
-    componentDidMount(){
-        //Foundation.addToJquery($);
-        $(document).foundation();
     }
     render(){
         return(
@@ -61,10 +52,10 @@ class ExpertiseArticle extends React.Component{
                     />
                 </center> :
                 <DocumentMeta {...this.state.meta}>
-                 {Object.keys(this.state.ExpertiseGovData).length>0? <AwardBanner customClass = "main-banner award-banner" nid={nid} nodeData = {this.state.ExpertiseGovData[Object.keys(this.state.ExpertiseGovData)[0]][0]}></AwardBanner>: ''}
+                 {Object.keys(this.state.ExpertiseGovData).length>0? <AwardBanner customClass = "main-banner award-banner" nid={this.props.nid} nodeData = {this.state.ExpertiseGovData[Object.keys(this.state.ExpertiseGovData)[0]][0]}></AwardBanner>: ''}
                 <div className=" clearfix"></div>
                  {this.state.ExpertiseGovData.hasOwnProperty('sub_block_id')? <FooterHeading subBlockData = {this.state.ExpertiseGovData['sub_block_id'][0]}/>:''}
-                    {nid===52? this.state.ExpertiseGovData.hasOwnProperty('extra_content_id')? this.state.ExpertiseGovData['extra_content_id'][0].map((obj, i) => {
+                    {this.props.nid===52? this.state.ExpertiseGovData.hasOwnProperty('extra_content_id')? this.state.ExpertiseGovData['extra_content_id'][0].map((obj, i) => {
 
                             return <div><TextContent data = {obj}/>
                                 <hr/>
@@ -74,18 +65,18 @@ class ExpertiseArticle extends React.Component{
                 {
                     this.state.ExpertiseGovData.hasOwnProperty('img_des_id')? this.state.ExpertiseGovData['img_des_id'][0].map((obj, i) => {
                         if ((i + 1) % 2 === 0) {
-                            return <LeftImgRContent data={obj}/>
+                            return <LeftImgRContent key = {i} data={obj}/>
                         }
                         else {
 
-                            return <RightImgLContent data={obj}/>
+                            return <RightImgLContent key = {i}  data={obj}/>
                         }
                     }): ''
                 }
                  {this.state.ExpertiseGovData.hasOwnProperty('secondary_sub_block_id')? <FooterSecndHeading subBlockData = {this.state.ExpertiseGovData['secondary_sub_block_id'][0]}/>:''}
-                 {nid!==52?this.state.ExpertiseGovData.hasOwnProperty('extra_content_id')? this.state.ExpertiseGovData['extra_content_id'][0].map((obj, i) => {
+                 {this.props.nid!==52?this.state.ExpertiseGovData.hasOwnProperty('extra_content_id')? this.state.ExpertiseGovData['extra_content_id'][0].map((obj, i) => {
 
-                         return <div><TextContent data = {obj}/>
+                         return <div key={i}> <TextContent data = {obj}/>
                              <hr/>
                              </div>
 
@@ -93,10 +84,10 @@ class ExpertiseArticle extends React.Component{
                  {
                      this.state.ExpertiseGovData.hasOwnProperty('secondary_img_des_id')? this.state.ExpertiseGovData['img_des_id'][0].map((obj, i) => {
                              if ((i + 1) % 2 === 0) {
-                                 return <RightImgLContent data={obj} secondary = "true"/>
+                                 return <RightImgLContent key = {i}  data={obj} secondary = "true"/>
                              }
                              else {
-                                 return <LeftImgRContent data={obj} secondary = "true"/>
+                                 return <LeftImgRContent key = {i}  data={obj} secondary = "true"/>
 
                              }
                          }): ''

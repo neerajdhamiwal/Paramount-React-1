@@ -6,8 +6,6 @@ import GridList from '../component/GridList.jsx';
 import requestService from '../services/request.js';
 import Loader from 'react-loader-spinner'; // eslint-disable-line no-unused-vars
 import DocumentMeta from 'react-document-meta';
-import InfiniteScroll from 'react-infinite-scroll-component';
-import $ from 'jquery';
 import ReactPaginate from 'react-paginate';
 
 
@@ -67,7 +65,6 @@ class CaseStudy extends React.Component{
   }
 
     handlePageClick = (data) => {
-        let selected = data.selected;
         this.setState({activeCaseStudy:this.state.blogList.slice(data.selected*5, data.selected*5+5)});
     };
 
@@ -97,10 +94,6 @@ class CaseStudy extends React.Component{
           .catch((err) => {
               //console.log(err);
           })
-  }
-  componentDidMount(){
-    //Foundation.addToJquery($);
-    $(document).foundation();
   }
 
   render() {

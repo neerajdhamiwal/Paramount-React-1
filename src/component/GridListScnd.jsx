@@ -1,13 +1,9 @@
 
 import React from 'react';
-import {apiUrl, decodeUri, jsonMiddleware, } from '../services/common.js';
+import {apiUrl } from '../services/common.js';
 import ReactHtmlParser from 'react-html-parser';
 
-
 class GridListScnd extends React.Component{
-    constructor(props){
-        super(props)
-    }
     render(){
         return(
             this.props.data.length>0? <div className="grid-container">
@@ -17,7 +13,7 @@ class GridListScnd extends React.Component{
                             return <div className="medium-4 cell img-block">
                             <a className="letest-read-link" href={"/casestudy/article?nid="+obj.nid}>
                                 <div className="img ">
-                                    <img src={apiUrl+obj.image_url} alt="image" />
+                                    <img src={apiUrl+obj.image_url} alt="" />
                                 </div>
                                 <div className="img-content">
                                     <h6>{ReactHtmlParser(obj.title)}</h6>

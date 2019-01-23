@@ -6,7 +6,7 @@ import AwardSlider from '../component/AwardsBottomSlider.jsx';
 import CertSlider from '../component/CertificationBottomSlider.jsx';
 import PartnerSlider from '../component/PartnerSlider.jsx';
 import FooterRowSlider from '../component/FooterRowSlider.jsx';
-import {customDivideData, apiUrl, jsonMiddleware, urlString, getMeta, imgPath} from '../services/common';
+import {customDivideData, apiUrl, jsonMiddleware, getMeta, imgPath} from '../services/common';
 import requestService from '../services/request';
 import Loader from 'react-loader-spinner'; // eslint-disable-line no-unused-vars
 import contactBanner from '../assets/img/contact-banner.png';
@@ -14,8 +14,6 @@ import contactBanner2 from '../assets/img/contact-banner2.png';
 import contactBanner3 from '../assets/img/contact-banner3.png';
 import ReactHtmlParser from 'react-html-parser';
 import DocumentMeta from 'react-document-meta';
-import $ from 'jquery';
-//import 'foundation/js/vendor/zepto';
 class Team extends React.Component{
     constructor(props) {
         super(props)
@@ -34,8 +32,8 @@ class Team extends React.Component{
     }
 
     componentWillMount(){
-        getMeta(urlString[this.props.location.pathname], this.getMeValue);
-        requestService.getService(`/reach-us-data/${urlString[this.props.location.pathname]}`)
+        getMeta(this.props.nid, this.getMeValue);
+        requestService.getService(`/reach-us-data/${this.props.nid}`)
             .then((response) => {
                 let ids = ['map_id','award_slider_id', 'certificate_slider_id', 'team_member_id', 'content_ctaflip_id', 'node_flipper_id'];
                 let data = jsonMiddleware(response.data, ids);
@@ -49,14 +47,9 @@ class Team extends React.Component{
             })
     }
 
-    componentDidMount(){
-        //Foundation.addToJquery($);
-        $(document).foundation();
-
-    }
     animation(){
         let scene = document.getElementById('scene');
-        let parallaxInstance = new Parallax(scene);
+        new Parallax(scene);
     }
 
     render(){
@@ -100,19 +93,21 @@ class Team extends React.Component{
                             </div>
                             </div>
                        </section>:''}</div>:''}
-
                         {this.state.teamData.hasOwnProperty('team_member_id') ? <div className="grid-container">
-                                {customDivideData(this.state.teamData['team_member_id'][0], 3).map((subArr) => {
-                                    return <div className="grid-x align-center block-latest-reads">
-                                        {subArr.map((obj) => {
-                                            return    <div className="medium-4 cell img-block">
+                                {customDivideData(this.state.teamData['team_member_id'][0], 3).map((subArr, index) => {
+                                    return <div key = {`arr${index}`}className="grid-x align-center block-latest-reads">
+                                        {subArr.map((obj, i) => {
+                                            return    <div className="medium-4 cell img-block" key={i}>
+                                                { //eslint-disable-next-line
+                                                }<a href={obj.social_link} target="_blank">
                                                 <div className="img">
-                                                    <img src={apiUrl+obj.team_member_image}/>
+                                                    <img src={apiUrl+obj.team_member_image} alt=""/>
                                                 </div>
                                                 <div className="img-content">
                                                     <h6>{obj.team_member_name}</h6>
-                                                    <h2><a>{obj.team_member_job} </a></h2>
+                                                    <h2>{obj.team_member_job}</h2>
                                                 </div>
+                                                </a>
                                             </div>
                                         })
                                         }
@@ -127,7 +122,6 @@ class Team extends React.Component{
                         {this.state.teamData.hasOwnProperty('certificate_slider_id')? this.state.teamData['certificate_slider_id'][0][0].certificate_slider_id ? <CertSlider/>: '':''}
                         {this.state.teamData.hasOwnProperty('partner_slider_id')? this.state.teamData['partner_slider_id'][0][0].partner_slider_id ? <PartnerSlider/>: '':''}
                         {this.state.teamData.hasOwnProperty('client_slider_id')? this.state.teamData['client_slider_id'][0][0].client_slider_id ? <FooterRowSlider/>: '':''}
-
                     </div>}
             </DocumentMeta>
         )

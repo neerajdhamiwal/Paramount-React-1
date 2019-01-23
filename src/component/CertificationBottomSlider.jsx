@@ -1,10 +1,9 @@
 
 import React from 'react';
-import {apiUrl, decodeUri} from '../services/common.js';
+import {apiUrl} from '../services/common.js';
 import ReactHtmlParser from 'react-html-parser';
 import requestService from '../services/request.js';
-
-
+import $ from 'jquery';
 
 class FooterRowSlider extends React.Component{
     constructor(){
@@ -61,8 +60,8 @@ class FooterRowSlider extends React.Component{
                     <h2 className="title-span text-center"><span><b>{ReactHtmlParser(this.state.clientData[0].logo_image_title)}</b></span></h2>
                 <div className="carousel cert-items">
                         {
-                            this.state.clientData.map((image)=> {
-                                return <div className="logo-icon"><img src={apiUrl+image.logo_image_image} width="200" height="200" alt="destination"/></div>
+                            this.state.clientData.map((image, i)=> {
+                                return <div key = {i} className="logo-icon"><img src={apiUrl+image.logo_image_image} width="200" height="200" alt="destination"/></div>
                             })
                         }
                     </div>

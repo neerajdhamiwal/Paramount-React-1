@@ -1,6 +1,7 @@
 
 import React from 'react';
 class MobHeader extends React.Component{
+
     render(){
         return(
             <div className="off-canvas position-right" id="offCanvas" data-off-canvas>
@@ -10,18 +11,25 @@ class MobHeader extends React.Component{
                 </button>
                 <nav className="main-menu show-for-small">
                                 <ul className="menu align-start dropdown" data-dropdown-menu id="menu-tabs">
-                                    <li><a>About Us</a>
+                                    <li>
+                                        { //eslint-disable-next-line
+                                        }<a>
+                                        About Us
+                                    </a>
                                         <ul className="menu dropdown-menu-an">
                                         <li><a href="/about-paramount">Our Story</a></li>
                                         <li><a href="/about-paramount/community">Community</a></li>
                                         <li><a href="/about-paramount/awards-and-certifications">Awards & Certifications</a></li>
                                         </ul>
                                     </li>
-                                    <li><a>Services</a>
+                                    <li>
+                                        { //eslint-disable-next-line
+                                        }<a>Services</a>
                                       <ul className="menu dropdown-menu-an">
                                       <li><a href="/services/paramount-edge">TechEdge</a></li>
                                       <li><a href="/services/paramount-tech-exec">TechExec</a></li>
-                                        <li><a>Paramount Techadvisory</a>
+                                        <li>{ //eslint-disable-next-line
+                                        }<a>Paramount Techadvisory</a>
                                             <ul className="menu dropdown-menu-an">
                                             <li><a href="/services/paramounttechadvisory/application-maintenance-development-integration">Application, Development & Integration</a></li>
                                             <li><a href="/services/paramounttechadvisory/infrastructuremanagement-and-monitoring">Infrastructure Management & Monitoring</a></li>
@@ -41,7 +49,8 @@ class MobHeader extends React.Component{
                                         <ul className="menu dropdown-menu-an">
                                             <li><a href="/resources/blogs">Blogs</a></li>
                                             <li><a href="/resources/casestudies">Case Studies</a></li>
-                                            <li><a >White Papers</a></li>
+                                            <li>{ //eslint-disable-next-line
+                                            }<a >White Papers</a></li>
                                             <li><a href="/infographic">Infographics</a></li>
                                         </ul>
                                     </li>

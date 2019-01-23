@@ -1,8 +1,8 @@
-import {apiUrl, UserName, Pass} from './common.js';
-const apiService = {};
+import {apiUrl} from './common.js';
 import axios from 'axios';
 import base64 from 'base-64';
 import {Auth} from './common';
+const apiService = {};
 
 
 

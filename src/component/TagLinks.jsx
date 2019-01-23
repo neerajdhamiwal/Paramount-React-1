@@ -1,5 +1,6 @@
 import React from 'react';
-import {apiUrl, COUNT, getActiveBlogMenu, setActiveBlogMenu} from '../services/common.js';
+import $ from 'jquery';
+import {apiUrl} from '../services/common.js';
 import ReactHtmlParser from 'react-html-parser';
 import ShowMore from './ShowMore.jsx';
 import WOW from 'wowjs';
@@ -42,8 +43,8 @@ constructor(props){
             <div className="medium-2 cell">
               <ul className="vertical menu" id="service">
                   {this.props.caseStudyList[0].name.split(',').map((value, index) => {
-                      return <li onClick={this.clickHandler}><a id={index} className={localStorage.getItem('activeMenu')? (value === localStorage.getItem('activeMenu')?'activeTab':''): (index===0?'activeTab':'')}>
-                          {value.replace(/\&amp;/g,'&')}</a></li>
+                       //eslint-disable-next-line
+                      return <li onClick={this.clickHandler}><a id={index} className={localStorage.getItem('activeMenu')? (value === localStorage.getItem('activeMenu')?'activeTab':''): (index===0?'activeTab':'')}>{value.replace(/\&amp;/g,'&')}</a></li>
                   })
                   }
               </ul>
@@ -51,7 +52,6 @@ constructor(props){
               {this.props.firstCaseStudy? <div className="medium-10 cell">
                     <div className="grid-x grid-padding-x">
                       <div className="medium-5 cell">
-                        <h3></h3>
                           <ShowMore id={`tagLink`} longText= {this.props.firstCaseStudy['field_body']} >
                           </ShowMore>
                           {this.props.locate === 'resource'?'':<a href = {"/casestudy/article?nid="+this.props.firstCaseStudy['id']} className="button mt-15">Read more</a>}

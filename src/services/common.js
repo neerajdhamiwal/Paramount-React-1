@@ -1,6 +1,4 @@
 import requestService from './request';
-
-let menu = 'IT'
 export const apiUrl = 'http://paramount.opensenselabs.com';
 export const UserName = 'sahil.s';
 export const Pass = 'System123#';
@@ -51,6 +49,7 @@ export const  customDivideData = (data, part) =>{
         }
         else{
             subarr.push(obj);
+             //eslint-disable-next-line
             if( dLen == index){
                 headingData.push(subarr)
             }
@@ -63,7 +62,7 @@ export const urlString={
     "/about-paramount/community": 46,
     "/about-paramount/awards-and-certifications": 33,
     "/services/paramount-edge": 24,
-    "/services/paramount-tech-exec": 39,
+    "/techexec": 39,
     "/services/paramounttechadvisory/cms-and-app-development": 47,
     "/services/paramounttechadvisory/application-maintenance-development-integration": 48,
     "/services/paramounttechadvisory/infrastructuremanagement-and-monitoring": 49,
@@ -82,6 +81,7 @@ export const imgPath = (data)=> {
         if (data.includes('img')) {
             const expression = /src="/g;
             let match;
+            //eslint-disable-next-line
             while(match = expression.exec(data)) {
                 data = data.slice(0, match.index) + 'src="http://paramount.opensenselabs.com' + data.slice(match.index + 5);
 
@@ -113,10 +113,4 @@ export const getMeta = (nid, cb)=> {
         })
 }
 export const COUNT = 20;
-export const setActiveBlogMenu = (menu)=> {
-    menu = menu;
-}
-export const getActiveBlogMenu = ()=> {
-    return menu;
-}
 

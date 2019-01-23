@@ -7,12 +7,10 @@ import {apiUrl, jsonMiddleware, getMeta} from '../services/common.js';
 import ReactHtmlParser from 'react-html-parser';
 import careerBanner from '../assets/img/career-banner.png';
 import careerBanner2 from '../assets/img/career-banner2.png';
-import WOW from 'wowjs';
 import Loader from 'react-loader-spinner'; // eslint-disable-line no-unused-vars
 import $ from 'jquery';
 import DocumentMeta from 'react-document-meta';
 import JobComponent from  '../component/Jobcomponent.jsx';
-let nid = '';
 
 class About extends React.Component{
     constructor(props) {
@@ -36,7 +34,7 @@ class About extends React.Component{
 
     animation(){
             let scene = document.getElementById('scene');
-            let parallaxInstance = new Parallax(scene);
+            new Parallax(scene);
         $('#jobList').on('click', 'li a', function() {
             $('#jobList a.activeTab').removeClass('activeTab');
             $(this).addClass('activeTab');
@@ -49,8 +47,8 @@ class About extends React.Component{
     }
 
     componentWillMount(){
-        getMeta(133, this.getMeValue);
-        requestService.getService(`/reach-us-data/133`)
+        getMeta(this.props.nid, this.getMeValue);
+        requestService.getService(`/reach-us-data/${this.props.nid}`)
             .then((response) => {
                 let ids = ['content_ctaflip_id', 'node_flipper_id']
                 let data = jsonMiddleware(response.data, ids)
@@ -108,7 +106,7 @@ class About extends React.Component{
         }
     }
     change(e){
-        if(e.target.id=='allJob'){
+        if(e.target.id==='allJob'){
             this.getAllJobs('NotReinitialize')
         }
         else{
@@ -153,9 +151,11 @@ class About extends React.Component{
                             <div className="grid-x grid-padding-x">
                                 <div className="medium-2 cell">
                                     <ul className="vertical menu career-page-tab-menu" id="jobList">
-                                        <li><a onClick={this.change} id="allJob" className="activeTab">All</a></li>
-                                        {this.state.jobList.length>0 ? this.state.jobList.map((obj)=>{
-                                            return <li><a onClick={this.change} id={obj.job_id}>{obj.job_name}</a></li>
+                                        <li>{ //eslint-disable-next-line
+                                        }<a onClick={this.change} id="allJob" className="activeTab">All</a></li>
+                                        {this.state.jobList.length>0 ? this.state.jobList.map((obj, i)=>{
+                                            return <li key={i}>{ //eslint-disable-next-line
+                                            }<a onClick={this.change} id={obj.job_id}>{obj.job_name}</a></li>
                                         }) : <div></div>}
                                     </ul>
                                 </div>

@@ -1,7 +1,7 @@
 
 import React from 'react';
 import WOW from 'wowjs';
-import {apiUrl, decodeUri, imgPath, COUNT} from '../services/common.js';
+import {apiUrl} from '../services/common.js';
 import ReactHtmlParser from 'react-html-parser';
 import ShowMore from './ShowMore.jsx';
 
@@ -32,7 +32,7 @@ class RightImgLContent extends React.Component{
                                 <div className="grid__item">
                                     <div className="box">
                                         <div className="box__shadow"></div>
-                                        <img className="box__img" src={apiUrl+this.props.data.secondary_image_description_img} alt="Some image"/>
+                                        <img className="box__img" src={apiUrl+this.props.data.secondary_image_description_img} alt=""/>
                                         <h2>{ReactHtmlParser(this.props.data.secondary_image_description_title)}</h2>
                                     </div>
                                 </div>
@@ -54,7 +54,7 @@ class RightImgLContent extends React.Component{
                                     <div className="grid__item">
                                         <div className="box">
                                             <div className="box__shadow"></div>
-                                            <img className="box__img" src={apiUrl+this.props.data.image_description_img} alt="Some image"/>
+                                            <img className="box__img" src={apiUrl+this.props.data.image_description_img} alt=""/>
                                             <h2>{ReactHtmlParser(this.props.data.image_description_title)}</h2>
                                         </div>
                                     </div>

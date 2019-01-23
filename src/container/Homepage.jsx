@@ -2,7 +2,6 @@
 import React from 'react';
 import WOW from 'wowjs';
 import Parallax from 'parallax-js';
-import paroller from 'paroller.js';
 import GridOverLap from '../component/GridOverlap.jsx';
 import CertSlider from '../component/CertificationBottomSlider.jsx';
 import AwardSlider from '../component/AwardsBottomSlider.jsx';
@@ -18,7 +17,7 @@ import layer6 from '../assets/img/layers/layer6.png';
 import layer7 from '../assets/img/layers/layer7.png';
 import arrowImg from '../assets/img/logo/arrow.jpg';
 import layerImg from '../assets/img/paramount-edge.png';
-import {jsonMiddleware, apiUrl, decodeUri, imgPath, getMeta, COUNT} from '../services/common';
+import {jsonMiddleware, apiUrl, decodeUri, imgPath, getMeta} from '../services/common';
 import ReactHtmlParser from 'react-html-parser';
 import Loader from 'react-loader-spinner'; // eslint-disable-line no-unused-vars
 import ShowMore from '../component/ShowMore.jsx';
@@ -43,7 +42,6 @@ class Home extends React.Component{
     }
 
     animation(){
-        $(document).foundation();
         new WOW.WOW(
             {
                 animateClass: 'animated',
@@ -52,7 +50,7 @@ class Home extends React.Component{
         ).init();
 
         let scene = document.getElementById('scene');
-        let parallaxInstance = new Parallax(scene);
+        new Parallax(scene);
         $("#service-tabs li a").on('click', function(e) {
             e.preventDefault()
             let page = $(this).data('page');
@@ -73,8 +71,8 @@ class Home extends React.Component{
     }
 
     componentWillMount(){
-        getMeta(50, this.getMeValue);
-        requestService.getService('/homepage-data/50')
+        getMeta(this.props.nid, this.getMeValue);
+        requestService.getService(`/homepage-data/${this.props.nid}`)
             .then((response) => {
                 let ids = ['node_flip_id','content_flip_id', 'content_slider_id', 'award_slider_id', 'certificate_slider_id', 'partner_slider_id', 'client_slider_id'];
                 // this.setState({});
@@ -106,17 +104,17 @@ class Home extends React.Component{
            <div className="grid-container">
            <div className="grid-x align-right align-middle grid-margin-x wow fadeInUp">
            <div className="medium-4 small-12 cell wow fadeInUp">
-           <h3 className="banner-info">{this.state.HomeData[Object.keys(this.state.HomeData)[0]][0][0].node_title}<br/>
+               <h3 className="banner-info"><span>{this.state.HomeData[Object.keys(this.state.HomeData)[0]][0][0].node_title}</span><br/>
                <span>{ReactHtmlParser(this.state.HomeData[Object.keys(this.state.HomeData)[0]][0][0].node_subtitle_title)}</span><br/>
-               {ReactHtmlParser(this.state.HomeData[Object.keys(this.state.HomeData)[0]][0][0].node_description)}
-              {ReactHtmlParser(imgPath(this.state.HomeData[Object.keys(this.state.HomeData)[0]][0][0].node_body))}
            </h3>
+               {ReactHtmlParser(this.state.HomeData[Object.keys(this.state.HomeData)[0]][0][0].node_description)}
+               {ReactHtmlParser(imgPath(this.state.HomeData[Object.keys(this.state.HomeData)[0]][0][0].node_body))}
 
                {this.state.HomeData[Object.keys(this.state.HomeData)[0]][0][0].node_cta_button_title !==''? <a className="button" href={this.state.HomeData[Object.keys(this.state.HomeData)[0]][0][0].node_cta_button_url.substring(9)}>{this.state.HomeData[Object.keys(this.state.HomeData)[0]][0][0].node_cta_button_title}</a>:''}
            <div className="banner-img-link paroller-example">
            <div className="grid-x grid-margin-x grid-margin-y img-shadow-hover hide-for-small-only">
                {this.state.HomeData.hasOwnProperty('node_flip_id')? this.state.HomeData['node_flip_id'][0].map((data, index) => {
-                   return <div className="cell shrink wow fadeInDown banner-image-effect" data-wow-delay='1s' ><a href={data.node_flipper_cta_url.substring(9)}><img src={apiUrl+data.node_flipper_image} alt=""/><span>{data.node_flipper_title}</span></a></div>
+                   return <div key = {index} className="cell shrink wow fadeInDown banner-image-effect" data-wow-delay='1s' ><a href={data.node_flipper_cta_url.substring(9)}><img src={apiUrl+data.node_flipper_image} alt=""/><span>{data.node_flipper_title}</span></a></div>
                    }):''}
            </div>
            </div>
@@ -146,15 +144,15 @@ class Home extends React.Component{
                        <div className="grid-x">
                            <div className="medium-2 cell wow fadeInUp">
                                <ul className="accordion" data-responsive-accordion-tabs="accordion medium-tabs" id="service-tabs">
-                                   {this.state.HomeData['content_slider_id'][0].map((obj, index) => {
-                                   return <li className={`${index==0 ?'tabs-title activeTab':'tabs-title'}`} onClick={() => this.setState({update: `contentSlider${index}`})}><a data-page = {`panel${index}`} id = {index}>{ReactHtmlParser(obj.content_slider_title)}</a></li>
+                                   {this.state.HomeData['content_slider_id'][0].map((obj, index) => { //eslint-disable-next-line
+                                   return <li key = {index} className={`${index===0 ?'tabs-title activeTab':'tabs-title'}`} onClick={() => this.setState({update: `contentSlider${index}`})}><a data-page = {`panel${index}`} id = {index}>{ReactHtmlParser(obj.content_slider_title)}</a></li>
                                    })}
                                </ul>
                            </div>
                            <div className="medium-5 cell wow fadeInUp" id="pages">
                                <div className="tabs-content" data-tabs-content="service-tabs">
                                    {this.state.HomeData['content_slider_id'][0].map((obj, index) => {
-                                       return <div className={index === 0 ? "page" : "page hide"}
+                                       return <div  key = {index} className={index === 0 ? "page" : "page hide"}
                                                         id={'panel' + index} data-page={'panel' + index}>
                                            <div className="grid-x grid-padding-x tab-accordion-content">
                                                <div className="medium-12 cell">
@@ -216,10 +214,10 @@ class Home extends React.Component{
                     <div className="medium-6 cell no-padding hide-for-small-only">
                         <div className="img-relative-title-ld">
                             <div className="grid">
-                                <div className="grid__item" href="#preview-7">
+                                <div className="grid__item">
                                     <div className="box">
                                         <div className="box__shadow"></div>
-                                        <img className="box__img" src={layerImg} alt="Some image"/>
+                                        <img className="box__img" src={layerImg} alt=""/>
                                     </div>
                                 </div>
                             </div>

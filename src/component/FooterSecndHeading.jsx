@@ -1,5 +1,4 @@
 import React from 'react';
-import $ from 'jquery';
 import {customDivideData, imgPath} from '../services/common';
 import ReactHtmlParser from 'react-html-parser';
 
@@ -12,10 +11,6 @@ class FooterHeading extends React.Component{
         }
     }
 
-    componentDidMount(){
-        //Foundation.addToJquery($);
-        $(document).foundation();
-    }
 
     render(){
         return(
@@ -31,7 +26,7 @@ class FooterHeading extends React.Component{
                                         <div className="grid-x pl-155">
                                             {
                                                 subArr.map((heading, i) => {
-                                                    if(i==1) {
+                                                    if(i===1) {
                                                         return <div className="medium-5 cell">
                                                             <div className="four-column-content four-col-left four-col-right">
                                                                 <h3 href="#">{ReactHtmlParser(heading.secondary_sub_block_heading)}</h3>

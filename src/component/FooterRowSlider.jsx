@@ -56,8 +56,8 @@ class FooterRowSlider extends React.Component{
                     <h2 className="title-span text-center"><span><b>{this.state.clientData[0].logo_image_title}</b></span></h2>
                 {this.state.clientData.length>0? <div className="carousel multiple-items">
                         {
-                            this.state.clientData.map((image)=> {
-                                return <div className="logo-icon"><img src={apiUrl+image.logo_image_image} width="200" height="200" alt="destination"/></div>
+                            this.state.clientData.map((image, i)=> {
+                                return <div key = {i} className="logo-icon"><img src={apiUrl+image.logo_image_image} width="200" height="200" alt="destination"/></div>
                             })
                         }
                     </div>: ''}

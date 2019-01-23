@@ -25,8 +25,8 @@ class ImgSlider extends React.Component{
           <div className="grid-container img-slider">
             <div className={`carousel single-item${this.props.id}`}>
                 {
-                    this.props.imgArray.map(img => {
-                        return <div className="slide-img"><img src={apiUrl+decodeUri(img)} width="595" alt="destination" /></div>
+                    this.props.imgArray.map((img, i) => {
+                        return <div key={i} className="slide-img"><img src={apiUrl+decodeUri(img)} width="595" alt="destination" /></div>
                             })
 
                 }

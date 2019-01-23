@@ -2,10 +2,25 @@
 import React from 'react';
 import Logo from '../assets/img/logo.png';
 import $ from 'jquery';
+import requestService from '../services/request.js';
 
 class Header extends React.Component{
-    constructor(props){
-        super(props)
+    constructor(){
+        super();
+        this.state = {
+            menu: []
+        }
+    }
+    componentWillMount(){
+        requestService.getService(`/api/menu_items/paramount-main-menu?_format=json`)
+            .then((response) => {
+                this.setState({menu :response.data},()=> {
+                    $(document).foundation();
+                });
+            })
+            .catch((err) => {
+                console.log(err);
+            })
     }
     componentDidMount(){
         $('#menu-tabs').on('click', 'li', function() {
@@ -22,45 +37,32 @@ class Header extends React.Component{
                         <div className="medium-8  small-6 cell text-right">
                             <button className="menu-icon" type="button" data-toggle="offCanvas"></button>
                             <nav className="main-menu show-for-medium">
-                                <ul className="menu align-right dropdown" data-dropdown-menu id="menu-tabs">
-                                    <li><a className="cursorDefault">About Us</a>
-                                        <ul className="menu dropdown-menu-an">
-                                            <li><a href="/about-paramount">Our Story</a></li>
-                                            <li><a href="/team">Team</a></li>
-                                            <li><a href="/about-paramount/community">Community</a></li>
-                                            <li><a href="/about-paramount/awards-and-certifications">Awards & Certifications</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a className="cursorDefault">Services</a>
-                                      <ul className="menu dropdown-menu-an">
-                                        <li><a href="/services/paramount-edge">TechEdge</a></li>
-                                        <li><a href="/services/paramount-tech-exec">TechExec</a></li>
-                                        <li><a className="cursorDefault">TechAdvisory</a>
-                                            <ul className="menu dropdown-menu-an">
-                                            <li><a href="/services/paramounttechadvisory/application-maintenance-development-integration">Application, Development & Integration</a></li>
-                                            <li><a href="/services/paramounttechadvisory/infrastructuremanagement-and-monitoring">Infrastructure Management & Monitoring</a></li>
-                                            <li><a href="/services/paramounttechadvisory/cms-and-app-development">Content Management Systems & Mobile App Development</a></li>
-                                            </ul>
-                                        </li>
-                                      </ul>
-                                    </li>
-                                    <li><a href="/expertise">Expertise</a>
-                                        <ul className="menu dropdown-menu-an">
-                                            <li><a href="/expertise/technologies">Technologies</a></li>
-                                            <li><a href="/expertise/government-solutions">Government</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="/resources">Resources</a>
-                                        <ul className="menu dropdown-menu-an">
-                                            <li><a href="/resources/blogs">Blogs</a></li>
-                                            <li><a href="/resources/casestudies">Case Studies</a></li>
-                                            <li><a >White Papers</a></li>
-                                            <li><a href="/infographic">Infographics</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="/contact">Contact Us</a></li>
-                                    <li><a href="/careers">Careers</a></li>
-                                </ul>
+                                {this.state.menu.length>0?<ul className="menu align-right dropdown" data-dropdown-menu id="menu-tabs">
+                                    {
+                                        this.state.menu.map((obj, i)=> {
+                                            if(obj.hasOwnProperty('below')) { //eslint-disable-next-line
+                                                return <li key={'obj'+i}><a className={obj.alias===''?'cursorDefault':''} href={obj.alias!==''? `/${obj.alias}`:"javascript:void(0);"}>{obj.title}</a>
+                                                    <ul className="menu dropdown-menu-an">
+                                                        {obj.below.map((subObj, i) => {  //eslint-disable-next-line
+                                                            return <li key={'subObj'+i}><a className={subObj.alias===''?'cursorDefault':''} href={subObj.alias!==''? `/${subObj.alias}`:"javascript:void(0);"}>{subObj.title}</a>
+                                                                {subObj.hasOwnProperty('below')?
+                                                                    <ul className="menu dropdown-menu-an">
+                                                                        {subObj.below.map((subsubObj, i) => { //eslint-disable-next-line
+                                                                            return <li key={'subsubObj'+i}><a className={subsubObj.alias===''?'cursorDefault':''} href={subsubObj.alias!==''? `/${subsubObj.alias}`:"javascript:void(0);"}>{subsubObj.title}</a></li>
+                                                                        })}
+                                                                    </ul> : ''
+                                                                }
+                                                            </li>
+                                                        })}
+                                                    </ul>
+                                                </li>
+                                            }
+                                            else{
+                                                return <li key={'obj'+i}><a href={`/${obj.alias}`}>{obj.title}</a></li>
+                                            }
+                                        })
+                                    }
+                                </ul>:'' }
                             </nav>
                         </div>
                     </div>

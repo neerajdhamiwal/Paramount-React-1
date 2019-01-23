@@ -2,7 +2,7 @@
 import React from 'react';
 import Parallax from 'parallax-js';
 import requestService from '../services/request.js';
-import {apiUrl, jsonMiddleware, imgPath, COUNT} from '../services/common.js';
+import {apiUrl, jsonMiddleware, imgPath} from '../services/common.js';
 import ReactHtmlParser from 'react-html-parser';
 import WOW from 'wowjs';
 import Loader from 'react-loader-spinner'; // eslint-disable-line no-unused-vars
@@ -11,7 +11,6 @@ import aboutLayerBannertwo from '../assets/img/about-layer2.png';
 import ShowMore from '../component/ShowMore.jsx';
 import DocumentMeta from 'react-document-meta';
 
-let nid = '';
 //import 'foundation/js/vendor/zepto';
 class About extends React.Component{
     constructor(props) {
@@ -43,7 +42,7 @@ class About extends React.Component{
         ).init();
 
         let scene = document.getElementById('scene');
-        let parallaxInstance = new Parallax(scene);
+         new Parallax(scene);
     }
 
     componentWillMount(){
@@ -108,7 +107,7 @@ class About extends React.Component{
                                     <div className="grid-container">
                                         <div className="grid-x align-right align-middle grid-margin-x">
                                             <div className="medium-2 cell small-order-change">
-                                                <img src={apiUrl+obj.hero_image}/>
+                                                <img src={apiUrl+obj.hero_image} alt=""/>
                                             </div>
                                             <div className="medium-8 cell">
                                                 <div className="award-content pr-155">

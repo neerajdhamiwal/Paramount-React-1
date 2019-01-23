@@ -1,9 +1,8 @@
 
 import React from 'react';
-import $ from 'jquery';
 import Loader from 'react-loader-spinner'; // eslint-disable-line no-unused-vars
 import requestService from '../services/request.js';
-import {apiUrl, imgPath, COUNT, getMeta} from '../services/common.js';
+import {apiUrl, getMeta} from '../services/common.js';
 import ReactHtmlParser from 'react-html-parser';
 import DocumentMeta from 'react-document-meta';
 import ShowMore from '../component/ShowMore.jsx';
@@ -27,10 +26,8 @@ class Resource extends React.Component{
         this.getRequest = this.getRequest.bind(this);
     }
     getRequest(){
-        let caseData = [];
-        requestService.getService(`/infographic-node/${this.props.location.search.substring(this.props.location.search.indexOf("=")+1)}`)
+        requestService.getService(`/infographic-node/${this.props.nid}`)
             .then((response) => {
-                // this.setState({loading: false});
                 this.setState({infoData: response.data, loading: false});
             })
             .catch((err) => {
@@ -43,13 +40,10 @@ class Resource extends React.Component{
     }
 
     componentWillMount(){
-        getMeta(this.props.location.search.substring(this.props.location.search.indexOf("=")+1), this.getMeValue);
+        getMeta(this.props.nid);
         this.getRequest();
     }
-    componentDidMount(){
-        //Foundation.addToJquery($);
-        $(document).foundation();
-    }
+
 
     render(){
         return(
@@ -81,10 +75,11 @@ class Resource extends React.Component{
                                     <ShowMore id="infoArt" longText= {this.state.infoData[0].node_body}>
                                     </ShowMore>
                                     <div className="img txt-center">
-                                        <img src={apiUrl+this.state.infoData[0].secondary_img}/>
+                                        <img src={apiUrl+this.state.infoData[0].secondary_img} alt=""/>
                                     </div>
                                     {this.state.infoData[0].cta_button_title !==''?<div className="bottom">
-                                        <a className="button" href="#">{this.state.infoData[0].cta_button_title}</a>
+                                            {//eslint-disable-next-line
+                                                 }<a className="button" href="#">{this.state.infoData[0].cta_button_title}</a>
                                         </div>:''}
                                     <div className="upload-botton">
                                         {this.state.infoData[0].attach_file_title!==''? <div>
