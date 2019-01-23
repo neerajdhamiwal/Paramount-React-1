@@ -311,6 +311,9 @@ strong span {
     display: inline-block;
     vertical-align: middle; }
 
+.blogList .img-relative-title-ld h2, .blogList .img-relative-title-ru h2 {
+  width: 400px; }
+
 /*Header Styling Starts Here*/
 .close-button {
   z-index: 9999; }
@@ -504,7 +507,28 @@ header .header-inner {
   transition: all .2s linear; }
 
 .img-relative-title-ld {
-  position: relative; }
+  position: relative;
+  height: 450px;
+  border-radius: 4px; }
+  @media screen and (max-width: 39.9375em) {
+    .img-relative-title-ld {
+      height: auto; } }
+  .img-relative-title-ld .box {
+    height: 450px;
+    border-radius: 4px; }
+    @media screen and (max-width: 39.9375em) {
+      .img-relative-title-ld .box {
+        height: auto; } }
+    .img-relative-title-ld .box:hover img {
+      box-shadow: -5px 5px 0px rgba(0, 0, 0, 0.2);
+      -webkit-transition: all .2s linear;
+      -moz-transition: all .2s linear;
+      -o-transition: all .2s linear;
+      transition: all .2s linear; }
+    .img-relative-title-ld .box img {
+      height: 100%;
+      object-fit: cover;
+      border-radius: 4px; }
   @media screen and (min-width: 64em) {
     .img-relative-title-ld h2 {
       position: relative;
@@ -542,11 +566,14 @@ header .header-inner {
   .img-relative-title-ld img {
     position: relative;
     width: 100%;
+    border-radius: 4px;
     -webkit-transition: all .2s linear;
     -moz-transition: all .2s linear;
     -o-transition: all .2s linear;
     transition: all .2s linear;
-    z-index: 1; }
+    z-index: 1;
+    height: 100%;
+    object-fit: cover; }
 
 .grid-overlap {
   margin-top: 50px; }
@@ -715,7 +742,11 @@ header .header-inner {
 
 .img-relative-title-ru {
   position: relative;
-  margin-bottom: 2em; }
+  margin-bottom: 2em;
+  height: 450px; }
+  @media screen and (max-width: 39.9375em) {
+    .img-relative-title-ru {
+      height: auto; } }
   .img-relative-title-ru:hover img {
     box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.2);
     -webkit-transition: all .2s linear;
@@ -770,13 +801,17 @@ header .header-inner {
     -webkit-transition: all .2s linear;
     -moz-transition: all .2s linear;
     -o-transition: all .2s linear;
-    transition: all .2s linear; }
+    transition: all .2s linear;
+    height: 100%;
+    object-fit: cover; }
 
 .left-image-right-content {
-  padding-top: 50px; }
+  padding-top: 50px;
+  padding-bottom: 150px; }
   @media screen and (max-width: 39.9375em) {
     .left-image-right-content {
-      padding-top: 15px; } }
+      padding-top: 15px;
+      padding-bottom: auto; } }
   .left-image-right-content h3 {
     font-family: "Montserrat", sans-serif;
     font-size: 1.125rem; }
@@ -898,6 +933,12 @@ header .header-inner {
 
 .resource-page-grid .grid-container h4 {
   margin-left: 23px; }
+
+.team-page .img-block .img {
+  height: 280px; }
+  .team-page .img-block .img img {
+    height: 100%;
+    object-fit: cover; }
 
 .banner-info {
   font-size: 1.875rem;
@@ -1306,7 +1347,7 @@ footer.footer-bottom {
   .four-column-outer .four-column-content p {
     color: rgba(0, 0, 0, 0.6);
     margin-top: 30px;
-    font-size: .8rem; }
+    font-size: .84rem; }
 
 .article-top-content .img-relative-title-ld {
   top: 25%; }

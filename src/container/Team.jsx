@@ -93,9 +93,9 @@ class Team extends React.Component{
                             </div>
                             </div>
                        </section>:''}</div>:''}
-                        {this.state.teamData.hasOwnProperty('team_member_id') ? <div className="grid-container">
+                        {this.state.teamData.hasOwnProperty('team_member_id') ? <div className="grid-container pt-50">
                                 {customDivideData(this.state.teamData['team_member_id'][0], 3).map((subArr, index) => {
-                                    return <div key = {`arr${index}`}className="grid-x align-center block-latest-reads">
+                                    return <div key = {`arr${index}`}className="grid-x align-center block-latest-reads team-page">
                                         {subArr.map((obj, i) => {
                                             return    <div className="medium-4 cell img-block" key={i}>
                                                 { //eslint-disable-next-line
@@ -122,6 +122,7 @@ class Team extends React.Component{
                         {this.state.teamData.hasOwnProperty('certificate_slider_id')? this.state.teamData['certificate_slider_id'][0][0].certificate_slider_id ? <CertSlider/>: '':''}
                         {this.state.teamData.hasOwnProperty('partner_slider_id')? this.state.teamData['partner_slider_id'][0][0].partner_slider_id ? <PartnerSlider/>: '':''}
                         {this.state.teamData.hasOwnProperty('client_slider_id')? this.state.teamData['client_slider_id'][0][0].client_slider_id ? <FooterRowSlider/>: '':''}
+
                     </div>}
             </DocumentMeta>
         )

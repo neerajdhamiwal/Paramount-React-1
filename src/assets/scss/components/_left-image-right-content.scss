@@ -1,6 +1,10 @@
 .img-relative-title-ru {
 	position: relative;
   margin-bottom: 2em;
+	height: 450px;
+	@include mq(small-screen) {
+		height: auto;
+	}
 	&:hover{
 		img{
 			box-shadow: 5px 5px 0px rgba(0,0,0,.2);
@@ -54,14 +58,18 @@
   	width: 100%;
     border-radius: 5px;
 		@include transition ();
+		height: 100%;
+		object-fit: cover;
 	}
 }
 
 
 .left-image-right-content {
     padding-top: 50px;
+		padding-bottom: 150px;
 		@include mq(small-screen) {
 			 padding-top: 15px;
+			 padding-bottom: auto;
 		}
   h3 {
     @include tab-title(18);

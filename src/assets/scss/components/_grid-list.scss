@@ -80,3 +80,15 @@
     }
   }
 }
+
+.team-page{
+    .img-block {
+      .img{
+        height: 280px;
+        img{
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+}

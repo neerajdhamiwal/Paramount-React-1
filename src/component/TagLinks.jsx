@@ -54,7 +54,7 @@ constructor(props){
                       <div className="medium-5 cell">
                           <ShowMore id={`tagLink`} longText= {this.props.firstCaseStudy['field_body']} >
                           </ShowMore>
-                          {this.props.locate === 'resource'?'':<a href = {"/casestudy/article?nid="+this.props.firstCaseStudy['id']} className="button mt-15">Read more</a>}
+                          {this.props.locate === 'resource'?'':<a href = {this.props.firstCaseStudy['read_more_url']} className="button mt-15">Read more</a>}
                       </div>
                       <div className="medium-7 cell no-padding wow slideInRight">
                         <div className="img-relative-title-ld tab-img-h">

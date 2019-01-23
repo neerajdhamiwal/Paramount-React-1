@@ -4,7 +4,6 @@ import ReactHtmlParser from 'react-html-parser';
 import ShowMore from './ShowMore.jsx';
 import WOW from 'wowjs';
 
-
 class CaseStudylist extends React.Component {
   constructor(props){
     super(props)
@@ -23,16 +22,15 @@ class CaseStudylist extends React.Component {
   render(){
     return(
         <div>
-            { //eslint-disable-next-line
-            }{this.props.activeCaseStudyData.map((caseStudy, i) => {
+            {this.props.activeCaseStudyData.map((caseStudy, i) => {
                 if(i !== 0){
-                  if(i%2 === 0){
+                  if(i%2 ===0){
                       return <div className="grid-container custom-grid custom-grid-right">
                         <div className="grid-x grid-padding-x height-750 align-middle">
                           <div className="medium-5 cell">
                             <ShowMore id={`caseListOdd${i}`} longText= {caseStudy.field_body}>
                             </ShowMore>
-                            <a href = {"/casestudy/article?nid="+caseStudy.id} className="button">Read more</a>
+                            <a href = {caseStudy.read_more_url} className="button">Read more</a>
                           </div>
                           <div className="medium-7 cell no-padding wow slideInRight">
                             <div className="img-relative-title-ld">
@@ -64,13 +62,16 @@ class CaseStudylist extends React.Component {
                       <div className="content-inner pl-155">
                         <ShowMore id={`caseList${i}`} longText= {caseStudy.field_body}>
                         </ShowMore>
-                        <a href = {"/casestudy/article?nid="+caseStudy.id} className="button">Read more</a>
+                        <a href = {caseStudy.read_more_url} className="button">Read more</a>
                       </div>
                     </div>
                   </div>
                   </div>
                   </section>
                   }
+                }
+                else{
+                    return false;
                 }
             })
         }
