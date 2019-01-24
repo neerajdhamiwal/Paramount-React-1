@@ -37,7 +37,7 @@ constructor(props){
     }
     render(){
         return(
-          <section className="category-link left-image-right-content bottom-50">
+          <section className="category-link bottom-50">
         <div className="grid-container  custom-grid custom-grid-right">
           <div className="grid-x">
             <div className="medium-2 cell">

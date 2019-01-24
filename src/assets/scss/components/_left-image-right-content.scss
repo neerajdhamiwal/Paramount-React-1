@@ -19,6 +19,7 @@
     padding: 5px 15px;
     border-radius: 4px;
     width: 245px;
+		text-align: right;
     @include mq(large-screen) {
 			position: relative;
 	    top: auto;
@@ -29,8 +30,7 @@
 	    font-weight: 400;
 	    right: -60px;
 	    height: auto;
-	    display: flex;
-	    align-items: flex-start;
+			text-align: right;
 	    padding: 30px 35px 60px;
 	    border-radius: 4px;
 	    float: right;
