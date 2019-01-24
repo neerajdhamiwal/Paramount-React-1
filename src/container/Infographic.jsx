@@ -67,6 +67,7 @@ class Resource extends React.Component{
                     />
                 </center> :
                 <DocumentMeta {...this.state.meta}>
+                    <div>
                     { this.state.bannerData.length>0?
                         <div>
                             <section className="bottom-100">
@@ -117,6 +118,7 @@ class Resource extends React.Component{
                             }):''
                             }
                         </div> :''}
+                        </div>
                 </DocumentMeta>
         )
     }

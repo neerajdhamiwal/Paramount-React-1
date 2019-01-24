@@ -78,6 +78,7 @@ class About extends React.Component{
                     />
                 </center> :
                 <DocumentMeta {...this.state.meta}>
+                    <div>
                 { this.state.bannerData.length>0?
                         <div>
                             <section className="bottom-100">
@@ -87,14 +88,13 @@ class About extends React.Component{
                                                 <h3 className="banner-info">{ReactHtmlParser(this.state.bannerData[0].banner_title)}<br/>
                                                     <span>{ReactHtmlParser(this.state.bannerData[0].banner_subtitle)}</span></h3>
                                                 <h5>{ReactHtmlParser(this.state.bannerData[0].banner_description)}</h5>
-                                                    <ShowMore id="caseBnnr" longText= {this.state.bannerData[0].banner_body}>
-                                                    </ShowMore>
+                                                    <ShowMore id="caseBnnr" longText= {this.state.bannerData[0].banner_body}/>
                                             </div>
                                             <div>
                                               <div className="medium-6 cell ">
-                                                  <div class="rotation-banner">
+                                                  <div className="rotation-banner">
                                                       <img id="loading" src={aboutLayerBannerone} alt="" />
-                                                      <img class="over-img" src={aboutLayerBannertwo} alt="" />
+                                                      <img className="over-img" src={aboutLayerBannertwo} alt="" />
                                                   </div>
                                                 </div>
                                             </div>
@@ -103,7 +103,7 @@ class About extends React.Component{
                                 </section>
 
                             {this.state.listingData.hasOwnProperty('nid')?this.state.listingData['nid'][0].map((obj, i) => {
-                                return <section className="award-content-box top-100 bottom-100">
+                                return <section key={i} className="award-content-box top-100 bottom-100">
                                     <div className="grid-container">
                                         <div className="grid-x align-right align-middle grid-margin-x">
                                             <div className="medium-2 cell small-order-change">
@@ -123,6 +123,7 @@ class About extends React.Component{
                             })
                             :''}
                         </div> :''}
+                    </div>
                 </DocumentMeta>
         )
     }
