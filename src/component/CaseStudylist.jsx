@@ -28,9 +28,11 @@ class CaseStudylist extends React.Component {
                       return <div className="grid-container custom-grid custom-grid-right">
                         <div className="grid-x grid-padding-x height-750 align-middle">
                           <div className="medium-5 cell">
+                          <div className="body-font-style">
                             <ShowMore id={`caseListOdd${i}`} longText= {caseStudy.field_body}>
                             </ShowMore>
-                            <a href = {caseStudy.read_more_url} className="button">Read more</a>
+                          </div>
+                            <a href = {caseStudy.read_more_url} className="button mt-15">Read more</a>
                           </div>
                           <div className="medium-7 cell no-padding wow slideInRight">
                             <div className="img-relative-title-ld">
@@ -60,9 +62,11 @@ class CaseStudylist extends React.Component {
                   </div>
                     <div className="large-5 cell">
                       <div className="content-inner pl-155">
-                        <ShowMore id={`caseList${i}`} longText= {caseStudy.field_body}>
-                        </ShowMore>
-                        <a href = {caseStudy.read_more_url} className="button">Read more</a>
+                        <div className="body-font-style">
+                          <ShowMore id={`caseList${i}`} longText= {caseStudy.field_body}>
+                          </ShowMore>
+                        </div>  
+                        <a href = {caseStudy.read_more_url} className="button mt-15">Read more</a>
                       </div>
                     </div>
                   </div>
