@@ -1,7 +1,6 @@
 import React from 'react';
 import {apiUrl} from '../services/common.js';
 import ReactHtmlParser from 'react-html-parser';
-import ShowMore from './ShowMore.jsx';
 import WOW from 'wowjs';
 import ShowMore from 'react-show-more';
 
