@@ -81,9 +81,9 @@ class Resource extends React.Component{
                                         </div>
                                         <div>
                                           <div className="medium-6 cell">
-                                              <div class="rotation-banner">
+                                              <div className="rotation-banner">
                                                   <img id="loading" src={aboutLayerBannerone} alt="" />
-                                                  <img class="over-img" src={aboutLayerBannertwo} alt="" />
+                                                  <img className="over-img" src={aboutLayerBannertwo} alt="" />
                                               </div>
                                           </div>
                                         </div>
@@ -92,7 +92,7 @@ class Resource extends React.Component{
                             </section>
 
                             {this.state.listingData.hasOwnProperty('nid')?this.state.listingData['nid'][0].map((obj, i) => {
-                                return <section className="award-content-box top-100 bottom-100">
+                                return <section key= {i} className="award-content-box top-100 bottom-100">
                                     <div className="grid-container">
                                         <div className="grid-x align-right align-middle grid-margin-x">
                                             <div className="medium-2 cell small-order-change">

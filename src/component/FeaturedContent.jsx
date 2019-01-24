@@ -4,12 +4,12 @@ import ReactHtmlParser from 'react-html-parser';
 // import ShowMore from './ShowMore.jsx';
 import ShowMore from 'react-show-more';
 
-const BannerStyle =(url)=> {
-    let combinedurl = apiUrl+url
-    return {
-        backgroundImage: `url(${combinedurl})`
-    }
-};
+// const BannerStyle =(url)=> {
+//     let combinedurl = apiUrl+url
+//     return {
+//         backgroundImage: `url(${combinedurl})`
+//     }
+// };
 
 class FeaturedContent extends React.Component{
   constructor(props){
