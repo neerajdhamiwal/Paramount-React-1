@@ -1,7 +1,7 @@
 import React from 'react';
 import {apiUrl} from '../services/common.js';
 import ReactHtmlParser from 'react-html-parser';
-// import ShowMore from './ShowMore.jsx';
+import ShowMore from './ShowMore.jsx';
 import WOW from 'wowjs';
 import ShowMore from 'react-show-more';
 
@@ -30,8 +30,7 @@ class CaseStudylist extends React.Component {
                       return <div key={i} className="grid-container custom-grid custom-grid-right">
                         <div className="grid-x grid-padding-x height-750 align-middle">
                           <div className="medium-5 cell">
-                            {/*<ShowMore id={`caseListOdd${i}`} longText= {caseStudy.field_body}>*/}
-                            {/*</ShowMore>*/}
+                              <div className="body-font-style">
                               <ShowMore
                                   lines={15}
                                   more='Show more'
@@ -40,7 +39,8 @@ class CaseStudylist extends React.Component {
                               >
                                   {ReactHtmlParser(caseStudy.field_body)}
                               </ShowMore>
-                            <a href = {caseStudy.read_more_url} className="button">Read more</a>
+                              </div>
+                            <a href = {caseStudy.read_more_url} className="button mt-15">Read more</a>
                           </div>
                           <div className="medium-7 cell no-padding wow slideInRight">
                             <div className="img-relative-title-ld">
@@ -80,7 +80,7 @@ class CaseStudylist extends React.Component {
                           >
                               {ReactHtmlParser(caseStudy.field_body)}
                               </ShowMore>
-                        <a href = {caseStudy.read_more_url} className="button">Read more</a>
+                        <a href = {caseStudy.read_more_url} className="button mt-15">Read more</a>
                       </div>
                     </div>
                   </div>

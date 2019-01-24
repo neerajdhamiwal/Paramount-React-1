@@ -109,6 +109,12 @@
 	position: relative;
   height: 450px;
   border-radius: 4px;
+  &:hover{
+    img{
+      box-shadow: -5px 5px 0px rgba(0,0,0,.2);
+      @include transition ();
+    }
+  }
   @include mq(small-screen) {
     height: auto;
   }

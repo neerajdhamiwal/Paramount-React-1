@@ -183,14 +183,25 @@ body {
 .resource-big-charge {
   max-height: 500px;
   overflow-y: scroll;
-  padding-right: 30px; }
+  padding-right: 30px;
+  -ms-overflow-style: none;
+  overflow: -moz-scrollbars-none; }
+  .resource-big-charge::-webkit-scrollbar {
+    display: none; }
   @media screen and (max-width: 39.9375em) {
     .resource-big-charge {
       padding-right: 0px; } }
 
 .info-graphi-small {
   max-height: 300px;
-  overflow-y: scroll; }
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+  overflow: -moz-scrollbars-none;
+  border: 1px solid #ccc; }
+  .info-graphi-small::-webkit-scrollbar {
+    display: none; }
+  .info-graphi-small img {
+    width: 100%; }
 
 .info-graphic .info-graphic-heading {
   text-align: center;
@@ -510,6 +521,12 @@ header .header-inner {
   position: relative;
   height: 450px;
   border-radius: 4px; }
+  .img-relative-title-ld:hover img {
+    box-shadow: -5px 5px 0px rgba(0, 0, 0, 0.2);
+    -webkit-transition: all .2s linear;
+    -moz-transition: all .2s linear;
+    -o-transition: all .2s linear;
+    transition: all .2s linear; }
   @media screen and (max-width: 39.9375em) {
     .img-relative-title-ld {
       height: auto; } }
@@ -760,7 +777,8 @@ header .header-inner {
     font-weight: 400;
     padding: 5px 15px;
     border-radius: 4px;
-    width: 245px; }
+    width: 245px;
+    text-align: right; }
     @media screen and (min-width: 64em) {
       .img-relative-title-ru h2 {
         position: relative;
@@ -772,8 +790,7 @@ header .header-inner {
         font-weight: 400;
         right: -60px;
         height: auto;
-        display: flex;
-        align-items: flex-start;
+        text-align: right;
         padding: 30px 35px 60px;
         border-radius: 4px;
         float: right; } }
@@ -1676,6 +1693,14 @@ img.align-right {
 img.align-left {
   float: left;
   margin-right: 15px; }
+
+.body-font-style h1, .body-font-style h2, .body-font-style h3, .body-font-style h4, .body-font-style h5, .body-font-style h6 {
+  font-size: 1.1rem;
+  font-weight: normal;
+  color: #303347;
+  display: inline-block;
+  margin: 0px;
+  padding: 0px; }
 
 .button {
   font-family: "Montserrat", sans-serif;

@@ -220,6 +220,11 @@ body {
     max-height: 500px;
     overflow-y: scroll;
 		padding-right: 30px;
+    -ms-overflow-style: none;
+    overflow: -moz-scrollbars-none;
+			&::-webkit-scrollbar {
+			    display: none;
+			}
 		@include mq(small-screen) {
 			padding-right: 0px;
 		}
@@ -228,6 +233,15 @@ body {
 .info-graphi-small {
     max-height: 300px;
     overflow-y: scroll;
+		-ms-overflow-style: none;
+		overflow: -moz-scrollbars-none;
+			&::-webkit-scrollbar {
+					display: none;
+			}
+			img{
+				width: 100%;
+			}
+			border: 1px solid #ccc;
 }
 
 .info-graphic{
