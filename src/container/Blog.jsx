@@ -75,15 +75,13 @@ class CaseStudy extends React.Component{
               this.ff = {};
               response.data.forEach((obj, i) => {
                   if (obj.field_featured === 'On') {
-                      // this.setState({featuredActive: obj});
                       this.ff = obj;
                       response.data.splice(i, 1);
-                      // this.setState({loading: false});
                       return false;
                   }
               })
+              this.setState({featuredActive: this.ff})
               this.setState({
-                  featuredActive: this.ff,
                   loading: false,
                   blogList: response.data,
                   caseStudyList: this.caseStudyList,
@@ -113,8 +111,8 @@ class CaseStudy extends React.Component{
              <div className=" bottom-100 clearfix"></div>
             {this.props.locate === 'resource'?'':<div>
               <CaseStudylist activeCaseStudyData = {this.state.activeCaseStudy}/>
-                    <ReactPaginate previousLabel={"previous"}
-                                   nextLabel={"next"}
+                    <ReactPaginate previousLabel={"<<previous"}
+                                   nextLabel={"next>>"}
                                    breakLabel={"..."}
                                    breakClassName={"break-me"}
                                    pageCount={this.state.pageCount}
@@ -128,7 +126,7 @@ class CaseStudy extends React.Component{
         }
                 <GridList/>
                 </div>
-                </DocumentMeta>
+            </DocumentMeta>
 
     )
   }

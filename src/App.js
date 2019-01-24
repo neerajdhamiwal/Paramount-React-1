@@ -43,8 +43,8 @@ class App extends React.Component{
                 <Switch>
                   <Route exact path="/" render={() => <Home nid={50}/>} />
                   <Route exact path="/resources" component={Resource} />
-                  <Route exact path="/blogs" component={Blog} />
-                  <Route exact path="/infographic" component={Infographic} />
+                  <Route exact path="/resources/blogs" component={Blog} />
+                  <Route exact path="/resources/infographic" component={Infographic} />
                     { //eslint-disable-next-line
                     this.state.url.map((obj, i)=> {if(obj.view_node_1 === '/careers'){
                        return <Route key ={i} exact path="/careers" render={() => <Career nid={obj.nid}/>} />

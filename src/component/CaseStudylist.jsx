@@ -1,8 +1,10 @@
 import React from 'react';
 import {apiUrl} from '../services/common.js';
 import ReactHtmlParser from 'react-html-parser';
-import ShowMore from './ShowMore.jsx';
+// import ShowMore from './ShowMore.jsx';
 import WOW from 'wowjs';
+import ShowMore from 'react-show-more';
+
 
 class CaseStudylist extends React.Component {
   constructor(props){
@@ -25,11 +27,19 @@ class CaseStudylist extends React.Component {
             {this.props.activeCaseStudyData.map((caseStudy, i) => {
                 if(i !== 0){
                   if(i%2 ===0){
-                      return <div className="grid-container custom-grid custom-grid-right">
+                      return <div key={i} className="grid-container custom-grid custom-grid-right">
                         <div className="grid-x grid-padding-x height-750 align-middle">
                           <div className="medium-5 cell">
-                            <ShowMore id={`caseListOdd${i}`} longText= {caseStudy.field_body}>
-                            </ShowMore>
+                            {/*<ShowMore id={`caseListOdd${i}`} longText= {caseStudy.field_body}>*/}
+                            {/*</ShowMore>*/}
+                              <ShowMore
+                                  lines={15}
+                                  more='Show more'
+                                  less='Show less'
+                                  anchorClass=''
+                              >
+                                  {ReactHtmlParser(caseStudy.field_body)}
+                              </ShowMore>
                             <a href = {caseStudy.read_more_url} className="button">Read more</a>
                           </div>
                           <div className="medium-7 cell no-padding wow slideInRight">
@@ -49,7 +59,7 @@ class CaseStudylist extends React.Component {
                       </div>
                   }
                   else{
-                   return <section className="left-image-right-content">
+                   return <section key={i} className="left-image-right-content">
                           <div className="grid-container custom-grid custom-grid-left">
                           <div className="grid-x align-middle">
                           <div className="large-7 cell no-padding wow slideInLeft">
@@ -62,6 +72,14 @@ class CaseStudylist extends React.Component {
                       <div className="content-inner pl-155">
                         <ShowMore id={`caseList${i}`} longText= {caseStudy.field_body}>
                         </ShowMore>
+                          <ShowMore
+                              lines={15}
+                              more='Show more'
+                              less='Show less'
+                              anchorClass=''
+                          >
+                              {ReactHtmlParser(caseStudy.field_body)}
+                              </ShowMore>
                         <a href = {caseStudy.read_more_url} className="button">Read more</a>
                       </div>
                     </div>

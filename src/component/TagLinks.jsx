@@ -44,7 +44,7 @@ constructor(props){
               <ul className="vertical menu" id="service">
                   {this.props.caseStudyList[0].name.split(',').map((value, index) => {
                        //eslint-disable-next-line
-                      return <li onClick={this.clickHandler}><a id={index} className={localStorage.getItem('activeMenu')? (value === localStorage.getItem('activeMenu')?'activeTab':''): (index===0?'activeTab':'')}>{value.replace(/\&amp;/g,'&')}</a></li>
+                      return <li key={index} onClick={this.clickHandler}><a id={index} className={localStorage.getItem('activeMenu')? (value === localStorage.getItem('activeMenu')?'activeTab':''): (index===0?'activeTab':'')}>{value.replace(/\&amp;/g,'&')}</a></li>
                   })
                   }
               </ul>

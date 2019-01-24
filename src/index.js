@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import $ from 'jquery';
 import App from './App';
-import 'foundation-sites';
 import './assets/css/foundation.css';
 import './assets/css/app.css';
 import 'owl.carousel/dist/assets/owl.carousel.css';
