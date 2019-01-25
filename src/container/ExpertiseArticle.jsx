@@ -60,7 +60,6 @@ class ExpertiseArticle extends React.Component{
                             return <div><TextContent data = {obj}/>
                                 <hr/>
                             </div>
-
                         }) :'':''}
                 {
                     this.state.ExpertiseGovData.hasOwnProperty('img_des_id')? this.state.ExpertiseGovData['img_des_id'][0].map((obj, i) => {

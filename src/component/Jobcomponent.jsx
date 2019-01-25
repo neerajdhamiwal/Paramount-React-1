@@ -1,10 +1,13 @@
 
 import React from 'react';
 import ReactHtmlParser from 'react-html-parser';
+import $ from 'jquery';
 
 
 class Jobcomponent extends React.Component{
-
+    componentDidMount(){
+        $(document).foundation();
+    }
     render(){
         return(
             <ul className="accordion" data-accordion data-allow-all-closed="true" id="job-tabs">

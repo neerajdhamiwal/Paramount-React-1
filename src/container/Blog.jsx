@@ -80,7 +80,9 @@ class CaseStudy extends React.Component{
                       return false;
                   }
               })
-              this.setState({featuredActive: this.ff})
+              if(this.ff!==undefined){
+                  this.setState({featuredActive: this.ff});
+              }
               this.setState({
                   loading: false,
                   blogList: response.data,
@@ -111,8 +113,8 @@ class CaseStudy extends React.Component{
              <div className=" bottom-100 clearfix"></div>
             {this.props.locate === 'resource'?'':<div>
               <CaseStudylist activeCaseStudyData = {this.state.activeCaseStudy}/>
-                    <ReactPaginate previousLabel={"<<previous"}
-                                   nextLabel={"next>>"}
+                    <ReactPaginate previousLabel={"<<"}
+                                   nextLabel={">>"}
                                    breakLabel={"..."}
                                    breakClassName={"break-me"}
                                    pageCount={this.state.pageCount}

@@ -12,32 +12,20 @@ import ShowMore from 'react-show-more';
 // };
 
 class FeaturedContent extends React.Component{
-  constructor(props){
-    super(props)
-      this.state = {
-          activeCaseStudy: []
-      }
-  }
-    componentWillReceiveProps(nextProps){
-        if(nextProps.activeCaseStudy !== 'undefined'){
-            this.setState({activeCaseStudy: nextProps.activeCaseStudy})
-        }
-    }
-
   render(){
     return(
       <div>
-          {this.state.activeCaseStudy? <section className="main-banner banner-with-content" style={{backgroundImage:`url(${apiUrl+this.state.activeCaseStudy.image})`}}>
+          {this.props.activeCaseStudy? <section className="main-banner banner-with-content" style={{backgroundImage:`url(${apiUrl+this.props.activeCaseStudy.image})`}}>
               <div className="grid-container">
                   <div className="grid-x align-right align-middle grid-margin-x">
                       <div className="medium-4 cell small-order-change">
-                          <h3 className="banner-info"><span>{ReactHtmlParser(this.state.activeCaseStudy.title)}</span><br/><p>{ReactHtmlParser(this.state.activeCaseStudy.sub_title)}</p>
+                          <h3 className="banner-info"><span>{ReactHtmlParser(this.props.activeCaseStudy.title)}</span><br/><p>{ReactHtmlParser(this.props.activeCaseStudy.sub_title)}</p>
                           </h3>
                       </div>
                   </div>
               </div>
               </section>: ''}
-          {this.state.activeCaseStudy? <section className="main-banner bottom-100 top-100 banner-with-content-box">
+          {this.props.activeCaseStudy? <section className="main-banner bottom-100 top-100 banner-with-content-box">
                   <div className="grid-container">
                       <div className="grid-x align-right align-middle grid-margin-x">
                           <div className="medium-5 cell small-order-change">
@@ -46,9 +34,9 @@ class FeaturedContent extends React.Component{
                                   more='Show more'
                                   less='Show less'
                                   anchorClass=''
-                              >{ReactHtmlParser(this.state.activeCaseStudy.field_body)}
+                              >{ReactHtmlParser(this.props.activeCaseStudy.field_body)}
                               </ShowMore>
-                              {this.props.locate === 'resource'?'':<a href = {"/casestudy/article?nid="+this.state.activeCaseStudy.id} className="button">Read more</a>}
+                              {this.props.locate === 'resource'?'':<a href = {this.props.activeCaseStudy.read_more_url} className="button">Read more</a>}
                           </div>
                           <div className="medium-5 cell"></div>
                       </div>

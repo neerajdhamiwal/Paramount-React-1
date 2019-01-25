@@ -14,6 +14,7 @@ import contactBanner2 from '../assets/img/contact-banner2.png';
 import contactBanner3 from '../assets/img/contact-banner3.png';
 import ReactHtmlParser from 'react-html-parser';
 import DocumentMeta from 'react-document-meta';
+import BottomFlipBanner from '../component/BottomFlipBanner';
 class Team extends React.Component{
     constructor(props) {
         super(props)
@@ -94,7 +95,7 @@ class Team extends React.Component{
                             </div>
                        </section>:''}</div>:''}
                         {this.state.teamData.hasOwnProperty('team_member_id') ? <div className="grid-container pt-50">
-                                {customDivideData(this.state.teamData['team_member_id'][0], 3).map((subArr, index) => {
+                                {customDivideData(this.state.teamData['team_member_id'][0], 4).map((subArr, index) => {
                                     return <div key = {`arr${index}`}className="grid-x align-center block-latest-reads team-page">
                                         {subArr.map((obj, i) => {
                                             return    <div className="medium-4 cell img-block" key={i}>
@@ -115,7 +116,7 @@ class Team extends React.Component{
                                 })
                                 }
                             </div> :""}
-                        {/*{this.state.teamData.hasOwnProperty('content_ctaflip_id')?<BottomFlipBanner nodeData={this.state.teamData['content_ctaflip_id'][0]}/>:''}*/}
+                        {this.state.teamData.hasOwnProperty('content_ctaflip_id')?<BottomFlipBanner nodeData={this.state.teamData['content_ctaflip_id'][0]}/>:''}
                         <div className="clear"></div>
                         {this.state.teamData.hasOwnProperty('map_id')? <Map node = {this.state.teamData['map_id'][0][0]}/>: ''}
                         {this.state.teamData.hasOwnProperty('award_slider_id')?this.state.teamData['award_slider_id'][0][0].award_slider_id? <AwardSlider/>: '':''}

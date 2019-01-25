@@ -12,14 +12,14 @@ class BFlipperBanner extends React.Component{
                     <div className="grid-x align-right align-middle grid-margin-x">
                         <div className="medium-5 cell small-order-change">
                             <h3 className="banner-info"><span>{ReactHtmlParser(this.props.nodeData[0].content_ctaflip_title)}</span><br/></h3>
-                            {/*<h6>{this.props.nodeData[0].content_ctaflip_description}</h6><br/>*/}
+                            <h6>{ReactHtmlParser(this.props.nodeData[0].content_ctaflip_description)}</h6><br/>
                             <ShowMore id="bottomFlipBnnr" longText= {this.props.nodeData[0].content_ctaflip_body}>
                             </ShowMore>
                             {this.props.nodeData[0].content_ctaflip_cta_title!==''? <a className="button" href={this.props.nodeData[0].content_ctaflip_cta_url}>{ReactHtmlParser(this.props.nodeData[0].content_ctaflip_cta_title)}</a>:''}
                             {this.props.nodeData[0].content_ctaflip_flip_title!==''? <div className="banner-img-link">
                                     <div className="grid-x grid-margin-x grid-margin-y img-shadow-hover">
-                                        {this.props.nodeData.map((data) => {
-                                            return  <div className="cell shrink team-banner-be"><a href={data.content_ctaflip_flip_cta_url.substring(9)}>{ReactHtmlParser(data.content_ctaflip_flip_title)}</a></div>
+                                        {this.props.nodeData.map((data, i) => {
+                                            return  <div key = {i} className="cell shrink team-banner-be"><a href={data.content_ctaflip_flip_cta_url.substring(9)}>{ReactHtmlParser(data.content_ctaflip_flip_title)}</a></div>
 
                                         })}
                                     </div>

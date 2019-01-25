@@ -71,6 +71,7 @@ class ArticlePage extends React.Component{
            <div className="grid-x align-right align-middle grid-margin-x">
              <div className="medium-10 cell small-order-change">
                <h3 className="banner-info"><span>{ReactHtmlParser(this.state.caseStudy.title)}</span><br/>
+                   {ReactHtmlParser(this.state.caseStudy.node_subtitle_title)}
              </h3>
              </div>
            </div>
