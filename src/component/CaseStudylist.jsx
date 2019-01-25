@@ -2,8 +2,7 @@ import React from 'react';
 import {apiUrl} from '../services/common.js';
 import ReactHtmlParser from 'react-html-parser';
 import WOW from 'wowjs';
-import ShowMore from 'react-show-more';
-
+import ShowMore from './ShowMore';
 
 class CaseStudylist extends React.Component {
   constructor(props){
@@ -30,14 +29,8 @@ class CaseStudylist extends React.Component {
                         <div className="grid-x grid-padding-x height-750 align-middle">
                           <div className="medium-5 cell">
                               <div className="body-font-style">
-                              <ShowMore
-                                  lines={15}
-                                  more='Show more'
-                                  less='Show less'
-                                  anchorClass=''
-                              >
-                                  {ReactHtmlParser(caseStudy.field_body)}
-                              </ShowMore>
+                                  <ShowMore id={`caseList${i}`} longText= {caseStudy.field_body}>
+                                  </ShowMore>
                               </div>
                             <a href = {caseStudy.read_more_url} className="button mt-15">Read more</a>
                           </div>
@@ -71,14 +64,6 @@ class CaseStudylist extends React.Component {
                       <div className="content-inner pl-155">
                         <ShowMore id={`caseList${i}`} longText= {caseStudy.field_body}>
                         </ShowMore>
-                          <ShowMore
-                              lines={15}
-                              more='Show more'
-                              less='Show less'
-                              anchorClass=''
-                          >
-                              {ReactHtmlParser(caseStudy.field_body)}
-                              </ShowMore>
                         <a href = {caseStudy.read_more_url} className="button mt-15">Read more</a>
                       </div>
                     </div>

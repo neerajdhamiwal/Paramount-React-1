@@ -1,8 +1,7 @@
 import React from 'react';
 import {apiUrl} from '../services/common.js';
 import ReactHtmlParser from 'react-html-parser';
-// import ShowMore from './ShowMore.jsx';
-import ShowMore from 'react-show-more';
+import ShowMore from './ShowMore.jsx';
 
 // const BannerStyle =(url)=> {
 //     let combinedurl = apiUrl+url
@@ -29,12 +28,7 @@ class FeaturedContent extends React.Component{
                   <div className="grid-container">
                       <div className="grid-x align-right align-middle grid-margin-x">
                           <div className="medium-5 cell small-order-change">
-                              <ShowMore
-                                  lines={15}
-                                  more='Show more'
-                                  less='Show less'
-                                  anchorClass=''
-                              >{ReactHtmlParser(this.props.activeCaseStudy.field_body)}
+                              <ShowMore id={`FeatBlog`} longText= {ReactHtmlParser(this.props.activeCaseStudy.field_body)}>
                               </ShowMore>
                               {this.props.locate === 'resource'?'':<a href = {this.props.activeCaseStudy.read_more_url} className="button">Read more</a>}
                           </div>
