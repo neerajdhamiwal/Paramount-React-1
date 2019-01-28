@@ -378,7 +378,9 @@ p{
 		}
 	}
 	.previous a, .next a{
-		width: 100px;
+		width: 40px;
+		padding: 7px;
+		font-size: 14px;
 	}
 	.active{
 		a{
@@ -410,4 +412,8 @@ strong{
 	.img-relative-title-ld h2, .img-relative-title-ru h2{
 		width: 400px;
 	}
+}
+
+.blog-page-content .undefined {
+    padding-top: 162px;
 }

@@ -98,11 +98,12 @@ class Team extends React.Component{
                                 {customDivideData(this.state.teamData['team_member_id'][0], 4).map((subArr, index) => {
                                     return <div key = {`arr${index}`}className="grid-x align-center block-latest-reads team-page">
                                         {subArr.map((obj, i) => {
-                                            return    <div className="medium-4 cell img-block" key={i}>
+                                            return    <div className="medium-3 cell img-block" key={i}>
                                                 { //eslint-disable-next-line
                                                 }<a href={obj.social_link} target="_blank">
                                                 <div className="img">
                                                     <img src={apiUrl+obj.team_member_image} alt=""/>
+                                                    <span>Team details</span>
                                                 </div>
                                                 <div className="img-content">
                                                     <h6>{obj.team_member_name}</h6>
