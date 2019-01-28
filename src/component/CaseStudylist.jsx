@@ -61,7 +61,7 @@ class CaseStudylist extends React.Component {
                   </div>
                   </div>
                     <div className="large-5 cell">
-                      <div className="content-inner pl-155">
+                      <div className="content-inner pl-155 blog-page-content">
                         <ShowMore id={`caseList${i}`} longText= {caseStudy.field_body}>
                         </ShowMore>
                         <a href = {caseStudy.read_more_url} className="button mt-15">Read more</a>
