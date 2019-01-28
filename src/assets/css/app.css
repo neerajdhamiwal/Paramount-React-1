@@ -330,6 +330,9 @@ strong span {
 .blog-page-content .undefined {
   padding-top: 162px; }
 
+.blog-right-img-text {
+  padding-right: 135px; }
+
 /*Header Styling Starts Here*/
 .close-button {
   z-index: 9999; }
@@ -962,6 +965,8 @@ header .header-inner {
     height: 100%;
     object-fit: cover; }
 
+.block-latest-reads.team-page .img-block .img-content h6 {
+  margin-bottom: 0px; }
 .block-latest-reads.team-page .img-block .img {
   position: relative; }
   .block-latest-reads.team-page .img-block .img span {
