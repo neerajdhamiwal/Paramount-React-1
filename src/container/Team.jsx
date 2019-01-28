@@ -104,7 +104,7 @@ class Team extends React.Component{
                                                 }<a href={obj.social_link} target="_blank">
                                                 <div className="img">
                                                     <img src={apiUrl+obj.team_member_image} alt=""/>
-                                                    <span>Team details</span>
+                                                    <span>{ReactHtmlParser(obj.about_team)}</span>
                                                 </div>
                                                 <div className="img-content">
                                                     <h6>{obj.team_member_name}</h6>
