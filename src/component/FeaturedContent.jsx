@@ -18,7 +18,7 @@ class FeaturedContent extends React.Component{
               <div className="grid-container">
                   <div className="grid-x align-right align-middle grid-margin-x">
                       <div className="medium-4 cell small-order-change">
-                          <h3 className="banner-info"><span>{ReactHtmlParser(this.props.activeCaseStudy.title)}</span><br/><p>{ReactHtmlParser(this.props.activeCaseStudy.sub_title)}</p>
+                        <h3 className="banner-info">{ReactHtmlParser(this.props.activeCaseStudy.title)}<br/><span>{ReactHtmlParser(this.props.activeCaseStudy.sub_title)}</span>
                           </h3>
                       </div>
                   </div>

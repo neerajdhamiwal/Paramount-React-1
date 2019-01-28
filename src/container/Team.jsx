@@ -70,7 +70,8 @@ class Team extends React.Component{
                             <div className="grid-container">
                                 <div className="grid-x align-right align-middle grid-margin-x">
                                     <div className="medium-5 cell small-order-change">
-                                        <h3 className="banner-info"><span>{ReactHtmlParser(this.state.teamData[Object.keys(this.state.teamData)[0]][0][0].node_title)}</span><br/>{ReactHtmlParser(this.state.teamData[Object.keys(this.state.teamData)[0]][0][0].node_subtitle_title)}</h3>
+                                        <h3 className="banner-info">{ReactHtmlParser(this.state.teamData[Object.keys(this.state.teamData)[0]][0][0].node_title)}<br/>
+                                            <span>{ReactHtmlParser(this.state.teamData[Object.keys(this.state.teamData)[0]][0][0].node_subtitle_title)}</span></h3>
                                         <p>{ReactHtmlParser(this.state.teamData[Object.keys(this.state.teamData)[0]][0][0].node_description)}</p>
                                         {this.state.teamData[Object.keys(this.state.teamData)[0]][0][0].hasOwnProperty('node_cta_button_title')? this.state.teamData[Object.keys(this.state.teamData)[0]][0][0].node_cta_button_title !==''?<a className="button" href={apiUrl+this.state.teamData[Object.keys(this.state.teamData)[0]][0][0].node_cta_button_url.substring(9)}>{this.state.teamData[Object.keys(this.state.teamData)[0]][0][0].node_cta_button_title}</a>:'':''}
                                         {this.state.teamData[Object.keys(this.state.teamData)[0]][0][0].hasOwnProperty('node_cta_button_title')?this.state.teamData[Object.keys(this.state.teamData)[0]][0][0].download_link_title !==''?<a className="button" href={apiUrl+this.state.teamData[Object.keys(this.state.teamData)[0]][0][0].download_link_url.substring(9)}>{this.state.teamData[Object.keys(this.state.teamData)[0]][0][0].download_link_title}</a>:'':''}
