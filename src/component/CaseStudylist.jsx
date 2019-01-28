@@ -28,7 +28,7 @@ class CaseStudylist extends React.Component {
                       return <div key={i} className="grid-container custom-grid custom-grid-right">
                         <div className="grid-x grid-padding-x height-750 align-middle">
                           <div className="medium-5 cell">
-                              <div className="body-font-style">
+                              <div className="body-font-style blog-right-img-text">
                                   <ShowMore id={`caseList${i}`} longText= {caseStudy.field_body}>
                                   </ShowMore>
                               </div>
