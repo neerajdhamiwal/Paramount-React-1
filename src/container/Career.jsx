@@ -116,7 +116,7 @@ class About extends React.Component{
 
     render(){
         return(
-            this.state.loading? <center >
+            this.state.loading? <center>
                     <Loader
                         type="ThreeDots"
                         color="#fd302a"

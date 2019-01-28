@@ -13,6 +13,8 @@ import AwardSlider from '../component/AwardsBottomSlider.jsx';
 import PartnerSlider from '../component/PartnerSlider.jsx';
 import FooterRowSlider from '../component/FooterRowSlider.jsx';
 import DocumentMeta from 'react-document-meta';
+import $ from 'jquery';
+
 class ExpertiseArticle extends React.Component{
     constructor(props){
         super(props)
@@ -35,7 +37,9 @@ class ExpertiseArticle extends React.Component{
             .then((response) => {
                 let ids = ['img_des_id','sub_block_id', 'secondary_sub_block_id','secondary_img_des_id', 'extra_content_id', 'award_slider_id', 'certificate_slider_id','partner_slider_id','client_slider_id'];
                 // this.setState({});
-                this.setState({ExpertiseGovData: jsonMiddleware(response.data, ids), loading: false});
+                this.setState({ExpertiseGovData: jsonMiddleware(response.data, ids), loading: false},()=>{
+                    $('.addAttr a').prop('target', '_blank');
+                });
             })
             .catch((err) => {
                 console.log(err);
@@ -52,6 +56,7 @@ class ExpertiseArticle extends React.Component{
                     />
                 </center> :
                 <DocumentMeta {...this.state.meta}>
+                    <div className="addAttr">
                  {Object.keys(this.state.ExpertiseGovData).length>0? <AwardBanner customClass = "main-banner award-banner" nid={this.props.nid} nodeData = {this.state.ExpertiseGovData[Object.keys(this.state.ExpertiseGovData)[0]][0]}></AwardBanner>: ''}
                 <div className=" clearfix"></div>
                  {this.state.ExpertiseGovData.hasOwnProperty('sub_block_id')? <FooterHeading subBlockData = {this.state.ExpertiseGovData['sub_block_id'][0]}/>:''}
@@ -95,7 +100,10 @@ class ExpertiseArticle extends React.Component{
                     {this.state.ExpertiseGovData.hasOwnProperty('client_slider_id')? this.state.ExpertiseGovData['client_slider_id'][0][0].client_slider_id ? <FooterRowSlider/>: '':''}
                     {this.state.ExpertiseGovData.hasOwnProperty('certificate_slider_id')?this.state.ExpertiseGovData['certificate_slider_id'][0][0].certificate_slider_id? <CertSlider/>: '':''}
                     {this.state.ExpertiseGovData.hasOwnProperty('partner_slider_id')? this.state.ExpertiseGovData['partner_slider_id'][0][0].partner_slider_id ? <PartnerSlider/>: '':''}
-                 </DocumentMeta>
+                    </div>
+                    </DocumentMeta>
+
+
         )
     }
 }
