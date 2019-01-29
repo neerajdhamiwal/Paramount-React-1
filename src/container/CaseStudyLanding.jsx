@@ -114,7 +114,9 @@ class About extends React.Component{
                                                     <h3>{ReactHtmlParser(obj.node_title)}</h3>
                                                     <h6>{ReactHtmlParser(obj.node_subtitle_title)}</h6>
                                                     <p>{ReactHtmlParser(imgPath(obj.node_body))}</p>
-                                                    <a className="button" href={obj.cta_button_url.substring(9)}>{obj.cta_button_title}</a>
+                                                    {obj.attach_file !==''? <a className="button" href={apiUrl+obj.attach_file}>{obj.attach_file_title}</a>:
+                                                        <a className="button" href={obj.cta_button_url}>{obj.cta_button_title}</a>
+                                                    }
                                                 </div>
                                             </div>
                                         </div>
