@@ -12,7 +12,7 @@ class BFlipperBanner extends React.Component{
                     <div className="grid-x align-right align-middle grid-margin-x">
                         <div className="medium-5 cell small-order-change">
                             <h3 className="banner-info"><span>{ReactHtmlParser(this.props.nodeData[0].content_ctaflip_title)}</span><br/></h3>
-                            <h6>{ReactHtmlParser(this.props.nodeData[0].content_ctaflip_description)}</h6><br/>
+                            {this.props.nodeData[0].content_ctaflip_description!==''?<h6>{ReactHtmlParser(this.props.nodeData[0].content_ctaflip_description)}</h6>:''} <br/>
                             <ShowMore id="bottomFlipBnnr" longText= {this.props.nodeData[0].content_ctaflip_body}>
                             </ShowMore>
                             {this.props.nodeData[0].content_ctaflip_cta_title!==''? <a className="button" href={this.props.nodeData[0].content_ctaflip_cta_url.substring(9)}>{ReactHtmlParser(this.props.nodeData[0].content_ctaflip_cta_title)}</a>:''}
