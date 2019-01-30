@@ -93,12 +93,22 @@
     }
 }
 
+
 .block-latest-reads.team-page{
     .img-block{
-       .img-content h6{
-         margin-bottom: 0px;
-       }
+       .img-content {
+            text-align: center;
+           h6{
+             margin-bottom: 0px;
+           }
+         }
         .img{
+          @include mq(small-screen) {
+            height: 250px;
+          }
+          img{
+            border-radius: 50%;
+          }
           position: relative;
             span {
             color: #fff;
@@ -106,8 +116,10 @@
             position: absolute;
             margin: auto;
             width: 100%;
+            padding: 10px;
             height: 100%;
             display: flex;
+            border-radius: 50%;
             align-items: center;
             justify-content: center;
             ms-flex-align: center;
@@ -117,6 +129,7 @@
             top: 0;
             right: 0;
             padding-top: 0px;
+            padding: 15px;
             bottom: 0;
             opacity: 0;
             background: #ff0000;
@@ -125,6 +138,10 @@
             transition: opacity .7s ease, -webkit-transform .5s ease;
             transition: transform .5s ease, opacity .7s ease;
             transition: transform .5s ease, opacity .7s ease, -webkit-transform .5s ease;
+            p{
+              padding: 25px 12px 15px;
+              border-radius: 50%;
+            }
           }
           &:hover{
             span{

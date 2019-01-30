@@ -965,18 +965,27 @@ header .header-inner {
     height: 100%;
     object-fit: cover; }
 
-.block-latest-reads.team-page .img-block .img-content h6 {
-  margin-bottom: 0px; }
+.block-latest-reads.team-page .img-block .img-content {
+  text-align: center; }
+  .block-latest-reads.team-page .img-block .img-content h6 {
+    margin-bottom: 0px; }
 .block-latest-reads.team-page .img-block .img {
   position: relative; }
+  @media screen and (max-width: 39.9375em) {
+    .block-latest-reads.team-page .img-block .img {
+      height: 250px; } }
+  .block-latest-reads.team-page .img-block .img img {
+    border-radius: 50%; }
   .block-latest-reads.team-page .img-block .img span {
     color: #fff;
     text-align: center;
     position: absolute;
     margin: auto;
     width: 100%;
+    padding: 10px;
     height: 100%;
     display: flex;
+    border-radius: 50%;
     align-items: center;
     justify-content: center;
     ms-flex-align: center;
@@ -986,6 +995,7 @@ header .header-inner {
     top: 0;
     right: 0;
     padding-top: 0px;
+    padding: 15px;
     bottom: 0;
     opacity: 0;
     background: #ff0000;
@@ -994,6 +1004,9 @@ header .header-inner {
     transition: opacity .7s ease, -webkit-transform .5s ease;
     transition: transform .5s ease, opacity .7s ease;
     transition: transform .5s ease, opacity .7s ease, -webkit-transform .5s ease; }
+    .block-latest-reads.team-page .img-block .img span p {
+      padding: 25px 12px 15px;
+      border-radius: 50%; }
   .block-latest-reads.team-page .img-block .img:hover span {
     opacity: 1;
     -webkit-transform: scale(1);
