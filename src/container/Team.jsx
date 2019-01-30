@@ -107,8 +107,8 @@ class Team extends React.Component{
                                                     <span>{ReactHtmlParser(obj.about_team)}</span>
                                                 </div>
                                                 <div className="img-content">
-                                                    <h6>{obj.team_member_name}</h6>
-                                                    <h2>{obj.team_member_job}</h2>
+                                                    <h6>{obj.team_member_name}</h6>{ //eslint-disable-next-line
+                                                }<h2>{obj.team_member_job.replace(/\&amp;/g,'&')}</h2>
                                                 </div>
                                                 </a>
                                             </div>
