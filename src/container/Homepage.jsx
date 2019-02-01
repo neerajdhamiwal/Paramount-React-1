@@ -201,9 +201,9 @@ class Home extends React.Component{
 
            <div className="clearfix"></div>
 
-        <section className="left-image-right-content paroller-example2" style={ArrowStyle}>
+        <section className="paroller-example2 pb-50" style={ArrowStyle}>
             <div className="grid-container custom-grid custom-grid-right">
-                <div className="grid-x grid-padding-x height-750 align-middle pl-155">
+                <div className="grid-x grid-padding-x  align-middle pl-155">
                     <div className="medium-6 small-12 cell  p-right-45">
                         <h2 className="relative-title title-span">{ReactHtmlParser(this.state.HomeData[Object.keys(this.state.HomeData)[0]][0][0].content_bottom_title)}</h2>
                         {this.state.HomeData[Object.keys(this.state.HomeData)[0]][0][0].content_bottom_description !==''? <h3 className="ptb-40"> {ReactHtmlParser(this.state.HomeData[Object.keys(this.state.HomeData)[0]][0][0].content_bottom_description)}</h3>:''}
@@ -227,7 +227,6 @@ class Home extends React.Component{
             </div>
         </section>
         {/*<HorizontalScroll/>*/}
-        <div className="clearfix bottom-100"></div>
                 <GridList/>
         {/*<FooterRowSlider/>*/}
                 {this.state.HomeData.hasOwnProperty('award_slider_id')?this.state.HomeData['award_slider_id'][0][0].award_slider_id? <AwardSlider/>: '':''}
