@@ -17,7 +17,7 @@ class RightImgLContent extends React.Component{
     render(){
         return(
              // left-image-right-content Section Starts Here
-        <section className="left-image-right-content">
+        <section className="right-image-left-content2">
             {this.props.secondary? <div className="grid-container custom-grid custom-grid-right">
                 <div className="grid-x grid-padding-x height-750 align-middle">
                     <div className="medium-6 cell  p-right-45">

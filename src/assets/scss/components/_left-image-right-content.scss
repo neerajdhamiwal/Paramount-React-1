@@ -74,6 +74,25 @@
   h3 {
     @include tab-title(18);
   }
+	.content-inner{
+		padding-top: 100px;
+	}
+}
+
+.right-image-left-content2{
+	h3 {
+	    font-family: "Montserrat", sans-serif;
+	    font-size: 1.125rem;
+	}
+
+	.img-relative-title-ld{
+		&:hover{
+			img{
+				box-shadow: -5px 5px 0px rgba(0,0,0,.2);
+				@include transition ();
+			}
+		}
+	}
 }
 
 .expertise-left-image{
