@@ -37,15 +37,8 @@ class CaseStudylist extends React.Component {
                           </div>
                           <div className="medium-7 cell no-padding wow slideInRight">
                             <div className="img-relative-title-ld">
-                              <div className="grid">
-                                <div className="grid__item">
-                                  <div className="box">
-                                    <div className="box__shadow"></div>
-                                    <img className="box__img" src={apiUrl + caseStudy.image} alt=""/>
-                                    <h2>{ReactHtmlParser(caseStudy.title)}</h2>
-                                  </div>
-                                </div>
-                              </div>
+                                <img src={apiUrl + caseStudy.image} alt=""/>
+                                <h2>{ReactHtmlParser(caseStudy.title)}</h2>
                             </div>
                           </div>
                         </div>

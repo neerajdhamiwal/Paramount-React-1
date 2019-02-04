@@ -840,6 +840,18 @@ header .header-inner {
   .left-image-right-content h3 {
     font-family: "Montserrat", sans-serif;
     font-size: 1.125rem; }
+  .left-image-right-content .content-inner {
+    padding-top: 100px; }
+
+.right-image-left-content2 h3 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.125rem; }
+.right-image-left-content2 .img-relative-title-ld:hover img {
+  box-shadow: -5px 5px 0px rgba(0, 0, 0, 0.2);
+  -webkit-transition: all .2s linear;
+  -moz-transition: all .2s linear;
+  -o-transition: all .2s linear;
+  transition: all .2s linear; }
 
 .expertise-left-image .img-relative-title-ru h2 {
   bottom: -75px;
@@ -1425,7 +1437,7 @@ footer.footer-bottom {
     font-size: .84rem; }
 
 .article-top-content .img-relative-title-ld {
-  top: 25%; }
+  top: 0%; }
 .article-top-content .img-relative-title-ld h2 {
   left: auto;
   right: 0px; }
@@ -1759,6 +1771,9 @@ img.align-left {
   display: inline-block;
   margin: 0px;
   padding: 0px; }
+
+.tp-non {
+  padding-top: none; }
 
 .button {
   font-family: "Montserrat", sans-serif;
