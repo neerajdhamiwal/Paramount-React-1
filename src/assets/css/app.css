@@ -1437,7 +1437,7 @@ footer.footer-bottom {
     font-size: .84rem; }
 
 .article-top-content .img-relative-title-ld {
-  top: 25%; }
+  top: 0%; }
 .article-top-content .img-relative-title-ld h2 {
   left: auto;
   right: 0px; }
@@ -1771,6 +1771,9 @@ img.align-left {
   display: inline-block;
   margin: 0px;
   padding: 0px; }
+
+.tp-non {
+  padding-top: none; }
 
 .button {
   font-family: "Montserrat", sans-serif;

@@ -79,13 +79,11 @@ class ArticlePage extends React.Component{
        </section>
        <section className="left-image-right-content top-100 bottom-100">
          <div className="grid-container custom-grid custom-grid-right">
-           <div className="grid-x grid-padding-x pl-155">
+           <div className="grid-x grid-padding-x">
              <div className="medium-6 small-12 cell p-right-45">
-               <div className="pr-155 ">
                    <p>{ReactHtmlParser(imgPath(this.state.caseStudy.field_body))}</p>
-               </div>
            </div>
-         <div className="medium-6 cell no-padding article-top-content hide-for-small-only">
+         <div className="medium-6 cell article-top-content hide-for-small-only">
            <div className="img-relative-title-ld">
              <img src={apiUrl+this.state.caseStudy.field_secondary_image} className="" alt=""/>
            </div>
