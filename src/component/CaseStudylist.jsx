@@ -2,7 +2,7 @@ import React from 'react';
 import {apiUrl} from '../services/common.js';
 import ReactHtmlParser from 'react-html-parser';
 import WOW from 'wowjs';
-import ShowMore from './ShowMore';
+// import ShowMore from './ShowMore';
 
 class CaseStudylist extends React.Component {
   constructor(props){
@@ -29,8 +29,9 @@ class CaseStudylist extends React.Component {
                         <div className="grid-x grid-padding-x height-750 align-middle">
                           <div className="medium-5 cell">
                               <div className="body-font-style blog-right-img-text">
-                                  <ShowMore id={`caseList${i}`} longText= {caseStudy.field_body}>
-                                  </ShowMore>
+                                  {/*<ShowMore id={`caseList${i}`} longText= {caseStudy.field_body}>*/}
+                                  {/*</ShowMore>*/}
+                                  {caseStudy.field_body}
                               </div>
                             <a href = {caseStudy.read_more_url} className="button mt-15">Read more</a>
                           </div>
@@ -62,8 +63,9 @@ class CaseStudylist extends React.Component {
                   </div>
                     <div className="large-5 cell">
                       <div className="content-inner pl-155 blog-page-content">
-                        <ShowMore id={`caseList${i}`} longText= {caseStudy.field_body}>
-                        </ShowMore>
+                        {/*<ShowMore id={`caseList${i}`} longText= {caseStudy.field_body}>*/}
+                        {/*</ShowMore>*/}
+                          {caseStudy.field_body}
                         <a href = {caseStudy.read_more_url} className="button mt-15">Read more</a>
                       </div>
                     </div>
