@@ -2,83 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2d1d3f16-6902-41a6-ae43-3ec3599bffc5" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/assets/.sass-cache/2452b84b14a6ee662d085dd079248d02f0fb72da/_accordion-tab.scssc" afterPath="$PROJECT_DIR$/src/assets/.sass-cache/2452b84b14a6ee662d085dd079248d02f0fb72da/_accordion-tab.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/assets/.sass-cache/2452b84b14a6ee662d085dd079248d02f0fb72da/_article-page.scssc" afterPath="$PROJECT_DIR$/src/assets/.sass-cache/2452b84b14a6ee662d085dd079248d02f0fb72da/_article-page.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/assets/.sass-cache/2452b84b14a6ee662d085dd079248d02f0fb72da/_award-content.scssc" afterPath="$PROJECT_DIR$/src/assets/.sass-cache/2452b84b14a6ee662d085dd079248d02f0fb72da/_award-content.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/assets/.sass-cache/2452b84b14a6ee662d085dd079248d02f0fb72da/_banner-with-content.scssc" afterPath="$PROJECT_DIR$/src/assets/.sass-cache/2452b84b14a6ee662d085dd079248d02f0fb72da/_banner-with-content.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/assets/.sass-cache/2452b84b14a6ee662d085dd079248d02f0fb72da/_banner.scssc" afterPath="$PROJECT_DIR$/src/assets/.sass-cache/2452b84b14a6ee662d085dd079248d02f0fb72da/_banner.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/assets/.sass-cache/2452b84b14a6ee662d085dd079248d02f0fb72da/_content-with-sidemenu.scssc" afterPath="$PROJECT_DIR$/src/assets/.sass-cache/2452b84b14a6ee662d085dd079248d02f0fb72da/_content-with-sidemenu.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/assets/.sass-cache/2452b84b14a6ee662d085dd079248d02f0fb72da/_footer.scssc" afterPath="$PROJECT_DIR$/src/assets/.sass-cache/2452b84b14a6ee662d085dd079248d02f0fb72da/_footer.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/assets/.sass-cache/2452b84b14a6ee662d085dd079248d02f0fb72da/_four-column.scssc" afterPath="$PROJECT_DIR$/src/assets/.sass-cache/2452b84b14a6ee662d085dd079248d02f0fb72da/_four-column.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/assets/.sass-cache/2452b84b14a6ee662d085dd079248d02f0fb72da/_grid-list.scssc" afterPath="$PROJECT_DIR$/src/assets/.sass-cache/2452b84b14a6ee662d085dd079248d02f0fb72da/_grid-list.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/assets/.sass-cache/2452b84b14a6ee662d085dd079248d02f0fb72da/_grid-overlap.scssc" afterPath="$PROJECT_DIR$/src/assets/.sass-cache/2452b84b14a6ee662d085dd079248d02f0fb72da/_grid-overlap.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/assets/.sass-cache/2452b84b14a6ee662d085dd079248d02f0fb72da/_latest-reads-block.scssc" afterPath="$PROJECT_DIR$/src/assets/.sass-cache/2452b84b14a6ee662d085dd079248d02f0fb72da/_latest-reads-block.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/assets/.sass-cache/2452b84b14a6ee662d085dd079248d02f0fb72da/_left-image-right-content.scssc" afterPath="$PROJECT_DIR$/src/assets/.sass-cache/2452b84b14a6ee662d085dd079248d02f0fb72da/_left-image-right-content.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/assets/.sass-cache/2452b84b14a6ee662d085dd079248d02f0fb72da/_mainmenu.scssc" afterPath="$PROJECT_DIR$/src/assets/.sass-cache/2452b84b14a6ee662d085dd079248d02f0fb72da/_mainmenu.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/assets/.sass-cache/2452b84b14a6ee662d085dd079248d02f0fb72da/_our-certifications.scssc" afterPath="$PROJECT_DIR$/src/assets/.sass-cache/2452b84b14a6ee662d085dd079248d02f0fb72da/_our-certifications.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/assets/.sass-cache/2452b84b14a6ee662d085dd079248d02f0fb72da/_right-image-left-content.scssc" afterPath="$PROJECT_DIR$/src/assets/.sass-cache/2452b84b14a6ee662d085dd079248d02f0fb72da/_right-image-left-content.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/assets/.sass-cache/2452b84b14a6ee662d085dd079248d02f0fb72da/_row-slider.scssc" afterPath="$PROJECT_DIR$/src/assets/.sass-cache/2452b84b14a6ee662d085dd079248d02f0fb72da/_row-slider.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/assets/.sass-cache/2452b84b14a6ee662d085dd079248d02f0fb72da/job.scssc" afterPath="$PROJECT_DIR$/src/assets/.sass-cache/2452b84b14a6ee662d085dd079248d02f0fb72da/job.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/assets/.sass-cache/25cbe06f2d106553c2c144ae7b1773f527e7d6d7/_header.scssc" afterPath="$PROJECT_DIR$/src/assets/.sass-cache/25cbe06f2d106553c2c144ae7b1773f527e7d6d7/_header.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/assets/.sass-cache/3042dbabdc3a2f35e1a4594bdae74dc60b3ec4cd/_header.scssc" afterPath="$PROJECT_DIR$/src/assets/.sass-cache/3042dbabdc3a2f35e1a4594bdae74dc60b3ec4cd/_header.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/assets/.sass-cache/531cf1284be265377878643c35920fef21cec4f5/_mixins.scssc" afterPath="$PROJECT_DIR$/src/assets/.sass-cache/531cf1284be265377878643c35920fef21cec4f5/_mixins.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/assets/.sass-cache/531cf1284be265377878643c35920fef21cec4f5/_overrides.scssc" afterPath="$PROJECT_DIR$/src/assets/.sass-cache/531cf1284be265377878643c35920fef21cec4f5/_overrides.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/assets/.sass-cache/531cf1284be265377878643c35920fef21cec4f5/_utility-classes.scssc" afterPath="$PROJECT_DIR$/src/assets/.sass-cache/531cf1284be265377878643c35920fef21cec4f5/_utility-classes.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/assets/.sass-cache/531cf1284be265377878643c35920fef21cec4f5/_variables.scssc" afterPath="$PROJECT_DIR$/src/assets/.sass-cache/531cf1284be265377878643c35920fef21cec4f5/_variables.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/assets/.sass-cache/5ebca85f6b62dc9e8860e96dff07d324d05ca185/_accordion-tab.scssc" afterPath="$PROJECT_DIR$/src/assets/.sass-cache/5ebca85f6b62dc9e8860e96dff07d324d05ca185/_accordion-tab.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/assets/.sass-cache/5ebca85f6b62dc9e8860e96dff07d324d05ca185/_article-page.scssc" afterPath="$PROJECT_DIR$/src/assets/.sass-cache/5ebca85f6b62dc9e8860e96dff07d324d05ca185/_article-page.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/assets/.sass-cache/5ebca85f6b62dc9e8860e96dff07d324d05ca185/_award-content.scssc" afterPath="$PROJECT_DIR$/src/assets/.sass-cache/5ebca85f6b62dc9e8860e96dff07d324d05ca185/_award-content.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/assets/.sass-cache/5ebca85f6b62dc9e8860e96dff07d324d05ca185/_banner-with-content.scssc" afterPath="$PROJECT_DIR$/src/assets/.sass-cache/5ebca85f6b62dc9e8860e96dff07d324d05ca185/_banner-with-content.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/assets/.sass-cache/5ebca85f6b62dc9e8860e96dff07d324d05ca185/_banner.scssc" afterPath="$PROJECT_DIR$/src/assets/.sass-cache/5ebca85f6b62dc9e8860e96dff07d324d05ca185/_banner.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/assets/.sass-cache/5ebca85f6b62dc9e8860e96dff07d324d05ca185/_content-with-sidemenu.scssc" afterPath="$PROJECT_DIR$/src/assets/.sass-cache/5ebca85f6b62dc9e8860e96dff07d324d05ca185/_content-with-sidemenu.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/assets/.sass-cache/5ebca85f6b62dc9e8860e96dff07d324d05ca185/_footer.scssc" afterPath="$PROJECT_DIR$/src/assets/.sass-cache/5ebca85f6b62dc9e8860e96dff07d324d05ca185/_footer.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/assets/.sass-cache/5ebca85f6b62dc9e8860e96dff07d324d05ca185/_four-column.scssc" afterPath="$PROJECT_DIR$/src/assets/.sass-cache/5ebca85f6b62dc9e8860e96dff07d324d05ca185/_four-column.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/assets/.sass-cache/5ebca85f6b62dc9e8860e96dff07d324d05ca185/_grid-overlap.scssc" afterPath="$PROJECT_DIR$/src/assets/.sass-cache/5ebca85f6b62dc9e8860e96dff07d324d05ca185/_grid-overlap.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/assets/.sass-cache/5ebca85f6b62dc9e8860e96dff07d324d05ca185/_latest-reads-block.scssc" afterPath="$PROJECT_DIR$/src/assets/.sass-cache/5ebca85f6b62dc9e8860e96dff07d324d05ca185/_latest-reads-block.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/assets/.sass-cache/5ebca85f6b62dc9e8860e96dff07d324d05ca185/_left-image-right-content.scssc" afterPath="$PROJECT_DIR$/src/assets/.sass-cache/5ebca85f6b62dc9e8860e96dff07d324d05ca185/_left-image-right-content.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/assets/.sass-cache/5ebca85f6b62dc9e8860e96dff07d324d05ca185/_mainmenu.scssc" afterPath="$PROJECT_DIR$/src/assets/.sass-cache/5ebca85f6b62dc9e8860e96dff07d324d05ca185/_mainmenu.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/assets/.sass-cache/5ebca85f6b62dc9e8860e96dff07d324d05ca185/_our-certifications.scssc" afterPath="$PROJECT_DIR$/src/assets/.sass-cache/5ebca85f6b62dc9e8860e96dff07d324d05ca185/_our-certifications.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/assets/.sass-cache/5ebca85f6b62dc9e8860e96dff07d324d05ca185/_right-image-left-content.scssc" afterPath="$PROJECT_DIR$/src/assets/.sass-cache/5ebca85f6b62dc9e8860e96dff07d324d05ca185/_right-image-left-content.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/assets/.sass-cache/5ebca85f6b62dc9e8860e96dff07d324d05ca185/_row-slider.scssc" afterPath="$PROJECT_DIR$/src/assets/.sass-cache/5ebca85f6b62dc9e8860e96dff07d324d05ca185/_row-slider.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/assets/.sass-cache/5ebca85f6b62dc9e8860e96dff07d324d05ca185/job.scssc" afterPath="$PROJECT_DIR$/src/assets/.sass-cache/5ebca85f6b62dc9e8860e96dff07d324d05ca185/job.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/assets/.sass-cache/93cb9d50df93925c1ff6b24a228660632f27f752/app.scssc" afterPath="$PROJECT_DIR$/src/assets/.sass-cache/93cb9d50df93925c1ff6b24a228660632f27f752/app.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/assets/.sass-cache/996f78a95059341375eb46b9e5a1f80a316c8619/_mixins.scssc" afterPath="$PROJECT_DIR$/src/assets/.sass-cache/996f78a95059341375eb46b9e5a1f80a316c8619/_mixins.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/assets/.sass-cache/996f78a95059341375eb46b9e5a1f80a316c8619/_overrides.scssc" afterPath="$PROJECT_DIR$/src/assets/.sass-cache/996f78a95059341375eb46b9e5a1f80a316c8619/_overrides.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/assets/.sass-cache/996f78a95059341375eb46b9e5a1f80a316c8619/_utility-classes.scssc" afterPath="$PROJECT_DIR$/src/assets/.sass-cache/996f78a95059341375eb46b9e5a1f80a316c8619/_utility-classes.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/assets/.sass-cache/996f78a95059341375eb46b9e5a1f80a316c8619/_variables.scssc" afterPath="$PROJECT_DIR$/src/assets/.sass-cache/996f78a95059341375eb46b9e5a1f80a316c8619/_variables.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/assets/.sass-cache/9baa2fc8e070319a337f075d3484d715e34eac06/app.scssc" afterPath="$PROJECT_DIR$/src/assets/.sass-cache/9baa2fc8e070319a337f075d3484d715e34eac06/app.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/assets/.sass-cache/a4a354fd19ea95df34a10b10072a21a7acc0ed21/_accordion-tab.scssc" afterPath="$PROJECT_DIR$/src/assets/.sass-cache/a4a354fd19ea95df34a10b10072a21a7acc0ed21/_accordion-tab.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/assets/.sass-cache/a4a354fd19ea95df34a10b10072a21a7acc0ed21/_article-page.scssc" afterPath="$PROJECT_DIR$/src/assets/.sass-cache/a4a354fd19ea95df34a10b10072a21a7acc0ed21/_article-page.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/assets/.sass-cache/a4a354fd19ea95df34a10b10072a21a7acc0ed21/_award-content.scssc" afterPath="$PROJECT_DIR$/src/assets/.sass-cache/a4a354fd19ea95df34a10b10072a21a7acc0ed21/_award-content.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/assets/.sass-cache/a4a354fd19ea95df34a10b10072a21a7acc0ed21/_banner-with-content.scssc" afterPath="$PROJECT_DIR$/src/assets/.sass-cache/a4a354fd19ea95df34a10b10072a21a7acc0ed21/_banner-with-content.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/assets/.sass-cache/a4a354fd19ea95df34a10b10072a21a7acc0ed21/_banner.scssc" afterPath="$PROJECT_DIR$/src/assets/.sass-cache/a4a354fd19ea95df34a10b10072a21a7acc0ed21/_banner.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/assets/.sass-cache/a4a354fd19ea95df34a10b10072a21a7acc0ed21/_content-with-sidemenu.scssc" afterPath="$PROJECT_DIR$/src/assets/.sass-cache/a4a354fd19ea95df34a10b10072a21a7acc0ed21/_content-with-sidemenu.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/assets/.sass-cache/a4a354fd19ea95df34a10b10072a21a7acc0ed21/_footer.scssc" afterPath="$PROJECT_DIR$/src/assets/.sass-cache/a4a354fd19ea95df34a10b10072a21a7acc0ed21/_footer.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/assets/.sass-cache/a4a354fd19ea95df34a10b10072a21a7acc0ed21/_four-column.scssc" afterPath="$PROJECT_DIR$/src/assets/.sass-cache/a4a354fd19ea95df34a10b10072a21a7acc0ed21/_four-column.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/assets/.sass-cache/a4a354fd19ea95df34a10b10072a21a7acc0ed21/_grid-list.scssc" afterPath="$PROJECT_DIR$/src/assets/.sass-cache/a4a354fd19ea95df34a10b10072a21a7acc0ed21/_grid-list.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/assets/.sass-cache/a4a354fd19ea95df34a10b10072a21a7acc0ed21/_grid-overlap.scssc" afterPath="$PROJECT_DIR$/src/assets/.sass-cache/a4a354fd19ea95df34a10b10072a21a7acc0ed21/_grid-overlap.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/assets/.sass-cache/a4a354fd19ea95df34a10b10072a21a7acc0ed21/_latest-reads-block.scssc" afterPath="$PROJECT_DIR$/src/assets/.sass-cache/a4a354fd19ea95df34a10b10072a21a7acc0ed21/_latest-reads-block.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/assets/.sass-cache/a4a354fd19ea95df34a10b10072a21a7acc0ed21/_left-image-right-content.scssc" afterPath="$PROJECT_DIR$/src/assets/.sass-cache/a4a354fd19ea95df34a10b10072a21a7acc0ed21/_left-image-right-content.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/assets/.sass-cache/a4a354fd19ea95df34a10b10072a21a7acc0ed21/_mainmenu.scssc" afterPath="$PROJECT_DIR$/src/assets/.sass-cache/a4a354fd19ea95df34a10b10072a21a7acc0ed21/_mainmenu.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/assets/.sass-cache/a4a354fd19ea95df34a10b10072a21a7acc0ed21/_our-certifications.scssc" afterPath="$PROJECT_DIR$/src/assets/.sass-cache/a4a354fd19ea95df34a10b10072a21a7acc0ed21/_our-certifications.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/assets/.sass-cache/a4a354fd19ea95df34a10b10072a21a7acc0ed21/_right-image-left-content.scssc" afterPath="$PROJECT_DIR$/src/assets/.sass-cache/a4a354fd19ea95df34a10b10072a21a7acc0ed21/_right-image-left-content.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/assets/.sass-cache/a4a354fd19ea95df34a10b10072a21a7acc0ed21/_row-slider.scssc" afterPath="$PROJECT_DIR$/src/assets/.sass-cache/a4a354fd19ea95df34a10b10072a21a7acc0ed21/_row-slider.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/assets/.sass-cache/a4a354fd19ea95df34a10b10072a21a7acc0ed21/job.scssc" afterPath="$PROJECT_DIR$/src/assets/.sass-cache/a4a354fd19ea95df34a10b10072a21a7acc0ed21/job.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/assets/.sass-cache/abd171ab3d9a3c42481037a23eaaa493ea368117/_mixins.scssc" afterPath="$PROJECT_DIR$/src/assets/.sass-cache/abd171ab3d9a3c42481037a23eaaa493ea368117/_mixins.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/assets/.sass-cache/abd171ab3d9a3c42481037a23eaaa493ea368117/_overrides.scssc" afterPath="$PROJECT_DIR$/src/assets/.sass-cache/abd171ab3d9a3c42481037a23eaaa493ea368117/_overrides.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/assets/.sass-cache/abd171ab3d9a3c42481037a23eaaa493ea368117/_utility-classes.scssc" afterPath="$PROJECT_DIR$/src/assets/.sass-cache/abd171ab3d9a3c42481037a23eaaa493ea368117/_utility-classes.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/assets/.sass-cache/abd171ab3d9a3c42481037a23eaaa493ea368117/_variables.scssc" afterPath="$PROJECT_DIR$/src/assets/.sass-cache/abd171ab3d9a3c42481037a23eaaa493ea368117/_variables.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/assets/.sass-cache/be25d10cacb30e6cd776df7ba89fabeb1815a321/_header.scssc" afterPath="$PROJECT_DIR$/src/assets/.sass-cache/be25d10cacb30e6cd776df7ba89fabeb1815a321/_header.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/assets/.sass-cache/c017c7be4c7f8d197992b22df0f740fd1c97c774/_global.scssc" afterPath="$PROJECT_DIR$/src/assets/.sass-cache/c017c7be4c7f8d197992b22df0f740fd1c97c774/_global.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/assets/.sass-cache/d3d067f320d50f3f481acb01fa628df135d54cbf/app.scssc" afterPath="$PROJECT_DIR$/src/assets/.sass-cache/d3d067f320d50f3f481acb01fa628df135d54cbf/app.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/assets/.sass-cache/fcf0f0314f4eefc389fbc4f51f2d15409e594bcf/_global.scssc" afterPath="$PROJECT_DIR$/src/assets/.sass-cache/fcf0f0314f4eefc389fbc4f51f2d15409e594bcf/_global.scssc" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/container/Notfound.jsx" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/webpack.config.js" afterPath="$PROJECT_DIR$/config/webpack.config.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/App.js" afterPath="$PROJECT_DIR$/src/App.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/component/CaseStudylist.jsx" afterPath="$PROJECT_DIR$/src/component/CaseStudylist.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/component/mobileHeader.jsx" afterPath="$PROJECT_DIR$/src/component/mobileHeader.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/container/Articlepage.jsx" afterPath="$PROJECT_DIR$/src/container/Articlepage.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/container/Team.jsx" afterPath="$PROJECT_DIR$/src/container/Team.jsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/container/CaseStudyLanding.jsx" afterPath="$PROJECT_DIR$/src/container/CaseStudyLanding.jsx" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -99,47 +27,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="webpack.config.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/webpack.config.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="25" column="57" lean-forward="false" selection-start-line="25" selection-start-column="57" selection-end-line="25" selection-end-column="57" />
-              <folding>
-                <element signature="e#7866#9675#0" expanded="false" />
-                <element signature="e#20883#20959#0" expanded="false" />
-                <element signature="e#21001#21488#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="17" lean-forward="false" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/index.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" column="16" lean-forward="false" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Blog.jsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/container/Blog.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="251">
-              <caret line="114" column="22" lean-forward="false" selection-start-line="114" selection-start-column="22" selection-end-line="114" selection-end-column="22" />
+            <state relative-caret-position="236">
+              <caret line="113" column="24" lean-forward="false" selection-start-line="113" selection-start-column="24" selection-end-line="113" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -148,8 +40,8 @@
       <file leaf-file-name="CaseStudylist.jsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/component/CaseStudylist.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="21" column="11" lean-forward="true" selection-start-line="21" selection-start-column="11" selection-end-line="21" selection-end-column="11" />
+            <state relative-caret-position="435">
+              <caret line="70" column="26" lean-forward="true" selection-start-line="70" selection-start-column="26" selection-end-line="70" selection-end-column="26" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -157,14 +49,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="mobileHeader.jsx" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/component/mobileHeader.jsx">
+      <file leaf-file-name="css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/assets/scss/css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" column="19" lean-forward="true" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
-              <folding>
-                <element signature="e#1#27#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app.scss" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/assets/scss/app.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -172,31 +72,52 @@
       <file leaf-file-name="Header.jsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/component/Header.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+            <state relative-caret-position="255">
+              <caret line="42" column="102" lean-forward="true" selection-start-line="42" selection-start-column="102" selection-end-line="42" selection-end-column="102" />
               <folding>
                 <element signature="e#1#27#0" expanded="true" />
-                <element signature="e#1678#3812#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="webpackDevServer.config.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/webpackDevServer.config.js">
+      <file leaf-file-name="CaseStudyLanding.jsx" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/container/CaseStudyLanding.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="16" lean-forward="false" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
+            <state relative-caret-position="296">
+              <caret line="113" column="94" lean-forward="true" selection-start-line="113" selection-start-column="94" selection-end-line="113" selection-end-column="94" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
+      <file leaf-file-name="App.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/App.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" column="5" lean-forward="false" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
+            <state relative-caret-position="449">
+              <caret line="45" column="5" lean-forward="true" selection-start-line="45" selection-start-column="5" selection-end-line="45" selection-end-column="5" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Notfound.jsx" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/container/Notfound.jsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="8" column="5" lean-forward="true" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Resource.jsx" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/container/Resource.jsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="975">
+              <caret line="72" column="71" lean-forward="false" selection-start-line="72" selection-start-column="71" selection-end-line="72" selection-end-column="71" />
               <folding />
             </state>
           </provider>
@@ -205,8 +126,8 @@
       <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="287">
-              <caret line="115" column="34" lean-forward="false" selection-start-line="115" selection-start-column="34" selection-end-line="115" selection-end-column="34" />
+            <state relative-caret-position="390">
+              <caret line="26" column="39" lean-forward="true" selection-start-line="26" selection-start-column="39" selection-end-line="26" selection-end-column="39" />
               <folding />
             </state>
           </provider>
@@ -264,8 +185,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/component/HorizontalScroll.jsx" />
-        <option value="$PROJECT_DIR$/src/container/Resource.jsx" />
         <option value="$PROJECT_DIR$/src/container/InfographicArticle.jsx" />
         <option value="$PROJECT_DIR$/src/component/AccordionTab.jsx" />
         <option value="$PROJECT_DIR$/src/component/AwardsBottomSlider.jsx" />
@@ -297,7 +216,6 @@
         <option value="$PROJECT_DIR$/src/index.js" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/component/Header.jsx" />
-        <option value="$PROJECT_DIR$/src/App.js" />
         <option value="$PROJECT_DIR$/src/container/Infographic.jsx" />
         <option value="$PROJECT_DIR$/src/component/Jobcomponent.jsx" />
         <option value="$PROJECT_DIR$/src/container/Blog.jsx" />
@@ -306,15 +224,18 @@
         <option value="$PROJECT_DIR$/src/component/FeaturedContent.jsx" />
         <option value="$PROJECT_DIR$/src/container/ExpertiseArticle.jsx" />
         <option value="$PROJECT_DIR$/src/component/GridListScnd.jsx" />
-        <option value="$PROJECT_DIR$/src/container/CaseStudyLanding.jsx" />
         <option value="$PROJECT_DIR$/src/component/BottomFlipBanner.jsx" />
         <option value="$PROJECT_DIR$/src/container/Team.jsx" />
         <option value="$PROJECT_DIR$/src/container/Articlepage.jsx" />
         <option value="$PROJECT_DIR$/config/paths.js" />
         <option value="$PROJECT_DIR$/config/env.js" />
         <option value="$PROJECT_DIR$/config/webpack.config.js" />
-        <option value="$PROJECT_DIR$/src/component/CaseStudylist.jsx" />
         <option value="$PROJECT_DIR$/src/component/mobileHeader.jsx" />
+        <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/src/component/CaseStudylist.jsx" />
+        <option value="$PROJECT_DIR$/src/container/CaseStudyLanding.jsx" />
+        <option value="$PROJECT_DIR$/src/container/Notfound.jsx" />
+        <option value="$PROJECT_DIR$/src/App.js" />
       </list>
     </option>
   </component>
@@ -390,25 +311,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="container" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="paramount-react" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="paramount-react" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="component" />
+              <option name="myItemId" value="assets" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -429,18 +332,8 @@
               <option name="myItemId" value="assets" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-          </PATH>
-          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="paramount-react" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="paramount-react" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="config" />
+              <option name="myItemId" value="css" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -573,16 +466,16 @@
       <workItem from="1548758057752" duration="1206000" />
       <workItem from="1548760015265" duration="1844000" />
       <workItem from="1548785192452" duration="2031000" />
-      <workItem from="1549268180331" duration="4927000" />
+      <workItem from="1549268180331" duration="9099000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="544432000" />
+    <option name="totallyTimeSpent" value="548604000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16842847" sideWeight="0.4163763" order="3" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -591,7 +484,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32891566" sideWeight="0.49753347" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32048193" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32048193" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17336152" sideWeight="0.5836237" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21071176" sideWeight="0.63419485" order="0" side_tool="true" content_ui="tabs" />
@@ -630,27 +523,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/assets/scss/components/_accordion-tab.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/assets/scss/components/_our-certifications.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/assets/scss/components/job.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" column="14" lean-forward="true" selection-start-line="26" selection-start-column="14" selection-end-line="26" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/container/Awards.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
@@ -785,13 +657,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/build/favicon.ico" />
     <entry file="file://$PROJECT_DIR$/build/manifest.json" />
-    <entry file="file://$PROJECT_DIR$/src/container/Resource.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="975">
-          <caret line="72" column="71" lean-forward="false" selection-start-line="72" selection-start-column="71" selection-end-line="72" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/component/GridListScnd.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
@@ -812,17 +677,6 @@
         <state relative-caret-position="855">
           <caret line="59" column="32" lean-forward="false" selection-start-line="59" selection-start-column="32" selection-end-line="59" selection-end-column="32" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/container/CaseStudyLanding.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1605">
-          <caret line="116" column="9" lean-forward="false" selection-start-line="116" selection-start-column="9" selection-end-line="116" selection-end-column="9" />
-          <folding>
-            <element signature="e#1#27#0" expanded="false" />
-            <element signature="e#343#408#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -860,14 +714,6 @@
             <element signature="e#1#27#0" expanded="false" />
             <element signature="e#586#647#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/App.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="49" column="55" lean-forward="false" selection-start-line="49" selection-start-column="55" selection-end-line="49" selection-end-column="55" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -930,22 +776,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
-          <caret line="115" column="34" lean-forward="false" selection-start-line="115" selection-start-column="34" selection-end-line="115" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/container/Blog.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="251">
-          <caret line="114" column="22" lean-forward="false" selection-start-line="114" selection-start-column="22" selection-end-line="114" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/webpack.config.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
@@ -971,7 +801,7 @@
         <state relative-caret-position="255">
           <caret line="17" column="16" lean-forward="false" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
           <folding>
-            <element signature="e#0#26#0" expanded="true" />
+            <element signature="e#0#26#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -984,10 +814,44 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/component/mobileHeader.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="5" lean-forward="true" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
+          <folding>
+            <element signature="e#1#27#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="26" column="39" lean-forward="true" selection-start-line="26" selection-start-column="39" selection-end-line="26" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assets/scss/css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assets/scss/app.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/component/CaseStudylist.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="11" lean-forward="true" selection-start-line="21" selection-start-column="11" selection-end-line="21" selection-end-column="11" />
+        <state relative-caret-position="435">
+          <caret line="70" column="26" lean-forward="true" selection-start-line="70" selection-start-column="26" selection-end-line="70" selection-end-column="26" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
@@ -996,21 +860,52 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/component/Header.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+        <state relative-caret-position="255">
+          <caret line="42" column="102" lean-forward="true" selection-start-line="42" selection-start-column="102" selection-end-line="42" selection-end-column="102" />
           <folding>
             <element signature="e#1#27#0" expanded="true" />
-            <element signature="e#1678#3812#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/component/mobileHeader.jsx">
+    <entry file="file://$PROJECT_DIR$/src/container/CaseStudyLanding.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="19" lean-forward="true" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
+        <state relative-caret-position="296">
+          <caret line="113" column="94" lean-forward="true" selection-start-line="113" selection-start-column="94" selection-end-line="113" selection-end-column="94" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/container/Resource.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="975">
+          <caret line="72" column="71" lean-forward="false" selection-start-line="72" selection-start-column="71" selection-end-line="72" selection-end-column="71" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/container/Blog.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="236">
+          <caret line="113" column="24" lean-forward="false" selection-start-line="113" selection-start-column="24" selection-end-line="113" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/container/Notfound.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="5" lean-forward="true" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="449">
+          <caret line="45" column="5" lean-forward="true" selection-start-line="45" selection-start-column="5" selection-end-line="45" selection-end-column="5" />
           <folding>
-            <element signature="e#1#27#0" expanded="true" />
+            <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>

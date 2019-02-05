@@ -114,8 +114,8 @@ class About extends React.Component{
                                                     <h3>{ReactHtmlParser(obj.node_title)}</h3>
                                                     <h6>{ReactHtmlParser(obj.node_subtitle_title)}</h6>
                                                     <p>{ReactHtmlParser(imgPath(obj.node_body))}</p>
-                                                    {obj.attach_file !==''? <a className="button" href={apiUrl+obj.attach_file}>{obj.attach_file_title}</a>:
-                                                        <a className="button" href={obj.cta_button_url}>{obj.cta_button_title}</a>
+                                                    { // eslint-disable-next-line
+                                                        obj.attach_file !==''? <a className="button" target="_blank" href={apiUrl+obj.attach_file}>{obj.attach_file_title}</a>: <a className="button" target="_blank" href={obj.cta_button_url}>{obj.cta_button_title}</a>
                                                     }
                                                 </div>
                                             </div>

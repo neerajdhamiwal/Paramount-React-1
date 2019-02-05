@@ -1,6 +1,6 @@
 import React from 'react';
 import { Switch, Route } from 'react-router';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Redirect } from 'react-router-dom';
 import Home from './container/Homepage.jsx';
 import Expertise from './container/Expertise.jsx';
 import Resource from './container/Resource.jsx';
@@ -13,6 +13,7 @@ import Career from './container/Career.jsx';
 import CaseStudy from './container/CaseStudyLanding.jsx';
 import InfographicArt from './container/InfographicArticle.jsx';
 import Infographic from './container/Infographic.jsx';
+import Notfound from './container/Notfound.jsx';
 import Main from './main';
 import requestService from './services/request';
 const UrlContent = {"Reach us Page":Team, "Service Node Page": ExpertiseArt, "Homepage": Home, "Landing Page":Expertise, "Reinforcement Page": Awards, "Infographics Page": InfographicArt, "Case Study": CaseStudy, "Blogs": ArticlePage};
@@ -23,6 +24,13 @@ class App extends React.Component{
     }
     componentWillMount(){
         requestService.getService(`/url-pattern-data`)
+            .then((response) => {
+                this.setState({url :this.addComponent(response.data)});
+            })
+            .catch((err) => {
+                console.log(err);
+            })
+        requestService.getService(`/redirect-link`)
             .then((response) => {
                 this.setState({url :this.addComponent(response.data)});
             })
@@ -46,6 +54,7 @@ class App extends React.Component{
                   <Route exact path="/resources/blogs" component={Blog} />
                   <Route exact path="/resources/case-studies" component={CaseStudy} />
                   <Route exact path="/resources/infographics" component={Infographic} />
+                    <Route path="*" component={Notfound}/>
                     { //eslint-disable-next-line
                     this.state.url.map((obj, i)=> {if(obj.view_node_1 === '/careers'){
                        return <Route key ={i} exact path="/careers" render={() => <Career nid={obj.nid}/>} />
