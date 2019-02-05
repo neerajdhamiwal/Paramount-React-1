@@ -24,7 +24,7 @@ class LeftImgRContent extends React.Component{
                             <div className="large-6 cell no-padding wow slideInLeft p-right-45">
                                 <div className="img-relative-title-ru">
                                     <h2 className="relative-title">{ReactHtmlParser(this.props.data.secondary_image_description_title)}</h2>
-                                    <img src={apiUrl+this.props.data.secondary_image_description_img} alt=""/>
+                                    <div className="left-image-block"><img src={apiUrl+this.props.data.secondary_image_description_img} alt=""/></div>
                                 </div>
                             </div>
                             <div className="large-6 cell wow fadeInUp">

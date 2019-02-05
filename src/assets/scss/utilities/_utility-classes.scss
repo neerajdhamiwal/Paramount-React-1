@@ -27,11 +27,21 @@
 		min-height: 750px;
 	}
 }
+
+.height-600 {
+	@include mq(medium-screen) {
+		min-height: 600px;
+	}
+}
+
 .pt-50 {
 	padding-top: 100px;
 }
 .pb-50 {
 	padding-bottom: 100px;
+	@include mq(small-screen) {
+		padding-bottom: 15px;
+	}
 }
 
 .mb-50 {

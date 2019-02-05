@@ -25,3 +25,15 @@
     @media screen and (max-width: 39.9375em)  { @content; }
   }
 }
+
+@mixin mx($media) {
+  @if $media == large-screen {
+    @media screen and (max-width: 1366px) { @content; }
+  }
+  @else if $media == medium-screen {
+    @media screen and (max-width: 1024px) { @content; }
+  }
+  @else if $media == small-screen {
+    @media screen and (max-width: 767)  { @content; }
+  }
+}

@@ -2,6 +2,12 @@
 	font: {
    size: 1.875rem;
  }
+ @include mq(small-screen) {
+	 font-size: 1.2rem;
+ }
+ @media(max-width: 1024px)and(min-width: 768px) {
+	 font-size: 1.2rem;
+ }
  color: #575757;
  line-height: 1.2;
  margin-bottom: 0px;
@@ -74,13 +80,21 @@ p{
 
 .banner-img-link {
 	position: relative;
+	@include mq(medium-screen) {
+		.grid-margin-y > .cell{
+			margin: 10px;
+		}
+	}
 	.img-shadow-hover {
     @include mq(medium-screen) {
-      position: absolute;
-      top: 60px;
-      width: 600px;
-
+			position: absolute;
+	    top: 60px;
+	    width: 600px;
     }
+		@media(max-width: 1024px)and(min-width: 768px) {
+			top: 0px;
+			width: 400px;
+		}
   }
 }
 
@@ -151,6 +165,10 @@ p{
 	img {
 		width: 160px;
     height: 90px;
+		@media(max-width: 1024px)and(min-width: 768px) {
+			width: 100px;
+			height: 60px;
+		}
   }
 }
 

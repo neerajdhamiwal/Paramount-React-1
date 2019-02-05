@@ -58,7 +58,7 @@ class CaseStudylist extends React.Component {
                           <div className="large-7 cell no-padding wow slideInLeft">
                           <div className="img-relative-title-ru">
                           <h2 className="relative-title">{ReactHtmlParser(caseStudy.title)}</h2>
-                    <img src={apiUrl + caseStudy.image} alt="placeholder"/>
+                    <div className="left-image-block"><img src={apiUrl + caseStudy.image} alt="placeholder"/></div>
                   </div>
                   </div>
                     <div className="large-5 cell">

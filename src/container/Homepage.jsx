@@ -186,7 +186,7 @@ class Home extends React.Component{
                        <div className="large-6 cell no-padding wow slideInLeft">
                            <div className="img-relative-title-ru">
                                <h2 className="relative-title">{ReactHtmlParser(this.state.HomeData[Object.keys(this.state.HomeData)[0]][0][0].image_content_block_title)}</h2>
-                               <img src={apiUrl+this.state.HomeData[Object.keys(this.state.HomeData)[0]][0][0].image_content_block_img} alt=""/>
+                               <div className="left-image-block"><img src={apiUrl+this.state.HomeData[Object.keys(this.state.HomeData)[0]][0][0].image_content_block_img} alt=""/></div>
                            </div>
                        </div>
                        <div className="large-6 cell wow fadeInUp">
