@@ -66,8 +66,10 @@ class CaseStudylist extends React.Component {
                         {/*<ShowMore id={`caseList${i}`} longText= {caseStudy.field_body}>*/}
                         {/*</ShowMore>*/}
                           {caseStudy.field_body}
-                        <a href = {caseStudy.read_more_url} className="button mt-15">Read more</a>
+                          <div className="clearfix"></div>
+                          <a href = {caseStudy.read_more_url} className="button mt-15">Read more</a>
                       </div>
+
                     </div>
                   </div>
                   </div>
