@@ -26,6 +26,9 @@ header {
 					a{
 						margin: 0 5px;
 						font-size: 1rem;
+						@media (max-width: 1366px) and (min-width: 1024px){
+							margin: 0px;
+						}
 					}
 			}
 		}

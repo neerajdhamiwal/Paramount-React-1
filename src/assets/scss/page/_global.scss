@@ -335,6 +335,10 @@ p{
 			display: inline-block;
 			width: 1em;
 			margin-left: -1em;
+			p{
+				display: inline-block;
+				margin: 0px;
+			}
 		}
 	}
 }

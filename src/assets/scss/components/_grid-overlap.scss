@@ -3,6 +3,10 @@
 }
 
 .block-overlap-custom {
+	@media  (min-width: 1024px) and (max-width: 1366px){
+		min-height: 600px;
+	}
+
 	.cell {
 		background: #e00106;
     max-width: 275px;

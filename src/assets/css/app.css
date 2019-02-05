@@ -269,6 +269,9 @@ p ul {
     display: inline-block;
     width: 1em;
     margin-left: -1em; }
+    p ul li:before p {
+      display: inline-block;
+      margin: 0px; }
 
 .view-more {
   color: red;
@@ -350,6 +353,9 @@ header .header-inner {
   header .header-inner .main-menu ul li a {
     margin: 0 5px;
     font-size: 1rem; }
+    @media (max-width: 1366px) and (min-width: 1024px) {
+      header .header-inner .main-menu ul li a {
+        margin: 0px; } }
   header .header-inner .dropdown.menu.align-right .is-dropdown-submenu.first-sub {
     top: 100%;
     right: 0;
@@ -603,6 +609,9 @@ header .header-inner {
 .grid-overlap {
   margin-top: 50px; }
 
+@media (min-width: 1024px) and (max-width: 1366px) {
+  .block-overlap-custom {
+    min-height: 600px; } }
 .block-overlap-custom .cell {
   background: #e00106;
   max-width: 275px;
@@ -1031,7 +1040,7 @@ header .header-inner {
   font-size: 1.875rem;
   color: #575757;
   line-height: 1.2;
-  margin-bottom: 24px; }
+  margin-bottom: 0px; }
   .banner-info span {
     font-weight: 300; }
 
