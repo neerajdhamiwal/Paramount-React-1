@@ -1,5 +1,5 @@
 import requestService from './request';
-export const apiUrl = 'http://paramount.opensenselabs.com';
+export const apiUrl = 'http://paramountdrupal.opensenselabs.com';
 export const UserName = 'sahil.s';
 export const Pass = 'System123#';
 export const jsonMiddleware = (json, ids)=> {
