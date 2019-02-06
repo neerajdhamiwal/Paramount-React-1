@@ -30,13 +30,13 @@ class App extends React.Component{
             .catch((err) => {
                 console.log(err);
             })
-        requestService.getService(`/redirect-link`)
-            .then((response) => {
-                this.setState({url :this.addComponent(response.data)});
-            })
-            .catch((err) => {
-                console.log(err);
-            })
+        // requestService.getService(`/redirect-link`)
+        //     .then((response) => {
+        //         this.setState({url :this.addComponent(response.data)});
+        //     })
+        //     .catch((err) => {
+        //         console.log(err);
+        //     })
     }
     addComponent(data){
         data.forEach((obj)=>{
@@ -54,7 +54,6 @@ class App extends React.Component{
                   <Route exact path="/resources/blogs" component={Blog} />
                   <Route exact path="/resources/case-studies" component={CaseStudy} />
                   <Route exact path="/resources/infographics" component={Infographic} />
-                    <Route path="*" component={Notfound}/>
                     { //eslint-disable-next-line
                     this.state.url.map((obj, i)=> {if(obj.view_node_1 === '/careers'){
                        return <Route key ={i} exact path="/careers" render={() => <Career nid={obj.nid}/>} />
@@ -64,6 +63,7 @@ class App extends React.Component{
                         }
                     }
                     })}
+                    <Route path="*" component={Notfound}/>
                 </Switch>
               </BrowserRouter>
             </Main>
