@@ -314,6 +314,9 @@ body {
 	.horizontal-scroll-wrapper .one:last-child {
 	    top: -638px;
 	}
+	h3{
+		font-size: 1.4rem;
+	}
 }
 
 .contact-us-page{
@@ -335,6 +338,10 @@ p{
 			display: inline-block;
 			width: 1em;
 			margin-left: -1em;
+			p{
+				display: inline-block;
+				margin: 0px;
+			}
 		}
 	}
 }
@@ -367,6 +374,7 @@ p{
 .pagination{
 	width: 100%;
 	text-align: center;
+	margin: 100px 0 50px;
 	li{
 		vertical-align: top;
 		padding: 0px!important;

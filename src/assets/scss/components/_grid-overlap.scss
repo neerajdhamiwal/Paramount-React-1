@@ -1,8 +1,14 @@
 .grid-overlap{
 	margin-top: 50px;
+	@include mq(medium-screen) {
+		margin-bottom: 50px;
+	}
 }
 
 .block-overlap-custom {
+	@media  (min-width: 1024px) and (max-width: 1366px){
+		min-height: 600px;
+	}
 	.cell {
 		background: #e00106;
     max-width: 275px;
@@ -23,6 +29,10 @@
 			-webkit-transition: none!important;
 			 -moz--transition:  none!important;
 			 -o--transition: none!important;
+		}
+		@include mq(medium-screen) {
+			width: 30%;
+			margin-bottom: 15px;
 		}
     h3 {
 	    bottom: 15px;
@@ -123,6 +133,9 @@
 		    transform: scale(0);
 		    -webkit-transition: transform .5s ease, opacity .7s ease;
 		    transition: transform .5s ease, opacity .7s ease;
+				@media(max-width: 1024px)and(min-width: 768px) {
+					padding: 10px  25px 0;
+				}
 				h3{
 					bottom: auto;
 					top:50px;

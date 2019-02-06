@@ -77,7 +77,7 @@ class ArticlePage extends React.Component{
            </div>
          </div>
        </section>
-       <section className="left-image-right-content top-100 bottom-100">
+       <section className="top-100 bottom-100">
          <div className="grid-container custom-grid custom-grid-right">
            <div className="grid-x grid-padding-x">
              <div className="medium-6 small-12 cell p-right-45">

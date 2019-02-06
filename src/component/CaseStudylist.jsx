@@ -58,7 +58,7 @@ class CaseStudylist extends React.Component {
                           <div className="large-7 cell no-padding wow slideInLeft">
                           <div className="img-relative-title-ru">
                           <h2 className="relative-title">{ReactHtmlParser(caseStudy.title)}</h2>
-                    <img src={apiUrl + caseStudy.image} alt="placeholder"/>
+                    <div className="left-image-block"><img src={apiUrl + caseStudy.image} alt="placeholder"/></div>
                   </div>
                   </div>
                     <div className="large-5 cell">
@@ -66,8 +66,10 @@ class CaseStudylist extends React.Component {
                         {/*<ShowMore id={`caseList${i}`} longText= {caseStudy.field_body}>*/}
                         {/*</ShowMore>*/}
                           {caseStudy.field_body}
-                        <a href = {caseStudy.read_more_url} className="button mt-15">Read more</a>
+                          <div className="clearfix"></div>
+                          <a href = {caseStudy.read_more_url} className="button mt-15">Read more</a>
                       </div>
+
                     </div>
                   </div>
                   </div>
