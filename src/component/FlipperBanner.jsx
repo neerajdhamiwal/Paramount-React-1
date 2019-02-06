@@ -10,7 +10,7 @@ class FlipperBanner extends React.Component{
             <section className="main-banner bottom-100 award-banner team-scnd-banner career-banner">
                 <div className="grid-container custom-grid custom-grid-right">
                     <div className="grid-x align-right align-middle grid-margin-x">
-                        <div className="medium-5 cell small-order-change">
+                        <div className="small-12 medium-5 cell small-order-change">
                             <h3 className="banner-info"><span>{ReactHtmlParser(this.props.nodeData[0].node_title)}</span><br/>
                                 {ReactHtmlParser(this.props.nodeData[0].node_subtitle)}</h3>
                             <h6>{ReactHtmlParser(imgPath(this.props.nodeData[0].node_description))}</h6>
@@ -24,7 +24,7 @@ class FlipperBanner extends React.Component{
                                 {/*<img>{data.image_flipper_image}</img>*/}
                             </div>
                         </div>
-                        <div className="medium-6 cell">
+                        <div className="small-12 medium-6 cell">
                             <img src={teamBanner} alt=""/>
                         </div>
                     </div>

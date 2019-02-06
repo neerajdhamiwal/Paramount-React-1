@@ -69,14 +69,14 @@ class Team extends React.Component{
                        <div> <section className="main-banner award-banner">
                             <div className="grid-container">
                                 <div className="grid-x align-right align-middle grid-margin-x">
-                                    <div className="medium-5 cell small-order-change">
+                                    <div className="small-12 medium-5 cell small-order-change banner-top-spacing">
                                         <h3 className="banner-info">{ReactHtmlParser(this.state.teamData[Object.keys(this.state.teamData)[0]][0][0].node_title)}<br/>
                                             <span>{ReactHtmlParser(this.state.teamData[Object.keys(this.state.teamData)[0]][0][0].node_subtitle_title)}</span></h3>
                                         <p>{ReactHtmlParser(this.state.teamData[Object.keys(this.state.teamData)[0]][0][0].node_description)}</p>
                                         {this.state.teamData[Object.keys(this.state.teamData)[0]][0][0].hasOwnProperty('node_cta_button_title')? this.state.teamData[Object.keys(this.state.teamData)[0]][0][0].node_cta_button_title !==''?<a className="button" href={apiUrl+this.state.teamData[Object.keys(this.state.teamData)[0]][0][0].node_cta_button_url.substring(9)}>{this.state.teamData[Object.keys(this.state.teamData)[0]][0][0].node_cta_button_title}</a>:'':''}
                                         {this.state.teamData[Object.keys(this.state.teamData)[0]][0][0].hasOwnProperty('node_cta_button_title')?this.state.teamData[Object.keys(this.state.teamData)[0]][0][0].download_link_title !==''?<a className="button" href={apiUrl+this.state.teamData[Object.keys(this.state.teamData)[0]][0][0].download_link_url.substring(9)}>{this.state.teamData[Object.keys(this.state.teamData)[0]][0][0].download_link_title}</a>:'':''}
                                     </div>
-                                    <div className="medium-6 cell services-sub-menu-two">
+                                    <div className="small-12 medium-6 cell services-sub-menu-two">
                                             <div id="scene" data-friction-x="0.1" data-friction-y="0.1" data-scalar-x="25" data-scalar-y="15">
                                                         <div data-depth="0.3"><img src={contactBanner} alt="" /></div>
                                                         <div data-depth="0.8"><img src={contactBanner2} alt="" /></div>
@@ -88,7 +88,7 @@ class Team extends React.Component{
                         </section>{this.state.teamData[Object.keys(this.state.teamData)[0]][0][0].node_content_block!==''? <section className="text-centent">
                                 <div className="grid-container ">
                             <div className="grid-x align-middle grid-margin-x">
-                            <div className="medium-12 cell">
+                            <div className="small-12 medium-12 cell">
                             <h3 className="banner-info"><span></span></h3>
                             <p>{ReactHtmlParser(imgPath(this.state.teamData[Object.keys(this.state.teamData)[0]][0][0].node_content_block))}</p>
                             </div>
@@ -99,7 +99,7 @@ class Team extends React.Component{
                                 {customDivideData(this.state.teamData['team_member_id'][0], 4).map((subArr, index) => {
                                     return <div key = {`arr${index}`}className="grid-x align-center block-latest-reads team-page">
                                         {subArr.map((obj, i) => {
-                                            return    <div className="medium-3 cell img-block" key={i}>
+                                            return    <div className="small-12 medium-5 large-3 cell img-block" key={i}>
                                                 { //eslint-disable-next-line
                                                 }<a href={obj.social_link} target="_blank">
                                                 <div className="img">

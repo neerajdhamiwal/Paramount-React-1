@@ -55,13 +55,13 @@ class CaseStudylist extends React.Component {
                    return <section key={i} className="left-image-right-content">
                           <div className="grid-container custom-grid custom-grid-left">
                           <div className="grid-x align-middle">
-                          <div className="large-7 cell no-padding wow slideInLeft">
+                          <div className="small-12 medium-7 cell no-padding wow slideInLeft">
                           <div className="img-relative-title-ru">
                           <h2 className="relative-title">{ReactHtmlParser(caseStudy.title)}</h2>
                     <div className="left-image-block"><img src={apiUrl + caseStudy.image} alt="placeholder"/></div>
                   </div>
                   </div>
-                    <div className="large-5 cell">
+                    <div className="small-12 medium-5 cell">
                       <div className="content-inner pl-155 blog-page-content">
                         {/*<ShowMore id={`caseList${i}`} longText= {caseStudy.field_body}>*/}
                         {/*</ShowMore>*/}

@@ -25,6 +25,9 @@
       .slick-slide{
         .slide-img {
             height: 358px;
+            @include mq(small-screen) {
+              height: 150px;
+            }
             img {
                 object-fit: cover;
                 height: 100%;
@@ -109,6 +112,9 @@
 	position: relative;
   height: 450px;
   border-radius: 4px;
+  @include mq(small-screen) {
+    margin-top: 30px;
+  }
   &:hover{
     img{
       box-shadow: -5px 5px 0px rgba(0,0,0,.2);
@@ -181,4 +187,15 @@
     height: 100%;
     object-fit: cover;
 	}
+}
+
+@media(max-width: 1024px) {
+  .blogList{
+    .menu {
+        a, .button{
+        padding: 0.7rem 0.5rem;
+        font-size: 0.9rem;
+      }
+    }
+  }
 }

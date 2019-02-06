@@ -142,7 +142,7 @@ p {
     .squares > div {
       width: 100%;
       height: auto;
-      margin: 50px 0;
+      margin: 15px 0;
       position: relative;
       top: 0;
       transform: none; } }
@@ -151,6 +151,9 @@ p {
   font-weight: 300;
   color: red;
   margin-bottom: 60px; }
+  @media screen and (max-width: 39.9375em) {
+    .one h4, .two h4 {
+      margin-bottom: 15px; } }
 
 .one p, .two p {
   font-size: 20px; }
@@ -248,7 +251,10 @@ body {
   .horizontal-scroll-wrapper {
     width: 380px;
     max-height: 850px;
-    left: -120px; }
+    left: -110px; }
+
+  .scroll-relative {
+    overflow: hidden; }
 
   .squares > div {
     width: 363px;
@@ -333,6 +339,13 @@ strong span {
 
 .blogList .img-relative-title-ld h2, .blogList .img-relative-title-ru h2 {
   width: 400px; }
+  @media screen and (max-width: 1024px) {
+    .blogList .img-relative-title-ld h2, .blogList .img-relative-title-ru h2 {
+      width: 285px; } }
+  @media screen and (max-width: 39.9375em) {
+    .blogList .img-relative-title-ld h2, .blogList .img-relative-title-ru h2 {
+      width: 200px;
+      font-size: 14px; } }
 
 .blog-page-content .undefined {
   padding-top: 162px; }
@@ -492,6 +505,9 @@ header .header-inner {
     margin-right: 10px; }
   .tab-accordion .tab-accordion-content .slick-slide .slide-img {
     height: 358px; }
+    @media screen and (max-width: 39.9375em) {
+      .tab-accordion .tab-accordion-content .slick-slide .slide-img {
+        height: 150px; } }
     .tab-accordion .tab-accordion-content .slick-slide .slide-img img {
       object-fit: cover;
       height: 100%; }
@@ -549,6 +565,9 @@ header .header-inner {
   position: relative;
   height: 450px;
   border-radius: 4px; }
+  @media screen and (max-width: 39.9375em) {
+    .img-relative-title-ld {
+      margin-top: 30px; } }
   .img-relative-title-ld:hover img {
     box-shadow: -5px 5px 0px rgba(0, 0, 0, 0.2);
     -webkit-transition: all .2s linear;
@@ -620,6 +639,10 @@ header .header-inner {
     height: 100%;
     object-fit: cover; }
 
+@media (max-width: 1024px) {
+  .blogList .menu a, .blogList .menu .button {
+    padding: 0.7rem 0.5rem;
+    font-size: 0.9rem; } }
 .grid-overlap {
   margin-top: 50px; }
   @media screen and (min-width: 40em) {
@@ -897,6 +920,19 @@ header .header-inner {
   bottom: -75px;
   top: auto; }
 
+@media (max-width: 1024px) and (min-width: 767px) {
+  .blogList .left-image-right-content .content-inner {
+    padding-left: 30px; }
+  .blogList .blog-right-img-text {
+    padding-right: 10px; } }
+@media screen and (max-width: 39.9375em) {
+  .blogList .img-relative-title-ru .left-image-block {
+    height: 179px; }
+  .blogList .blog-right-img-text {
+    padding-right: 0px; }
+
+  .left-image-right-content .content-inner {
+    padding-top: 100px; } }
 .block-latest-reads button {
   display: none !important; }
 .block-latest-reads .fs {
@@ -1035,7 +1071,7 @@ header .header-inner {
   position: relative; }
   @media screen and (max-width: 39.9375em) {
     .block-latest-reads.team-page .img-block .img {
-      height: 250px; } }
+      height: 340px; } }
   .block-latest-reads.team-page .img-block .img img {
     border-radius: 50%; }
   .block-latest-reads.team-page .img-block .img span {
@@ -1087,15 +1123,22 @@ header .header-inner {
       font-size: 1.2rem; } }
   @media (max-width: 1024px) and (min-width: 768px) {
     .banner-info {
-      font-size: 1.2rem; } }
+      font-size: 1.5rem; } }
   .banner-info span {
     font-weight: 300; }
 
+@media screen and (max-width: 1024px) {
+  .main-banner {
+    margin-bottom: 25px;
+    margin-top: 25px; } }
 .main-banner button, .main-banner a.button {
   padding: 10px 15px;
   font-size: .90rem;
   margin-right: 15px;
   margin-top: 15px; }
+  @media screen and (max-width: 1024px) {
+    .main-banner button, .main-banner a.button {
+      font-size: .70rem; } }
   @media screen and (max-width: 39.9375em) {
     .main-banner button, .main-banner a.button {
       width: 100%; } }
@@ -1174,6 +1217,9 @@ header .header-inner {
   box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.1); }
 .team-scnd-banner .small-order-change {
   padding-right: 150px; }
+  @media screen and (max-width: 1024px) {
+    .team-scnd-banner .small-order-change {
+      padding-right: 15px; } }
 @media screen and (min-width: 40em) {
   .team-scnd-banner .img-shadow-hover {
     position: absolute;
@@ -1233,6 +1279,9 @@ header .header-inner {
   @media screen and (max-width: 39.9375em) {
     .contact-form {
       padding: 40px 15px; } }
+  @media screen and (max-width: 1024px) {
+    .contact-form {
+      top: 15px; } }
   @media screen and (max-width: 39.9375em) {
     .contact-form {
       top: 0px;
@@ -1316,7 +1365,7 @@ footer.footer-bottom {
     padding-left: 35px;
     padding-right: 25px; } }
 
-@media screen and (max-width: 39.9375em) {
+@media screen and (max-width: 1024px) {
   .award-content-box {
     margin-top: 25px;
     margin-bottom: 25px; } }
@@ -1333,8 +1382,15 @@ footer.footer-bottom {
 .our-certifications-box {
   background: url(..//img/our-award-bg.png) no-repeat top right #f6f4f5;
   background-position: 80% top; }
+  @media screen and (max-width: 1024px) {
+    .our-certifications-box {
+      margin-top: 30px;
+      margin-bottom: 30px; } }
   .our-certifications-box .our-certifications-content {
     padding: 130px 0 130px; }
+    @media screen and (max-width: 39.9375em) {
+      .our-certifications-box .our-certifications-content {
+        padding: 26px 0px 70px 0px; } }
 
 .our-certifications-box {
   background: url(..//img/certifications-parallax-des.png) no-repeat top right #f6f4f5;
@@ -1432,7 +1488,7 @@ footer.footer-bottom {
     transition: all .2s linear; }
     @media screen and (max-width: 39.9375em) {
       .four-column-outer .four-col-left {
-        padding: 0 30px 20px; } }
+        padding: 0 0px 20px; } }
     .four-column-outer .four-col-left:hover {
       -webkit-transition: all .2s linear;
       -moz-transition: all .2s linear;
@@ -1685,7 +1741,7 @@ footer.footer-bottom {
 
 @media screen and (min-width: 64em) {
   .height-750 {
-    min-height: 750px; } }
+    min-height: 650px; } }
 
 @media screen and (min-width: 40em) {
   .height-600 {
@@ -1848,6 +1904,12 @@ img.align-left {
 
 .tp-non {
   padding-top: none; }
+
+.banner-top-spacing {
+  padding-top: 70px; }
+  @media screen and (max-width: 1024px) {
+    .banner-top-spacing {
+      padding-top: 20px; } }
 
 .button {
   font-family: "Montserrat", sans-serif;

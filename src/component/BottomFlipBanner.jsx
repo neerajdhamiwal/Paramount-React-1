@@ -10,7 +10,7 @@ class BFlipperBanner extends React.Component{
             <section className="main-banner bottom-100 award-banner team-scnd-banner career-banner">
                 <div className="grid-container custom-grid custom-grid-right">
                     <div className="grid-x align-right align-middle grid-margin-x">
-                        <div className="medium-5 cell small-order-change">
+                        <div className="small-12 medium-5 cell small-order-change">
                             <h3 className="banner-info"><span>{ReactHtmlParser(this.props.nodeData[0].content_ctaflip_title)}</span><br/></h3>
                             {this.props.nodeData[0].content_ctaflip_description!==''?<h6>{ReactHtmlParser(this.props.nodeData[0].content_ctaflip_description)}</h6>:''} <br/>
                             <ShowMore id="bottomFlipBnnr" longText= {this.props.nodeData[0].content_ctaflip_body}>
@@ -26,7 +26,7 @@ class BFlipperBanner extends React.Component{
                                     {/*<img>{data.content_ctaflip_flip_image}</img>*/}
                                 </div>: ''}
                         </div>
-                        <div className="medium-6 cell">
+                        <div className="small-12 medium-6 cell">
                             <img src={BottomBanner} alt=""/>
                         </div>
                     </div>

@@ -183,13 +183,13 @@ class Home extends React.Component{
             <section className="left-image-right-content">
                <div className="grid-container custom-grid custom-grid-left">
                    <div className="grid-x align-middle">
-                       <div className="large-6 cell no-padding wow slideInLeft">
+                       <div className="small-12 medium-6 cell no-padding wow slideInLeft">
                            <div className="img-relative-title-ru">
                                <h2 className="relative-title">{ReactHtmlParser(this.state.HomeData[Object.keys(this.state.HomeData)[0]][0][0].image_content_block_title)}</h2>
                                <div className="left-image-block"><img src={apiUrl+this.state.HomeData[Object.keys(this.state.HomeData)[0]][0][0].image_content_block_img} alt=""/></div>
                            </div>
                        </div>
-                       <div className="large-6 cell wow fadeInUp">
+                       <div className="small-12 medium-6 cell wow fadeInUp">
                            <div className="content-inner pl-155">
                                <ShowMore id="imgConBlock" longText= {this.state.HomeData[Object.keys(this.state.HomeData)[0]][0][0].image_content_block_body}>
                                </ShowMore>
