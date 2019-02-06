@@ -1,1 +1,32 @@
 .right-image-left-content {}
+
+@media(max-width:1024px) and (min-width:767px){
+  .blogList{
+    .left-image-right-content{
+      .content-inner{
+        padding-left: 30px;
+      }
+    }
+    .blog-right-img-text{
+      padding-right: 10px;
+    }
+  }
+}
+
+@include mq(small-screen) {
+  .blogList{
+    .img-relative-title-ru{
+      .left-image-block{
+        height: 179px;
+      }
+    }
+    .blog-right-img-text{
+      padding-right: 0px;
+    }
+  }
+  .left-image-right-content {
+    .content-inner{
+      padding-top: 100px;
+    }
+  }
+}

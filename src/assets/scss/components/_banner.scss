@@ -6,7 +6,7 @@
 	 font-size: 1.2rem;
  }
  @media(max-width: 1024px)and(min-width: 768px) {
-	 font-size: 1.2rem;
+	 font-size: 1.5rem;
  }
  color: #575757;
  line-height: 1.2;
@@ -16,11 +16,18 @@
  }
 }
 .main-banner{
+	@include mx(medium-screen) {
+		margin-bottom:25px;
+		margin-top: 25px;
+	}
 	button, a.button{
 		padding: 10px 15px;
 		font-size: .90rem;
 		margin-right: 15px;
 		margin-top: 15px;
+		@include mx(medium-screen) {
+			font-size: .70rem;
+		}
 	@include mq(small-screen) {
 		width: 100%;
 	}
@@ -120,6 +127,9 @@ p{
  }
  .small-order-change{
   padding-right: 150px;
+	@include mx(medium-screen) {
+		padding-right: 15px;
+	}
 }
 .img-shadow-hover {
   @include mq(medium-screen) {

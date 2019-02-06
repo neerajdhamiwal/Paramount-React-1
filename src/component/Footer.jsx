@@ -98,7 +98,7 @@ class Footer extends React.Component{
              <footer className="footer-top bg-color-grey">
               <div className="grid-container">
                 <div className="grid-x footer-inner align-middle align-center ">
-                  <div className="medium-4 cell small-order-change">
+                  <div className="small-12 medium-4 cell small-order-change">
                     <div className="footer-info">
                         {this.state.footerData.length>0 ?ReactHtmlParser(imgPath(this.state.footerData[0].block_body)): ''}
                         <div>{ //eslint-disable-next-line
@@ -110,7 +110,7 @@ class Footer extends React.Component{
                         </div>
                     </div>
                   </div>
-                  <div className="medium-5 cell">
+                  <div className="small-12 medium-5 cell">
                     <div className="form-wrapper">
                       <form className="contact-form">
                         <div className="grid-container">

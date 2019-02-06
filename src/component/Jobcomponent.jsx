@@ -25,7 +25,7 @@ class Jobcomponent extends React.Component{
                             {/*<!-- Accordion tab content: it would start in the open state due to using the `is-active` state className. -->*/}
                             <div className="accordion-content" data-tab-content="" role="tabpanel" aria-labelledby={`job${obj.nid}`} aria-hidden="true" id={`tab${obj.nid}`}>
                                 <div className="grid-x align-justify">
-                                    <div className="cell medium-8" id="coltab">
+                                    <div className="cell small-12 medium-8" id="coltab">
                                         <div className="job-deties-req">
                                             {//eslint-disable-next-line
                                             }<a> <div className={this.props.duty?'activeTab job-duties':'job-duties'} onClick={this.handleChange}>Duties</div></a>
@@ -38,7 +38,7 @@ class Jobcomponent extends React.Component{
                                                 {ReactHtmlParser(obj.node_requirements)}
                                             </p>}
                                     </div>
-                                    <div className="cell medium-4">
+                                    <div className="cell small-12 medium-4">
                                         <div className="location-block">
                                             <h6>Job Sites</h6>
                                             <p>{ReactHtmlParser(obj.node_job_site)}</p>
