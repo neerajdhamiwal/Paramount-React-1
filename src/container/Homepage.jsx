@@ -24,6 +24,8 @@ import ShowMore from '../component/ShowMore.jsx';
 import DocumentMeta from 'react-document-meta';
 import requestService from '../services/request.js';
 import $ from 'jquery';
+import {Link} from 'react-router-dom'; // eslint-disable-line no-unused-vars
+
 const ArrowStyle = {background: `url(${arrowImg}) noRepeat center bottom`, backgroundSize: '1000px'}
 //import 'foundation/js/vendor/zepto';
 
@@ -110,11 +112,11 @@ class Home extends React.Component{
                {ReactHtmlParser(this.state.HomeData[Object.keys(this.state.HomeData)[0]][0][0].node_description)}
                {ReactHtmlParser(imgPath(this.state.HomeData[Object.keys(this.state.HomeData)[0]][0][0].node_body))}
 
-               {this.state.HomeData[Object.keys(this.state.HomeData)[0]][0][0].node_cta_button_title !==''? <a className="button" href={this.state.HomeData[Object.keys(this.state.HomeData)[0]][0][0].node_cta_button_url.substring(9)}>{this.state.HomeData[Object.keys(this.state.HomeData)[0]][0][0].node_cta_button_title}</a>:''}
+               {this.state.HomeData[Object.keys(this.state.HomeData)[0]][0][0].node_cta_button_title !==''? <Link className="button" to={this.state.HomeData[Object.keys(this.state.HomeData)[0]][0][0].node_cta_button_url.substring(9)}>{this.state.HomeData[Object.keys(this.state.HomeData)[0]][0][0].node_cta_button_title}</Link>:''}
            <div className="banner-img-link paroller-example">
            <div className="grid-x grid-margin-x grid-margin-y img-shadow-hover hide-for-small-only">
                {this.state.HomeData.hasOwnProperty('node_flip_id')? this.state.HomeData['node_flip_id'][0].map((data, index) => {
-                   return <div key = {index} className="cell shrink wow fadeInDown banner-image-effect" data-wow-delay='1s' ><a href={data.node_flipper_cta_url.substring(9)}><img src={apiUrl+data.node_flipper_image} alt=""/><span>{data.node_flipper_title}</span></a></div>
+                   return <div key = {index} className="cell shrink wow fadeInDown banner-image-effect" data-wow-delay='1s' ><Link to={data.node_flipper_cta_url.substring(9)}><img src={apiUrl+data.node_flipper_image} alt=""/><span>{data.node_flipper_title}</span></Link></div>
                    }):''}
            </div>
            </div>
@@ -161,7 +163,7 @@ class Home extends React.Component{
                                                        <ShowMore id={`contentSlider${index}`} longText= {obj.content_slider_body}  update={this.state.update}>
                                                        </ShowMore>
                                                    </div>
-                                                   {obj.content_slider_cta_title !==''? <a className="button mt-15" href={obj.content_slider_cta_url.substring(9)}>{ReactHtmlParser(obj.content_slider_cta_title)}</a>:''}
+                                                   {obj.content_slider_cta_title !==''? <Link className="button mt-15" to={obj.content_slider_cta_url.substring(9)}>{ReactHtmlParser(obj.content_slider_cta_title)}</Link>:''}
                                                </div>
                                            </div>
                                        </div>
@@ -209,7 +211,7 @@ class Home extends React.Component{
                         {this.state.HomeData[Object.keys(this.state.HomeData)[0]][0][0].content_bottom_description !==''? <h3 className="ptb-40"> {ReactHtmlParser(this.state.HomeData[Object.keys(this.state.HomeData)[0]][0][0].content_bottom_description)}</h3>:''}
                         <ShowMore id="imgLConBlock" longText= {this.state.HomeData[Object.keys(this.state.HomeData)[0]][0][0].content_bottom_body}>
                         </ShowMore>
-                        {this.state.HomeData[Object.keys(this.state.HomeData)[0]][0][0].content_bottom_cta_title!==''? <a className="button mt-15" href={this.state.HomeData[Object.keys(this.state.HomeData)[0]][0][0].content_bottom_cta_url.substring(9)}>{this.state.HomeData[Object.keys(this.state.HomeData)[0]][0][0].content_bottom_cta_title}</a>:''}
+                        {this.state.HomeData[Object.keys(this.state.HomeData)[0]][0][0].content_bottom_cta_title!==''? <Link className="button mt-15" to={this.state.HomeData[Object.keys(this.state.HomeData)[0]][0][0].content_bottom_cta_url.substring(9)}>{this.state.HomeData[Object.keys(this.state.HomeData)[0]][0][0].content_bottom_cta_title}</Link>:''}
                     </div>
                     <div className="medium-6 cell no-padding hide-for-small-only">
                         <div className="img-relative-title-ld">
