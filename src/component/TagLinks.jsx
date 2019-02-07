@@ -52,12 +52,12 @@ constructor(props){
             </div>
               {this.props.firstCaseStudy? <div className="medium-10 cell">
                     <div className="grid-x grid-padding-x">
-                      <div className="medium-5 cell">
+                      <div className="small-12 medium-5 cell">
                           <ShowMore id={`tagLink`} longText= {this.props.firstCaseStudy['field_body']} >
                           </ShowMore>
                           {this.props.locate === 'resource'?'':<Link to = {this.props.firstCaseStudy['read_more_url']} className="button mt-15">Read more</Link>}
                       </div>
-                      <div className="medium-7 cell no-padding wow slideInRight">
+                      <div className="small-12 medium-7 cell no-padding wow slideInRight">
                         <div className="img-relative-title-ld tab-img-h">
                           <img src={apiUrl+this.props.firstCaseStudy['image']} alt="" />
                           <h2 className="relative-title">{ReactHtmlParser(this.props.firstCaseStudy['title'])}</h2>

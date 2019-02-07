@@ -1,5 +1,5 @@
 .award-content-box{
-  @include mq(small-screen) {
+  @include mx(medium-screen) {
     margin-top: 25px;
     margin-bottom: 25px;
   }
@@ -22,8 +22,15 @@
 .our-certifications-box{
   background: url(..//img/our-award-bg.png)no-repeat top right #f6f4f5;
   background-position: 80% top;
+  @include mx(medium-screen) {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
 
   .our-certifications-content {
     padding: 130px 0 130px;
+    @include mq(small-screen) {
+      padding: 26px 0px 70px 0px;
+    }
   }
 }

@@ -22,12 +22,12 @@ class FooterHeading extends React.Component{
                         </div>
                         {this.props.subBlockData.length>0?
                             customDivideData(this.props.subBlockData, 2).map((subArr, index) => {
-                                    return  <div key = {index} className="medium-12 cell">
+                                    return  <div key = {index} className="small-12 cell">
                                         <div className="grid-x pl-155">
                                             {
                                                 subArr.map((heading, i) => {
                                                     if(i===1){
-                                                        return <div key={i} className="medium-5 cell">
+                                                        return <div key={i} className="small-12 medium-6 large-5 cell">
                                                             <div className="four-column-content four-col-left four-col-right">
                                                                 <h3>{ReactHtmlParser(heading.sub_block_heading)}</h3>
                                                                 <p>{ReactHtmlParser(imgPath(heading.sub_block_description))}</p>
@@ -35,7 +35,7 @@ class FooterHeading extends React.Component{
                                                         </div>
                                                     }
                                                     else{
-                                                        return <div key={i} className="medium-5 cell">
+                                                        return <div key={i} className="small-12 medium-6 large-5 cell">
                                                             <div className="four-column-content four-col-left">
                                                                 <h3>{ReactHtmlParser(heading.sub_block_heading)}</h3>
                                                                 <p>{ReactHtmlParser(imgPath(heading.sub_block_description))}</p>

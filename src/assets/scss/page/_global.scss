@@ -169,7 +169,7 @@ p{
 		@include mq(small-screen) {
 			width: 100%;
 			height: auto;
-			margin: 50px 0;
+			margin: 15px 0;
 			position: relative;
 			top: 0;
 			transform: none;
@@ -180,6 +180,9 @@ p{
 	  font-weight: 300;
 	  color: red;
 	  margin-bottom: 60px;
+		@include mq(small-screen) {
+			margin-bottom: 15px;
+		}
   }
 
   .one p, .two p{
@@ -303,9 +306,11 @@ body {
 	.horizontal-scroll-wrapper {
 	    width: 380px;
 	    max-height: 850px;
-	    left: -120px;
+	    left: -110px;
 	}
-
+	.scroll-relative{
+		overflow: hidden;
+	}
 	.squares>div {
 	    width: 363px;
 	    top: -453px;
@@ -419,6 +424,13 @@ strong{
 .blogList{
 	.img-relative-title-ld h2, .img-relative-title-ru h2{
 		width: 400px;
+		@include mx(medium-screen) {
+			width: 285px;
+		}
+		@include mq(small-screen) {
+			width: 200px;
+			font-size: 14px;
+		}
 	}
 }
 

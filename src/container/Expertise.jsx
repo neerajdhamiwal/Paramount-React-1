@@ -69,7 +69,7 @@ class Expertise extends React.Component{
                 </center> :   <DocumentMeta {...this.state.meta}>
 
                 {Object.keys(this.state.ExpertiseData).length>0? <MainBanner nid = {this.props.nid} node = {this.state.ExpertiseData[Object.keys(this.state.ExpertiseData)[0]][0]}></MainBanner>: ''}
-                <section className="banner-thumb-img bottom-100">
+                <section className={`banner-thumb-img ${(this.props.nid==='38') ?'pb-50':''}`}>
                   <div className="grid-container">
                     <div className="grid-x align-right align-middle grid-margin-x">
                     <div className="medium-11">

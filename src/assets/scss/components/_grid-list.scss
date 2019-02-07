@@ -104,7 +104,7 @@
          }
         .img{
           @include mq(small-screen) {
-            height: 250px;
+            height: 340px;
           }
           img{
             border-radius: 50%;

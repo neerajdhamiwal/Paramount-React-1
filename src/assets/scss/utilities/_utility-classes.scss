@@ -24,7 +24,7 @@
 
 .height-750 {
 	@include mq(large-screen) {
-		min-height: 750px;
+		min-height: 650px;
 	}
 }
 
@@ -239,4 +239,11 @@ img.align-left{
 
 .tp-non{
 	padding-top: none;
+}
+
+.banner-top-spacing{
+	padding-top: 70px;
+	@include mx(medium-screen) {
+		padding-top: 20px;
+	}
 }
