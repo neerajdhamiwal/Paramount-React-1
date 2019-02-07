@@ -218,11 +218,21 @@
 img.align-right{
 	float: right;
 	margin-left:15px;
+	@include mq(small-screen) {
+		float: none;
+		width: 100%;
+		margin: 15px 0;
+	}
 }
 
 img.align-left{
 	float: left;
 	margin-right: 15px;
+	@include mq(small-screen) {
+		float: none;
+		width: 100%;
+		margin: 15px 0;
+	}
 }
 
 .body-font-style{

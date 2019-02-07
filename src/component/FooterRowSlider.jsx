@@ -52,7 +52,7 @@ class FooterRowSlider extends React.Component{
 
     render(){
         return(
-            this.state.clientData.length>0? <div className="grid-container row-slider pb-50">
+            this.state.clientData.length>0? <div className={`grid-container row-slider pb-50 ${this.props.nid==='47'?'award-top-spacing':''}`}>
                     <h2 className="title-span text-center"><span><b>{this.state.clientData[0].logo_image_title}</b></span></h2>
                 {this.state.clientData.length>0? <div className="carousel multiple-items">
                         {

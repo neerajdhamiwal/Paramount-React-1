@@ -97,7 +97,7 @@ class ExpertiseArticle extends React.Component{
                          }): ''
                  }
                     {this.state.ExpertiseGovData.hasOwnProperty('award_slider_id')?this.state.ExpertiseGovData['award_slider_id'][0][0].award_slider_id? <AwardSlider/>: '':''}
-                    {this.state.ExpertiseGovData.hasOwnProperty('client_slider_id')? this.state.ExpertiseGovData['client_slider_id'][0][0].client_slider_id ? <FooterRowSlider/>: '':''}
+                    {this.state.ExpertiseGovData.hasOwnProperty('client_slider_id')? this.state.ExpertiseGovData['client_slider_id'][0][0].client_slider_id ? <FooterRowSlider nid={this.props.nid}/>: '':''}
                     {this.state.ExpertiseGovData.hasOwnProperty('certificate_slider_id')?this.state.ExpertiseGovData['certificate_slider_id'][0][0].certificate_slider_id? <CertSlider/>: '':''}
                     {this.state.ExpertiseGovData.hasOwnProperty('partner_slider_id')? this.state.ExpertiseGovData['partner_slider_id'][0][0].partner_slider_id ? <PartnerSlider/>: '':''}
                     </div>
