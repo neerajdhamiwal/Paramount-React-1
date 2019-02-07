@@ -2,6 +2,8 @@ import React from 'react';
 import {apiUrl} from '../services/common.js';
 import ReactHtmlParser from 'react-html-parser';
 import ShowMore from './ShowMore.jsx';
+import {Link} from 'react-router-dom'; // eslint-disable-line no-unused-vars
+
 
 // const BannerStyle =(url)=> {
 //     let combinedurl = apiUrl+url
@@ -30,7 +32,7 @@ class FeaturedContent extends React.Component{
                           <div className="medium-5 cell small-order-change">
                               <ShowMore id={`FeatBlog`} longText= {ReactHtmlParser(this.props.activeCaseStudy.field_body)}>
                               </ShowMore>
-                              {this.props.locate === 'resource'?'':<a href = {this.props.activeCaseStudy.read_more_url} className="button">Read more</a>}
+                              {this.props.locate === 'resource'?'':<Link to = {this.props.activeCaseStudy.read_more_url} className="button">Read more</Link>}
                           </div>
                           <div className="medium-5 cell"></div>
                       </div>

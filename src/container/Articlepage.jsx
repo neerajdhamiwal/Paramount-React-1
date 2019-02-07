@@ -6,6 +6,8 @@ import ReactHtmlParser from 'react-html-parser';
 import Loader from 'react-loader-spinner'; // eslint-disable-line no-unused-vars
 import GridList from '../component/GridList.jsx';
 import DocumentMeta from 'react-document-meta';
+import {Link} from 'react-router-dom'; // eslint-disable-line no-unused-vars
+
 
 const BannerStyle =(url)=> {
     let combinedurl = apiUrl+url
@@ -113,8 +115,8 @@ class ArticlePage extends React.Component{
                       {this.state.caseList.hasOwnProperty('name')?<ul>
                         {
                             this.state.caseList.name.split(',').map((value, index) => {
-                            return <li onClick={() => localStorage.setItem('activeMenu', this.state.caseList.name.split(',')[index])}><a href = {"/resources/blogs?cid="+this.state.caseList.id.split(',')[index]} id={index} className={localStorage.getItem('activeMenu')? value === localStorage.getItem('activeMenu')?'activeTab':'': index===0?'activeTab':''}>
-                                {value}</a></li>
+                            return <li onClick={() => localStorage.setItem('activeMenu', this.state.caseList.name.split(',')[index])}><Link to = {"/resources/blogs?cid="+this.state.caseList.id.split(',')[index]} id={index} className={localStorage.getItem('activeMenu')? value === localStorage.getItem('activeMenu')?'activeTab':'': index===0?'activeTab':''}>
+                                {value}</Link></li>
                         })
                         }
                     </ul>:''

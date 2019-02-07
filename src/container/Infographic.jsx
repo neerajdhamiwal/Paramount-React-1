@@ -8,7 +8,7 @@ import aboutLayerBannerone from '../assets/img/about-layer1.png';
 import aboutLayerBannertwo from '../assets/img/about-layer2.png';
 import ShowMore from '../component/ShowMore.jsx';
 import DocumentMeta from 'react-document-meta';
-
+import {Link} from 'react-router-dom'; // eslint-disable-line no-unused-vars
 
 //import 'foundation/js/vendor/zepto';
 class Resource extends React.Component{
@@ -107,7 +107,7 @@ class Resource extends React.Component{
                                                     <ShowMore id={`info${obj.nid}`} longText= {obj.node_body}>
                                                     </ShowMore>
                                                     { //eslint-disable-next-line
-                                                    }<a href={`/infographic-article?nid=${obj.nid}`}>View</a>
+                                                    }<Link to={`/infographic-article?nid=${obj.nid}`}>View</Link>
                                                     {//eslint-disable-next-line
                                                          obj.cta_button_title!==''?<a href="" className="button">{obj.cta_button_title}</a>:''}
                                                 </div>

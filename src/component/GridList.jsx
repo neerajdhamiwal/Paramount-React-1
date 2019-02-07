@@ -4,6 +4,8 @@ import {apiUrl, decodeUri,imgPath } from '../services/common.js';
 import requestService from '../services/request.js';
 import $ from 'jquery';
 import ReactHtmlParser from 'react-html-parser';
+import {Link} from 'react-router-dom'; // eslint-disable-line no-unused-vars
+
 
 class GridList extends React.Component{
     constructor(){
@@ -44,7 +46,7 @@ class GridList extends React.Component{
             <div className="grid-x align-center block-latest-reads" id="sliderformobile">
                 {this.state.latestReadData.map((obj, i) => {
                     return <div key = {i} className="medium-4 cell img-block">
-                        <a className="letest-read-link" href={obj.link_to_node}>
+                        <Link className="letest-read-link" to={obj.link_to_node}>
                         <div className="img">
                             <img src={decodeUri(apiUrl+obj.image_url)} alt="" />
                         </div>
@@ -52,7 +54,7 @@ class GridList extends React.Component{
                             <h6>{ReactHtmlParser(obj.title)}</h6>
                             <h2>{ReactHtmlParser(imgPath(obj.description))}</h2>
                         </div>
-                        </a>
+                        </Link>
                     </div>
                 })}
               </div>

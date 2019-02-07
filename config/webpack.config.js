@@ -23,7 +23,13 @@ const getClientEnvironment = require('./env');
 const ModuleNotFoundPlugin = require('react-dev-utils/ModuleNotFoundPlugin');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin-alt');
 const typescriptFormatter = require('react-dev-utils/typescriptFormatter');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const ImageminPlugin = require("imagemin-webpack");
+const imageminGifsicle = require("imagemin-gifsicle");
+const imageminJpegtran = require("imagemin-jpegtran");
+const imageminOptipng = require("imagemin-optipng");
+const imageminSvgo = require("imagemin-svgo");
+
 
 
 
@@ -475,6 +481,28 @@ module.exports = function(webpackEnv) {
       },
     plugins: [
       // Generates an `index.html` file with the <script> injected.
+        new ImageminPlugin({
+            bail: false, // Ignore errors on corrupted images
+            cache: true,
+            imageminOptions: {
+                // Lossless optimization with custom option
+                // Feel free to experement with options for better result for you
+                plugins: [
+                    imageminGifsicle({
+                        interlaced: true
+                    }),
+                    imageminJpegtran({
+                        progressive: true
+                    }),
+                    imageminOptipng({
+                        optimizationLevel: 5
+                    }),
+                    imageminSvgo({
+                        removeViewBox: true
+                    })
+                ]
+            }
+        }),
       new HtmlWebpackPlugin(
         Object.assign(
           {},

@@ -2,6 +2,7 @@ import React from 'react';
 import {apiUrl} from '../services/common.js';
 import ReactHtmlParser from 'react-html-parser';
 import WOW from 'wowjs';
+import {Link} from 'react-router-dom'; // eslint-disable-line no-unused-vars
 // import ShowMore from './ShowMore';
 
 class CaseStudylist extends React.Component {
@@ -33,7 +34,7 @@ class CaseStudylist extends React.Component {
                                   {/*</ShowMore>*/}
                                   {caseStudy.field_body}
                               </div>
-                            <a href = {caseStudy.read_more_url} className="button mt-15">Read more</a>
+                            <Link to = {caseStudy.read_more_url} className="button mt-15">Read more</Link>
                           </div>
                           <div className="medium-7 cell no-padding wow slideInRight">
                             <div className="img-relative-title-ld">
@@ -67,9 +68,8 @@ class CaseStudylist extends React.Component {
                         {/*</ShowMore>*/}
                           {caseStudy.field_body}
                           <div className="clearfix"></div>
-                          <a href = {caseStudy.read_more_url} className="button mt-15">Read more</a>
+                          <Link to = {caseStudy.read_more_url} className="button mt-15">Read more</Link>
                       </div>
-
                     </div>
                   </div>
                   </div>
