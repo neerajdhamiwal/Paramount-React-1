@@ -14,7 +14,6 @@ import 'owl.carousel/dist/assets/owl.theme.green.min.css';
 import 'owl.carousel/dist/owl.carousel.min.js';
 import 'slick-carousel';
 import indexRoutes from './routes/index.js';
-
 import * as serviceWorker from './serviceWorker';
 window.jQuery = $;
 window.$ = $;
