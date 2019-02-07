@@ -1267,9 +1267,6 @@ header .header-inner {
   position: sticky;
   top: 0px; }
 
-@media (min-width: 1600px) {
-  .services-sub-menu-two {
-    width: 40% !important; } }
 @media screen and (max-width: 39.9375em) {
   footer.bg-color-grey {
     background: #fff; } }
