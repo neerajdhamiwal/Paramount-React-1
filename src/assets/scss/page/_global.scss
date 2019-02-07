@@ -55,7 +55,13 @@ a {
 	}
 	@media(min-width: 1481px){
 		margin: 0 auto;
-		max-width: 1600px;
+		max-width: 1400px;
+	}
+}
+
+.grid-container{
+	@media(min-width: 1481px){
+		max-width: 1400px;
 	}
 }
 
@@ -440,4 +446,8 @@ strong{
 
 .blog-right-img-text{
 	padding-right: 135px;
+}
+
+.award-top-spacing{
+	margin-top: 140px;
 }

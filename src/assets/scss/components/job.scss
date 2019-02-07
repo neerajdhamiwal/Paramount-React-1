@@ -44,6 +44,7 @@
       color: #666;
       @include mq(small-screen){
         font-size: 0.875rem;
+        max-width: 147px;
       }
     }
     .location-view{

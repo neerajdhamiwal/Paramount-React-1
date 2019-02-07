@@ -42,7 +42,11 @@ a {
 @media (min-width: 1481px) {
   .custom-grid {
     margin: 0 auto;
-    max-width: 1600px; } }
+    max-width: 1400px; } }
+
+@media (min-width: 1481px) {
+  .grid-container {
+    max-width: 1400px; } }
 
 p {
   font-size: 1.1rem; }
@@ -352,6 +356,9 @@ strong span {
 
 .blog-right-img-text {
   padding-right: 135px; }
+
+.award-top-spacing {
+  margin-top: 140px; }
 
 /*Header Styling Starts Here*/
 .close-button {
@@ -1655,7 +1662,8 @@ footer.footer-bottom {
     color: #666; }
     @media screen and (max-width: 39.9375em) {
       .job-posting-list .accordion-title .job-title {
-        font-size: 0.875rem; } }
+        font-size: 0.875rem;
+        max-width: 147px; } }
   .job-posting-list .accordion-title .location-view {
     position: absolute;
     right: 15px;
@@ -1889,10 +1897,20 @@ footer.footer-bottom {
 img.align-right {
   float: right;
   margin-left: 15px; }
+  @media screen and (max-width: 39.9375em) {
+    img.align-right {
+      float: none;
+      width: 100%;
+      margin: 15px 0; } }
 
 img.align-left {
   float: left;
   margin-right: 15px; }
+  @media screen and (max-width: 39.9375em) {
+    img.align-left {
+      float: none;
+      width: 100%;
+      margin: 15px 0; } }
 
 .body-font-style h1, .body-font-style h2, .body-font-style h3, .body-font-style h4, .body-font-style h5, .body-font-style h6 {
   font-size: 1.1rem;
