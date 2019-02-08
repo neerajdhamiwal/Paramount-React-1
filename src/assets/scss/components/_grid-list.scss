@@ -84,7 +84,9 @@
 .team-page{
     .img-block {
       .img{
-        height: 280px;
+        height: 240px;
+        width: 230px;
+        margin: 0 auto;
         img{
           height: 100%;
           object-fit: cover;
@@ -103,9 +105,6 @@
            }
          }
         .img{
-          @include mq(small-screen) {
-            height: 340px;
-          }
           img{
             border-radius: 50%;
           }
