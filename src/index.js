@@ -15,14 +15,17 @@ import 'owl.carousel/dist/owl.carousel.min.js';
 import 'slick-carousel';
 import indexRoutes from './routes/index.js';
 import * as serviceWorker from './serviceWorker';
+import ScrollToTop from 'react-router-scroll-top'
 window.jQuery = $;
 window.$ = $;
 const hist = createBrowserHistory();
 ReactDOM.render(
     <Router history={hist}>
+        <ScrollToTop>
         <Switch>
             {indexRoutes.map((prop, key) => <Route path={prop.path} component={prop.component} key={key} />)}
         </Switch>
+        </ScrollToTop>
     </Router>,
     document.getElementById('root')
 );

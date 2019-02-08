@@ -115,7 +115,7 @@ class ArticlePage extends React.Component{
                       {this.state.caseList.hasOwnProperty('name')?<ul>
                         {
                             this.state.caseList.name.split(',').map((value, index) => {
-                            return <li onClick={() => localStorage.setItem('activeMenu', this.state.caseList.name.split(',')[index])}><Link to = {"/resources/blogs?cid="+this.state.caseList.id.split(',')[index]} id={index} className={localStorage.getItem('activeMenu')? value === localStorage.getItem('activeMenu')?'activeTab':'': index===0?'activeTab':''}>
+                            return <li key={index} onClick={() => localStorage.setItem('activeMenu', this.state.caseList.name.split(',')[index])}><Link to = {"/resources/blogs?cid="+this.state.caseList.id.split(',')[index]} id={index} className={localStorage.getItem('activeMenu')? value === localStorage.getItem('activeMenu')?'activeTab':'': index===0?'activeTab':''}>
                                 {value}</Link></li>
                         })
                         }

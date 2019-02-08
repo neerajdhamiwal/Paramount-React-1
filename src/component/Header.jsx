@@ -42,14 +42,14 @@ class Header extends React.Component{
                                     {
                                         this.state.menu.map((obj, i)=> {
                                             if(obj.hasOwnProperty('below')) { //eslint-disable-next-line
-                                                return <li key={'obj'+i}><Link className={obj.relative==='/'?'cursorDefault':''} to={obj.relative!=='/'? `${obj.relative}`:"javascript:void(0);"}>{obj.title}</Link>
+                                                return <li key={'obj'+i}><Link className={obj.relative==='/'?'cursorDefault':''} to={obj.relative!=='/'? `${obj.relative}`:''}>{obj.title}</Link>
                                                     <ul className="menu dropdown-menu-an">
                                                         {obj.below.map((subObj, i) => {  //eslint-disable-next-line
-                                                            return <li key={'subObj'+i}><Link className={subObj.relative==='/'?'cursorDefault':''} to={subObj.relative!=='/'? `${subObj.relative}`:"javascript:void(0);"}>{subObj.title}</Link>
+                                                            return <li key={'subObj'+i}><Link className={subObj.relative==='/'?'cursorDefault':''} to={subObj.relative!=='/'? `${subObj.relative}`:''}>{subObj.title}</Link>
                                                                 {subObj.hasOwnProperty('below')?
                                                                     <ul className="menu dropdown-menu-an">
                                                                         {subObj.below.map((subsubObj, i) => { //eslint-disable-next-line
-                                                                            return <li key={'subsubObj'+i}><Link className={subsubObj.relative==='/'?'cursorDefault':''} to={subsubObj.relative!=='/'? `${subsubObj.relative}`:"javascript:void(0);"}>{subsubObj.title}</Link></li>
+                                                                            return <li key={'subsubObj'+i}><Link className={subsubObj.relative==='/'?'cursorDefault':''} to={subsubObj.relative!=='/'? `${subsubObj.relative}`:''}>{subsubObj.title}</Link></li>
                                                                         })}
                                                                     </ul> : ''
                                                                 }
