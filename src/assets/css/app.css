@@ -1065,7 +1065,9 @@ header .header-inner {
   margin-left: 23px; }
 
 .team-page .img-block .img {
-  height: 280px; }
+  height: 240px;
+  width: 230px;
+  margin: 0 auto; }
   .team-page .img-block .img img {
     height: 100%;
     object-fit: cover; }
@@ -1076,9 +1078,6 @@ header .header-inner {
     margin-bottom: 0px; }
 .block-latest-reads.team-page .img-block .img {
   position: relative; }
-  @media screen and (max-width: 39.9375em) {
-    .block-latest-reads.team-page .img-block .img {
-      height: 340px; } }
   .block-latest-reads.team-page .img-block .img img {
     border-radius: 50%; }
   .block-latest-reads.team-page .img-block .img span {
@@ -1267,9 +1266,9 @@ header .header-inner {
   position: sticky;
   top: 0px; }
 
-@media (min-width: 1600px) {
-  .services-sub-menu-two {
-    width: 40% !important; } }
+.main-banner.award-banner h3.banner-info {
+  margin-bottom: 30px; }
+
 @media screen and (max-width: 39.9375em) {
   footer.bg-color-grey {
     background: #fff; } }
@@ -1928,6 +1927,9 @@ img.align-left {
   @media screen and (max-width: 1024px) {
     .banner-top-spacing {
       padding-top: 20px; } }
+
+.mb-30 {
+  margin-bottom: 30px; }
 
 .button {
   font-family: "Montserrat", sans-serif;
