@@ -120,7 +120,7 @@ class About extends React.Component{
                        <div className="grid-container custom-grid custom-grid-right">
                            <div className="grid-x align-right align-middle grid-margin-x wow fadeInUp">
                                <div className="small-12 medium-5 cell small-order-change">
-                                   <h3 className="banner-info">{ReactHtmlParser(this.state.awardsData.primary_image_id[0][0].node_title)}<br/>
+                                   <h3 className="banner-info mb-30">{ReactHtmlParser(this.state.awardsData.primary_image_id[0][0].node_title)}<br/>
                                        <span> {ReactHtmlParser(this.state.awardsData.primary_image_id[0][0].node_subtitle_title)}</span></h3>
                                        <ShowMore id={`awards${this.state.awardsData.primary_image_id[0][0].node_title}`} longText= {imgPath(this.state.awardsData.primary_image_id[0][0].node_description)}>
                                        </ShowMore>
