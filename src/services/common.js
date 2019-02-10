@@ -1,5 +1,5 @@
 import requestService from './request';
-export const apiUrl = 'http://paramountdrupal.opensenselabs.com';
+export const apiUrl = 'http://drupal.paramountsoft.net';
 export const UserName = 'sahil.s';
 export const Pass = 'System123#';
 export const jsonMiddleware = (json, ids)=> {
@@ -113,4 +113,5 @@ export const getMeta = (nid, cb)=> {
         })
 }
 export const COUNT = 20;
+
 

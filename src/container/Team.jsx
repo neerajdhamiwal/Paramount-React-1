@@ -103,7 +103,7 @@ class Team extends React.Component{
                                         {subArr.map((obj, i) => {
                                             return    <div className="small-12 medium-5 large-3 cell img-block" key={i}>
                                                 { //eslint-disable-next-line
-                                                }<Link to={obj.social_link} target="_blank">
+                                                }<a href={obj.social_link} target="_blank">
                                                 <div className="img">
                                                     <img src={apiUrl+obj.team_member_image} alt=""/>
                                                     <span>{ReactHtmlParser(obj.about_team)}</span>
@@ -112,7 +112,7 @@ class Team extends React.Component{
                                                     <h6>{obj.team_member_name}</h6>{ //eslint-disable-next-line
                                                 }<h2>{obj.team_member_job.replace(/\&amp;/g,'&')}</h2>
                                                 </div>
-                                                </Link>
+                                                </a>
                                             </div>
                                         })
                                         }
