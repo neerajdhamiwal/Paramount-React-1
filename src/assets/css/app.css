@@ -360,6 +360,14 @@ strong span {
 .award-top-spacing {
   margin-top: 140px; }
 
+@media screen and (max-width: 39.9375em) {
+  .contact-table tr td {
+    display: block;
+    width: 100% !important;
+    margin-bottom: 25px; }
+    .contact-table tr td a {
+      word-break: break-word;
+      display: block; } }
 /*Header Styling Starts Here*/
 .close-button {
   z-index: 9999; }
