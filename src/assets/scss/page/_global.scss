@@ -451,3 +451,19 @@ strong{
 .award-top-spacing{
 	margin-top: 140px;
 }
+
+@include mq(small-screen) {
+	.contact-table{
+		tr {
+			td{
+				display: block;
+		    width: 100%!important;
+		    margin-bottom: 25px;
+				a{
+					word-break: break-word;
+			    display: block;
+				}
+			}
+		}
+	}
+}
