@@ -163,7 +163,7 @@ class Home extends React.Component{
                                                        <ShowMore id={`contentSlider${index}`} longText= {obj.content_slider_body}  update={this.state.update}>
                                                        </ShowMore>
                                                    </div>
-                                                   {obj.content_slider_cta_title !==''? <Link className="button mt-15" to={obj.content_slider_cta_url.substring(9)}>{ReactHtmlParser(obj.content_slider_cta_title)}</Link>:''}
+                                                   {obj.content_slider_cta_title !==''? <a className="button mt-15" href={obj.content_slider_cta_url.substring(9)}>{ReactHtmlParser(obj.content_slider_cta_title)}</a>:''}
                                                </div>
                                            </div>
                                        </div>

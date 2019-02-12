@@ -107,7 +107,7 @@ class Resource extends React.Component{
                                                     <ShowMore id={`info${obj.nid}`} longText= {obj.node_body}>
                                                     </ShowMore>
                                                     { //eslint-disable-next-line
-                                                    }<Link to={`/infographic-article?nid=${obj.nid}`}>View</Link>
+                                                    }<Link to={obj.read_more_url}>View</Link>
                                                     {//eslint-disable-next-line
                                                          obj.cta_button_title!==''?<a href="" className="button">{obj.cta_button_title}</a>:''}
                                                 </div>

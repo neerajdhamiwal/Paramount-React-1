@@ -66,6 +66,7 @@ class CaseStudy extends React.Component{
 
     handlePageClick = (data) => {
         this.setState({activeCaseStudy:this.state.blogList.slice(data.selected*5, data.selected*5+5)});
+        window.scrollTo(0, 800);
     };
 
   getTermInfo(id){
