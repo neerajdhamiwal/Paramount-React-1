@@ -1,5 +1,5 @@
 import requestService from './request';
-export const apiUrl = 'http://drupal.paramountsoft.net';
+export const apiUrl = 'https://drupal.paramountsoft.net';
 export const UserName = 'sahil.s';
 export const Pass = 'System123#';
 export const jsonMiddleware = (json, ids)=> {

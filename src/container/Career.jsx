@@ -29,7 +29,6 @@ class About extends React.Component{
         this.getAllJobs = this.getAllJobs.bind(this);
         this.handleChange = this.handleChange.bind(this);
         this.getMeValue = this.getMeValue.bind(this);
-
     }
 
     animation(){

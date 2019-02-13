@@ -3,10 +3,14 @@ import React from 'react';
 import ReactHtmlParser from 'react-html-parser';
 import $ from 'jquery';
 
-
 class Jobcomponent extends React.Component{
     componentDidMount(){
         $(document).foundation();
+    }
+    componentWillReceiveProps(nextProps){
+        console.log(nextProps);
+
+        setTimeout(() => { $(document).foundation();}, 3000);
     }
     render(){
         return(
