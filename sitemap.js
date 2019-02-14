@@ -22,7 +22,7 @@ const getUrl = body =>{
 app.get('/sitemap.xml', function(req, res) {
     request('http://drupal.paramountsoft.net/url-pattern-data', function (error, response, body) {
         const sitemap = sm.createSitemap ({
-            hostname: 'http://drupal.paramountsoft.net',
+            hostname: 'http://paramountsoft.net',
             cacheTime: 600000,        // 600 sec - cache purge period
             urls: getUrl(body)
         });

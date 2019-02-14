@@ -7,27 +7,22 @@ class Jobcomponent extends React.Component{
     componentDidMount(){
         $(document).foundation();
     }
-    componentWillReceiveProps(nextProps){
-        console.log(nextProps);
-
-        setTimeout(() => { $(document).foundation();}, 3000);
-    }
     render(){
         return(
             <ul className="accordion" data-accordion data-allow-all-closed="true" id="job-tabs">
-                {this.props.careerData.hasOwnProperty('nid')?
+                {
                     this.props.careerData['nid'][0].map((obj, i)=>{
-                        return <li key={i} className="accordion-item" data-accordion-item="" >
+                        return <li key={i} className="accordion-item" data-accordion-item >
                             {/*<!-- Accordion tab title -->*/}
                             {//eslint-disable-next-line
-                            }<a className="accordion-title" aria-controls={`tab${obj.nid}`} role="tab" id={`job${obj.nid}`} aria-expanded="false" aria-selected="false">
+                            }<a className="accordion-title">
                                 <div className="job-title">{obj.node_title}</div>
                                 <span className="location-view">
                                   <div className="view-job-btn">View Job</div>
                                 </span>
                             </a>
                             {/*<!-- Accordion tab content: it would start in the open state due to using the `is-active` state className. -->*/}
-                            <div className="accordion-content" data-tab-content="" role="tabpanel" aria-labelledby={`job${obj.nid}`} aria-hidden="true" id={`tab${obj.nid}`}>
+                            <div className="accordion-content" data-tab-content>
                                 <div className="grid-x align-justify">
                                     <div className="cell small-12 medium-8" id="coltab">
                                         <div className="job-deties-req">
@@ -52,7 +47,7 @@ class Jobcomponent extends React.Component{
                                 <p className="career-info-btn"><a className="button" href="mailto:careers@paramountsoft.net">Apply Now</a></p>
                             </div>
                         </li>
-                    }):''
+                    })
                 }
             </ul>
         )
