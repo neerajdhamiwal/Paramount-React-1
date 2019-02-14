@@ -92,9 +92,9 @@ class About extends React.Component{
                 let data = jsonMiddleware(response.data, ids);
                 //this.setState({loading: false});
                 this.setState({careerData: data},()=> {
-                    setTimeout(()=> {
-                        $('#job-tabs').foundation('tab', 'reflow');
-                    }, 3000)
+                    // setTimeout(()=> {
+                    //     $('#job-tabs').foundation('tab', 'reflow');
+                    // }, 3000)
                 });
             })
             .catch((err) => {
