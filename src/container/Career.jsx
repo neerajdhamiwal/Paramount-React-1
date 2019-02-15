@@ -170,7 +170,7 @@ class About extends React.Component{
                                             color="#fd302a"
                                             height="100"
                                             width="100"
-                                        />:this.state.careerData.hasOwnProperty('nid')?<JobComponent careerData={this.state.careerData} duty={this.state.duty}/>:''}
+                                        />:this.state.careerData.hasOwnProperty('nid')?<JobComponent careerData={this.state.careerData} duty={this.state.duty} handleChange= {this.handleChange}/>:''}
                                 </div>
                             </div>
                         </div>
