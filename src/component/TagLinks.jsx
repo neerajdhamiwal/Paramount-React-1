@@ -59,7 +59,7 @@ constructor(props){
                       </div>
                       <div className="small-12 medium-7 cell no-padding wow slideInRight">
                         <div className="img-relative-title-ld tab-img-h">
-                          <img src={apiUrl+this.props.firstCaseStudy['image']} alt="" />
+                          <img src={apiUrl+this.props.firstCaseStudy['field_secondary_image']} alt="" />
                           <h2 className="relative-title">{ReactHtmlParser(this.props.firstCaseStudy['title'])}</h2>
                         </div>
                       </div>

@@ -42,7 +42,7 @@ class CaseStudylist extends React.Component {
                                 <div className="grid__item">
                                   <div className="box">
                                     <div className="box__shadow"></div>
-                                    <img className="box__img" src={apiUrl + caseStudy.image} alt=""/>
+                                    <img className="box__img" src={apiUrl + caseStudy['field_secondary_image']} alt=""/>
                                     <h2>{ReactHtmlParser(caseStudy.title)}</h2>
                                   </div>
                                 </div>
