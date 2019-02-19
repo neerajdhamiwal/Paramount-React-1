@@ -282,9 +282,9 @@ p ul {
     display: inline-block;
     width: 1em;
     margin-left: -1em; }
-    p ul li:before p {
-      display: inline-block;
-      margin: 0px; }
+  p ul li p {
+    display: inline-block;
+    margin: 0px; }
 
 .view-more {
   color: red;
