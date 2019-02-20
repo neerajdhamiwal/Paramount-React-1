@@ -1,6 +1,6 @@
 
 import React from 'react';
-import BottomBanner from '../assets/img/team-banner-bg2.png';
+import BottomBanner from '../assets/img/makeCareer.jpg';
 import ReactHtmlParser from 'react-html-parser';
 import ShowMore from './ShowMore.jsx';
 import {Link} from 'react-router-dom'; // eslint-disable-line no-unused-vars
