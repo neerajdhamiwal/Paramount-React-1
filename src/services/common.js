@@ -83,7 +83,7 @@ export const imgPath = (data)=> {
             let match;
             //eslint-disable-next-line
             while(match = expression.exec(data)) {
-                data = data.slice(0, match.index) + 'src="http://paramount.opensenselabs.com' + data.slice(match.index + 5);
+                data = data.slice(0, match.index) + 'src="https://drupal.paramountsoft.net' + data.slice(match.index + 5);
 
             }
             return data;

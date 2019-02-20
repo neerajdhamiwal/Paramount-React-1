@@ -130,7 +130,6 @@ class CaseStudy extends React.Component{
                 <GridList/>
                 </div>
             </DocumentMeta>
-
     )
   }
 }
