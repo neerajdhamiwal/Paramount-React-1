@@ -1,7 +1,6 @@
 import React from 'react';
 import {apiUrl} from '../services/common.js';
 import ReactHtmlParser from 'react-html-parser';
-import ShowMore from './ShowMore.jsx';
 import {Link} from 'react-router-dom'; // eslint-disable-line no-unused-vars
 
 
@@ -30,8 +29,7 @@ class FeaturedContent extends React.Component{
                   <div className="grid-container">
                       <div className="grid-x align-right align-middle grid-margin-x">
                           <div className="small-12 medium-5 cell small-order-change">
-                              <ShowMore id={`FeatBlog`} longText= {ReactHtmlParser(this.props.activeCaseStudy.field_body)}>
-                              </ShowMore>
+                              <p>{ReactHtmlParser(this.props.activeCaseStudy.field_body)}></p>
                               {this.props.locate === 'resource'?'':<Link to = {this.props.activeCaseStudy.read_more_url} className="button">Read more</Link>}
                           </div>
                           <div className="small-12 medium-5 cell"></div>

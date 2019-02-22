@@ -8,7 +8,6 @@ import Loader from 'react-loader-spinner'; // eslint-disable-line no-unused-vars
 import DocumentMeta from 'react-document-meta';
 import ReactPaginate from 'react-paginate';
 
-
 let nid = [];
 class CaseStudy extends React.Component{
   constructor(){

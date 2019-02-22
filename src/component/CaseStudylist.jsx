@@ -3,7 +3,6 @@ import {apiUrl} from '../services/common.js';
 import ReactHtmlParser from 'react-html-parser';
 import WOW from 'wowjs';
 import {Link} from 'react-router-dom'; // eslint-disable-line no-unused-vars
-// import ShowMore from './ShowMore';
 
 class CaseStudylist extends React.Component {
   constructor(props){

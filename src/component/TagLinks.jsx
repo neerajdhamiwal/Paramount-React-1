@@ -2,7 +2,6 @@ import React from 'react';
 import $ from 'jquery';
 import {apiUrl} from '../services/common.js';
 import ReactHtmlParser from 'react-html-parser';
-import ShowMore from './ShowMore.jsx';
 import WOW from 'wowjs';
 import {Link} from 'react-router-dom'; // eslint-disable-line no-unused-vars
 
@@ -53,8 +52,8 @@ constructor(props){
               {this.props.firstCaseStudy? <div className="medium-10 cell">
                     <div className="grid-x grid-padding-x">
                       <div className="small-12 medium-5 cell">
-                          <ShowMore id={`tagLink`} longText= {this.props.firstCaseStudy['field_body']} >
-                          </ShowMore>
+                          <p>{this.props.firstCaseStudy['field_body']}
+                          </p>
                           {this.props.locate === 'resource'?'':<Link to = {this.props.firstCaseStudy['read_more_url']} className="button mt-15">Read more</Link>}
                       </div>
                       <div className="small-12 medium-7 cell no-padding wow slideInRight">
