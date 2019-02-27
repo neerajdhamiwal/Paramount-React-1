@@ -21,7 +21,7 @@ class CaseStudylist extends React.Component {
   }
   render(){
     return(
-        <div>
+        <div className="addAttr">
             {this.props.activeCaseStudyData.map((caseStudy, i) => {
                 if(i !== 0){
                   if(i%2 ===0){

@@ -7,7 +7,7 @@ import Loader from 'react-loader-spinner'; // eslint-disable-line no-unused-vars
 import GridList from '../component/GridList.jsx';
 import DocumentMeta from 'react-document-meta';
 import {Link} from 'react-router-dom'; // eslint-disable-line no-unused-vars
-
+import $ from 'jquery';
 
 const BannerStyle =(url)=> {
     let combinedurl = apiUrl+url
@@ -41,7 +41,8 @@ class ArticlePage extends React.Component{
                 if(response.data.length> 0){
                 caseStudy =  response.data[0];
                 this.setState({caseStudy: caseStudy, loading: false});
-            }
+                    $('.addAttr a').prop('target', '_blank');
+                }
             })
             .catch((err) => {
                 //console.log(err);
@@ -55,6 +56,8 @@ class ArticlePage extends React.Component{
                 //console.log(err);
             })
     }
+
+
 
 
     render(){
@@ -97,14 +100,14 @@ class ArticlePage extends React.Component{
           <div className="grid-container  custom-grid custom-grid-right">
             <div className="grid-x">
             <div className="medium-12 cell">
-              <div className="sidemnu-heading pl-155 pr-155 pb-50">
-                <h3>{ReactHtmlParser(this.state.caseStudy.field_quote)}</h3>
-                <p>{ReactHtmlParser(this.state.caseStudy.field_quote_author)}</p>
-              </div>
+                {(this.state.caseStudy.field_quote !=='' || this.state.caseStudy.field_quote_author) ?<div className="sidemnu-heading pl-155 pr-155 pb-50">
+                        {this.state.caseStudy.field_quote!==''?<h3>{ReactHtmlParser(this.state.caseStudy.field_quote)}</h3>:''}
+                    {this.state.caseStudy.field_quote_author !==''?<p>{ReactHtmlParser(this.state.caseStudy.field_quote_author)}</p>:''}
+              </div>:''}
               <div className="tabs-content" data-tabs-content="service-tabs">
                 <div className="tabs-panel is-active" id="panel1">
                   <div className="grid-x grid-padding-x">
-                  <div className="medium-8 cell">
+                  <div className="medium-8 cell addAttr">
                     <div className="">
                         <p>{ReactHtmlParser(imgPath(this.state.caseStudy.field_secondary_body))}</p>
 
