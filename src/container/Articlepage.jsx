@@ -40,8 +40,9 @@ class ArticlePage extends React.Component{
             .then((response) => {
                 if(response.data.length> 0){
                 caseStudy =  response.data[0];
-                this.setState({caseStudy: caseStudy, loading: false});
+                this.setState({caseStudy: caseStudy, loading: false},()=> {
                     $('.addAttr a').prop('target', '_blank');
+                });
                 }
             })
             .catch((err) => {
@@ -56,9 +57,6 @@ class ArticlePage extends React.Component{
                 //console.log(err);
             })
     }
-
-
-
 
     render(){
         return(
@@ -82,7 +80,7 @@ class ArticlePage extends React.Component{
            </div>
          </div>
        </section>
-       <section className="top-100 bottom-100">
+       <section className="top-100 bottom-100 addAttr">
          <div className="grid-container custom-grid custom-grid-right">
            <div className="grid-x grid-padding-x">
              <div className="medium-6 small-12 cell p-right-45">

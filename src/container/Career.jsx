@@ -74,11 +74,7 @@ class About extends React.Component{
             .then((response) => {
                 let ids = ['job_id','nid'];
                 let data = jsonMiddleware(response.data, ids);
-                this.setState({careerData: data},()=> {
-                    setTimeout(()=> {
-                        $('#job-tabs').foundation('tab', 'reflow');
-                    }, 3000)
-                });
+                this.setState({careerData: data});
             })
             .catch((err) => {
                 //console.log(err);
