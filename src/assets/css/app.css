@@ -1246,7 +1246,7 @@ header .header-inner {
     order: 1; } }
 
 #loading {
-  -webkit-animation: rotation 15s infinite linear; }
+  -webkit-animation: rotation 40s infinite linear; }
 
 @-webkit-keyframes rotation {
   from {
